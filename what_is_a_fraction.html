@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fractions Adventure — Primary 4 | Xeledif Educational Services</title>
 <style>
-  :root {
+
+
+:root {
     --blue:#378ADD; --blue-light:#E6F1FB; --blue-dark:#0C447C; --blue-mid:#185FA5;
     --green:#639922; --green-light:#EAF3DE; --green-dark:#27500A; --green-mid:#3B6D11;
     --amber:#BA7517; --amber-light:#FAEEDA; --amber-dark:#633806; --amber-mid:#854F0B;
@@ -97,6 +99,8 @@
 
   svg.shape-svg { display:block; margin:0 auto; }
 </style>
+
+
 </head>
 <body>
 <div class="page">
@@ -106,7 +110,7 @@
       <div class="hero-avatar">F</div>
       <div>
         <div class="hero-title">Fractions Adventure — Primary 4</div>
-        <div class="hero-sub">Xeledif Educational Services &nbsp;|&nbsp; UK Curriculum &nbsp;|&nbsp; March 2026</div>
+        <div class="hero-sub">Xeledif Educational Services &nbsp;|&nbsp; UK Curriculum &nbsp;|&nbsp; April 2026</div>
       </div>
     </div>
     <div>
@@ -148,7 +152,7 @@ const TAB_TYPE = {
 
 
 /* ----------------------------------------------------------
-   TASK 1 — 3 March 2026
+   TASK 1 — 3 April 2026
    Foundational gap 1: What is a fraction? Shading shapes.
    ---------------------------------------------------------- */
 const TASK1_CONTENT = `
@@ -156,7 +160,7 @@ const TASK1_CONTENT = `
   <div class="day-header">
     <div class="day-icon" style="background:#E6F1FB;color:#0C447C;border:0.5px solid #B5D4F4;">1</div>
     <div>
-      <div class="day-label" style="color:#0C447C;">Task Set 1 — 3 March 2026</div>
+      <div class="day-label" style="color:#0C447C;">Task Set 1 — 3 April 2026</div>
       <div class="day-sub">Topic: What is a fraction? Shading rectangles &amp; squares</div>
     </div>
   </div>
@@ -362,18 +366,21 @@ const TASK1_CONTENT = `
           <span class="ex-tag" style="background:#E6F1FB;color:#0C447C;">Rectangle</span>
         </div>
       </div>
+
       <div class="exercise-item">
-        <div class="exercise-item"><div class="ex-num">4</div>
+        <div class="ex-num">4</div>
         <div class="ex-text">Shade <strong>2/4</strong> of a rectangle. Are 2/4 and 1/2 the same? 
-            <span class="ex-shape-tag" style="background:var(--green-light);color:var(--green-dark);">Check</span></div></div>
+          <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Check</span>
         </div>
       </div>
+
       <div class="exercise-item">
         <div class="ex-num">5</div>
         <div class="ex-text">A pizza is cut into 6 equal slices. You eat 2 slices. Write the fraction and shade a rectangle to show it.
           <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Word problem</span>
         </div>
       </div>
+
       <div class="exercise-item">
         <div class="ex-num">6</div>
         <div class="ex-text">Shade <strong>4/6</strong> of a rectangle.
@@ -412,34 +419,278 @@ const TASK1_CONTENT = `
 
 
 /* ----------------------------------------------------------
-   HOW TO ADD TASK 2 WHEN IT IS READY
-   ----------------------------------------------------------
-   1. Copy the block below (remove the comment markers /* and *\/)
-   2. Replace the placeholder text with your actual lesson HTML
-   3. In the WEEKS array further down, find week 1 tab t2
-      and change:  content: null
-      to:          content: { title: 'Study Review — Saturday 4 March', body: TASK2_CONTENT }
-   That is the only change needed. Nothing else in the file changes.
+   Study Review — Saturday, 4 April 2026
+   Foundational gap 1: What is a fraction? Shading shapes.
    ---------------------------------------------------------- */
 
-/*
 const TASK2_CONTENT = `
 
-  <div class="day-header">
-    <div class="day-icon" style="background:#EAF3DE;color:#27500A;border:0.5px solid #C0DD97;">2</div>
-    <div>
-      <div class="day-label" style="color:#27500A;">Study Review — Saturday, 4 March 2026</div>
-      <div class="day-sub">Topic: Revisit and practise fraction shading</div>
+<!-- TASK 2 -->
+  <div class="section" id="sec-task2">
+    <div class="day-header">
+      <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid #C0DD97;">2</div>
+      <div>
+        <div class="day-label" style="color:var(--green-dark);">Study Review — Saturday, 4 April 2026</div>
+        <div class="day-sub">Topic: Circles and triangles — fractions are everywhere!</div>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:#C0DD97;border-width:1px;">
+      <div class="card-title" style="color:var(--green-dark);">Today’s adventure</div>
+      <div class="card-body" style="background:var(--green-light);border-radius:8px;padding:12px;font-style:italic;">"Amazing work yesterday! Today we level up — we're going to shade fractions of circles and triangles. Did you know a pizza is always a circle? Every time you eat a slice, you're doing fractions!"</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Example 1 — Shade <span style="color:var(--teal);">1/3</span> of a Circle</div>
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-num" style="color:var(--teal-dark);">Step 1</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#1D9E75" stroke-width="1.5"/>
+          </svg>
+          <div class="step-caption" style="color:var(--teal-dark);">Empty circle</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--teal-dark);">Step 2 — 3 equal parts</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#1D9E75" stroke-width="1.5"/>
+            <line x1="35" y1="35" x2="35" y2="7" stroke="#1D9E75" stroke-width="1"/>
+            <line x1="35" y1="35" x2="11" y2="49" stroke="#1D9E75" stroke-width="1"/>
+            <line x1="35" y1="35" x2="59" y2="49" stroke="#1D9E75" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--teal-dark);">Denominator = 3</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--teal-dark);">Step 3 — Shade 1 part</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <path d="M35,35 L35,7 A28,28 0 0,1 59,49 Z" fill="#5DCAA5" opacity="0.8"/>
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#085041" stroke-width="1.5"/>
+            <line x1="35" y1="35" x2="35" y2="7" stroke="#085041" stroke-width="1"/>
+            <line x1="35" y1="35" x2="11" y2="49" stroke="#085041" stroke-width="1"/>
+            <line x1="35" y1="35" x2="59" y2="49" stroke="#085041" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--teal-dark);">Numerator = 1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Example 2 — Shade <span style="color:var(--pink);">3/4</span> of a Circle</div>
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-num" style="color:var(--pink-dark);">Step 1</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#D4537E" stroke-width="1.5"/>
+          </svg>
+          <div class="step-caption" style="color:var(--pink-dark);">Empty circle</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--pink-dark);">Step 2 — 4 equal parts</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#D4537E" stroke-width="1.5"/>
+            <line x1="35" y1="7" x2="35" y2="63" stroke="#D4537E" stroke-width="1"/>
+            <line x1="7" y1="35" x2="63" y2="35" stroke="#D4537E" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--pink-dark);">Denominator = 4</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--pink-dark);">Step 3 — Shade 3 parts</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <path d="M35,35 L35,7 A28,28 0 0,1 63,35 Z" fill="#ED93B1" opacity="0.85"/>
+            <path d="M35,35 L63,35 A28,28 0 0,1 35,63 Z" fill="#ED93B1" opacity="0.85"/>
+            <path d="M35,35 L35,63 A28,28 0 0,1 7,35 Z" fill="#ED93B1" opacity="0.85"/>
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#72243E" stroke-width="1.5"/>
+            <line x1="35" y1="7" x2="35" y2="63" stroke="#72243E" stroke-width="1"/>
+            <line x1="7" y1="35" x2="63" y2="35" stroke="#72243E" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--pink-dark);">Numerator = 3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Example 3 — Shade <span style="color:var(--coral);">1/2</span> of a Triangle</div>
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-num" style="color:var(--coral-dark);">Step 1</div>
+          <svg class="shape-svg" width="90" height="70" viewBox="0 0 90 70">
+            <polygon points="45,8 5,62 85,62" fill="none" stroke="#D85A30" stroke-width="1.5"/>
+          </svg>
+          <div class="step-caption" style="color:var(--coral-dark);">Empty triangle</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--coral-dark);">Step 2 — 2 equal parts</div>
+          <svg class="shape-svg" width="90" height="70" viewBox="0 0 90 70">
+            <polygon points="45,8 5,62 85,62" fill="none" stroke="#D85A30" stroke-width="1.5"/>
+            <line x1="45" y1="8" x2="45" y2="62" stroke="#D85A30" stroke-width="1" stroke-dasharray="4,2"/>
+          </svg>
+          <div class="step-caption" style="color:var(--coral-dark);">Denominator = 2</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--coral-dark);">Step 3 — Shade 1 part</div>
+          <svg class="shape-svg" width="90" height="70" viewBox="0 0 90 70">
+            <polygon points="45,8 5,62 45,62" fill="#F0997B" opacity="0.85"/>
+            <polygon points="45,8 5,62 85,62" fill="none" stroke="#712B13" stroke-width="1.5"/>
+            <line x1="45" y1="8" x2="45" y2="62" stroke="#712B13" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--coral-dark);">Numerator = 1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Example 4 — Shade <span style="color:var(--blue);">2/6</span> of a Circle</div>
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-num" style="color:var(--blue-dark);">Step 1</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#378ADD" stroke-width="1.5"/>
+          </svg>
+          <div class="step-caption" style="color:var(--blue-dark);">Empty circle</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--blue-dark);">Step 2 — 6 equal parts</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#378ADD" stroke-width="1.5"/>
+            <line x1="35" y1="35" x2="35" y2="7" stroke="#378ADD" stroke-width="1"/>
+            <line x1="35" y1="35" x2="59.2" y2="21" stroke="#378ADD" stroke-width="1"/>
+            <line x1="35" y1="35" x2="59.2" y2="49" stroke="#378ADD" stroke-width="1"/>
+            <line x1="35" y1="35" x2="35" y2="63" stroke="#378ADD" stroke-width="1"/>
+            <line x1="35" y1="35" x2="10.8" y2="49" stroke="#378ADD" stroke-width="1"/>
+            <line x1="35" y1="35" x2="10.8" y2="21" stroke="#378ADD" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--blue-dark);">Denominator = 6</div>
+        </div>
+        <div class="arrow-sep">→</div>
+        <div class="step-box">
+          <div class="step-num" style="color:var(--blue-dark);">Step 3 — Shade 2 parts</div>
+          <svg class="shape-svg" width="70" height="70" viewBox="0 0 70 70">
+            <path d="M35,35 L35,7 A28,28 0 0,1 59.2,21 Z" fill="#85B7EB" opacity="0.85"/>
+            <path d="M35,35 L59.2,21 A28,28 0 0,1 59.2,49 Z" fill="#85B7EB" opacity="0.85"/>
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#0C447C" stroke-width="1.5"/>
+            <line x1="35" y1="35" x2="35" y2="7" stroke="#0C447C" stroke-width="1"/>
+            <line x1="35" y1="35" x2="59.2" y2="21" stroke="#0C447C" stroke-width="1"/>
+            <line x1="35" y1="35" x2="59.2" y2="49" stroke="#0C447C" stroke-width="1"/>
+            <line x1="35" y1="35" x2="35" y2="63" stroke="#0C447C" stroke-width="1"/>
+            <line x1="35" y1="35" x2="10.8" y2="49" stroke="#0C447C" stroke-width="1"/>
+            <line x1="35" y1="35" x2="10.8" y2="21" stroke="#0C447C" stroke-width="1"/>
+          </svg>
+          <div class="step-caption" style="color:var(--blue-dark);">Numerator = 2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:#C0DD97;">
+  <div class="card-title" style="color:var(--green-dark);">Class Work</div>
+  <div class="exercise-list">
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">1</div>
+      <div class="ex-text">Shade <strong>1/2</strong> of a circle. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Check</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">2</div>
+      <div class="ex-text">Shade <strong>3/4</strong> of a rectangle. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Check</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">3</div>
+      <div class="ex-text">A pizza is cut into 6 equal slices. You eat 2 slices. Write the fraction and shade a circle to show it. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Word problem</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">4</div>
+      <div class="ex-text">Shade <strong>2/5</strong> of a rectangle. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Check</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">5</div>
+      <div class="ex-text">A chocolate bar has 8 equal pieces. You eat 5 pieces. What fraction did you eat? Shade a rectangle to show this. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Word problem</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">6</div>
+      <div class="ex-text">Shade <strong>1/3</strong> of a circle. Now shade <strong>1/4</strong> of another same-sized circle. Which is bigger? <span class="ex-tag" style="background:#EAF3DE;color:#27500A;">Think deeper</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">7</div>
+      <div class="ex-text">A pie is cut into 4 equal slices. Mum eats 3 slices. Write the fraction and shade a circle to show this. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Word problem</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">8</div>
+      <div class="ex-text">Shade <strong>3/8</strong> of a rectangle. What fraction is NOT shaded? Explain your answer. <span class="ex-tag" style="background:#EAF3DE;color:#27500A;">Think deeper</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">9</div>
+      <div class="ex-text">BOSS LEVEL: Ava says "1/3 of a circle is bigger than 1/4 of the same circle." Is she right? Draw both to prove your answer. <span class="ex-tag" style="background:#FAECE7;color:#712B13;">Boss level</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">10</div>
+      <div class="ex-text">A cake is cut into 10 equal slices. Dad eats 4 slices and you eat 2 slices. What fraction was eaten altogether? Shade to show this. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Word problem</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">11</div>
+      <div class="ex-text">BOSS LEVEL: Tom shaded 3 parts of a rectangle. He says the fraction is 3/5 but his rectangle only has 4 parts. Is Tom right? Explain why. <span class="ex-tag" style="background:#FAECE7;color:#712B13;">Boss level</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">12</div>
+      <div class="ex-text">Shade <strong>5/6</strong> of a circle. If you ate this much pizza, how much is left for your friend? <span class="ex-tag" style="background:#EAF3DE;color:#27500A;">Think deeper</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">13</div>
+      <div class="ex-text">BOSS LEVEL: Two same-sized sandwiches are cut differently. One is cut into 2 equal parts, the other into 4 equal parts. Would you rather have 1/2 of the first sandwich or 2/4 of the second sandwich? Draw and explain. <span class="ex-tag" style="background:#FAECE7;color:#712B13;">Boss level</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">14</div>
+      <div class="ex-text">Shade <strong>7/8</strong> of a rectangle. Write this fraction in words. <span class="ex-tag" style="background:#FAEEDA;color:#633806;">Check</span></div>
+    </div>
+    
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">15</div>
+      <div class="ex-text">BOSS LEVEL: Mia says that 2/3 of a small circle is smaller than 1/2 of a big circle. Is she correct? Explain why size of the whole matters. <span class="ex-tag" style="background:#FAECE7;color:#712B13;">Boss level</span></div>
+    </div>
+    
+  </div>
+</div>
+
+  <div class="card" style="border-color:#C0DD97;">
+      <div class="card-title" style="color:var(--green-dark);">Exercises — Task Set 2</div>
+      <div class="exercise-list">
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">1</div><div class="ex-text">Shade <strong>1/2</strong> of a circle. <span class="ex-shape-tag" style="background:var(--teal-light);color:var(--teal-dark);">Circle</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">2</div><div class="ex-text">Shade <strong>2/3</strong> of a circle. Remember: draw 3 equal lines from the centre first! <span class="ex-shape-tag" style="background:var(--teal-light);color:var(--teal-dark);">Circle</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">3</div><div class="ex-text">Shade <strong>1/4</strong> of a circle. <span class="ex-shape-tag" style="background:var(--teal-light);color:var(--teal-dark);">Circle</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">4</div><div class="ex-text">Shade <strong>2/3</strong> of a triangle. <span class="ex-shape-tag" style="background:var(--coral-light);color:var(--coral-dark);">Triangle</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">5</div><div class="ex-text">A pie is cut into 4 equal slices. Mum eats 3 slices. Write the fraction and shade a circle to show this. <span class="ex-shape-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">6</div><div class="ex-text">Shade <strong>5/6</strong> of a circle. <span class="ex-shape-tag" style="background:var(--teal-light);color:var(--teal-dark);">Circle</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">7</div><div class="ex-text">Shade <strong>1/2</strong> of a triangle. What fraction is NOT shaded? <span class="ex-shape-tag" style="background:var(--coral-light);color:var(--coral-dark);">Triangle</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">8</div><div class="ex-text">You have a circular birthday cake cut into 8 equal slices. You give away 5 slices at your party. Shade the circle to show what is left. <span class="ex-shape-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">9</div><div class="ex-text">Shade <strong>4/4</strong> of a circle. What does this equal? Write your answer. <span class="ex-shape-tag" style="background:var(--green-light);color:var(--green-dark);">Think deeper</span></div></div>
+        <div class="exercise-item"><div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">10</div><div class="ex-text">BOSS LEVEL: Ava says "1/3 of a circle is bigger than 1/4 of the same circle." Is she right? Draw both to prove your answer. <span class="ex-shape-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span></div></div>
+      </div>
     </div>
   </div>
 
-  <div class="card" style="border-color:#C0DD97;">
-    <div class="card-title" style="color:#27500A;">Your lesson content goes here</div>
-    <div class="card-body">Add your examples, diagrams and exercises for this session.</div>
-  </div>
+
+
 
 `;
-*/
+
 /* ---- END OF TASK 2 TEMPLATE ---- */
 
 
@@ -457,7 +708,7 @@ const WEEKS = [
     tabs: [
       {
         id: 't1',
-        label: 'Task Set 1 — 3 Mar 2026',
+        label: 'Task Set 1 — 3 April 2026',
         type: 'task',
         content: {
           title: 'Task Set 1 — Introduction to fractions',
@@ -466,19 +717,22 @@ const WEEKS = [
       },
       {
         id: 't2',
-        label: 'Study Review — Sat, 4 Mar',
+        label: 'Study Review — Sat, 4 April',
         type: 'review',
-        content: null                /* <-- CHANGE TO: { title:'...', body: TASK2_CONTENT } WHEN READY */
+        content: 
+          { title:'Study Review — Saturday 4 April', 
+          body: TASK2_CONTENT 
+        }
       },
       {
         id: 't3',
-        label: 'Study Review — Sun, 5 Mar',
+        label: 'Study Review — Sun, 5 April',
         type: 'review',
         content: null                /* <-- CHANGE TO: { title:'...', body: TASK3_CONTENT } WHEN READY */
       },
       {
         id: 't4',
-        label: 'Weekly Revision — Sun, 5 Mar',
+        label: 'Weekly Revision — Sun, 5 April',
         type: 'revision',
         content: null                /* <-- CHANGE TO: { title:'...', body: TASK4_CONTENT } WHEN READY */
       },
@@ -489,13 +743,13 @@ const WEEKS = [
     colorIdx: 1,
     open: false,
     unlocked: false,
-    unlockedAfter: 'Sunday, 5 March 2026',
+    unlockedAfter: 'Sunday, 5 April 2026',
     tabs: [
-      { id:'t5',  label:'Task Set 2 — 9 Mar 2026',       type:'task',     content: null },
-      { id:'t6',  label:'Task Set 3 — 9 Mar 2026',       type:'task',     content: null },
-      { id:'t7',  label:'Study Review — Sat, 11 Mar',    type:'review',   content: null },
-      { id:'t8',  label:'Study Review — Sun, 12 Mar',    type:'review',   content: null },
-      { id:'t9',  label:'Weekly Revision — Sun, 12 Mar', type:'revision', content: null },
+      { id:'t5',  label:'Task Set 2 — 9 April 2026',       type:'task',     content: null },
+      { id:'t6',  label:'Task Set 3 — 9 April 2026',       type:'task',     content: null },
+      { id:'t7',  label:'Study Review — Sat, 11 April',    type:'review',   content: null },
+      { id:'t8',  label:'Study Review — Sun, 12 April',    type:'review',   content: null },
+      { id:'t9',  label:'Weekly Revision — Sun, 12 April', type:'revision', content: null },
     ]
   },
   {
@@ -503,13 +757,13 @@ const WEEKS = [
     colorIdx: 2,
     open: false,
     unlocked: false,
-    unlockedAfter: 'Sunday, 12 March 2026',
+    unlockedAfter: 'Sunday, 12 April 2026',
     tabs: [
-      { id:'t10', label:'Task Set 4 — 16 Mar 2026',      type:'task',     content: null },
-      { id:'t11', label:'Task Set 5 — 18 Mar 2026',      type:'task',     content: null },
-      { id:'t12', label:'Study Review — Sat, 18 Mar',    type:'review',   content: null },
-      { id:'t13', label:'Study Review — Sun, 19 Mar',    type:'review',   content: null },
-      { id:'t14', label:'Weekly Revision — Sun, 19 Mar', type:'revision', content: null },
+      { id:'t10', label:'Task Set 4 — 16 April 2026',      type:'task',     content: null },
+      { id:'t11', label:'Task Set 5 — 18 April 2026',      type:'task',     content: null },
+      { id:'t12', label:'Study Review — Sat, 18 April',    type:'review',   content: null },
+      { id:'t13', label:'Study Review — Sun, 19 April',    type:'review',   content: null },
+      { id:'t14', label:'Weekly Revision — Sun, 19 April', type:'revision', content: null },
     ]
   },
   {
@@ -517,13 +771,13 @@ const WEEKS = [
     colorIdx: 3,
     open: false,
     unlocked: false,
-    unlockedAfter: 'Sunday, 19 March 2026',
+    unlockedAfter: 'Sunday, 19 April 2026',
     tabs: [
-      { id:'t15', label:'Task Set 6 — 23 Mar 2026',      type:'task',     content: null },
-      { id:'t16', label:'Task Set 7 — 25 Mar 2026',      type:'task',     content: null },
-      { id:'t17', label:'Study Review — Sat, 25 Mar',    type:'review',   content: null },
-      { id:'t18', label:'Study Review — Sun, 26 Mar',    type:'review',   content: null },
-      { id:'t19', label:'Weekly Revision — Sun, 26 Mar', type:'revision', content: null },
+      { id:'t15', label:'Task Set 6 — 23 April 2026',      type:'task',     content: null },
+      { id:'t16', label:'Task Set 7 — 25 April 2026',      type:'task',     content: null },
+      { id:'t17', label:'Study Review — Sat, 25 April',    type:'review',   content: null },
+      { id:'t18', label:'Study Review — Sun, 26 April',    type:'review',   content: null },
+      { id:'t19', label:'Weekly Revision — Sun, 26 April', type:'revision', content: null },
     ]
   },
 ];
