@@ -3790,62 +3790,91 @@ const FRAC_STEP14 = `
   </div>
 </div>
 
+
+
+
+
 <div class="card">
-  <div class="card-title">Example 3 — Counting Backwards on Number Line</div>
+  <div class="card-title">Example 3 — Counting Backwards on a Number Line</div>
   <div class="card-body">Calculate: 2 − <span style="display:inline-block;text-align:center;vertical-align:middle;"><span style="display:block;font-size:0.8em;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;font-size:0.8em;line-height:1;">3</span></span></div>
-  
-  <svg class="shape-svg" width="300" height="90" viewBox="0 0 300 90">
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">
+    A number line is like a ruler. <strong>Subtracting means moving LEFT</strong> (backwards). We start at <strong style="color:var(--coral-dark);">2</strong>, then jump back <strong style="color:var(--coral-dark);">one third</strong> to land on our answer.
+  </div>
+
+  <div style="font-size:11px; color:var(--blue-dark); background:var(--blue-light); border-radius:8px; padding:8px 10px; margin-bottom:10px;">
+    <strong>Step 1:</strong> Split each whole into thirds — each gap between whole numbers has 3 equal parts.<br/>
+    <strong>Step 2:</strong> Place your finger on <strong>2</strong> (the coral dot).<br/>
+    <strong>Step 3:</strong> Jump back <strong>1 third</strong> to the left. You land on 1<span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em; margin:0 2px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">2</span><span style="display:block;line-height:1;">3</span></span> (the green dot).
+  </div>
+
+  <svg width="100%" height="110" viewBox="0 0 340 110">
     <defs>
-      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0, 10 3.5, 0 7" fill="var(--coral)" />
+      <marker id="arrowBack" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+        <polygon points="10 0, 0 3.5, 10 7" fill="var(--coral)" />
       </marker>
     </defs>
-    
+
     <!-- Number line -->
-    <line x1="20" y1="55" x2="280" y2="55" stroke="var(--blue-dark)" stroke-width="2"/>
-    
-    <!-- Tick marks and labels -->
-    <g transform="translate(20, 55)">
-      <line x1="0" y1="-10" x2="0" y2="10" stroke="var(--blue-dark)" stroke-width="2"/>
-      <text x="0" y="25" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">0</text>
-    </g>
-    <g transform="translate(130, 55)">
-      <line x1="0" y1="-10" x2="0" y2="10" stroke="var(--blue-dark)" stroke-width="2"/>
-      <text x="0" y="25" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">1</text>
-    </g>
-    <g transform="translate(240, 55)">
-      <line x1="0" y1="-10" x2="0" y2="10" stroke="var(--blue-dark)" stroke-width="2"/>
-      <text x="0" y="25" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">2</text>
-      <circle cx="0" cy="0" r="5" fill="var(--coral)"/>
-    </g>
-    
-    <!-- Thirds marks -->
-    <g transform="translate(90, 55)">
-      <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--blue-mid)" stroke-width="1"/>
-      <text x="0" y="40" text-anchor="middle" font-size="9" fill="var(--text-sec)">
-        <tspan font-size="0.7em" baseline-shift="super">1</tspan>/<tspan font-size="0.7em" baseline-shift="sub">3</tspan>
-      </text>
-    </g>
-    <g transform="translate(185, 55)">
-      <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--blue-mid)" stroke-width="1"/>
-      <text x="0" y="40" text-anchor="middle" font-size="9" fill="var(--text-sec)">
-        <tspan font-size="0.7em" baseline-shift="super">2</tspan>/<tspan font-size="0.7em" baseline-shift="sub">3</tspan>
-      </text>
-    </g>
-    
-    <!-- Jump arrow -->
-    <path d="M240,45 Q210,15 195,45" fill="none" stroke="var(--coral)" stroke-width="3" marker-end="url(#arrowhead)"/>
-    <text x="215" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">
-      − <tspan font-size="0.8em" baseline-shift="super">1</tspan>/<tspan font-size="0.8em" baseline-shift="sub">3</tspan>
-    </text>
-    
-    <!-- Result -->
-    <circle cx="185" cy="55" r="5" fill="var(--green)"/>
-    <text x="185" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="var(--green-dark)">
-      1 <tspan font-size="0.8em" baseline-shift="super">2</tspan>/<tspan font-size="0.8em" baseline-shift="sub">3</tspan>
-    </text>
+    <line x1="20" y1="58" x2="320" y2="58" stroke="var(--blue-dark)" stroke-width="2"/>
+    <!-- Arrow tip at right end -->
+    <polygon points="320,54 330,58 320,62" fill="var(--blue-dark)"/>
+
+    <!-- Whole number: 0 -->
+    <line x1="30" y1="48" x2="30" y2="68" stroke="var(--blue-dark)" stroke-width="2"/>
+    <text x="30" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <!-- Third marks between 0 and 1 -->
+    <line x1="63" y1="53" x2="63" y2="63" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="96" y1="53" x2="96" y2="63" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Whole number: 1 -->
+    <line x1="129" y1="48" x2="129" y2="68" stroke="var(--blue-dark)" stroke-width="2"/>
+    <text x="129" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- Third marks between 1 and 2, labelled -->
+    <line x1="162" y1="53" x2="162" y2="68" stroke="var(--blue-mid)" stroke-width="1.5"/>
+    <text x="162" y="84" text-anchor="middle" font-size="10" fill="var(--text-sec)">1</text>
+    <text x="162" y="95" text-anchor="middle" font-size="9" fill="var(--text-sec)">1/3</text>
+
+    <line x1="195" y1="53" x2="195" y2="68" stroke="var(--blue-mid)" stroke-width="1.5"/>
+    <text x="195" y="84" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">1</text>
+    <text x="195" y="95" text-anchor="middle" font-size="9" fill="var(--green-dark)" font-weight="700">2/3</text>
+
+    <!-- Whole number: 2 — start point -->
+    <line x1="228" y1="48" x2="228" y2="68" stroke="var(--blue-dark)" stroke-width="2"/>
+    <text x="228" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">2</text>
+
+    <!-- Third marks between 2 and 3 -->
+    <line x1="261" y1="53" x2="261" y2="63" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="294" y1="53" x2="294" y2="63" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Start dot at 2 (coral) -->
+    <circle cx="228" cy="58" r="7" fill="var(--coral)" stroke="white" stroke-width="1.5"/>
+
+    <!-- Curved jump arrow from 2 back to 1 2/3 -->
+    <path d="M228,50 Q211,18 195,50" fill="none" stroke="var(--coral)" stroke-width="2.5" marker-end="url(#arrowBack)"/>
+
+    <!-- Label on arrow -->
+    <text x="213" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">− 1/3</text>
+    <text x="213" y="26" text-anchor="middle" font-size="9" fill="var(--coral-dark)">(move left)</text>
+
+    <!-- Result dot at 1 2/3 (green) -->
+    <circle cx="195" cy="58" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+
+    <!-- Legend -->
+    <circle cx="30" cy="105" r="5" fill="var(--coral)"/>
+    <text x="40" y="109" font-size="10" fill="var(--coral-dark)">Start: 2</text>
+    <circle cx="110" cy="105" r="5" fill="var(--green)"/>
+    <text x="120" y="109" font-size="10" fill="var(--green-dark)">Answer: 1 2/3</text>
   </svg>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700; margin-top:8px;">
+    2 − <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;line-height:1;">3</span></span> = 1<span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin-left:3px;"><span style="display:block;border-bottom:1px solid;line-height:1;">2</span><span style="display:block;line-height:1;">3</span></span> — one jump left lands us on the answer!
+  </div>
 </div>
+
+
 
 
 <div class="card">
@@ -5073,6 +5102,1295 @@ const DEC_A_STEP2 = `
 
 
 
+// Decimals A — Step 3: Tenths on a place value chart
+const DEC_A_STEP3 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">D3</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 3 — Tenths on a place value chart</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Spring 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "In Step 1 we wrote tenths as fractions. In Step 2 we wrote them as decimals like <strong>0.3</strong>. Now in Step 3 we use a <strong>place value chart</strong> — a table that shows exactly where each digit lives. Every digit has a home: <strong>Ones</strong> live on the left of the decimal point, and <strong>Tenths</strong> live on the right!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">The Place Value Chart — meet the columns!</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Every number we write sits in a column. Each column has a name and a value:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:12px;">
+    <div style="flex:1; background:var(--blue-light); border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:10px 6px; text-align:center;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:4px;">Hundreds</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">100</div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px;">Big numbers</div>
+    </div>
+    <div style="flex:1; background:var(--blue-light); border:2px solid var(--blue-dark); border-left:none; padding:10px 6px; text-align:center;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:4px;">Tens</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">10</div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px;">Groups of ten</div>
+    </div>
+    <div style="flex:1; background:var(--blue-light); border:2px solid var(--blue-dark); border-left:none; padding:10px 6px; text-align:center;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:4px;">Ones</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">1</div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px;">Whole ones</div>
+    </div>
+    <div style="flex:0 0 32px; background:var(--amber); border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:20px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="flex:1; background:var(--coral-light); border:2px solid var(--coral-dark); border-radius:0 8px 8px 0; padding:10px 6px; text-align:center;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:4px;">Tenths</div>
+      <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.3em; font-weight:700; color:var(--coral-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:4px;">Parts of one</div>
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>The golden rule:</strong> The decimal point is the fence between whole numbers (left side) and fraction parts (right side). Tenths always sit in the first column to the RIGHT of the decimal point.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Reading 0.4 on a place value chart</div>
+  <div class="example-label">Place <strong>0.4</strong> on the chart</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:8px 0 10px;">We write each digit in its correct column. 0.4 has zero ones and four tenths:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:14px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Hundreds</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; border-radius:0; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tens</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="flex:0 0 28px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-radius:0 8px 0 0; padding:6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700;">Tenths</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:0; margin-bottom:16px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:12px 6px; text-align:center;">
+      <div style="font-size:24px; font-weight:700; color:var(--text-sec);"></div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;">
+      <div style="font-size:24px; font-weight:700; color:var(--text-sec);"></div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;">
+      <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">0</div>
+    </div>
+    <div style="flex:0 0 28px; border-top:none; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-top:none; border-radius:0 0 8px 0; padding:12px 6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:28px; font-weight:700; color:var(--coral-dark);">4</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+    <div style="background:var(--blue-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--blue-dark);"><strong>0</strong> in the Ones column → zero whole ones</div>
+    <div style="background:var(--coral-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--coral-dark);"><strong>4</strong> in the Tenths column → four tenths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">4</span><span style="display:block;line-height:1;">10</span></span></div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.4 = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">4</span><span style="display:block;line-height:1;">10</span></span> — the chart shows exactly where the 4 lives!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — A number bigger than 1: placing 2.7</div>
+  <div class="example-label">Place <strong>2.7</strong> on the chart</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:8px 0 10px;">This number has <strong>2 whole ones</strong> AND <strong>7 tenths</strong>. Each digit goes in its own column:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:0;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Hundreds</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tens</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="flex:0 0 28px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-radius:0 8px 0 0; padding:6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700;">Tenths</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0; margin-bottom:14px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:12px 6px; text-align:center;"></div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;"></div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;">
+      <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">2</div>
+    </div>
+    <div style="flex:0 0 28px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-top:none; border-radius:0 0 8px 0; padding:12px 6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:28px; font-weight:700; color:var(--coral-dark);">7</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+    <div style="background:var(--blue-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--blue-dark);"><strong>2</strong> in the Ones column → 2 whole ones</div>
+    <div style="background:var(--coral-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--coral-dark);"><strong>7</strong> in the Tenths column → <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">7</span><span style="display:block;line-height:1;">10</span></span></div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2.7 = 2 ones + <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin:0 5px;"><span style="display:block;border-bottom:1px solid;line-height:1;">7</span><span style="display:block;line-height:1;">10</span></span> = 2<span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">7</span><span style="display:block;line-height:1;">10</span></span>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Reading from the chart back to a decimal</div>
+  <div class="example-label">What number does this chart show?</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:8px 0 10px;">A chart has been filled in for you. Read the digits and write the decimal:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:0;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Hundreds</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tens</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="flex:0 0 28px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-radius:0 8px 0 0; padding:6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700;">Tenths</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0; margin-bottom:14px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:12px 6px; text-align:center;"></div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;"></div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;">
+      <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">5</div>
+    </div>
+    <div style="flex:0 0 28px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-top:none; border-radius:0 0 8px 0; padding:12px 6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:28px; font-weight:700; color:var(--coral-dark);">3</div>
+    </div>
+  </div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Read left to right: <strong style="color:var(--blue-dark);">5</strong> ones, then the point, then <strong style="color:var(--coral-dark);">3</strong> tenths → write as <strong>5.3</strong></div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    The chart shows <strong>5.3</strong> = 5 ones and 3 tenths = 5<span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">3</span><span style="display:block;line-height:1;">10</span></span>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Connecting all three: fraction → decimal → chart</div>
+  <div class="example-label">Show <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">9</span><span style="display:block;line-height:1;">10</span></span> three ways</div>
+
+  <div style="display:flex; gap:10px; margin:14px 0; flex-wrap:wrap; align-items:stretch;">
+    <div style="flex:1; min-width:90px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:6px;">Step 1 — Fraction</div>
+      <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.5em; font-weight:700; color:var(--blue-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">9</span><span style="display:block;line-height:1;">10</span></div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:6px;">nine tenths</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:20px; color:var(--amber-dark);">↔</div>
+    <div style="flex:1; min-width:90px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:6px;">Step 2 — Decimal</div>
+      <div style="font-size:2em; font-weight:700; color:var(--coral-dark);">0.9</div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:6px;">zero point nine</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:20px; color:var(--amber-dark);">↔</div>
+    <div style="flex:1; min-width:90px; background:var(--amber-light); border:1px solid var(--amber-mid); border-radius:8px; padding:10px; text-align:center;">
+      <div style="font-size:10px; color:var(--amber-dark); font-weight:700; margin-bottom:6px;">Step 3 — Chart</div>
+      <div style="display:flex; gap:0; justify-content:center;">
+        <div style="width:28px; border:1px solid var(--blue-mid); text-align:center; padding:4px 0; font-size:10px; color:var(--blue-dark); border-radius:4px 0 0 4px; background:var(--blue-light);">O<br/><strong>0</strong></div>
+        <div style="width:16px; background:var(--amber); border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:12px;">.</div>
+        <div style="width:28px; border:1px solid var(--coral-dark); text-align:center; padding:4px 0; font-size:10px; color:var(--coral-dark); border-radius:0 4px 4px 0; background:var(--coral-light);">T<br/><strong>9</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    All three mean exactly the same amount — just written differently!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: Blessing's race</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Blessing runs 3 and six tenths kilometres. Show this number on a place value chart and write it as a decimal."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Step 1:</strong> Read the words carefully. "3 and six tenths" = 3 ones and 6 tenths.</div>
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;"><strong>Step 2:</strong> Put each digit in its column:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:0;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Hundreds</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tens</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="flex:0 0 28px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-radius:0 8px 0 0; padding:6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700;">Tenths</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0; margin-bottom:14px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:12px 6px; text-align:center;"></div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;"></div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 6px; text-align:center;">
+      <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">3</div>
+    </div>
+    <div style="flex:0 0 28px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-top:none; border-radius:0 0 8px 0; padding:12px 6px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:28px; font-weight:700; color:var(--coral-dark);">6</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Blessing runs <strong>3.6</strong> km = 3 ones and 6 tenths = 3<span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">6</span><span style="display:block;line-height:1;">10</span></span> km
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 3</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        On a place value chart, which column is immediately to the RIGHT of the decimal point?
+        ${mcqBlock(['Ones','Hundreds','Tenths'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        A chart shows: Ones = <strong>0</strong>, Tenths = <strong>6</strong>. What decimal does it show?
+        ${mcqBlock(['6.0','60','0.6'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Place <strong>1.8</strong> on a chart. Which digit goes in the Tenths column?
+        ${mcqBlock(['1','18','8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        A chart shows: Ones = <strong>4</strong>, Tenths = <strong>2</strong>. Write this as a fraction.
+        ${mcqBlock(['4/2','42/10','4 and 2/10'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Ehinome says the number 3.5 has a 5 in the Ones column. Is he right?
+        ${mcqBlock(['Yes','No — the 5 is in the Tenths column','No — 5 is in the Tens column'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Which decimal has <strong>7</strong> in the Tenths column and <strong>2</strong> in the Ones column?
+        ${mcqBlock(['7.2','0.72','2.7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Oghenekaro runs 4 and nine tenths metres. What digit goes in the Tenths column of her place value chart?
+        ${mcqBlock(['4','10','9'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        A chart shows Ones = <strong>8</strong>, Tenths = <strong>0</strong>. What decimal does this show?
+        ${mcqBlock(['0.8','8.0','80'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Ahmed says 0.7 and 7.0 have the same digits so they must be equal. Is he correct?
+        ${mcqBlock(['Yes — same digits mean same value','No — 7.0 is 7 ones but 0.7 is only 7 tenths','Only if you round them'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> A place value chart shows Tens = <strong>1</strong>, Ones = <strong>3</strong>, Tenths = <strong>5</strong>. What number does the chart show?
+        ${mcqBlock(['1.35','13.5','135'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+
+
+// Decimals A — Step 4: Tenths on a number line
+const DEC_A_STEP4 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">D4</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 4 — Tenths on a number line</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Spring 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "We have written tenths as fractions (Step 1), as decimals (Step 2), and on a place value chart (Step 3). Now in Step 4 we <strong>see</strong> them on a number line! A number line is like a ruler — the gap between any two whole numbers is split into <strong>10 equal jumps</strong>. Each jump is one tenth (0.1). This helps us see exactly how big or small a decimal number is!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">The big picture — tenths between 0 and 1</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">The gap between 0 and 1 is split into 10 equal parts. Each mark is one tenth further along:</div>
+
+  <svg width="100%" height="75" viewBox="0 0 360 75">
+    <!-- Number line -->
+    <line x1="20" y1="35" x2="340" y2="35" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="340,31 350,35 340,39" fill="var(--blue-dark)"/>
+
+    <!-- Whole number ticks: 0 and 1 -->
+    <line x1="20" y1="25" x2="20" y2="45" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <line x1="340" y1="25" x2="340" y2="45" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- 10 tenth-marks at x = 20 + n*32 for n=1..9 -->
+    <line x1="52"  y1="28" x2="52"  y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="84"  y1="28" x2="84"  y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="116" y1="28" x2="116" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="148" y1="28" x2="148" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="180" y1="28" x2="180" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="212" y1="28" x2="212" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="244" y1="28" x2="244" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="276" y1="28" x2="276" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <line x1="308" y1="28" x2="308" y2="42" stroke="var(--amber-dark)" stroke-width="1.5"/>
+
+    <!-- Labels below each mark -->
+    <text x="52"  y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.1</text>
+    <text x="84"  y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.2</text>
+    <text x="116" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.3</text>
+    <text x="148" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.4</text>
+    <text x="180" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.5</text>
+    <text x="212" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.6</text>
+    <text x="244" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.7</text>
+    <text x="276" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.8</text>
+    <text x="308" y="60" text-anchor="middle" font-size="9" fill="var(--amber-dark)">0.9</text>
+  </svg>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Count the jumps:</strong> Starting at 0, each small step adds 0.1. After 10 steps you reach 1.0 — one whole. This is why 10 tenths = 1!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Placing a decimal on the number line</div>
+  <div class="example-label">Mark <strong>0.6</strong> on the number line</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;"><strong>Method:</strong> Start at 0 and count 6 tenth-jumps to the right. The 6th mark is 0.6.</div>
+
+  <svg width="100%" height="90" viewBox="0 0 360 90">
+    <defs>
+      <marker id="arrRight" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral)"/>
+      </marker>
+    </defs>
+
+    <line x1="20" y1="45" x2="350" y2="45" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="350,41 360,45 350,49" fill="var(--blue-dark)"/>
+
+    <!-- 0 and 1 ticks -->
+    <line x1="20"  y1="35" x2="20"  y2="55" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="70" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+    <line x1="340" y1="35" x2="340" y2="55" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- Tenth marks (spacing = 32) -->
+    <line x1="52"  y1="39" x2="52"  y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="84"  y1="39" x2="84"  y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="116" y1="39" x2="116" y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="148" y1="39" x2="148" y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="180" y1="39" x2="180" y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="212" y1="39" x2="212" y2="51" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="244" y1="39" x2="244" y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="276" y1="39" x2="276" y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="308" y1="39" x2="308" y2="51" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Counting arrows above line for first 6 jumps -->
+    <line x1="20"  y1="30" x2="52"  y2="30" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrRight)"/>
+    <line x1="52"  y1="28" x2="84"  y2="28" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrRight)"/>
+    <line x1="84"  y1="26" x2="116" y2="26" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrRight)"/>
+    <line x1="116" y1="24" x2="148" y2="24" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrRight)"/>
+    <line x1="148" y1="22" x2="180" y2="22" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrRight)"/>
+    <line x1="180" y1="20" x2="212" y2="20" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrRight)"/>
+
+    <text x="116" y="13" text-anchor="middle" font-size="9" fill="var(--coral-dark)">count 6 jumps →</text>
+
+    <!-- Answer dot -->
+    <circle cx="212" cy="45" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+    <text x="212" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">0.6</text>
+  </svg>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    6 jumps of 0.1 from zero = <strong>0.6</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Reading a point already marked</div>
+  <div class="example-label">What decimal does the green dot show?</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;"><strong>Method:</strong> Count how many tenth-steps the dot is from zero. Each step = 0.1.</div>
+
+  <svg width="100%" height="80" viewBox="0 0 360 80">
+    <line x1="20" y1="40" x2="350" y2="40" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="350,36 360,40 350,44" fill="var(--blue-dark)"/>
+
+    <line x1="20"  y1="30" x2="20"  y2="50" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="65" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+    <line x1="340" y1="30" x2="340" y2="50" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <line x1="52"  y1="34" x2="52"  y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="52"  y="65" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.1</text>
+    <line x1="84"  y1="34" x2="84"  y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="84"  y="65" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.2</text>
+    <line x1="116" y1="34" x2="116" y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="116" y="65" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.3</text>
+    <line x1="148" y1="34" x2="148" y2="46" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="180" y1="34" x2="180" y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="180" y="65" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.5</text>
+    <line x1="212" y1="34" x2="212" y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="212" y="65" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.6</text>
+    <line x1="244" y1="34" x2="244" y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="276" y1="34" x2="276" y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="308" y1="34" x2="308" y2="46" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- ? label at the dot position -->
+    <text x="148" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">?</text>
+    <line x1="148" y1="24" x2="148" y2="33" stroke="var(--coral-dark)" stroke-width="1.5"/>
+
+    <!-- Green dot -->
+    <circle cx="148" cy="40" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+    <text x="148" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">0.4</text>
+  </svg>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Count the steps from 0: 0.1 … 0.2 … 0.3 … <strong style="color:var(--green-dark);">0.4</strong>. The dot is at the 4th mark.</div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    The green dot is at <strong>0.4</strong> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">4</span><span style="display:block;line-height:1;">10</span></span>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Tenths beyond 1: the number line keeps going!</div>
+  <div class="example-label">Mark <strong>1.3</strong> on the number line</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">The number line does not stop at 1. Every gap between whole numbers has the same 10 equal tenth-steps. For 1.3 we go to 1, then count 3 more tenths.</div>
+
+  <svg width="100%" height="90" viewBox="0 0 360 90">
+    <defs>
+      <marker id="arrR2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral)"/>
+      </marker>
+    </defs>
+
+    <line x1="10" y1="48" x2="355" y2="48" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="355,44 365,48 355,52" fill="var(--blue-dark)"/>
+
+    <!-- 0 -->
+    <line x1="20"  y1="38" x2="20"  y2="58" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="73" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <!-- tenth marks 0.1–0.9 -->
+    <line x1="48"  y1="43" x2="48"  y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="76"  y1="43" x2="76"  y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="104" y1="43" x2="104" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="132" y1="43" x2="132" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="160" y1="43" x2="160" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="188" y1="43" x2="188" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="216" y1="43" x2="216" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="244" y1="43" x2="244" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="272" y1="43" x2="272" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- 1 -->
+    <line x1="300" y1="38" x2="300" y2="58" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="300" y="73" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- tenth marks 1.1, 1.2, 1.3 -->
+    <line x1="328" y1="43" x2="328" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="328" y="73" text-anchor="middle" font-size="9" fill="var(--text-sec)">1.1</text>
+    <line x1="356" y1="43" x2="356" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Big jump arrow: 0 to 1 -->
+    <path d="M20,38 Q160,12 300,38" fill="none" stroke="var(--blue-mid)" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrR2)"/>
+    <text x="160" y="10" text-anchor="middle" font-size="10" fill="var(--blue-dark)" font-weight="700">+1 whole</text>
+
+    <!-- Small jump arrows: 1 to 1.1, 1.1 to 1.2, 1.2 to 1.3 -->
+    <line x1="300" y1="34" x2="328" y2="34" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrR2)"/>
+    <line x1="328" y1="31" x2="356" y2="31" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrR2)"/>
+
+    <text x="328" y="22" text-anchor="middle" font-size="9" fill="var(--coral-dark)">+0.1 +0.1</text>
+
+    <!-- Answer dot at position for 1.3 — but line ends, so show dot at 1.2 position x=356 -->
+    <!-- Actually 1.2 is at x=328, 1.3 would be at x=356+28=384 which is off canvas -->
+    <!-- Let's restate: show 1.3 using a shorter line from 0..1 only -->
+    <!-- Rebuild: 0 at x=20, 1 at x=180, spacing=(180-20)/10=16px per tenth -->
+    <!-- This approach is cleaner — restart the SVG -->
+  </svg>
+
+  <!-- Rebuilt cleaner SVG for example 3 -->
+  <svg width="100%" height="95" viewBox="0 0 360 95">
+    <defs>
+      <marker id="arrR3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral)"/>
+      </marker>
+      <marker id="arrB3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--blue-mid)"/>
+      </marker>
+    </defs>
+
+    <!-- line: 0 at x=20, 1 at x=180, 2 at x=340. spacing per tenth = 16px -->
+    <line x1="15" y1="50" x2="355" y2="50" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="355,46 365,50 355,54" fill="var(--blue-dark)"/>
+
+    <!-- 0 -->
+    <line x1="20"  y1="40" x2="20"  y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="75" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <!-- 1 at x=180 -->
+    <line x1="180" y1="40" x2="180" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="180" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- 2 at x=340 -->
+    <line x1="340" y1="40" x2="340" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">2</text>
+
+    <!-- tenths between 1 and 2: x = 180 + n*16 for n=1..9 -->
+    <line x1="196" y1="44" x2="196" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="196" y="75" text-anchor="middle" font-size="8" fill="var(--text-sec)">1.1</text>
+    <line x1="212" y1="44" x2="212" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="212" y="75" text-anchor="middle" font-size="8" fill="var(--text-sec)">1.2</text>
+    <line x1="228" y1="44" x2="228" y2="56" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="244" y1="44" x2="244" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="260" y1="44" x2="260" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="276" y1="44" x2="276" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="292" y1="44" x2="292" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="308" y1="44" x2="308" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="324" y1="44" x2="324" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Big curved arrow: 0 to 1 -->
+    <path d="M20,40 Q100,14 180,40" fill="none" stroke="var(--blue-mid)" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrB3)"/>
+    <text x="100" y="11" text-anchor="middle" font-size="10" fill="var(--blue-dark)" font-weight="700">jump to 1</text>
+
+    <!-- Small arrows: 1→1.1, 1.1→1.2, 1.2→1.3 -->
+    <line x1="180" y1="36" x2="196" y2="36" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrR3)"/>
+    <line x1="196" y1="33" x2="212" y2="33" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrR3)"/>
+    <line x1="212" y1="30" x2="228" y2="30" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrR3)"/>
+    <text x="204" y="22" text-anchor="middle" font-size="9" fill="var(--coral-dark)">3 more tenths</text>
+
+    <!-- Answer dot -->
+    <circle cx="228" cy="50" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+    <text x="228" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">1.3</text>
+
+    <!-- Legend -->
+    <circle cx="30" cy="90" r="4" fill="var(--blue-mid)"/>
+    <text x="38" y="94" font-size="9" fill="var(--blue-dark)">Whole jump</text>
+    <circle cx="110" cy="90" r="4" fill="var(--coral)"/>
+    <text x="118" y="94" font-size="9" fill="var(--coral-dark)">Tenth jumps</text>
+    <circle cx="190" cy="90" r="4" fill="var(--green)"/>
+    <text x="198" y="94" font-size="9" fill="var(--green-dark)">Answer</text>
+  </svg>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    1 whole jump + 3 tenth jumps = <strong>1.3</strong>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Ordering decimals on a number line</div>
+  <div class="example-label">Place <strong>0.2, 0.5</strong> and <strong>0.8</strong> on the same number line and say which is smallest</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">Numbers further to the <strong>right</strong> on a number line are always <strong>bigger</strong>. Numbers further to the <strong>left</strong> are <strong>smaller</strong>.</div>
+
+  <svg width="100%" height="80" viewBox="0 0 360 80">
+    <line x1="20" y1="42" x2="350" y2="42" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="350,38 360,42 350,46" fill="var(--blue-dark)"/>
+
+    <line x1="20"  y1="32" x2="20"  y2="52" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="67" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+    <line x1="340" y1="32" x2="340" y2="52" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="67" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- all 9 tenth marks, spacing=32 -->
+    <line x1="52"  y1="37" x2="52"  y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="84"  y1="37" x2="84"  y2="47" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="116" y1="37" x2="116" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="148" y1="37" x2="148" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="180" y1="37" x2="180" y2="47" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="212" y1="37" x2="212" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="244" y1="37" x2="244" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="276" y1="37" x2="276" y2="47" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="308" y1="37" x2="308" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Three coloured dots -->
+    <circle cx="84"  cy="42" r="7" fill="var(--blue)"   stroke="white" stroke-width="1.5"/>
+    <circle cx="180" cy="42" r="7" fill="var(--coral)"  stroke="white" stroke-width="1.5"/>
+    <circle cx="276" cy="42" r="7" fill="var(--purple)" stroke="white" stroke-width="1.5"/>
+
+    <!-- Labels -->
+    <text x="84"  y="67" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">0.2</text>
+    <text x="180" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">0.5</text>
+    <text x="276" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">0.8</text>
+
+    <!-- "smallest" arrow -->
+    <text x="84" y="26" text-anchor="middle" font-size="9" fill="var(--blue-dark)">smallest</text>
+    <line x1="84" y1="28" x2="84" y2="34" stroke="var(--blue-dark)" stroke-width="1"/>
+  </svg>
+
+  <div style="display:flex; gap:8px; margin-bottom:10px; align-items:center; flex-wrap:wrap; font-size:13px; font-weight:700;">
+    <span style="color:var(--blue-dark);">0.2</span>
+    <span style="color:var(--text-sec); font-weight:400; font-size:11px;">&lt; further left = smaller</span>
+    <span style="color:var(--coral-dark);">0.5</span>
+    <span style="color:var(--text-sec); font-weight:400; font-size:11px;">&lt;</span>
+    <span style="color:var(--purple-dark);">0.8</span>
+    <span style="color:var(--text-sec); font-weight:400; font-size:11px;">further right = bigger</span>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Smallest → largest: 0.2 &lt; 0.5 &lt; 0.8
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: Emeka's long jump</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Emeka jumps 0.7 m in his first attempt and 0.4 m in his second attempt. Show both distances on a number line and say which jump was longer."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">Plot both decimals and compare their positions — the one further right is the longer jump.</div>
+
+  <svg width="100%" height="80" viewBox="0 0 360 80">
+    <line x1="20" y1="42" x2="350" y2="42" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="350,38 360,42 350,46" fill="var(--blue-dark)"/>
+
+    <line x1="20"  y1="32" x2="20"  y2="52" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="67" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+    <line x1="340" y1="32" x2="340" y2="52" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="67" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1 m</text>
+
+    <!-- tenth marks spacing=32 -->
+    <line x1="52"  y1="37" x2="52"  y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="84"  y1="37" x2="84"  y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="116" y1="37" x2="116" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="148" y1="37" x2="148" y2="47" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="180" y1="37" x2="180" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="212" y1="37" x2="212" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="244" y1="37" x2="244" y2="47" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="276" y1="37" x2="276" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="308" y1="37" x2="308" y2="47" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- 0.4 dot — coral (2nd attempt) -->
+    <circle cx="148" cy="42" r="7" fill="var(--coral)" stroke="white" stroke-width="1.5"/>
+    <text x="148" y="26" text-anchor="middle" font-size="9" fill="var(--coral-dark)" font-weight="700">2nd</text>
+    <line x1="148" y1="28" x2="148" y2="34" stroke="var(--coral-dark)" stroke-width="1"/>
+    <text x="148" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">0.4 m</text>
+
+    <!-- 0.7 dot — green (1st attempt) -->
+    <circle cx="244" cy="42" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+    <text x="244" y="26" text-anchor="middle" font-size="9" fill="var(--green-dark)" font-weight="700">1st ★</text>
+    <line x1="244" y1="28" x2="244" y2="34" stroke="var(--green-dark)" stroke-width="1"/>
+    <text x="244" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">0.7 m</text>
+  </svg>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">0.7 is further right than 0.4, so <strong style="color:var(--green-dark);">0.7 m &gt; 0.4 m</strong>.</div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Emeka's first jump (0.7 m) was longer than his second (0.4 m) ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 4</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        A number line goes from 0 to 1. It is split into 10 equal parts. What decimal does each small step represent?
+        ${mcqBlock(['1.0','0.01','0.1'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Starting at 0, you count 3 tenth-steps to the right. Which decimal do you land on?
+        ${mcqBlock(['3.0','0.3','0.03'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        A dot is placed at the 8th tenth-mark between 0 and 1. What decimal is it?
+        ${mcqBlock(['0.8','8.0','0.08'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        On a number line, which decimal is further to the right — 0.3 or 0.7?
+        ${mcqBlock(['0.3','They are equal','0.7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        To plot 1.5 on a number line, where do you start counting the extra tenth-steps from?
+        ${mcqBlock(['From 0','From 0.5','From 1'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Sade marks 0.9 on a number line. How many tenth-steps is this from 1.0?
+        ${mcqBlock(['9 steps','0 steps','1 step'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Three decimals are shown on a number line in order: 0.1, ?, 0.3. What is the missing decimal?
+        ${mcqBlock(['0.13','0.2','0.02'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Dayo places 1.7 on a number line. How many tenth-steps does he count after the whole number 1?
+        ${mcqBlock(['1','17','7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Tolu says 0.5 is exactly halfway between 0 and 1 on a number line. Is she right?
+        ${mcqBlock(['No — 0.5 is closer to 1','No — 0.5 is closer to 0','Yes — 5 is exactly half of 10'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Chiamaka draws a number line from 0 to 2. She marks 0.6, 1.2 and 1.8. Which order is correct from smallest to largest?
+        ${mcqBlock(['1.2, 0.6, 1.8','1.8, 1.2, 0.6','0.6, 1.2, 1.8'], 2)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+
+
+
+// Decimals A — Step 5: Divide a 1-digit number by 10
+const DEC_A_STEP5 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">D5</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 5 — Divide a 1-digit number by 10</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Spring 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "In Steps 1–4 we learned to read and write tenths. Now we discover <strong>where tenths come from</strong>! When you divide any number by 10, every digit slides <strong>one place to the right</strong> on the place value chart. A digit that was in the Ones column moves into the Tenths column. This is why 3 ÷ 10 = 0.3 — the 3 simply moves one place to the right!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">The big picture — what dividing by 10 does to a digit</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Dividing by 10 is like a <strong>slide to the right</strong> on the place value chart. Watch what happens to the digit 7:</div>
+
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Before: 7 (seven ones)</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:56px; border:2px solid var(--blue-mid); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Ones</div>
+          <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">7</div>
+        </div>
+        <div style="width:24px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+        </div>
+        <div style="width:56px; border:2px solid var(--coral-mid); border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:4px;">Tenths</div>
+          <div style="font-size:28px; font-weight:700; color:var(--text-sec); opacity:0.3;">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:22px; color:var(--amber-dark);">÷ 10</div>
+      <div style="font-size:20px; color:var(--amber-dark);">→</div>
+      <div style="font-size:10px; color:var(--amber-dark); font-weight:700;">slide right!</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">After: 0.7 (seven tenths)</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:56px; border:2px solid var(--blue-mid); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Ones</div>
+          <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">0</div>
+        </div>
+        <div style="width:24px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+        </div>
+        <div style="width:56px; border:2px solid var(--coral-dark); border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:4px;">Tenths</div>
+          <div style="font-size:28px; font-weight:700; color:var(--coral-dark);">7</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>The rule:</strong> When you divide by 10, every digit moves <strong>one place to the RIGHT</strong>. A 0 appears in the Ones column because there are no whole ones left. The answer is always less than 1 when a 1-digit number is divided by 10.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — The simplest case: 1 ÷ 10</div>
+  <div class="example-label">Calculate: <strong>1 ÷ 10</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Think of it this way: if you share <strong>1 whole</strong> equally between <strong>10 people</strong>, each person gets one tenth. We already know one tenth = 0.1!</div>
+
+  <div style="display:flex; gap:0; margin-bottom:6px; justify-content:center;">
+    <div style="width:26px; height:26px; background:var(--amber); border:1px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700; border-radius:4px 0 0 4px;">1</div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--amber-dark); font-size:9px;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none;"></div>
+    <div style="width:26px; height:26px; background:var(--amber-light); border:1px solid var(--amber-dark); border-left:none; border-radius:0 4px 4px 0;"></div>
+  </div>
+  <div style="font-size:10px; color:var(--amber-dark); text-align:center; margin-bottom:12px;">1 whole split into 10 equal parts → each part = one tenth</div>
+
+  <div style="display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:12px; flex-wrap:wrap;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">Place value: before</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:44px; border:1px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">1</div>
+        </div>
+        <div style="width:18px; border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--amber-dark);">.</div>
+        <div style="width:44px; border:1px solid var(--coral-mid); border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:20px; font-weight:700; color:var(--text-sec); opacity:0.3;">—</div>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:20px; color:var(--amber-dark); font-weight:700;">÷10→</div>
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">Place value: after</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:44px; border:1px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">0</div>
+        </div>
+        <div style="width:18px; border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--amber-dark);">.</div>
+        <div style="width:44px; border:1px solid var(--coral-dark); border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    1 ÷ 10 = <strong>0.1</strong> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — A bigger digit: 6 ÷ 10</div>
+  <div class="example-label">Calculate: <strong>6 ÷ 10</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The digit 6 is in the Ones column. Dividing by 10 slides it one place right — into the Tenths column. A 0 fills the empty Ones column.</div>
+
+  <svg width="100%" height="70" viewBox="0 0 340 70">
+    <defs>
+      <marker id="slideArr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--amber-dark)"/>
+      </marker>
+    </defs>
+
+    <!-- Before chart -->
+    <rect x="10"  y="10" width="60" height="45" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
+    <text x="40"  y="26" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="40"  y="48" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">6</text>
+
+    <rect x="70"  y="10" width="20" height="45" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="80"  y="37" text-anchor="middle" font-size="16" font-weight="700" fill="var(--amber-dark)">.</text>
+
+    <rect x="90"  y="10" width="60" height="45" rx="4" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
+    <text x="120" y="26" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">Tenths</text>
+    <text x="120" y="48" text-anchor="middle" font-size="22" fill="var(--text-sec)" opacity="0.3">—</text>
+
+    <!-- Arrow showing slide -->
+    <path d="M40,8 Q80,-10 120,8" fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr)"/>
+    <text x="80" y="5" text-anchor="middle" font-size="9" fill="var(--amber-dark)" font-weight="700">÷ 10 → slide right</text>
+
+    <!-- After chart -->
+    <rect x="200" y="10" width="60" height="45" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
+    <text x="230" y="26" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="230" y="48" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <rect x="260" y="10" width="20" height="45" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="270" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="var(--amber-dark)">.</text>
+
+    <rect x="280" y="10" width="60" height="45" rx="4" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="1.5"/>
+    <text x="310" y="26" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">Tenths</text>
+    <text x="310" y="48" text-anchor="middle" font-size="26" font-weight="700" fill="var(--coral-dark)">6</text>
+
+    <text x="170" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">→</text>
+  </svg>
+
+  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+    <div style="background:var(--blue-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--blue-dark);">The <strong>6</strong> slides from Ones → Tenths</div>
+    <div style="background:var(--amber-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--amber-dark);"><strong>0</strong> fills the empty Ones column</div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    6 ÷ 10 = <strong>0.6</strong> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">6</span><span style="display:block;line-height:1;">10</span></span>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Spot the pattern: all single digits ÷ 10</div>
+  <div class="example-label">Complete the table and find the rule</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 10px;">Watch what happens to every digit from 1 to 9 when divided by 10. Look for the pattern!</div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--blue-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--blue-light);">
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Calculation</div>
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--coral-dark); border-right:1px solid var(--blue-mid);">Decimal</div>
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--blue-dark);">Fraction</div>
+    </div>
+    ${[
+      ['1 ÷ 10','0.1','1/10'],
+      ['2 ÷ 10','0.2','2/10'],
+      ['3 ÷ 10','0.3','3/10'],
+      ['4 ÷ 10','0.4','4/10'],
+      ['5 ÷ 10','0.5','5/10'],
+      ['6 ÷ 10','0.6','6/10'],
+      ['7 ÷ 10','0.7','7/10'],
+      ['8 ÷ 10','0.8','8/10'],
+      ['9 ÷ 10','0.9','9/10'],
+    ].map((r,i) => `
+      <div style="display:flex; background:${i%2===0?'white':'var(--amber-light)'}; border-top:1px solid var(--blue-mid);">
+        <div style="flex:1; padding:5px 10px; font-size:12px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">${r[0]}</div>
+        <div style="flex:1; padding:5px 10px; font-size:13px; font-weight:700; color:var(--coral-dark); border-right:1px solid var(--blue-mid);">${r[1]}</div>
+        <div style="flex:1; padding:5px 10px; font-size:12px; color:var(--blue-dark);">${r[2]}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>The pattern:</strong> The digit in "n ÷ 10" always becomes the digit after the decimal point! 3 ÷ 10 = 0.<strong>3</strong>, 7 ÷ 10 = 0.<strong>7</strong>. The 0 before the point reminds us there are no whole ones.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Connecting division to the number line</div>
+  <div class="example-label">Show that <strong>4 ÷ 10 = 0.4</strong> on a number line</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">Dividing 4 by 10 gives 0.4. We can check this is correct by finding 0.4 on the number line — it should be 4 tenth-steps from zero.</div>
+
+  <svg width="100%" height="80" viewBox="0 0 360 80">
+    <defs>
+      <marker id="arrStep" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral)"/>
+      </marker>
+    </defs>
+
+    <line x1="20" y1="45" x2="350" y2="45" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="350,41 360,45 350,49" fill="var(--blue-dark)"/>
+
+    <line x1="20"  y1="35" x2="20"  y2="55" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="70" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+    <line x1="340" y1="35" x2="340" y2="55" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <!-- tick marks spacing=32 -->
+    <line x1="52"  y1="40" x2="52"  y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="52"  y="70" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.1</text>
+    <line x1="84"  y1="40" x2="84"  y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="84"  y="70" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.2</text>
+    <line x1="116" y1="40" x2="116" y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="116" y="70" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.3</text>
+    <line x1="148" y1="40" x2="148" y2="50" stroke="var(--amber-dark)" stroke-width="2"/>
+    <line x1="180" y1="40" x2="180" y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="212" y1="40" x2="212" y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="244" y1="40" x2="244" y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="276" y1="40" x2="276" y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="308" y1="40" x2="308" y2="50" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- 4 jump arrows -->
+    <line x1="20"  y1="31" x2="52"  y2="31" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrStep)"/>
+    <line x1="52"  y1="28" x2="84"  y2="28" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrStep)"/>
+    <line x1="84"  y1="25" x2="116" y2="25" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrStep)"/>
+    <line x1="116" y1="22" x2="148" y2="22" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrStep)"/>
+
+    <text x="84" y="15" text-anchor="middle" font-size="9" fill="var(--coral-dark)" font-weight="700">4 jumps of 0.1</text>
+
+    <!-- answer dot -->
+    <circle cx="148" cy="45" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+    <text x="148" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">0.4</text>
+  </svg>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    4 ÷ 10 = 0.4 ✓ — confirmed on the number line by counting 4 tenth-steps!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: sharing stickers</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Chioma has 9 identical stickers. She shares them equally into 10 bags. How many stickers does each bag get? Write your answer as a decimal and as a fraction."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Think:</strong> 9 shared between 10 means 9 ÷ 10.</div>
+
+  <div style="display:flex; gap:8px; margin:10px 0 14px; flex-wrap:wrap; align-items:center; justify-content:center;">
+    <div style="display:flex; gap:3px; flex-wrap:wrap; max-width:200px;">
+      ${[1,2,3,4,5,6,7,8,9].map(n => `
+        <div style="width:28px; height:28px; background:var(--purple-light); border:1px solid var(--purple-dark); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--purple-dark);">★</div>
+      `).join('')}
+    </div>
+    <div style="font-size:20px; color:var(--amber-dark);">÷ 10</div>
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">each bag gets:</div>
+      <div style="width:52px; height:52px; background:var(--amber-light); border:2px solid var(--amber-dark); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:var(--amber-dark);">0.9</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; justify-content:center;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">As a decimal</div>
+      <div style="font-size:1.8em; font-weight:700; color:var(--blue-dark);">0.9</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:20px; color:var(--amber-dark);">↔</div>
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">As a fraction</div>
+      <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.5em; font-weight:700; color:var(--coral-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">9</span><span style="display:block;line-height:1;">10</span></div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    9 ÷ 10 = <strong>0.9</strong> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">9</span><span style="display:block;line-height:1;">10</span></span> — each bag gets nine tenths of a sticker
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 5</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Calculate: <strong>3 ÷ 10</strong>
+        ${mcqBlock(['3.0','0.03','0.3'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        When you divide a 1-digit number by 10, where does the digit move on the place value chart?
+        ${mcqBlock(['One place to the right','One place to the left','It stays in the same column'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Calculate: <strong>8 ÷ 10</strong>
+        ${mcqBlock(['0.08','8.0','0.8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Which fraction is the same as <strong>5 ÷ 10</strong>?
+        ${mcqBlock(['5/100','5/10','1/5'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Kemi says 7 ÷ 10 = 7.0. Is she correct?
+        ${mcqBlock(['Yes — the digit stays the same','No — the answer is 0.07','No — the answer is 0.7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Femi divides 2 by 10. Which number line position does his answer land on?
+        ${mcqBlock(['0.02','2.0','0.2'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Tunde has 4 oranges shared equally into 10 boxes. What decimal shows how many oranges are in each box?
+        ${mcqBlock(['4.0','0.4','0.04'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        What digit goes in the <strong>Tenths</strong> column when you calculate <strong>9 ÷ 10</strong>?
+        ${mcqBlock(['0','1','9'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Adaeze says that any 1-digit number divided by 10 will always give an answer less than 1. Is she right?
+        ${mcqBlock(['No — it depends on the number','Only if the number is less than 5','Yes — because the digit moves to the tenths place'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Emeka divides a number by 10 and gets 0.6. Then he divides a second number by 10 and gets 0.3. What is the sum of his two original numbers?
+        ${mcqBlock(['0.9','9','1.0'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+
+
+
+//Step 6 Divide a 2-digit number by 10
+const DEC_A_STEP6 = ``;
+
+//Step 7 Hundredths as fractions
+const DEC_A_STEP7 = ``;
+
+//Step 8 Hundredths as decimals
+const DEC_A_STEP8 = ``;
+
+//Step 9 Hundredths on a place value chart
+const DEC_A_STEP9 = ``;
+
+//Step 10 Divide a 1- or 2-digit number by 100
+const DEC_A_STEP10 = ``;
+
 /* ============================================================
    FULL SCHEME DATA TREE
    ============================================================ */
@@ -5172,14 +6490,14 @@ const SCHEME = [
         steps:[
           { label:'Tenths as fractions',                    content: DEC_A_STEP1 },
           { label:'Tenths as decimals',                     content: DEC_A_STEP2 },
-          { label:'Tenths on a place value chart',          content: null },
-          { label:'Tenths on a number line',                content: null },
-          { label:'Divide a 1-digit number by 10',          content: null },
-          { label:'Divide a 2-digit number by 10',          content: null },
-          { label:'Hundredths as fractions',                content: null },
-          { label:'Hundredths as decimals',                 content: null },
-          { label:'Hundredths on a place value chart',     content: null },
-          { label:'Divide a 1- or 2-digit number by 100',  content: null },
+          { label:'Tenths on a place value chart',          content: DEC_A_STEP3 },
+          { label:'Tenths on a number line',                content: DEC_A_STEP4 },
+          { label:'Divide a 1-digit number by 10',          content: DEC_A_STEP5 },
+          { label:'Divide a 2-digit number by 10',          content: DEC_A_STEP6 },
+          { label:'Hundredths as fractions',                content: DEC_A_STEP7 },
+          { label:'Hundredths as decimals',                 content: DEC_A_STEP8 },
+          { label:'Hundredths on a place value chart',     content: DEC_A_STEP9 },
+          { label:'Divide a 1- or 2-digit number by 100',  content: DEC_A_STEP10 },
         ]
       },
     ]
