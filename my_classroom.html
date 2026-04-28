@@ -6376,11 +6376,864 @@ const DEC_A_STEP5 = `
 
 
 
-//Step 6 Divide a 2-digit number by 10
-const DEC_A_STEP6 = ``;
+// Decimals A — Step 6: Divide a 2-digit number by 10
+const DEC_A_STEP6 = `
 
-//Step 7 Hundredths as fractions
-const DEC_A_STEP7 = ``;
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">D6</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 6 — Divide a 2-digit number by 10</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Spring 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "In Step 5 we divided 1-digit numbers by 10 — the single digit slid into the Tenths column and we got answers like 0.3 or 0.7. Now we do the <strong>same slide</strong> with 2-digit numbers! When 34 ÷ 10, <strong>both digits slide one place to the right</strong> together. The 3 moves from Tens → Ones, and the 4 moves from Ones → Tenths. The answer is <strong>3.4</strong> — a number with a whole part AND a tenths part!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">The big picture — ALL digits slide right together</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Dividing by 10 slides <strong>every digit</strong> one place to the right — no digit is left behind. Watch what happens to <strong>34</strong>:</div>
+
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Before: 34 (thirty-four)</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Tens</div>
+          <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">3</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Ones</div>
+          <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="width:22px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--coral-mid); border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:4px;">Tenths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--text-sec); opacity:0.25;">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:22px; color:var(--amber-dark);">÷ 10</div>
+      <div style="font-size:20px; color:var(--amber-dark);">→</div>
+      <div style="font-size:10px; color:var(--amber-dark); font-weight:700;">both slide right!</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">After: 3.4 (three point four)</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Tens</div>
+          <div style="font-size:22px; font-weight:700; color:var(--text-sec); opacity:0.25;">—</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Ones</div>
+          <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">3</div>
+        </div>
+        <div style="width:22px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:16px; font-weight:700; color:var(--amber-dark);">.</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--coral-dark); border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:4px;">Tenths</div>
+          <div style="font-size:26px; font-weight:700; color:var(--coral-dark);">4</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>The same rule as Step 5</strong> — every digit slides one place to the right. With 2-digit numbers the answer is now <strong>bigger than 1</strong> because the Tens digit becomes the new Ones digit!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Step 5 vs Step 6: spot the difference</div>
+  <div class="example-label">Compare: <strong>4 ÷ 10</strong> and <strong>40 ÷ 10</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 10px;">The same digit 4 behaves differently depending on which column it starts in. Watch carefully:</div>
+
+  <div style="display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
+
+    <div style="flex:1; min-width:140px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:8px;">Step 5: 4 ÷ 10</div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">4 starts in <strong>Ones</strong> → slides to <strong>Tenths</strong></div>
+      <div style="display:flex; gap:0; margin-bottom:6px;">
+        <div style="width:44px; border:1px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="width:14px; border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--amber-dark);">.</div>
+        <div style="width:44px; border:1px solid var(--coral-mid); border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--text-sec); opacity:0.3;">—</div>
+        </div>
+      </div>
+      <div style="font-size:11px; color:var(--amber-dark); margin-bottom:6px; text-align:center;">÷ 10 ↓</div>
+      <div style="display:flex; gap:0; margin-bottom:8px;">
+        <div style="width:44px; border:1px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">0</div>
+        </div>
+        <div style="width:14px; border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--amber-dark);">.</div>
+        <div style="width:44px; border:1px solid var(--coral-dark); border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--coral-dark);">4</div>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:14px; font-weight:700; color:var(--green-dark);">= 0.4</div>
+    </div>
+
+    <div style="flex:1; min-width:140px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:8px;">Step 6: 40 ÷ 10</div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">4 starts in <strong>Tens</strong> → slides to <strong>Ones</strong></div>
+      <div style="display:flex; gap:0; margin-bottom:6px;">
+        <div style="width:38px; border:1px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Tens</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="width:38px; border:1px solid var(--blue-mid); border-left:none; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">0</div>
+        </div>
+        <div style="width:14px; border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--amber-dark);">.</div>
+        <div style="width:38px; border:1px solid var(--coral-mid); border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--text-sec); opacity:0.3;">—</div>
+        </div>
+      </div>
+      <div style="font-size:11px; color:var(--amber-dark); margin-bottom:6px; text-align:center;">÷ 10 ↓</div>
+      <div style="display:flex; gap:0; margin-bottom:8px;">
+        <div style="width:38px; border:1px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Tens</div>
+          <div style="font-size:18px; font-weight:700; color:var(--text-sec); opacity:0.3;">—</div>
+        </div>
+        <div style="width:38px; border:1px solid var(--blue-mid); border-left:none; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="width:14px; border-top:1px solid var(--amber-dark); border-bottom:1px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--amber-dark);">.</div>
+        <div style="width:38px; border:1px solid var(--coral-dark); border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--coral-dark);">0</div>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:14px; font-weight:700; color:var(--green-dark);">= 4.0 = 4</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Key difference:</strong> 4 ÷ 10 = <strong>0.4</strong> (less than 1). But 40 ÷ 10 = <strong>4</strong> (a whole number!). The starting column determines everything.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Both digits slide: 27 ÷ 10</div>
+  <div class="example-label">Calculate: <strong>27 ÷ 10</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">27 has a 2 in the Tens column and a 7 in the Ones column. Both digits slide one place to the right when we divide by 10.</div>
+
+  <svg width="100%" height="110" viewBox="0 0 360 110">
+    <defs>
+      <marker id="slideR" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--amber-dark)"/>
+      </marker>
+    </defs>
+
+    <!-- Row 1: ÷ 10 label centred at top -->
+    <text x="180" y="12" text-anchor="middle" font-size="9" fill="var(--amber-dark)" font-weight="700">÷ 10 → both slide right</text>
+
+    <!-- Row 2: BEFORE and AFTER headers -->
+    <text x="80"  y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">BEFORE (27)</text>
+    <text x="290" y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">AFTER (2.7)</text>
+
+    <!-- Row 3: slide arrows curving between y=28 and y=38 -->
+    <path d="M37,38 Q64,28 91,38"   fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideR)"/>
+    <path d="M91,38 Q128,28 165,38" fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideR)"/>
+
+    <!-- Row 4: chart boxes starting at y=40 -->
+    <rect x="10"  y="40" width="54" height="48" rx="4" fill="var(--blue-light)"  stroke="var(--blue-dark)"  stroke-width="1.5"/>
+    <text x="37"  y="55" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Tens</text>
+    <text x="37"  y="78" text-anchor="middle" font-size="28" font-weight="700" fill="var(--blue-dark)">2</text>
+
+    <rect x="64"  y="40" width="54" height="48" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
+    <text x="91"  y="55" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="91"  y="78" text-anchor="middle" font-size="28" font-weight="700" fill="var(--blue-dark)">7</text>
+
+    <rect x="118" y="40" width="20" height="48" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="128" y="69" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">.</text>
+
+    <rect x="138" y="40" width="54" height="48" rx="4" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
+    <text x="165" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">Tenths</text>
+    <text x="165" y="78" text-anchor="middle" font-size="22" fill="var(--text-sec)" opacity="0.25">—</text>
+
+    <rect x="200" y="40" width="54" height="48" rx="4" fill="var(--blue-light)"  stroke="var(--blue-dark)"  stroke-width="1.5"/>
+    <text x="227" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Tens</text>
+    <text x="227" y="78" text-anchor="middle" font-size="22" fill="var(--text-sec)" opacity="0.25">—</text>
+
+    <rect x="254" y="40" width="54" height="48" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
+    <text x="281" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="281" y="78" text-anchor="middle" font-size="28" font-weight="700" fill="var(--blue-dark)">2</text>
+
+    <rect x="308" y="40" width="20" height="48" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="318" y="69" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">.</text>
+
+    <rect x="328" y="40" width="54" height="48" rx="4" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="1.5"/>
+    <text x="355" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">Tenths</text>
+    <text x="355" y="78" text-anchor="middle" font-size="28" font-weight="700" fill="var(--coral-dark)">7</text>
+
+    <!-- → between the two charts -->
+    <text x="192" y="69" text-anchor="middle" font-size="16" font-weight="700" fill="var(--amber-dark)">→</text>
+
+    <!-- Row 5: footer labels below boxes (box bottom = 40+48 = 88) -->
+    <text x="37"  y="102" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Tens: 2</text>
+    <text x="91"  y="102" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Ones: 7</text>
+    <text x="281" y="102" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">Ones: 2</text>
+    <text x="355" y="102" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">Tenths: 7</text>
+  </svg>
+
+  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+    <div style="background:var(--blue-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--blue-dark);">The <strong>2</strong> slides Tens → Ones</div>
+    <div style="background:var(--coral-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--coral-dark);">The <strong>7</strong> slides Ones → Tenths</div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    27 ÷ 10 = <strong>2.7</strong> — the 2 becomes the whole part, the 7 becomes the tenths!
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Spot the pattern: 2-digit multiples of 10</div>
+  <div class="example-label">What happens when the Ones digit is 0?</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 10px;">Numbers like 10, 20, 30 … already have 0 in the Ones column. When the 0 slides to Tenths, the answer is a clean whole number — <strong>no decimal part needed!</strong></div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--blue-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--blue-light);">
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Calculation</div>
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Tens digit becomes…</div>
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--coral-dark);">Answer</div>
+    </div>
+    ${[
+      ['10 ÷ 10','1 whole one','1.0 = 1'],
+      ['20 ÷ 10','2 whole ones','2.0 = 2'],
+      ['30 ÷ 10','3 whole ones','3.0 = 3'],
+      ['50 ÷ 10','5 whole ones','5.0 = 5'],
+      ['90 ÷ 10','9 whole ones','9.0 = 9'],
+    ].map((r,i) => `
+      <div style="display:flex; background:${i%2===0?'white':'var(--amber-light)'}; border-top:1px solid var(--blue-mid);">
+        <div style="flex:1; padding:5px 10px; font-size:12px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">${r[0]}</div>
+        <div style="flex:1; padding:5px 10px; font-size:11px; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">${r[1]}</div>
+        <div style="flex:1; padding:5px 10px; font-size:12px; font-weight:700; color:var(--coral-dark);">${r[2]}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Now compare with 2-digit numbers that have a non-zero Ones digit:</div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--coral-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--coral-light);">
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--coral-dark); border-right:1px solid var(--coral-mid);">Calculation</div>
+      <div style="flex:1; padding:6px 10px; font-size:11px; font-weight:700; color:var(--coral-dark);">Answer (has a decimal!)</div>
+    </div>
+    ${[
+      ['13 ÷ 10','1.3'],
+      ['25 ÷ 10','2.5'],
+      ['48 ÷ 10','4.8'],
+      ['76 ÷ 10','7.6'],
+    ].map((r,i) => `
+      <div style="display:flex; background:${i%2===0?'white':'var(--coral-light)'}; border-top:1px solid var(--coral-mid);">
+        <div style="flex:1; padding:5px 10px; font-size:12px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--coral-mid);">${r[0]}</div>
+        <div style="flex:1; padding:5px 10px; font-size:13px; font-weight:700; color:var(--coral-dark);">${r[1]}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Quick trick:</strong> For any 2-digit number divided by 10, put a decimal point between the two digits! 27 ÷ 10 = 2.7 · 48 ÷ 10 = 4.8 · 53 ÷ 10 = 5.3
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Connecting to the number line</div>
+  <div class="example-label">Show that <strong>35 ÷ 10 = 3.5</strong> on a number line</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">The answer 3.5 is bigger than 1 now, so we need a number line that goes past 1. It sits exactly halfway between 3 and 4 — because 5 tenths = half a whole.</div>
+
+  <svg width="100%" height="90" viewBox="0 0 360 90">
+    <defs>
+      <marker id="arrNL" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral)"/>
+      </marker>
+    </defs>
+
+    <!-- number line 0 to 5, spacing = 60px per whole -->
+    <line x1="15" y1="50" x2="355" y2="50" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="355,46 365,50 355,54" fill="var(--blue-dark)"/>
+
+    <!-- Whole number ticks -->
+    <line x1="15"  y1="40" x2="15"  y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="15"   y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <line x1="75"  y1="40" x2="75"  y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="75"   y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">1</text>
+
+    <line x1="135" y1="40" x2="135" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="135"  y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">2</text>
+
+    <line x1="195" y1="40" x2="195" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="195"  y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">3</text>
+
+    <line x1="255" y1="40" x2="255" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="255"  y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">4</text>
+
+    <line x1="315" y1="40" x2="315" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="315"  y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">5</text>
+
+    <!-- Half-marks at .5 positions -->
+    <line x1="45"  y1="44" x2="45"  y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="105" y1="44" x2="105" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="165" y1="44" x2="165" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+    <line x1="225" y1="44" x2="225" y2="56" stroke="var(--amber-dark)" stroke-width="2"/>
+    <text x="225"  y="74" text-anchor="middle" font-size="10" fill="var(--amber-dark)" font-weight="700">3.5</text>
+    <line x1="285" y1="44" x2="285" y2="56" stroke="var(--blue-mid)" stroke-width="1"/>
+
+    <!-- Big bracket showing 35 whole-number jumps from 0 -->
+    <path d="M15,38 Q120,14 225,38" fill="none" stroke="var(--coral)" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrNL)"/>
+    <text x="120" y="10" text-anchor="middle" font-size="10" fill="var(--coral-dark)" font-weight="700">3 whole jumps + 5 tenth-steps = 3.5</text>
+
+    <!-- Answer dot -->
+    <circle cx="225" cy="50" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+
+    <!-- Legend -->
+    <circle cx="20"  cy="86" r="4" fill="var(--coral)"/>
+    <text x="28" y="90" font-size="9" fill="var(--coral-dark)">journey from 0</text>
+    <circle cx="120" cy="86" r="4" fill="var(--green)"/>
+    <text x="128" y="90" font-size="9" fill="var(--green-dark)">answer: 3.5</text>
+  </svg>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    35 ÷ 10 = <strong>3.5</strong> — sits exactly halfway between 3 and 4 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: sharing rope</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Emeka has a rope that is 63 cm long. He cuts it into 10 equal pieces. How long is each piece? Give your answer as a decimal."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Think:</strong> 63 shared equally between 10 means 63 ÷ 10.</div>
+
+  <div style="display:flex; gap:8px; margin:12px 0; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Place value: before</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:48px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tens</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">6</div>
+        </div>
+        <div style="width:48px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">3</div>
+        </div>
+        <div style="width:18px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:14px; font-weight:700; color:var(--amber-dark);">.</div>
+        </div>
+        <div style="width:48px; border:2px solid var(--coral-mid); border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:22px; color:var(--text-sec); opacity:0.25;">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding:0 8px;">
+      <div style="font-size:22px; color:var(--amber-dark); font-weight:700;">÷10</div>
+      <div style="font-size:20px; color:var(--amber-dark);">→</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Place value: after</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:48px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tens</div>
+          <div style="font-size:22px; color:var(--text-sec); opacity:0.25;">—</div>
+        </div>
+        <div style="width:48px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">6</div>
+        </div>
+        <div style="width:18px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber-light); display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:14px; font-weight:700; color:var(--amber-dark);">.</div>
+        </div>
+        <div style="width:48px; border:2px solid var(--coral-dark); border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:24px; font-weight:700; color:var(--coral-dark);">3</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+    <div style="background:var(--blue-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--blue-dark);">The <strong>6</strong> slides Tens → Ones</div>
+    <div style="background:var(--coral-light); border-radius:8px; padding:6px 12px; font-size:11px; color:var(--coral-dark);">The <strong>3</strong> slides Ones → Tenths</div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    63 ÷ 10 = <strong>6.3 cm</strong> — each piece of rope is 6.3 cm long ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 6</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Calculate: <strong>52 ÷ 10</strong>
+        ${mcqBlock(['52.0','0.52','5.2'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        When you divide a 2-digit number by 10, where does the Tens digit move to?
+        ${mcqBlock(['It moves to the Ones column','It moves to the Tenths column','It disappears'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Calculate: <strong>80 ÷ 10</strong>
+        ${mcqBlock(['0.8','80.0','8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Bola divides 47 by 10. What digit appears in the Tenths column of her answer?
+        ${mcqBlock(['4','0','7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Calculate: <strong>19 ÷ 10</strong>
+        ${mcqBlock(['0.19','1.9','19.0'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Dayo says 60 ÷ 10 = 6.0 which is the same as 6. Is he right?
+        ${mcqBlock(['No — 6.0 is different from 6','Yes — 6.0 and 6 are the same value','Only if you round it'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        A 74 cm strip of paper is cut into 10 equal pieces. How long is each piece?
+        ${mcqBlock(['0.74 cm','74.0 cm','7.4 cm'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Which of these is the correct quick trick for 36 ÷ 10?
+        ${mcqBlock(['Put the decimal point after the 6: 36. = 36','Put a zero at the end: 360','Put the decimal point between the digits: 3.6'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Sade calculates 50 ÷ 10 and gets 5. Tunde calculates 5 ÷ 10 and gets 0.5. Sade says her answer is 10 times bigger than Tunde's. Is she right?
+        ${mcqBlock(['No — they are equal','No — Sade\'s is 5 times bigger','Yes — 5 is ten times bigger than 0.5'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Ngozi divides a number by 10 and gets 3.8. Emeka divides a different number by 10 and gets 4.5. What is the <strong>sum</strong> of their two original numbers?
+        ${mcqBlock(['8.3','83','0.83'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+
+
+// Decimals A — Step 7: Hundredths as fractions
+const DEC_A_STEP7 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">D7</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 7 — Hundredths as fractions</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Spring 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "In Step 1 we split 1 whole into <strong>10 equal parts</strong> and got <strong>tenths</strong>. Now we go one step further — we split 1 whole into <strong>100 equal parts</strong>. Each tiny part is called a <strong>hundredth</strong>. We write one hundredth as <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;line-height:1;">100</span></span>. Think of it like this — if a tenth is one slice of a pizza cut into 10, a hundredth is one tiny square of a chocolate bar broken into 100 pieces!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Step 1 vs Step 7 — Tenths and hundredths side by side</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:12px;">The only difference is how many equal parts the whole is split into. More parts means each part is <strong>smaller</strong>:</div>
+
+  <div style="display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
+
+    <div style="flex:1; min-width:130px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:8px;">Step 1 — Tenths</div>
+      <div style="display:flex; gap:0; margin-bottom:8px;">
+        <div style="width:20px; height:28px; background:var(--blue); border:1px solid var(--blue-dark);"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:28px; background:var(--blue-light); border:1px solid var(--blue-dark); border-left:none;"></div>
+      </div>
+      <div style="font-size:11px; color:var(--blue-dark);">10 equal parts</div>
+      <div style="font-size:11px; color:var(--blue-dark);">1 part = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span> (one tenth)</div>
+      <div style="font-size:11px; color:var(--blue-dark); margin-top:4px;">Each part is <strong>quite big</strong></div>
+    </div>
+
+    <div style="flex:1; min-width:130px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:8px;">Step 7 — Hundredths</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:12px; height:12px; background:${i===0?'var(--coral)':'white'}; border:0.5px solid var(--amber-mid); box-sizing:border-box;"></div>`).join('')}
+      </div>
+      <div style="font-size:11px; color:var(--coral-dark);">100 equal parts</div>
+      <div style="font-size:11px; color:var(--coral-dark);">1 part = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">1</span><span style="display:block;line-height:1;">100</span></span> (one hundredth)</div>
+      <div style="font-size:11px; color:var(--coral-dark); margin-top:4px;">Each part is <strong>very tiny!</strong></div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Key fact:</strong> One tenth = ten hundredths. So <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">10</span><span style="display:block;line-height:1;">100</span></span>. Hundredths are simply tenths cut into 10 even smaller pieces each!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — What does one hundredth look like?</div>
+  <div class="example-label">Show <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;line-height:1;">100</span></span> on a 100-square grid</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">A whole square split into 100 equal tiny squares. Just <strong>one</strong> tiny square is shaded — that is one hundredth:</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:12px;">
+    <div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:12px; height:12px; background:${i===0?'var(--coral)':'white'}; border:0.5px solid var(--amber-mid); box-sizing:border-box;"></div>`).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--text-sec); margin-top:4px; width:120px; text-align:center;">1 tiny square shaded out of 100</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+        <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">We write it as:</div>
+        <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.5em; font-weight:700; color:var(--coral-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">1</span><span style="display:block;line-height:1;">100</span></div>
+      </div>
+      <div style="font-size:13px; color:var(--text-sec);">We say: <strong style="color:var(--coral-dark);">"one hundredth"</strong></div>
+      <div style="background:var(--amber-light); border-radius:8px; padding:8px 10px; font-size:11px; color:var(--amber-dark);">
+        <strong>Notice:</strong> the shaded square looks very small compared to the whole grid — because it really is just 1 out of 100 equal parts!
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    1 whole ÷ 100 = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin-left:6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;line-height:1;">100</span></span> = one hundredth
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Counting hundredths</div>
+  <div class="example-label">How many hundredths are shaded? Write as a fraction.</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Count the shaded squares — each one is one hundredth. There are <strong>17</strong> shaded:</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:12px;">
+    <div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:12px; height:12px; background:${i<17?'var(--coral)':'white'}; border:0.5px solid var(--amber-mid); box-sizing:border-box;"></div>`).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:4px; width:120px; text-align:center; font-weight:700;">17 squares shaded</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:11px; color:var(--text-sec);">17 parts shaded out of 100 equal parts:</div>
+      <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.6em; font-weight:700; color:var(--coral-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">17</span><span style="display:block;line-height:1;">100</span></div>
+      <div style="font-size:12px; color:var(--text-sec);">We say: <strong style="color:var(--coral-dark);">"seventeen hundredths"</strong></div>
+      <div style="background:var(--amber-light); border-radius:8px; padding:8px 10px; font-size:11px; color:var(--amber-dark);">
+        <strong>The rule:</strong> Shaded squares → top of fraction. Total squares (always 100) → bottom of fraction.
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    17 shaded squares = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin:0 6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">17</span><span style="display:block;line-height:1;">100</span></span> = seventeen hundredths
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — The relationship: tenths and hundredths</div>
+  <div class="example-label">Show that <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">10</span><span style="display:block;line-height:1;">100</span></span></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">One tenth of the 100-square grid is an entire <strong>column of 10 squares</strong>. Count the columns — there are exactly 10 columns, each with 10 squares:</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">1 tenth = first column (10 squares)</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:12px; height:12px; background:${i%10===0?'var(--blue)':'white'}; border:0.5px solid var(--amber-mid); box-sizing:border-box;"></div>`).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px;">10 blue squares = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 2px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">10</span><span style="display:block;line-height:1;">100</span></span> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 2px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span></div>
+    </div>
+
+    <div style="flex:1; min-width:120px;">
+      <div style="display:flex; flex-direction:column; gap:8px; margin-top:20px;">
+        <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--blue-dark);">
+          The grid has <strong>10 columns</strong>.<br/>Each column has <strong>10 squares</strong>.<br/>So 1 column = 10 out of 100 = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 2px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">10</span><span style="display:block;line-height:1;">100</span></span>
+        </div>
+        <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--coral-dark);">
+          But 1 column also equals <strong>one tenth</strong> of the whole grid = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em; margin:0 2px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span>
+        </div>
+        <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); font-weight:700;">
+          Therefore: <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">1</span><span style="display:block;line-height:1;">10</span></span> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">10</span><span style="display:block;line-height:1;">100</span></span> ✓
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    1 tenth = 10 hundredths — tenths and hundredths are just different ways of counting the same grid!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Hundredths make a whole</div>
+  <div class="example-label">How many hundredths make 1 whole?</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Watch the grid fill up as we add groups of 25 hundredths at a time:</div>
+
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:4px;">25 hundredths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">25</span><span style="display:block;line-height:1;">100</span></span> = ¼</div>
+      <div style="display:flex; flex-wrap:wrap; width:60px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:5.5px; height:5.5px; background:${i<25?'var(--coral)':'white'}; border:0.3px solid var(--amber-mid);"></div>`).join('')}
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--amber-dark); font-weight:700; margin-bottom:4px;">50 hundredths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">50</span><span style="display:block;line-height:1;">100</span></span> = ½</div>
+      <div style="display:flex; flex-wrap:wrap; width:60px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:5.5px; height:5.5px; background:${i<50?'var(--amber)':'white'}; border:0.3px solid var(--amber-mid);"></div>`).join('')}
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">75 hundredths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">75</span><span style="display:block;line-height:1;">100</span></span> = ¾</div>
+      <div style="display:flex; flex-wrap:wrap; width:60px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:5.5px; height:5.5px; background:${i<75?'var(--blue)':'white'}; border:0.3px solid var(--amber-mid);"></div>`).join('')}
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); font-weight:700; margin-bottom:4px;">100 hundredths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">100</span><span style="display:block;line-height:1;">100</span></span> = 1 whole!</div>
+      <div style="display:flex; flex-wrap:wrap; width:60px;">
+        ${Array.from({length:100}, () => `<div style="width:5.5px; height:5.5px; background:var(--green); border:0.3px solid var(--green-dark);"></div>`).join('')}
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Bonus connections!</strong> 25 hundredths = one quarter (¼) · 50 hundredths = one half (½) · 75 hundredths = three quarters (¾). These are very useful to remember!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    100 hundredths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.1em; margin:0 6px;"><span style="display:block;border-bottom:1px solid;line-height:1;">100</span><span style="display:block;line-height:1;">100</span></span> = 1 whole ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: Tolu's savings grid</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Tolu has a savings chart with 100 equal boxes. She has filled in 43 boxes so far. What fraction of her savings goal has she reached? What fraction is still left?"</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin:12px 0;">
+    <div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">Tolu's savings chart:</div>
+      <div style="display:flex; flex-wrap:wrap; width:110px;">
+        ${Array.from({length:100}, (_,i) => `<div style="width:10px; height:10px; background:${i<43?'var(--purple)':'white'}; border:0.5px solid var(--purple-light);"></div>`).join('')}
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:120px; display:flex; flex-direction:column; gap:8px; margin-top:14px;">
+      <div style="background:var(--purple-light); border:1px solid var(--purple-mid); border-radius:8px; padding:8px 12px; text-align:center;">
+        <div style="font-size:10px; color:var(--purple-dark); margin-bottom:4px;">Saved so far</div>
+        <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.4em; font-weight:700; color:var(--purple-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">43</span><span style="display:block;line-height:1;">100</span></div>
+        <div style="font-size:10px; color:var(--purple-dark); margin-top:3px;">forty-three hundredths</div>
+      </div>
+      <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 12px; text-align:center;">
+        <div style="font-size:10px; color:var(--green-dark); margin-bottom:4px;">Still to save</div>
+        <div style="display:inline-block;text-align:center;vertical-align:middle;font-size:1.4em; font-weight:700; color:var(--green-dark);"><span style="display:block;border-bottom:2px solid;line-height:1;">57</span><span style="display:block;line-height:1;">100</span></div>
+        <div style="font-size:10px; color:var(--green-dark); margin-top:3px;">fifty-seven hundredths</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em;"><span style="display:block;border-bottom:1px solid;line-height:1;">43</span><span style="display:block;line-height:1;">100</span></span> saved + <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">57</span><span style="display:block;line-height:1;">100</span></span> remaining = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin:0 4px;"><span style="display:block;border-bottom:1px solid;line-height:1;">100</span><span style="display:block;line-height:1;">100</span></span> = 1 whole goal ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 7</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        A grid is split into 100 equal squares. 9 squares are shaded. What fraction is shaded?
+        ${mcqBlock(['9/10','1/9','9/100'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Which fraction means "thirty-five hundredths"?
+        ${mcqBlock(['35/100','35/10','1/35'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        How many hundredths make 1 whole?
+        ${mcqBlock(['10','1000','100'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        One tenth is the same as how many hundredths?
+        ${mcqBlock(['100','10','1'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Chidi shades 60 squares on a 100-square grid. What fraction is <strong>not</strong> shaded?
+        ${mcqBlock(['60/100','6/100','40/100'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Which fraction is equal to one half using hundredths?
+        ${mcqBlock(['25/100','75/100','50/100'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Amaka colours <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em;line-height:1;"><span style="display:block;padding-bottom:1px;">3</span><span style="display:block;border-top:1px solid currentColor;padding-top:1px;">10</span></span> of a 100-square grid. How many individual squares does she colour?
+        ${mcqBlock(['3','300','30'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        A grid has 100 squares. <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em;line-height:1;"><span style="display:block;padding-bottom:1px;">75</span><span style="display:block;border-top:1px solid currentColor;padding-top:1px;">100</span></span> are shaded. What common fraction is this equal to?
+        ${mcqBlock(['1/2','3/4','1/4'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Emeka says <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em;line-height:1;"><span style="display:block;padding-bottom:1px;">1</span><span style="display:block;border-top:1px solid currentColor;padding-top:1px;">100</span></span> is bigger than <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em;line-height:1;"><span style="display:block;padding-bottom:1px;">1</span><span style="display:block;border-top:1px solid currentColor;padding-top:1px;">10</span></span> because 100 is a bigger number than 10. Is he right?
+        ${mcqBlock(['Yes — bigger bottom means bigger fraction','No — a bigger bottom means each part is smaller','Only if the top numbers are the same'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Ngozi shades <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em;line-height:1;"><span style="display:block;padding-bottom:1px;">2</span><span style="display:block;border-top:1px solid currentColor;padding-top:1px;">10</span></span> of a 100-square grid. Kola then shades another <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.8em;line-height:1;"><span style="display:block;padding-bottom:1px;">35</span><span style="display:block;border-top:1px solid currentColor;padding-top:1px;">100</span></span>. What fraction of the grid is now shaded altogether?
+        ${mcqBlock(['37/100','55/100','57/100'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+
 
 //Step 8 Hundredths as decimals
 const DEC_A_STEP8 = ``;
