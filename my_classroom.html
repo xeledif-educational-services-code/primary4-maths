@@ -8168,6 +8168,17 @@ const DEC_A_STEP9 = `
 
 
 
+
+const grid80 = Array.from({length:100}, (_,i) => {
+  const bg = i < 80 ? '#4A90D9' : '#ffffff';
+  return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid #a0b8d0;box-sizing:border-box;"></div>`;
+}).join('');
+
+const grid8 = Array.from({length:100}, (_,i) => {
+  const bg = i < 8 ? '#E05A5A' : '#ffffff';
+  return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid #d0a0a0;box-sizing:border-box;"></div>`;
+}).join('');
+
 // Decimals A — Step 10: Divide a 1- or 2-digit number by 100
 const DEC_A_STEP10 = `
 
@@ -8282,63 +8293,65 @@ const DEC_A_STEP10 = `
 
   <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The digit 3 starts in the Ones column. Dividing by 100 slides it <strong>two places to the right</strong> — past Tenths, all the way into Hundredths. Two 0 placeholders fill the gaps it leaves behind:</div>
 
-  <svg width="100%" height="105" viewBox="0 0 360 105">
+  <svg width="100%" height="118" viewBox="0 0 440 118">
     <defs>
       <marker id="slideArr10" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
         <polygon points="0 0, 8 3, 0 6" fill="var(--amber-dark)"/>
       </marker>
     </defs>
 
-    <!-- Row 1: ÷ 100 label -->
-    <text x="180" y="12" text-anchor="middle" font-size="9" fill="var(--amber-dark)" font-weight="700">÷ 100 → slide TWO places right</text>
+    <!-- Row 1: ÷ 100 label centred -->
+    <text x="220" y="12" text-anchor="middle" font-size="9" fill="var(--amber-dark)" font-weight="700">÷ 100 → slide TWO places right</text>
 
-    <!-- Row 2: BEFORE and AFTER headers -->
-    <text x="72"  y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">BEFORE (3)</text>
-    <text x="272" y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">AFTER (0.03)</text>
+    <!-- Row 2: BEFORE and AFTER headers on same y -->
+    <text x="90"  y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">BEFORE (3)</text>
+    <text x="330" y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">AFTER (0.03)</text>
 
-    <!-- Row 3: slide arrows from Ones → Tenths → Hundredths -->
-    <path d="M54,38 Q80,28 106,38"  fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr10)"/>
-    <path d="M106,38 Q132,28 158,38" fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr10)"/>
+    <!-- Row 3: slide arrows y=28–40 -->
+    <path d="M68,40 Q100,30 132,40"  fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr10)"/>
+    <path d="M132,40 Q172,30 212,40" fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr10)"/>
 
-    <!-- Row 4: BEFORE chart boxes y=40 -->
-    <rect x="10"  y="40" width="44" height="48" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)"  stroke-width="1.5"/>
-    <text x="32"  y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
-    <text x="32"  y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">3</text>
+    <!-- BEFORE chart: Ones at x=10, decimal at x=76, Tenths at x=94, Hundredths at x=156 -->
+    <!-- Ones -->
+    <rect x="10"  y="42" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+    <text x="39"  y="57" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="39"  y="82" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">3</text>
+    <!-- decimal point -->
+    <rect x="68"  y="42" width="18" height="50" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="77"  y="71" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
+    <!-- Tenths -->
+    <rect x="86"  y="42" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-mid)" stroke-width="1.5"/>
+    <text x="115" y="57" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tenths</text>
+    <text x="115" y="82" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
+    <!-- Hundredths -->
+    <rect x="144" y="42" width="68" height="50" rx="4" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
+    <text x="178" y="57" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
+    <text x="178" y="82" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
 
-    <rect x="54"  y="40" width="16" height="48" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
-    <text x="62"  y="68" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
+    <!-- Arrow between charts -->
+    <text x="228" y="72" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">→</text>
 
-    <rect x="70"  y="40" width="44" height="48" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
-    <text x="92"  y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tenths</text>
-    <text x="92"  y="78" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
+    <!-- AFTER chart: Ones at x=244, decimal at x=310, Tenths at x=328, Hundredths at x=394 -->
+    <!-- Ones -->
+    <rect x="244" y="42" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+    <text x="273" y="57" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="273" y="82" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">0</text>
+    <!-- decimal point -->
+    <rect x="302" y="42" width="18" height="50" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="311" y="71" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
+    <!-- Tenths placeholder -->
+    <rect x="320" y="42" width="58" height="50" rx="4" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="349" y="57" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--amber-dark)">Tenths</text>
+    <text x="349" y="82" text-anchor="middle" font-size="26" font-weight="700" fill="var(--amber-dark)">0</text>
+    <!-- Hundredths -->
+    <rect x="378" y="42" width="58" height="50" rx="4" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="1.5"/>
+    <text x="407" y="57" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
+    <text x="407" y="82" text-anchor="middle" font-size="26" font-weight="700" fill="var(--coral-dark)">3</text>
 
-    <rect x="114" y="40" width="52" height="48" rx="4" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
-    <text x="140" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
-    <text x="140" y="78" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
-
-    <!-- Arrow between -->
-    <text x="182" y="68" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">→</text>
-
-    <!-- AFTER chart boxes y=40 -->
-    <rect x="200" y="40" width="44" height="48" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)"  stroke-width="1.5"/>
-    <text x="222" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
-    <text x="222" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">0</text>
-
-    <rect x="244" y="40" width="16" height="48" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
-    <text x="252" y="68" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
-
-    <rect x="260" y="40" width="44" height="48" rx="4" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
-    <text x="282" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--amber-dark)">Tenths</text>
-    <text x="282" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--amber-dark)">0</text>
-
-    <rect x="304" y="40" width="52" height="48" rx="4" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="1.5"/>
-    <text x="330" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
-    <text x="330" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--coral-dark)">3</text>
-
-    <!-- Footer labels -->
-    <text x="32"  y="102" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Ones: 3</text>
-    <text x="282" y="102" text-anchor="middle" font-size="10" fill="var(--amber-dark)" font-weight="700">placeholder</text>
-    <text x="330" y="102" text-anchor="middle" font-size="10" fill="var(--coral-dark)" font-weight="700">Hundredths: 3</text>
+    <!-- Footer labels — well spaced, each under its own box -->
+    <text x="39"  y="106" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Ones: 3</text>
+    <text x="349" y="106" text-anchor="middle" font-size="10" fill="var(--amber-dark)" font-weight="700">placeholder</text>
+    <text x="407" y="106" text-anchor="middle" font-size="10" fill="var(--coral-dark)" font-weight="700">Hundredths: 3</text>
   </svg>
 
   <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
@@ -8359,70 +8372,75 @@ const DEC_A_STEP10 = `
 
   <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">47 has a 4 in Tens and a 7 in Ones. Both digits slide <strong>two places to the right</strong> together. The 4 moves Tens → Tenths, and the 7 moves Ones → Hundredths:</div>
 
-  <svg width="100%" height="105" viewBox="0 0 380 105">
+  <svg width="100%" height="118" viewBox="0 0 500 118">
     <defs>
       <marker id="slideArr47" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
         <polygon points="0 0, 8 3, 0 6" fill="var(--amber-dark)"/>
       </marker>
+      <marker id="slideArr47b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--blue-dark)"/>
+      </marker>
     </defs>
 
-    <!-- Row 1 -->
-    <text x="190" y="12" text-anchor="middle" font-size="9" fill="var(--amber-dark)" font-weight="700">÷ 100 → both digits slide TWO places right</text>
+    <!-- Row 1: ÷ 100 label -->
+    <text x="250" y="11" text-anchor="middle" font-size="9" fill="var(--amber-dark)" font-weight="700">÷ 100 → both digits slide TWO places right</text>
 
-    <!-- Row 2 -->
-    <text x="84"  y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">BEFORE (47)</text>
-    <text x="294" y="26" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">AFTER (0.47)</text>
+    <!-- Row 2: BEFORE and AFTER on same line -->
+    <text x="110" y="24" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">BEFORE (47)</text>
+    <text x="385" y="24" text-anchor="middle" font-size="10" fill="var(--text-sec)" font-weight="700">AFTER (0.47)</text>
 
-    <!-- Row 3: slide arrows — 4 slides from Tens to Tenths (2 places), 7 slides from Ones to Hundredths (2 places) -->
-    <path d="M32,38 Q80,22 128,38"  fill="none" stroke="var(--blue-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr47)"/>
-    <path d="M76,38 Q124,28 172,38" fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr47)"/>
-    <text x="50"  y="16" text-anchor="middle" font-size="8" fill="var(--blue-dark)">4 slides</text>
-    <text x="120" y="22" text-anchor="middle" font-size="8" fill="var(--amber-dark)">7 slides</text>
+    <!-- Row 3: "4 slides" and "7 slides" labels — clearly below row 2 -->
+    <text x="72"  y="36" text-anchor="middle" font-size="8" fill="var(--blue-dark)">4 slides →→</text>
+    <text x="140" y="36" text-anchor="middle" font-size="8" fill="var(--amber-dark)">7 slides →→</text>
 
-    <!-- Row 4: BEFORE chart y=40 -->
-    <rect x="10"  y="40" width="44" height="48" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)"  stroke-width="1.5"/>
-    <text x="32"  y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tens</text>
-    <text x="32"  y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">4</text>
+    <!-- Row 4: slide arrows from y=40 -->
+    <path d="M44,42 Q160,30 276,42"  fill="none" stroke="var(--blue-dark)"  stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr47b)"/>
+    <path d="M104,42 Q220,30 336,42" fill="none" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#slideArr47)"/>
 
-    <rect x="54"  y="40" width="44" height="48" rx="4" fill="var(--blue-light)" stroke="var(--blue-mid)"  stroke-width="1.5"/>
-    <text x="76"  y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
-    <text x="76"  y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">7</text>
+    <!-- BEFORE chart: Tens x=10, Ones x=76, decimal x=142, Tenths x=160, Hundredths x=226 -->
+    <rect x="10"  y="44" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)"  stroke-width="1.5"/>
+    <text x="39"  y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tens</text>
+    <text x="39"  y="84" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">4</text>
 
-    <rect x="98"  y="40" width="16" height="48" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
-    <text x="106" y="68" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
+    <rect x="68"  y="44" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-mid)"  stroke-width="1.5"/>
+    <text x="97"  y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="97"  y="84" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">7</text>
 
-    <rect x="114" y="40" width="44" height="48" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
-    <text x="136" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tenths</text>
-    <text x="136" y="78" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
+    <rect x="126" y="44" width="18" height="50" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="135" y="73" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
 
-    <rect x="158" y="40" width="52" height="48" rx="4" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
-    <text x="184" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
-    <text x="184" y="78" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
+    <rect x="144" y="44" width="58" height="50" rx="4" fill="var(--blue-light)"  stroke="var(--blue-mid)"  stroke-width="1.5"/>
+    <text x="173" y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tenths</text>
+    <text x="173" y="84" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
 
-    <!-- Arrow between -->
-    <text x="222" y="68" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">→</text>
+    <rect x="202" y="44" width="68" height="50" rx="4" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
+    <text x="236" y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
+    <text x="236" y="84" text-anchor="middle" font-size="20" fill="var(--text-sec)" opacity="0.25">—</text>
 
-    <!-- AFTER chart y=40 -->
-    <rect x="240" y="40" width="44" height="48" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)"  stroke-width="1.5"/>
-    <text x="262" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
-    <text x="262" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">0</text>
+    <!-- Arrow between charts -->
+    <text x="285" y="74" text-anchor="middle" font-size="18" font-weight="700" fill="var(--amber-dark)">→</text>
 
-    <rect x="284" y="40" width="16" height="48" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
-    <text x="292" y="68" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
+    <!-- AFTER chart: Ones x=300, decimal x=366, Tenths x=384, Hundredths x=450 -->
+    <rect x="300" y="44" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)"  stroke-width="1.5"/>
+    <text x="329" y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Ones</text>
+    <text x="329" y="84" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">0</text>
 
-    <rect x="300" y="40" width="44" height="48" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
-    <text x="322" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tenths</text>
-    <text x="322" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">4</text>
+    <rect x="358" y="44" width="18" height="50" fill="var(--amber)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    <text x="367" y="73" text-anchor="middle" font-size="14" font-weight="700" fill="white">.</text>
 
-    <rect x="344" y="40" width="52" height="48" rx="4" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="1.5"/>
-    <text x="370" y="55" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
-    <text x="370" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="var(--coral-dark)">7</text>
+    <rect x="376" y="44" width="58" height="50" rx="4" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+    <text x="405" y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--blue-dark)">Tenths</text>
+    <text x="405" y="84" text-anchor="middle" font-size="26" font-weight="700" fill="var(--blue-dark)">4</text>
 
-    <!-- Footer labels -->
-    <text x="32"  y="102" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Tens: 4</text>
-    <text x="76"  y="102" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Ones: 7</text>
-    <text x="322" y="102" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">Tenths: 4</text>
-    <text x="370" y="102" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">Hundredths: 7</text>
+    <rect x="434" y="44" width="58" height="50" rx="4" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="1.5"/>
+    <text x="463" y="59" text-anchor="middle" font-size="9"  font-weight="700" fill="var(--coral-dark)">Hundredths</text>
+    <text x="463" y="84" text-anchor="middle" font-size="26" font-weight="700" fill="var(--coral-dark)">7</text>
+
+    <!-- Footer labels — each centred under its own box -->
+    <text x="39"  y="108" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Tens: 4</text>
+    <text x="97"  y="108" text-anchor="middle" font-size="10" fill="var(--blue-dark)">Ones: 7</text>
+    <text x="405" y="108" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">Tenths: 4</text>
+    <text x="463" y="108" text-anchor="middle" font-size="10" fill="var(--green-dark)" font-weight="700">Hundredths: 7</text>
   </svg>
 
   <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
@@ -8498,18 +8516,14 @@ const DEC_A_STEP10 = `
 
     <div style="text-align:center;">
       <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:4px;">8 ÷ 10 = 0.8 = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">8</span><span style="display:block;line-height:1;">10</span></span></div>
-      <div style="display:flex; flex-wrap:wrap; width:120px;">
-        ${Array.from({length:100}, (_,i) => `<div style="width:12px; height:12px; background:${i<80?'var(--blue)':'white'}; border:0.5px solid var(--blue-mid); box-sizing:border-box;"></div>`).join('')}
-      </div>
-      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px; font-weight:700;">80 squares = 8 tenths</div>
+      <div style="display:flex;flex-wrap:wrap;width:120px;">${grid80}</div>
+      <div style="font-size:10px;color:var(--blue-dark);margin-top:4px;font-weight:700;">80 squares = 8 tenths</div>
     </div>
 
     <div style="text-align:center;">
       <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:4px;">8 ÷ 100 = 0.08 = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.85em;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">8</span><span style="display:block;line-height:1;">100</span></span></div>
-      <div style="display:flex; flex-wrap:wrap; width:120px;">
-        ${Array.from({length:100}, (_,i) => `<div style="width:12px; height:12px; background:${i<8?'var(--coral)':'white'}; border:0.5px solid var(--coral-mid); box-sizing:border-box;"></div>`).join('')}
-      </div>
-      <div style="font-size:10px; color:var(--coral-dark); margin-top:4px; font-weight:700;">8 squares = 8 hundredths</div>
+      <div style="display:flex;flex-wrap:wrap;width:120px;">${grid8}</div>
+      <div style="font-size:10px;color:var(--coral-dark);margin-top:4px;font-weight:700;">8 squares = 8 hundredths</div>
     </div>
 
   </div>
@@ -8697,6 +8711,55 @@ const DEC_A_STEP10 = `
 
 
 
+// --- DECIMALS B ---
+const DEC_B_STEP1 = ``;
+const DEC_B_STEP2 = ``;
+const DEC_B_STEP3 = ``;
+const DEC_B_STEP4 = ``;
+const DEC_B_STEP5 = ``;
+const DEC_B_STEP6 = ``;
+const DEC_B_STEP7 = ``;
+const DEC_B_STEP8 = ``;
+
+// --- MONEY ---
+const MONEY_STEP1 = ``;
+const MONEY_STEP2 = ``;
+const MONEY_STEP3 = ``;
+const MONEY_STEP4 = ``;
+const MONEY_STEP5 = ``;
+const MONEY_STEP6 = ``;
+
+// --- TIME ---
+const TIME_STEP1 = ``;
+const TIME_STEP2 = ``;
+const TIME_STEP3 = ``;
+const TIME_STEP4 = ``;
+const TIME_STEP5 = ``;
+
+// --- SHAPE ---
+const SHAPE_STEP1 = ``;
+const SHAPE_STEP2 = ``;
+const SHAPE_STEP3 = ``;
+const SHAPE_STEP4 = ``;
+const SHAPE_STEP5 = ``;
+const SHAPE_STEP6 = ``;
+const SHAPE_STEP7 = ``;
+const SHAPE_STEP8 = ``;
+
+// --- STATISTICS ---
+const STATS_STEP1 = ``;
+const STATS_STEP2 = ``;
+const STATS_STEP3 = ``;
+const STATS_STEP4 = ``;
+
+// --- POSITION & DIRECTION ---
+const POS_STEP1 = ``;
+const POS_STEP2 = ``;
+const POS_STEP3 = ``;
+const POS_STEP4 = ``;
+const POS_STEP5 = ``;
+
+
 /* ============================================================
    FULL SCHEME DATA TREE
    ============================================================ */
@@ -8816,12 +8879,84 @@ const SCHEME = [
     col: TERM_COLORS.summer,
     open: false,
     topics: [
-      { id:'decimalsB',  label:'Decimals B',           col:TOPIC_PALETTE[0], steps:['Make a whole with tenths','Make a whole with hundredths','Partition decimals','Flexibly partition decimals','Compare decimals','Order decimals','Round to the nearest whole number','Halves and quarters as decimals'].map(s=>({label:s,content:null})) },
-      { id:'money',      label:'Money',                col:TOPIC_PALETTE[1], steps:['Write money using decimals','Convert between pounds and pence','Compare amounts of money','Estimate with money','Calculate with money','Solve problems with money'].map(s=>({label:s,content:null})) },
-      { id:'time',       label:'Time',                 col:TOPIC_PALETTE[2], steps:['Years, months, weeks and days','Hours, minutes and seconds','Convert between analogue and digital times','Convert to the 24 hour clock','Convert from the 24 hour clock'].map(s=>({label:s,content:null})) },
-      { id:'shape',      label:'Shape',                col:TOPIC_PALETTE[3], steps:['Understand angles as turns','Identify angles','Compare and order angles','Triangles','Quadrilaterals','Polygons','Lines of symmetry','Complete a symmetric figure'].map(s=>({label:s,content:null})) },
-      { id:'stats',      label:'Statistics',           col:TOPIC_PALETTE[4], steps:['Interpret charts','Comparison, sum and difference','Interpret line graphs','Draw line graphs'].map(s=>({label:s,content:null})) },
-      { id:'posdir',     label:'Position & Direction', col:TOPIC_PALETTE[5], steps:['Describe position using coordinates','Plot coordinates','Draw 2-D shapes on a grid','Translate on a grid','Describe translation on a grid'].map(s=>({label:s,content:null})) },
+      {
+        id: 'decimalsB',
+        label: 'Decimals B',
+        col: TOPIC_PALETTE[0],
+        steps: [
+          { label: 'Make a whole with tenths', content: DEC_B_STEP1 },
+          { label: 'Make a whole with hundredths', content: DEC_B_STEP2 },
+          { label: 'Partition decimals', content: DEC_B_STEP3 },
+          { label: 'Flexibly partition decimals', content: DEC_B_STEP4 },
+          { label: 'Compare decimals', content: DEC_B_STEP5 },
+          { label: 'Order decimals', content: DEC_B_STEP6 },
+          { label: 'Round to the nearest whole number', content: DEC_B_STEP7 },
+          { label: 'Halves and quarters as decimals', content: DEC_B_STEP8 }
+        ]
+      },
+      {
+        id: 'money',
+        label: 'Money',
+        col: TOPIC_PALETTE[1],
+        steps: [
+          { label: 'Write money using decimals', content: MONEY_STEP1 },
+          { label: 'Convert between pounds and pence', content: MONEY_STEP2 },
+          { label: 'Compare amounts of money', content: MONEY_STEP3 },
+          { label: 'Estimate with money', content: MONEY_STEP4 },
+          { label: 'Calculate with money', content: MONEY_STEP5 },
+          { label: 'Solve problems with money', content: MONEY_STEP6 }
+        ]
+      },
+      {
+        id: 'time',
+        label: 'Time',
+        col: TOPIC_PALETTE[2],
+        steps: [
+          { label: 'Years, months, weeks and days', content: TIME_STEP1 },
+          { label: 'Hours, minutes and seconds', content: TIME_STEP2 },
+          { label: 'Convert between analogue and digital times', content: TIME_STEP3 },
+          { label: 'Convert to the 24 hour clock', content: TIME_STEP4 },
+          { label: 'Convert from the 24 hour clock', content: TIME_STEP5 }
+        ]
+      },
+      {
+        id: 'shape',
+        label: 'Shape',
+        col: TOPIC_PALETTE[3],
+        steps: [
+          { label: 'Understand angles as turns', content: SHAPE_STEP1 },
+          { label: 'Identify angles', content: SHAPE_STEP2 },
+          { label: 'Compare and order angles', content: SHAPE_STEP3 },
+          { label: 'Triangles', content: SHAPE_STEP4 },
+          { label: 'Quadrilaterals', content: SHAPE_STEP5 },
+          { label: 'Polygons', content: SHAPE_STEP6 },
+          { label: 'Lines of symmetry', content: SHAPE_STEP7 },
+          { label: 'Complete a symmetric figure', content: SHAPE_STEP8 }
+        ]
+      },
+      {
+        id: 'stats',
+        label: 'Statistics',
+        col: TOPIC_PALETTE[4],
+        steps: [
+          { label: 'Interpret charts', content: STATS_STEP1 },
+          { label: 'Comparison, sum and difference', content: STATS_STEP2 },
+          { label: 'Interpret line graphs', content: STATS_STEP3 },
+          { label: 'Draw line graphs', content: STATS_STEP4 }
+        ]
+      },
+      {
+        id: 'posdir',
+        label: 'Position & Direction',
+        col: TOPIC_PALETTE[5],
+        steps: [
+          { label: 'Describe position using coordinates', content: POS_STEP1 },
+          { label: 'Plot coordinates', content: POS_STEP2 },
+          { label: 'Draw 2-D shapes on a grid', content: POS_STEP3 },
+          { label: 'Translate on a grid', content: POS_STEP4 },
+          { label: 'Describe translation on a grid', content: POS_STEP5 }
+        ]
+      }
     ]
   }
 ];
