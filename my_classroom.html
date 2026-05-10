@@ -8712,14 +8712,3093 @@ const DEC_A_STEP10 = `
 
 
 // --- DECIMALS B ---
-const DEC_B_STEP1 = ``;
-const DEC_B_STEP2 = ``;
-const DEC_B_STEP3 = ``;
-const DEC_B_STEP4 = ``;
-const DEC_B_STEP5 = ``;
-const DEC_B_STEP6 = ``;
-const DEC_B_STEP7 = ``;
-const DEC_B_STEP8 = ``;
+
+// Decimals B — Step 1: Make a whole with tenths
+const DEC_B_STEP1 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B1</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 1 — Make a whole with tenths</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "We know from Decimals A that 10 tenths make 1 whole. Now we use that fact to <strong>find the missing tenths</strong> that complete a whole! If we already have 0.3, we ask: how many more tenths do we need to reach 1.0? The answer is 0.7 — because 3 tenths + 7 tenths = 10 tenths = 1 whole. This is just like number bonds to 10, but with tenths!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The big picture — tenths number bonds to 1</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Every decimal from 0.1 to 0.9 has a <strong>partner tenth</strong> that completes the whole. Together they always add up to <strong>1.0</strong>:</div>
+
+  <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:14px;">
+    ${[
+      ['0.1','0.9'],['0.2','0.8'],['0.3','0.7'],['0.4','0.6'],['0.5','0.5'],
+      ['0.6','0.4'],['0.7','0.3'],['0.8','0.2'],['0.9','0.1']
+    ].map(([a,b],i) => `
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:36px; text-align:right; font-size:12px; font-weight:700; color:var(--blue-dark);">${a}</div>
+        <div style="flex:1; height:18px; background:var(--blue); border-radius:4px 0 0 4px; width:${parseInt(a.split('.')[1])*10}%; max-width:${parseInt(a.split('.')[1])*10}%; min-width:4px;"></div>
+        <div style="flex:1; height:18px; background:var(--green); border-radius:0 4px 4px 0; width:${parseInt(b.split('.')[1])*10}%; max-width:${parseInt(b.split('.')[1])*10}%; min-width:4px;"></div>
+        <div style="width:36px; font-size:12px; font-weight:700; color:var(--green-dark);">${b}</div>
+        <div style="font-size:11px; color:var(--text-sec); width:60px;">${a} + ${b} = 1</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--green-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark);">
+    <strong>The pattern:</strong> The two decimals always share the same digits as a number bond to 10. 3 + 7 = 10 tenths, so 0.3 + 0.7 = 1.0. If you know your bonds to 10, you already know your tenths bonds to 1!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Finding the missing tenth to make 1 whole</div>
+  <div class="example-label">0.4 + ? = 1.0</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">We have 4 tenths. We need to find how many more tenths are needed to fill the whole bar completely:</div>
+
+  <div style="margin-bottom:12px;">
+    <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">The 10-cell bar — 4 tenths filled, rest empty:</div>
+    <div style="display:flex; gap:0; margin-bottom:6px;">
+      <div style="width:36px; height:32px; background:var(--blue); border:1px solid var(--blue-dark); display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700;">1</div>
+      <div style="width:36px; height:32px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700;">2</div>
+      <div style="width:36px; height:32px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700;">3</div>
+      <div style="width:36px; height:32px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700;">4</div>
+      <div style="width:36px; height:32px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--green-dark); font-size:10px; font-weight:700;">5</div>
+      <div style="width:36px; height:32px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--green-dark); font-size:10px; font-weight:700;">6</div>
+      <div style="width:36px; height:32px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--green-dark); font-size:10px; font-weight:700;">7</div>
+      <div style="width:36px; height:32px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--green-dark); font-size:10px; font-weight:700;">8</div>
+      <div style="width:36px; height:32px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--green-dark); font-size:10px; font-weight:700;">9</div>
+      <div style="width:36px; height:32px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; display:flex; align-items:center; justify-content:center; color:var(--green-dark); font-size:10px; font-weight:700;">10</div>
+    </div>
+    <div style="display:flex; gap:0;">
+      <div style="width:144px; text-align:center; font-size:10px; font-weight:700; color:var(--blue-dark);">0.4 already filled</div>
+      <div style="width:216px; text-align:center; font-size:10px; font-weight:700; color:var(--green-dark);">? more needed</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">Already have</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">0.4</div>
+      <div style="font-size:10px; color:var(--blue-dark);">4 tenths</div>
+    </div>
+    <div style="font-size:20px; color:var(--text-sec);">+</div>
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:3px;">Need this many more</div>
+      <div style="font-size:22px; font-weight:700; color:var(--green-dark);">0.6</div>
+      <div style="font-size:10px; color:var(--green-dark);">6 tenths</div>
+    </div>
+    <div style="font-size:20px; color:var(--text-sec);">=</div>
+    <div style="background:var(--amber-light); border:1px solid var(--amber-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--amber-dark); margin-bottom:3px;">1 whole!</div>
+      <div style="font-size:22px; font-weight:700; color:var(--amber-dark);">1.0</div>
+      <div style="font-size:10px; color:var(--amber-dark);">10 tenths</div>
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Think like this:</strong> 4 + ? = 10. The answer is 6. So 0.4 + <strong>0.6</strong> = 1.0. Use your bonds to 10 every time!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.4 + <strong>0.6</strong> = 1.0 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Making a whole when starting from a whole number</div>
+  <div class="example-label">2.3 + ? = 3.0</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">This number has a <strong>whole part</strong> and a <strong>tenths part</strong>. The whole parts already match — 2 wholes will not change. We only need to complete the <strong>tenths part</strong> from 0.3 to the next whole:</div>
+
+  <div style="display:flex; gap:8px; margin:12px 0; flex-wrap:wrap; align-items:center; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">2 complete wholes (stays the same)</div>
+      <div style="display:flex; gap:4px;">
+        <div style="width:48px; height:36px; background:var(--blue); border:1px solid var(--blue-dark); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:14px; font-weight:700;">1</div>
+        <div style="width:48px; height:36px; background:var(--blue); border:1px solid var(--blue-dark); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:14px; font-weight:700;">1</div>
+      </div>
+    </div>
+
+    <div style="font-size:22px; color:var(--text-sec);">+</div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">3 tenths filled — need 7 more</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:20px; height:36px; background:var(--blue); border:1px solid var(--blue-dark); border-radius:4px 0 0 4px;"></div>
+        <div style="width:20px; height:36px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:20px; height:36px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none; border-radius:0 4px 4px 0;"></div>
+      </div>
+      <div style="display:flex; gap:0;">
+        <div style="width:60px; font-size:9px; color:var(--blue-dark); font-weight:700; text-align:center;">0.3 filled</div>
+        <div style="width:140px; font-size:9px; color:var(--green-dark); font-weight:700; text-align:center;">0.7 needed</div>
+      </div>
+    </div>
+
+    <div style="font-size:22px; color:var(--text-sec);">=</div>
+
+    <div style="background:var(--amber-light); border:1px solid var(--amber-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--amber-dark); margin-bottom:3px;">Next whole</div>
+      <div style="font-size:22px; font-weight:700; color:var(--amber-dark);">3.0</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--green-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); margin-bottom:10px;">
+    <strong>Key insight:</strong> To go from 2.3 to 3.0, the whole number part increases by 1. We only need to fill the remaining 7 tenths: 3 + 7 = 10 tenths = 1 more whole.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2.3 + <strong>0.7</strong> = 3.0 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Using a number line to make a whole</div>
+  <div class="example-label">Start at 0.6 — jump to the next whole number</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 6px;">On a number line, making a whole means <strong>jumping right to the nearest whole number</strong>. Start at 0.6 and count how many tenth-steps it takes to reach 1.0:</div>
+
+  <svg width="100%" height="95" viewBox="0 0 360 95">
+    <defs>
+      <marker id="arrGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--green-dark)"/>
+      </marker>
+    </defs>
+
+    <line x1="20" y1="48" x2="350" y2="48" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="350,44 360,48 350,52" fill="var(--blue-dark)"/>
+
+    <!-- 0 -->
+    <line x1="20"  y1="38" x2="20"  y2="58" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="72" text-anchor="middle" font-size="12" font-weight="700" fill="var(--blue-dark)">0</text>
+
+    <!-- tenth marks, spacing=32 -->
+    <line x1="52"  y1="43" x2="52"  y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="52"  y="72" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.1</text>
+    <line x1="84"  y1="43" x2="84"  y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="84"  y="72" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.2</text>
+    <line x1="116" y1="43" x2="116" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="116" y="72" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.3</text>
+    <line x1="148" y1="43" x2="148" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="148" y="72" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.4</text>
+    <line x1="180" y1="43" x2="180" y2="53" stroke="var(--blue-mid)" stroke-width="1"/>
+    <text x="180" y="72" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.5</text>
+    <!-- 0.6 start dot -->
+    <line x1="212" y1="38" x2="212" y2="58" stroke="var(--blue-mid)" stroke-width="1.5"/>
+    <circle cx="212" cy="48" r="7" fill="var(--blue)" stroke="white" stroke-width="1.5"/>
+    <text x="212" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="var(--blue-dark)">0.6</text>
+    <text x="212" y="84" text-anchor="middle" font-size="9" fill="var(--blue-dark)">start</text>
+
+    <line x1="244" y1="43" x2="244" y2="53" stroke="var(--green-dark)" stroke-width="1.5"/>
+    <text x="244" y="72" text-anchor="middle" font-size="9" fill="var(--green-dark)">0.7</text>
+    <line x1="276" y1="43" x2="276" y2="53" stroke="var(--green-dark)" stroke-width="1.5"/>
+    <text x="276" y="72" text-anchor="middle" font-size="9" fill="var(--green-dark)">0.8</text>
+    <line x1="308" y1="43" x2="308" y2="53" stroke="var(--green-dark)" stroke-width="1.5"/>
+    <text x="308" y="72" text-anchor="middle" font-size="9" fill="var(--green-dark)">0.9</text>
+
+    <!-- 1.0 whole -->
+    <line x1="340" y1="38" x2="340" y2="58" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <circle cx="340" cy="48" r="7" fill="var(--green)" stroke="white" stroke-width="1.5"/>
+    <text x="340" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="var(--green-dark)">1.0</text>
+    <text x="340" y="84" text-anchor="middle" font-size="9" fill="var(--green-dark)">whole!</text>
+
+    <!-- Jump arrow from 0.6 to 1.0 -->
+    <path d="M212,38 Q276,14 340,38" fill="none" stroke="var(--green-dark)" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrGreen)"/>
+    <text x="276" y="10" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">+ 0.4</text>
+    <text x="276" y="22" text-anchor="middle" font-size="9" fill="var(--green-dark)">(4 tenth-steps)</text>
+  </svg>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Count the steps:</strong> From 0.6 we count 0.7 … 0.8 … 0.9 … 1.0. That is 4 steps. Each step = 0.1. So 4 × 0.1 = 0.4 is needed.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.6 + <strong>0.4</strong> = 1.0 ✓ — 4 tenth-steps from 0.6 reaches 1.0
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Connecting to the place value chart</div>
+  <div class="example-label">What must be added to 0.8 to make 1.0? Show on a place value chart.</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The place value chart shows us clearly: the Tenths column has 8. We need 10 in total. So we need 2 more tenths. When Tenths reaches 10, it <strong>carries over</strong> into the Ones column — making 1 whole:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; flex-wrap:wrap; justify-content:center; align-items:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Start: 0.8</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:54px; border:2px solid var(--blue-mid); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">0</div>
+        </div>
+        <div style="width:20px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:white;">.</div>
+        <div style="width:54px; border:2px solid var(--blue-mid); border-left:none; border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">8</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; font-size:13px; color:var(--green-dark);">
+      <div style="font-weight:700;">+ 0.2</div>
+      <div style="font-size:20px;">→</div>
+      <div style="font-size:10px;">8 + 2 = 10 tenths</div>
+      <div style="font-size:10px;">= carry 1 to Ones!</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); font-weight:700; margin-bottom:6px;">Result: 1.0</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:54px; border:2px solid var(--green-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--green-light);">
+          <div style="font-size:9px; color:var(--green-dark); font-weight:700;">Ones</div>
+          <div style="font-size:24px; font-weight:700; color:var(--green-dark);">1</div>
+        </div>
+        <div style="width:20px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:white;">.</div>
+        <div style="width:54px; border:2px solid var(--green-dark); border-left:none; border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--green-light);">
+          <div style="font-size:9px; color:var(--green-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:24px; font-weight:700; color:var(--green-dark);">0</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--green-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); margin-bottom:10px;">
+    <strong>What happened?</strong> 8 tenths + 2 tenths = 10 tenths. Ten tenths cannot stay in the Tenths column — they regroup into 1 whole, which moves to the Ones column. The Tenths column returns to 0.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.8 + <strong>0.2</strong> = 1.0 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: filling a bottle</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Funke has a water bottle that holds exactly 1 litre. She has already poured in 0.5 litres. How much more water does she need to fill the bottle completely?"</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Think:</strong> 0.5 + ? = 1.0. The Tenths digit is 5. We need 10. So 5 + ? = 10. The answer is 5.</div>
+
+  <div style="display:flex; gap:12px; margin:12px 0 14px; flex-wrap:wrap; align-items:flex-start; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:6px;">Already in the bottle (0.5 L):</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:36px; height:30px; background:var(--blue); border:1px solid var(--blue-dark);"></div>
+        <div style="width:36px; height:30px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+        <div style="width:36px; height:30px; background:var(--green-light); border:1px solid var(--green-dark); border-left:none;"></div>
+      </div>
+      <div style="display:flex; gap:0; margin-top:3px;">
+        <div style="width:180px; text-align:center; font-size:10px; font-weight:700; color:var(--blue-dark);">0.5 L filled</div>
+        <div style="width:180px; text-align:center; font-size:10px; font-weight:700; color:var(--green-dark);">? L to go</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; justify-content:center;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">Already poured</div>
+      <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">0.5 L</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:18px; color:var(--text-sec);">+</div>
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:3px;">Still needed</div>
+      <div style="font-size:20px; font-weight:700; color:var(--green-dark);">0.5 L</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:18px; color:var(--text-sec);">=</div>
+    <div style="background:var(--amber-light); border:1px solid var(--amber-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--amber-dark); margin-bottom:3px;">Full bottle</div>
+      <div style="font-size:20px; font-weight:700; color:var(--amber-dark);">1.0 L</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Funke needs <strong>0.5 L</strong> more to fill her bottle. 0.5 + 0.5 = 1.0 ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 1</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        0.3 + ? = 1.0. What is the missing decimal?
+        ${mcqBlock(['0.3','0.7','0.4'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        How many tenths must be added to 0.9 to make 1 whole?
+        ${mcqBlock(['9 tenths','2 tenths','1 tenth'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        4.6 + ? = 5.0. What is the missing decimal?
+        ${mcqBlock(['0.6','1.4','0.4'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Which pair of decimals adds up to make exactly 1 whole?
+        ${mcqBlock(['0.4 and 0.5','0.3 and 0.6','0.2 and 0.8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Emeka drinks 0.7 litres of juice from a 1 litre bottle. How much juice is left?
+        ${mcqBlock(['0.7 L','0.2 L','0.3 L'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        On a number line, Adaeze starts at 0.2 and wants to reach 1.0. How far must she jump?
+        ${mcqBlock(['0.2','0.8','0.9'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        7.5 + ? = 8.0. What is the missing number?
+        ${mcqBlock(['0.3','0.5','1.5'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        A place value chart shows Ones = 0, Tenths = 4. What must be added in the Tenths column to make the number equal 1?
+        ${mcqBlock(['4 more tenths','10 more tenths','6 more tenths'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Bayo says 0.5 + 0.5 = 1.0 AND 1.5 + 0.5 = 2.0. Is he right about both?
+        ${mcqBlock(['Only the first is right','Only the second is right','Yes — both are correct'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Ngozi fills three bottles. The first has 0.6 L, the second has 0.8 L, and the third has 0.4 L. Each bottle holds 1 litre. How much more water in total does she need to fill all three bottles completely?
+        ${mcqBlock(['1.0 L','1.2 L','0.8 L'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+// Decimals B — Step 2: Make a whole with hundredths
+const DEC_B_STEP2 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B2</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 2 — Make a whole with hundredths</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "In Step 1 we made wholes using tenths — we used number bonds to 10. Now we do the same with hundredths! We know that <strong>100 hundredths = 1 whole</strong>. So to find the missing hundredths, we use <strong>number bonds to 100</strong>. If we have 0.37, we ask: how many hundredths make 100 in total? 37 + 63 = 100, so 0.37 + <strong>0.63</strong> = 1.00. It is the same idea — just a bigger number bond!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Step 1 vs Step 2 — tenths bonds vs hundredths bonds</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:12px;">The idea is identical — only the size of the bond changes. Tenths use bonds to 10. Hundredths use bonds to 100:</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="flex:1; min-width:140px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:8px;">Step 1 — Tenths (bonds to 10)</div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        ${[['0.3','0.7'],['0.5','0.5'],['0.8','0.2']].map(([a,b]) => `
+          <div style="display:flex; align-items:center; gap:6px; font-size:12px;">
+            <span style="font-weight:700; color:var(--blue-dark); width:30px;">${a}</span>
+            <span style="color:var(--text-sec);">+</span>
+            <span style="font-weight:700; color:var(--green-dark); width:30px;">${b}</span>
+            <span style="color:var(--text-sec); font-size:10px;">= 1.0</span>
+          </div>
+        `).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:6px;">Bond: ? + ? = <strong>10</strong> tenths</div>
+    </div>
+
+    <div style="flex:1; min-width:140px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:8px;">Step 2 — Hundredths (bonds to 100)</div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        ${[['0.30','0.70'],['0.55','0.45'],['0.82','0.18']].map(([a,b]) => `
+          <div style="display:flex; align-items:center; gap:6px; font-size:12px;">
+            <span style="font-weight:700; color:var(--coral-dark); width:34px;">${a}</span>
+            <span style="color:var(--text-sec);">+</span>
+            <span style="font-weight:700; color:var(--green-dark); width:34px;">${b}</span>
+            <span style="color:var(--text-sec); font-size:10px;">= 1.00</span>
+          </div>
+        `).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:6px;">Bond: ? + ? = <strong>100</strong> hundredths</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--green-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark);">
+    <strong>The strategy:</strong> Look at the two digits after the decimal point as a 2-digit number. Find its bond to 100. For example, 0.37 → the number 37 → bond to 100 is 63 → so 0.37 + 0.63 = 1.00.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Finding the missing hundredths on a grid</div>
+  <div class="example-label">0.25 + ? = 1.00</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">We have 25 hundredths shaded. We need to find how many more squares are needed to fill the whole 100-square grid:</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">25 shaded (blue) + ? empty (green) = 100:</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => {
+          const bg = i < 25 ? '#4A90D9' : '#e8f5e9';
+          const border = i < 25 ? '#2c6fad' : '#66bb6a';
+          return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid ${border};box-sizing:border-box;"></div>`;
+        }).join('')}
+      </div>
+      <div style="display:flex; margin-top:4px; width:120px;">
+        <div style="width:30px; font-size:9px; color:#2c6fad; font-weight:700;">25</div>
+        <div style="flex:1; font-size:9px; color:#388e3c; font-weight:700; text-align:right;">75 needed</div>
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:120px; display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+      <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--blue-dark);">
+        <strong>Think:</strong> 25 + ? = 100<br/>
+        25 + 75 = 100 ✓
+      </div>
+      <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark);">
+        So 0.25 + <strong>0.75</strong> = 1.00
+      </div>
+      <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+        <strong>Bonus:</strong> 0.25 = ¼ and 0.75 = ¾. Quarter + three-quarters = 1 whole!
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.25 + <strong>0.75</strong> = 1.00 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — The tricky case: when tenths AND hundredths both need completing</div>
+  <div class="example-label">0.43 + ? = 1.00</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">This has <strong>4 tenths</strong> and <strong>3 hundredths</strong>. We need to think about both columns. The key is to find the bond to 100 for the number 43:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0; flex-wrap:wrap; align-items:flex-start;">
+
+    <div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">43 squares shaded, 57 empty:</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => {
+          const bg = i < 43 ? '#E05A5A' : '#e8f5e9';
+          const border = i < 43 ? '#b71c1c' : '#66bb6a';
+          return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid ${border};box-sizing:border-box;"></div>`;
+        }).join('')}
+      </div>
+      <div style="display:flex; margin-top:4px; width:120px;">
+        <div style="width:52px; font-size:9px; color:#b71c1c; font-weight:700;">43 filled</div>
+        <div style="flex:1; font-size:9px; color:#388e3c; font-weight:700; text-align:right;">57 to go</div>
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:130px;">
+      <div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+
+        <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--blue-dark);">
+          <strong>Step 1:</strong> Treat 43 as a whole number.<br/>Bond to 100: 43 + 57 = 100
+        </div>
+
+        <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--coral-dark);">
+          <strong>Step 2:</strong> Convert 57 back to a decimal.<br/>57 hundredths = 0.57
+        </div>
+
+        <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); font-weight:700;">
+          So 0.43 + <strong>0.57</strong> = 1.00 ✓
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Quick method:</strong> To find the bond to 100, subtract from 100. 100 − 43 = 57. So the missing decimal is always 0. followed by (100 − your number).
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.43 + <strong>0.57</strong> = 1.00 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Using the place value chart</div>
+  <div class="example-label">0.68 + ? = 1.00. Show on a place value chart.</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The chart shows 6 tenths and 8 hundredths. We need the Tenths to reach 10 and Hundredths to reach 10 — but we have to work carefully from right to left, just like column addition!</div>
+
+  <div style="display:flex; gap:12px; margin:12px 0 14px; flex-wrap:wrap; justify-content:center; align-items:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Start: 0.68</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--blue-mid); border-radius:8px 0 0 8px; padding:5px 3px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">0</div>
+        </div>
+        <div style="width:18px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+        <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; padding:5px 3px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">6</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--coral-dark); border-left:none; border-radius:0 8px 8px 0; padding:5px 3px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Hundredths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--coral-dark);">8</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:11px; font-weight:700; color:var(--green-dark); margin-bottom:4px;">+ 0.32</div>
+      <div style="font-size:9px; color:var(--text-sec);">8 + 2 = 10 hundredths</div>
+      <div style="font-size:9px; color:var(--text-sec);">carry 1 to Tenths</div>
+      <div style="font-size:9px; color:var(--text-sec);">6 + 3 + 1 = 10 tenths</div>
+      <div style="font-size:9px; color:var(--text-sec);">carry 1 to Ones</div>
+      <div style="font-size:20px; color:var(--amber-dark);">→</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); font-weight:700; margin-bottom:6px;">Result: 1.00</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--green-dark); border-radius:8px 0 0 8px; padding:5px 3px; text-align:center; background:var(--green-light);">
+          <div style="font-size:9px; color:var(--green-dark); font-weight:700;">Ones</div>
+          <div style="font-size:22px; font-weight:700; color:var(--green-dark);">1</div>
+        </div>
+        <div style="width:18px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+        <div style="width:52px; border:2px solid var(--green-dark); border-left:none; padding:5px 3px; text-align:center; background:var(--green-light);">
+          <div style="font-size:9px; color:var(--green-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--green-dark);">0</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--green-dark); border-left:none; border-radius:0 8px 8px 0; padding:5px 3px; text-align:center; background:var(--green-light);">
+          <div style="font-size:9px; color:var(--green-dark); font-weight:700;">Hundredths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--green-dark);">0</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Column by column:</strong> Hundredths: 8 + 2 = 10 → write 0, carry 1. Tenths: 6 + 3 + 1 carried = 10 → write 0, carry 1. Ones: 0 + 0 + 1 carried = 1. Answer: 1.00 ✓
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.68 + <strong>0.32</strong> = 1.00 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Making a whole beyond 1: mixed numbers with hundredths</div>
+  <div class="example-label">3.72 + ? = 4.00</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Just like with tenths in Step 1, when our decimal is bigger than 1 the whole number part looks after itself. We only need to complete the hundredths part. Focus on the digits after the decimal point:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; flex-wrap:wrap; align-items:center; justify-content:center;">
+
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">We have</div>
+      <div style="font-size:2em; font-weight:700; color:var(--blue-dark);">3.72</div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px;">3 wholes + 72 hundredths</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">Ignore the 3.<br/>Just fix the .72</div>
+      <div style="font-size:22px; color:var(--amber-dark);">→</div>
+      <div style="font-size:10px; color:var(--amber-dark); font-weight:700;">72 + ? = 100</div>
+    </div>
+
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">Bond to 100:</div>
+      <div style="font-size:1.5em; font-weight:700; color:var(--coral-dark);">72 + 28 = 100</div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:4px;">so missing part = 0.28</div>
+    </div>
+
+    <div style="font-size:22px; color:var(--amber-dark);">→</div>
+
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:10px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:4px;">We reach</div>
+      <div style="font-size:2em; font-weight:700; color:var(--green-dark);">4.00</div>
+      <div style="font-size:10px; color:var(--green-dark); margin-top:4px;">next whole number</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Remember:</strong> 100 − 72 = 28. So the missing decimal is 0.28. The whole number 3 increases to 4 because 72 hundredths + 28 hundredths = 100 hundredths = 1 more whole.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    3.72 + <strong>0.28</strong> = 4.00 ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: Chidi's long jump</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Chidi needs to jump exactly 1 metre to win a prize. His first jump measures 0.64 metres. By how much does he fall short of 1 metre? That is, what distance must he add to reach exactly 1.00 metre?"</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Think:</strong> 0.64 + ? = 1.00. Use the bond: 64 + ? = 100.</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin:12px 0 14px;">
+
+    <div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">Chidi's jump: 64 out of 100 cm:</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => {
+          const bg = i < 64 ? '#7B68EE' : '#e8f5e9';
+          const border = i < 64 ? '#4B0082' : '#66bb6a';
+          return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid ${border};box-sizing:border-box;"></div>`;
+        }).join('')}
+      </div>
+      <div style="display:flex; margin-top:4px; width:120px;">
+        <div style="width:77px; font-size:9px; color:#4B0082; font-weight:700;">0.64 m jumped</div>
+        <div style="flex:1; font-size:9px; color:#388e3c; font-weight:700; text-align:right;">? short</div>
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:120px; display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+      <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--blue-dark);">
+        <strong>Bond to 100:</strong><br/>64 + 36 = 100
+      </div>
+      <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--coral-dark);">
+        Or: 100 − 64 = <strong>36</strong>
+      </div>
+      <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); font-weight:700;">
+        Missing = <strong>0.36</strong> metres
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.64 + <strong>0.36</strong> = 1.00 ✓ — Chidi falls short by 0.36 metres
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 2</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        0.45 + ? = 1.00. What is the missing decimal?
+        ${mcqBlock(['0.45','0.65','0.55'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        How many hundredths must be added to 0.73 to make 1 whole?
+        ${mcqBlock(['27 hundredths','37 hundredths','17 hundredths'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Which pair of decimals adds up to exactly 1.00?
+        ${mcqBlock(['0.34 and 0.56','0.48 and 0.62','0.19 and 0.81'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        5.38 + ? = 6.00. What is the missing decimal?
+        ${mcqBlock(['0.72','0.38','0.62'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Amaka has filled 0.07 of a jar. How much more must she add to fill it completely to 1.00?
+        ${mcqBlock(['0.97','0.93','0.07'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        On a 100-square grid, 61 squares are shaded. What fraction written as a decimal represents the unshaded squares?
+        ${mcqBlock(['0.61','0.49','0.39'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Tunde says 0.50 + 0.50 = 1.00 and also that 0.05 + 0.95 = 1.00. Is he right about both?
+        ${mcqBlock(['Only the first is correct','Only the second is correct','Yes — both are correct'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        A place value chart shows Ones = 0, Tenths = 8, Hundredths = 4. What decimal must be added to reach 1.00?
+        ${mcqBlock(['0.26','0.84','0.16'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Ngozi says the bond for 0.37 + ? = 1.00 is the same as the bond 37 + ? = 100. Is she right, and what is the answer?
+        ${mcqBlock(['No — decimals work differently','Yes — and the answer is 0.63','Yes — and the answer is 0.73'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Emeka completes three jumps. They measure 0.34 m, 0.57 m and 0.09 m. Each jump must reach exactly 1.00 m to score a point. How much extra distance in total does Emeka need across all three jumps?
+        ${mcqBlock(['1.00 m','0.90 m','1.50 m'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+
+// Decimals B — Step 3: Partition decimals
+const DEC_B_STEP3 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B3</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 3 — Partition decimals</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "You already know how to partition whole numbers — 347 = 300 + 40 + 7. Partitioning decimals is exactly the same idea! We split a decimal number into its separate parts: the <strong>ones part</strong>, the <strong>tenths part</strong> and the <strong>hundredths part</strong>. So 5.73 = 5 + 0.7 + 0.03. Each digit goes back to its home column, and we can see exactly what each part is worth. Think of it like dismantling a toy into its separate pieces — the toy is still the same, just shown in parts!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The big picture — whole numbers vs decimals partitioned</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:12px;">Partitioning works the same way for both — every digit lives in a column, and its column tells you its value:</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="flex:1; min-width:140px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:8px;">Whole number: 347</div>
+      <div style="display:flex; gap:0; margin-bottom:8px;">
+        <div style="flex:1; border:1.5px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Hundreds</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">3</div>
+        </div>
+        <div style="flex:1; border:1.5px solid var(--blue-mid); border-left:none; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tens</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="flex:1; border:1.5px solid var(--blue-mid); border-left:none; border-radius:0 4px 4px 0; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">7</div>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--blue-dark); font-weight:700; text-align:center;">347 = 300 + 40 + 7</div>
+    </div>
+
+    <div style="display:flex; align-items:center; font-size:22px; color:var(--amber-dark);">↔</div>
+
+    <div style="flex:1; min-width:140px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:8px;">Decimal: 3.47</div>
+      <div style="display:flex; gap:0; margin-bottom:8px;">
+        <div style="flex:1; border:1.5px solid var(--blue-mid); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">3</div>
+        </div>
+        <div style="width:14px; border-top:1.5px solid var(--amber-dark); border-bottom:1.5px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:white;">.</div>
+        <div style="flex:1; border:1.5px solid var(--blue-mid); border-left:none; padding:4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="flex:1; border:1.5px solid var(--coral-dark); border-left:none; border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Hundredths</div>
+          <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">7</div>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--coral-dark); font-weight:700; text-align:center;">3.47 = 3 + 0.4 + 0.07</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Same idea, different columns!</strong> In a whole number, digits are worth hundreds, tens or ones. In a decimal, digits after the point are worth tenths or hundredths — each ten times smaller than the column to its left.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Partition a simple decimal: tenths only</div>
+  <div class="example-label">Partition <strong>2.6</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Start simple — this decimal only has a ones part and a tenths part. Read each digit and name its value:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:6px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="width:26px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:14px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; border-radius:0 8px 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0; margin-bottom:14px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:12px 4px; text-align:center;">
+      <div style="font-size:30px; font-weight:700; color:var(--blue-dark);">2</div>
+    </div>
+    <div style="width:26px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:14px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; border-radius:0 0 8px 0; padding:12px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:30px; font-weight:700; color:var(--blue-dark);">6</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:10px; margin-bottom:12px; flex-wrap:wrap; align-items:center; justify-content:center;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">The 2 is in Ones</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">2</div>
+      <div style="font-size:10px; color:var(--blue-dark);">worth 2 ones</div>
+    </div>
+    <div style="font-size:22px; color:var(--text-sec);">+</div>
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">The 6 is in Tenths</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">0.6</div>
+      <div style="font-size:10px; color:var(--blue-dark);">worth 6 tenths</div>
+    </div>
+  </div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">On the bar — 2 wholes and 6 tenths of a third bar:</div>
+  <div style="display:flex; gap:4px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+    <div style="width:36px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700;">1</div>
+    <div style="width:36px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700;">1</div>
+    <div style="font-size:13px; color:var(--text-sec);">+</div>
+    <div style="display:flex; gap:0;">
+      <div style="width:22px; height:28px; background:var(--blue); border:1px solid var(--blue-dark);"></div>
+      <div style="width:22px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue); border:1px solid var(--blue-dark); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue-light); border:1px solid var(--blue-mid); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue-light); border:1px solid var(--blue-mid); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue-light); border:1px solid var(--blue-mid); border-left:none;"></div>
+      <div style="width:22px; height:28px; background:var(--blue-light); border:1px solid var(--blue-mid); border-left:none;"></div>
+    </div>
+    <div style="font-size:11px; color:var(--blue-dark); margin-left:4px;">6 of 10 tenths</div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2.6 = <strong>2</strong> + <strong>0.6</strong>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Partition a decimal with tenths and hundredths</div>
+  <div class="example-label">Partition <strong>4.85</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Now all three columns are used — ones, tenths and hundredths. Read each digit carefully and assign its value:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:0;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="width:26px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:14px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-left:none; border-radius:0 8px 0 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700;">Hundredths</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0; margin-bottom:14px;">
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:12px 4px; text-align:center;">
+      <div style="font-size:30px; font-weight:700; color:var(--blue-dark);">4</div>
+    </div>
+    <div style="width:26px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:14px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--blue-mid); border-top:none; border-left:none; padding:12px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:30px; font-weight:700; color:var(--blue-dark);">8</div>
+    </div>
+    <div style="flex:1; border:2px solid var(--coral-dark); border-top:none; border-left:none; border-radius:0 0 8px 0; padding:12px 4px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:30px; font-weight:700; color:var(--coral-dark);">5</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; align-items:center; justify-content:center;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">4 in Ones</div>
+      <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">4</div>
+      <div style="font-size:10px; color:var(--blue-dark);">4 ones</div>
+    </div>
+    <div style="font-size:20px; color:var(--text-sec);">+</div>
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">8 in Tenths</div>
+      <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">0.8</div>
+      <div style="font-size:10px; color:var(--blue-dark);">8 tenths</div>
+    </div>
+    <div style="font-size:20px; color:var(--text-sec);">+</div>
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:3px;">5 in Hundredths</div>
+      <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">0.05</div>
+      <div style="font-size:10px; color:var(--coral-dark);">5 hundredths</div>
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Watch the zeros!</strong> The 8 in Tenths is worth 0.8 — not 8. The 5 in Hundredths is worth 0.05 — not 5 or 0.5. The zero before the digit is essential to show the correct column!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    4.85 = <strong>4</strong> + <strong>0.8</strong> + <strong>0.05</strong>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Partition using a part-whole model</div>
+  <div class="example-label">Partition <strong>7.39</strong> using a part-whole model</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">A part-whole model is a diagram that shows a number split into its parts. The whole sits at the top, and the parts branch out below:</div>
+
+  <div style="display:flex; justify-content:center; margin:14px 0;">
+    <div style="text-align:center;">
+
+      <!-- Whole -->
+      <div style="display:inline-block; background:var(--blue-light); border:2px solid var(--blue-dark); border-radius:10px; padding:8px 24px; font-size:20px; font-weight:700; color:var(--blue-dark); margin-bottom:0;">7.39</div>
+
+      <!-- Branch lines drawn with divs -->
+      <div style="display:flex; justify-content:center; gap:0; margin:0;">
+        <div style="width:80px; height:24px; border-bottom:2px solid var(--blue-mid); border-left:2px solid var(--blue-mid); border-radius:0 0 0 8px;"></div>
+        <div style="width:2px; height:24px; background:var(--blue-mid);"></div>
+        <div style="width:80px; height:24px; border-bottom:2px solid var(--blue-mid);"></div>
+        <div style="width:2px; height:24px; background:var(--blue-mid);"></div>
+        <div style="width:80px; height:24px; border-bottom:2px solid var(--blue-mid); border-right:2px solid var(--blue-mid); border-radius:0 0 8px 0;"></div>
+      </div>
+
+      <!-- Parts -->
+      <div style="display:flex; gap:12px; justify-content:center;">
+        <div style="background:var(--blue-light); border:2px solid var(--blue-dark); border-radius:10px; padding:6px 16px; text-align:center; min-width:70px;">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:2px;">Ones part</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">7</div>
+          <div style="font-size:9px; color:var(--blue-dark);">7 ones</div>
+        </div>
+        <div style="background:var(--blue-light); border:2px solid var(--blue-mid); border-radius:10px; padding:6px 16px; text-align:center; min-width:70px;">
+          <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:2px;">Tenths part</div>
+          <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">0.3</div>
+          <div style="font-size:9px; color:var(--blue-dark);">3 tenths</div>
+        </div>
+        <div style="background:var(--coral-light); border:2px solid var(--coral-dark); border-radius:10px; padding:6px 16px; text-align:center; min-width:70px;">
+          <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:2px;">Hundredths part</div>
+          <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">0.09</div>
+          <div style="font-size:9px; color:var(--coral-dark);">9 hundredths</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Check it:</strong> 7 + 0.3 + 0.09 = 7.39 ✓. You can always check by adding the parts back together — they must give you the original number!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    7.39 = <strong>7</strong> + <strong>0.3</strong> + <strong>0.09</strong>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Reading a partition and writing the decimal</div>
+  <div class="example-label">Write the decimal: <strong>5 + 0.2 + 0.07</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">This time we work <strong>backwards</strong> — we are given the parts and we must put them together to write the decimal. Place each part in its correct column:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; flex-wrap:wrap; align-items:center; justify-content:center;">
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:6px 12px; display:flex; align-items:center; gap:8px;">
+        <div style="font-size:18px; font-weight:700; color:var(--blue-dark); width:40px; text-align:center;">5</div>
+        <div style="font-size:11px; color:var(--blue-dark);">→ goes in Ones column</div>
+      </div>
+      <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:6px 12px; display:flex; align-items:center; gap:8px;">
+        <div style="font-size:18px; font-weight:700; color:var(--blue-dark); width:40px; text-align:center;">0.2</div>
+        <div style="font-size:11px; color:var(--blue-dark);">→ the 2 goes in Tenths column</div>
+      </div>
+      <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:6px 12px; display:flex; align-items:center; gap:8px;">
+        <div style="font-size:18px; font-weight:700; color:var(--coral-dark); width:40px; text-align:center;">0.07</div>
+        <div style="font-size:11px; color:var(--coral-dark);">→ the 7 goes in Hundredths column</div>
+      </div>
+    </div>
+
+    <div style="font-size:24px; color:var(--amber-dark);">→</div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Filled chart:</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">5</div>
+        </div>
+        <div style="width:20px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:white;">.</div>
+        <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+          <div style="font-size:24px; font-weight:700; color:var(--blue-dark);">2</div>
+        </div>
+        <div style="width:52px; border:2px solid var(--coral-dark); border-left:none; border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Hundredths</div>
+          <div style="font-size:24px; font-weight:700; color:var(--coral-dark);">7</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--green-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); margin-bottom:10px;">
+    <strong>Read left to right:</strong> 5 in Ones, then the decimal point, then 2 in Tenths, then 7 in Hundredths → write <strong>5.27</strong>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    5 + 0.2 + 0.07 = <strong>5.27</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: measuring ingredients</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Mama weighs ingredients for a recipe. She has 2 kilograms, 4 tenths of a kilogram and 6 hundredths of a kilogram of flour on the scale. Write the total weight as a single decimal number and as a partitioned sum."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Step 1:</strong> Identify each part and its column.</div>
+
+  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; justify-content:center;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">2 kilograms</div>
+      <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">2</div>
+      <div style="font-size:10px; color:var(--blue-dark);">Ones column</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:18px; color:var(--text-sec);">+</div>
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">4 tenths kg</div>
+      <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">0.4</div>
+      <div style="font-size:10px; color:var(--blue-dark);">Tenths column</div>
+    </div>
+    <div style="display:flex; align-items:center; font-size:18px; color:var(--text-sec);">+</div>
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:3px;">6 hundredths kg</div>
+      <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">0.06</div>
+      <div style="font-size:10px; color:var(--coral-dark);">Hundredths column</div>
+    </div>
+  </div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;"><strong>Step 2:</strong> Place into chart and read off:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:14px; justify-content:center;">
+    <div style="width:60px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:8px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+      <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">2</div>
+    </div>
+    <div style="width:22px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:white;">.</div>
+    <div style="width:60px; border:2px solid var(--blue-mid); border-left:none; padding:8px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+      <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">4</div>
+    </div>
+    <div style="width:60px; border:2px solid var(--coral-dark); border-left:none; border-radius:0 8px 8px 0; padding:8px 4px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Hundredths</div>
+      <div style="font-size:26px; font-weight:700; color:var(--coral-dark);">6</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2 + 0.4 + 0.06 = <strong>2.46 kg</strong> of flour ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 3</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Partition <strong>3.7</strong>. Which answer is correct?
+        ${mcqBlock(['3 + 0.07','3 + 7','3 + 0.7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Partition <strong>6.54</strong>. Which answer is correct?
+        ${mcqBlock(['6 + 0.5 + 0.04','6 + 5 + 4','6 + 0.5 + 0.4'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        What decimal is the same as 8 + 0.3 + 0.02?
+        ${mcqBlock(['8.32','83.2','8.23'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        In the number <strong>5.09</strong>, what is the value of the digit 9?
+        ${mcqBlock(['9 ones','9 tenths','0.09'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Kola writes 4 + 0.6 + 0.08 on his chart. What decimal has he made?
+        ${mcqBlock(['4.68','4.086','46.8'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Which digit is in the Hundredths column of the number <strong>9.17</strong>?
+        ${mcqBlock(['1','9','7'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Adaeze says 2.50 partitions as 2 + 0.5 + 0.00. Is she correct?
+        ${mcqBlock(['No — the partition is 2 + 5 + 0','Yes — 2 + 0.5 + 0.00 = 2.50','No — the partition is 2 + 0.05'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        What decimal is the same as 0 + 0.9 + 0.04?
+        ${mcqBlock(['9.4','0.94','0.094'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Emeka says the digit 4 in 12.47 is worth 4. Ngozi says it is worth 0.4. Who is right?
+        ${mcqBlock(['Emeka — 4 is always worth 4','Ngozi — the 4 is in the Tenths column so it is worth 0.4','Both — it depends how you read it'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> A number partitions as ? + 0.6 + 0.03 = 7.63. What is the missing ones part, and what does the full partition prove about the digit 7 in 7.63?
+        ${mcqBlock(['The ones part is 0.7 — the 7 is in the Tenths column','The ones part is 7 — and the 7 in 7.63 is worth 7 ones','The ones part is 70 — and the 7 is worth 70'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+// Decimals B — Step 4: Flexibly partition decimals
+const DEC_B_STEP4 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B4</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 4 — Flexibly partition decimals</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "In Step 3 we partitioned decimals the standard way: 4.85 = 4 + 0.8 + 0.05. In Step 4 we learn that there is more than one way to split the same number! Just like 47 can be split as 40 + 7 OR as 30 + 17, a decimal like 4.85 can be split as 4 + 0.85 OR as 4.8 + 0.05 OR even as 3 + 1.85. All of these are correct — they all add up to 4.85. This flexible thinking helps us calculate much faster!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The big picture — one number, many partitions</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">The number <strong>3.74</strong> can be split in several different ways. Every single split is correct as long as the parts add up to 3.74:</div>
+
+  <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:14px;">
+
+    <div style="display:flex; align-items:center; gap:8px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 12px;">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700; width:80px;">Standard:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--blue-dark);">3 + 0.7 + 0.04 = 3.74</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 12px;">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700; width:80px;">Flexible 1:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--coral-dark);">3 + 0.74 = 3.74</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; background:var(--purple-light); border:1px solid var(--purple-mid); border-radius:8px; padding:8px 12px;">
+      <div style="font-size:10px; color:var(--purple-dark); font-weight:700; width:80px;">Flexible 2:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--purple-dark);">3.7 + 0.04 = 3.74</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; background:var(--amber-light); border:1px solid var(--amber-mid); border-radius:8px; padding:8px 12px;">
+      <div style="font-size:10px; color:var(--amber-dark); font-weight:700; width:80px;">Flexible 3:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--amber-dark);">2 + 1.74 = 3.74</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 12px;">
+      <div style="font-size:10px; color:var(--green-dark); font-weight:700; width:80px;">Flexible 4:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--green-dark);">3.74 + 0 = 3.74</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Why is this useful?</strong> Different partitions make different calculations easier. To add 3.74 + 0.06 quickly, think of it as "3.74 needs 0.06 to make 3.80" — which only works if you can see 3.74 as 3.7 + 0.04!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Two ways to partition the same decimal</div>
+  <div class="example-label">Partition <strong>5.63</strong> in two different ways</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The standard partition splits every column separately. A flexible partition groups some columns together:</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="flex:1; min-width:140px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:8px;">Way 1 — Standard</div>
+      <div style="display:flex; gap:0; margin-bottom:8px; justify-content:center;">
+        <div style="width:44px; border:1.5px solid var(--blue-dark); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">5</div>
+        </div>
+        <div style="width:14px; border-top:1.5px solid var(--amber-dark); border-bottom:1.5px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:white;">.</div>
+        <div style="width:44px; border:1.5px solid var(--blue-mid); border-left:none; padding:4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark);">Tenths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">6</div>
+        </div>
+        <div style="width:44px; border:1.5px solid var(--coral-dark); border-left:none; border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Hundredths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--coral-dark);">3</div>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:13px; font-weight:700; color:var(--blue-dark);">5 + 0.6 + 0.03</div>
+    </div>
+
+    <div style="flex:1; min-width:140px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:8px;">Way 2 — Flexible</div>
+      <div style="display:flex; gap:0; margin-bottom:8px; justify-content:center;">
+        <div style="width:44px; border:1.5px solid var(--blue-dark); border-radius:4px 0 0 4px; padding:4px; text-align:center; background:white;">
+          <div style="font-size:9px; color:var(--blue-dark);">Ones</div>
+          <div style="font-size:18px; font-weight:700; color:var(--blue-dark);">5</div>
+        </div>
+        <div style="width:14px; border-top:1.5px solid var(--amber-dark); border-bottom:1.5px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:white;">.</div>
+        <div style="width:88px; border:1.5px solid var(--coral-dark); border-left:none; border-radius:0 4px 4px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths + Hundredths</div>
+          <div style="font-size:18px; font-weight:700; color:var(--coral-dark);">63</div>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:13px; font-weight:700; color:var(--coral-dark);">5 + 0.63</div>
+      <div style="font-size:10px; color:var(--coral-dark); text-align:center; margin-top:4px;">Grouped the decimal part together!</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Check both:</strong> 5 + 0.6 + 0.03 = 5.63 ✓ and 5 + 0.63 = 5.63 ✓. Both are correct — just grouped differently!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    5.63 = 5 + 0.6 + 0.03 = 5 + 0.63 — all correct!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Partition to help with addition</div>
+  <div class="example-label">Use a flexible partition to calculate <strong>4.57 + 0.3</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Instead of adding in a column, we can split 4.57 in a way that makes adding 0.3 easy. We partition to show the tenths clearly:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">Split 4.57 as:</div>
+      <div style="font-size:14px; font-weight:700; color:var(--blue-dark);">4 + 0.5 + 0.07</div>
+    </div>
+
+    <div style="font-size:20px; color:var(--amber-dark);">→</div>
+
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">Add 0.3 to the tenths part:</div>
+      <div style="font-size:14px; font-weight:700; color:var(--coral-dark);">0.5 + 0.3 = 0.8</div>
+    </div>
+
+    <div style="font-size:20px; color:var(--amber-dark);">→</div>
+
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:10px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:4px;">Recombine:</div>
+      <div style="font-size:14px; font-weight:700; color:var(--green-dark);">4 + 0.8 + 0.07 = 4.87</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Why split this way?</strong> By separating the 0.5 tenths from the 0.07 hundredths, we can add 0.3 to just the tenths part (0.5 + 0.3 = 0.8) without touching the hundredths at all. Much faster!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    4.57 + 0.3 = <strong>4.87</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Regrouping: trading a tenth for hundredths</div>
+  <div class="example-label">Rewrite <strong>2.4</strong> as a partition that uses hundredths</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Sometimes we need to express a tenth as hundredths — just like exchanging a 10p coin for ten 1p coins. One tenth = ten hundredths:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:11px; color:var(--blue-dark); font-weight:700; margin-bottom:6px;">Standard partition:</div>
+      <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 16px;">
+        <div style="font-size:14px; font-weight:700; color:var(--blue-dark);">2 + 0.4 + 0.00</div>
+        <div style="font-size:10px; color:var(--blue-dark); margin-top:3px;">(4 tenths, 0 hundredths)</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:11px; color:var(--amber-dark); font-weight:700;">Exchange:</div>
+      <div style="font-size:10px; color:var(--amber-dark);">1 tenth → 10 hundredths</div>
+      <div style="font-size:22px; color:var(--amber-dark);">↔</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:11px; color:var(--coral-dark); font-weight:700; margin-bottom:6px;">Flexible partition:</div>
+      <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px 16px;">
+        <div style="font-size:14px; font-weight:700; color:var(--coral-dark);">2 + 0.3 + 0.10</div>
+        <div style="font-size:10px; color:var(--coral-dark); margin-top:3px;">(3 tenths, 10 hundredths)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:8px;">Check: both equal 2.4 — let us verify the flexible version:</div>
+  <div style="background:var(--green-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--green-dark); margin-bottom:10px;">
+    2 + 0.3 + 0.10 = 2 + 0.3 + 0.1 = 2.4 ✓ — the 10 hundredths became 1 tenth, giving us 3 + 1 = 4 tenths total.
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Why would we ever do this?</strong> If we need to subtract 0.07 from 2.4, we cannot take 7 hundredths from 0 hundredths. By exchanging a tenth for 10 hundredths, we can! (This is like borrowing in subtraction.)
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2.4 = 2 + 0.4 = 2 + 0.3 + 0.10 — same value, different split!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Spot the flexible partition in a calculation</div>
+  <div class="example-label">Use a flexible partition to calculate <strong>6.82 − 0.05</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">We are subtracting from the hundredths. So we partition 6.82 to make the hundredths part visible — then subtract from it directly:</div>
+
+  <div style="display:flex; gap:8px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">Partition 6.82:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--blue-dark);">6.8 + 0.02</div>
+    </div>
+
+    <div style="font-size:20px; color:var(--amber-dark);">→</div>
+
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">Subtract 0.05 from hundredths:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--coral-dark);">0.02 − 0.05 = not enough!</div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:3px;">Need to exchange a tenth</div>
+    </div>
+
+    <div style="font-size:20px; color:var(--amber-dark);">→</div>
+
+    <div style="background:var(--purple-light); border:1px solid var(--purple-mid); border-radius:8px; padding:10px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--purple-dark); margin-bottom:4px;">Exchange: 6.8 → 6.7 + 0.10</div>
+      <div style="font-size:13px; font-weight:700; color:var(--purple-dark);">0.12 − 0.05 = 0.07</div>
+    </div>
+
+    <div style="font-size:20px; color:var(--amber-dark);">→</div>
+
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:10px 12px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:4px;">Recombine:</div>
+      <div style="font-size:13px; font-weight:700; color:var(--green-dark);">6.7 + 0.07 = 6.77</div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    6.82 − 0.05 = <strong>6.77</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: Dayo's ribbons</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Dayo has a ribbon that is 3.45 metres long. He cuts off a piece that is 0.2 metres long. Without using column subtraction, use a flexible partition to find how much ribbon remains."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Strategy:</strong> Partition 3.45 so the tenths part is easy to subtract 0.2 from.</div>
+
+  <div style="display:flex; flex-direction:column; gap:8px; margin:12px 0 14px;">
+
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 14px; font-size:11px; color:var(--blue-dark);">
+      <strong>Step 1 — Partition 3.45:</strong> Split as 3 + 0.4 + 0.05
+    </div>
+
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 14px; font-size:11px; color:var(--coral-dark);">
+      <strong>Step 2 — Subtract 0.2 from the tenths part:</strong> 0.4 − 0.2 = 0.2
+    </div>
+
+    <div style="background:var(--amber-light); border:1px solid var(--amber-mid); border-radius:8px; padding:8px 14px; font-size:11px; color:var(--amber-dark);">
+      <strong>Step 3 — The ones and hundredths are untouched:</strong> 3 stays as 3, 0.05 stays as 0.05
+    </div>
+
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 14px; font-size:11px; color:var(--green-dark); font-weight:700;">
+      <strong>Step 4 — Recombine:</strong> 3 + 0.2 + 0.05 = 3.25 m
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    3.45 − 0.2 = <strong>3.25 m</strong> of ribbon remaining ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 4</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Which is a correct flexible partition of <strong>6.29</strong>?
+        ${mcqBlock(['6 + 2 + 9','6.2 + 0.09','6 + 29'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Which flexible partition makes it easiest to calculate <strong>3.56 + 0.04</strong>?
+        ${mcqBlock(['3 + 0.5 + 0.06','3.5 + 0.06','3.56 + 0'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Tunde writes 7.4 = 7 + 0.3 + 0.10. Is this a valid flexible partition?
+        ${mcqBlock(['No — 0.3 + 0.10 is not 0.4','Yes — 0.3 + 0.10 = 0.40 = 0.4','No — you cannot use hundredths for 7.4'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Use a flexible partition to calculate <strong>5.73 + 0.2</strong>.
+        ${mcqBlock(['5.93','5.75','5.83'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Which partition of <strong>8.06</strong> uses a flexible grouping?
+        ${mcqBlock(['8 + 0.0 + 0.06','8 + 0.06','8 + 0.6'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Use a flexible partition to calculate <strong>4.38 − 0.08</strong>.
+        ${mcqBlock(['4.46', '4.3', '4.35'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Ngozi partitions 9.50 as 9 + 0.50. Her friend says this is wrong because 0.50 should be written as 0.5. Who is right?
+        ${mcqBlock(['Ngozi is wrong — 0.50 is not a valid decimal','Both are right — 0.50 = 0.5, so both partitions are valid','Her friend is wrong — you must always write hundredths'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Which of these is NOT a valid partition of <strong>2.91</strong>?
+        ${mcqBlock(['2 + 0.91','2.9 + 0.01','2 + 0.9 + 0.10'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Emeka says there are only two ways to partition 3.62. Amaka says there are more than two. Who is right?
+        ${mcqBlock(['Emeka — standard and flexible are the only two','Amaka — you can group in many different ways','They are both wrong — there is only one way'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Use flexible partitioning to calculate <strong>7.35 + 0.08</strong>. Which partition of 7.35 makes this easiest, and what is the answer?
+        ${mcqBlock(['Split as 7.3 + 0.05; answer is 7.43','Split as 7 + 0.35; answer is 7.43','Split as 7.3 + 0.05; answer is 7.33'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+
+// Decimals B — Step 5: Compare decimals
+const DEC_B_STEP5 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B5</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 5 — Compare decimals</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "Comparing decimals means deciding which is <strong>bigger</strong> or <strong>smaller</strong>. The secret is to always compare <strong>column by column, starting from the left</strong>. First compare the Ones. If they are the same, compare the Tenths. If those are the same too, compare the Hundredths. The first column where the digits are different tells you which number is bigger — just like comparing whole numbers! We use the symbols <strong>&gt;</strong> (greater than), <strong>&lt;</strong> (less than) and <strong>=</strong> (equal to)."
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The comparison symbols — a reminder</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; justify-content:center;">
+
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:12px 20px; text-align:center; min-width:90px;">
+      <div style="font-size:32px; font-weight:700; color:var(--blue-dark);">&gt;</div>
+      <div style="font-size:11px; color:var(--blue-dark); font-weight:700;">Greater than</div>
+      <div style="font-size:10px; color:var(--blue-dark);">Open mouth faces<br/>the bigger number</div>
+    </div>
+
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:12px 20px; text-align:center; min-width:90px;">
+      <div style="font-size:32px; font-weight:700; color:var(--coral-dark);">&lt;</div>
+      <div style="font-size:11px; color:var(--coral-dark); font-weight:700;">Less than</div>
+      <div style="font-size:10px; color:var(--coral-dark);">Pointed end faces<br/>the smaller number</div>
+    </div>
+
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:12px 20px; text-align:center; min-width:90px;">
+      <div style="font-size:32px; font-weight:700; color:var(--green-dark);">=</div>
+      <div style="font-size:11px; color:var(--green-dark); font-weight:700;">Equal to</div>
+      <div style="font-size:10px; color:var(--green-dark);">Both numbers<br/>are the same</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Memory trick:</strong> The crocodile always opens its mouth toward the bigger number — it wants to eat the larger meal! So in 0.7 &gt; 0.3, the open mouth faces the 0.7 because 0.7 is bigger.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Compare by looking at the Ones first</div>
+  <div class="example-label">Compare: <strong>3.47</strong> and <strong>1.89</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Always start by comparing the <strong>Ones column</strong>. If the Ones are different, we do not even need to look at the rest:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; flex-wrap:wrap; justify-content:center; align-items:center;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">First number</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--blue-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+          <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">3</div>
+        </div>
+        <div style="width:18px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+        <div style="width:44px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:9px; color:var(--blue-dark);">Tenths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+        <div style="width:44px; border:2px solid var(--blue-mid); border-left:none; border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:9px; color:var(--blue-dark);">Hundredths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">7</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; font-size:14px; color:var(--blue-dark);">
+      <div style="background:var(--blue-light); border:2px solid var(--blue-dark); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700; margin:0 auto;">3</div>
+      <div style="font-size:10px; margin-top:4px; color:var(--blue-dark);">Ones: 3 > 1</div>
+      <div style="font-size:10px; color:var(--blue-dark);">STOP HERE!</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Second number</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:52px; border:2px solid var(--coral-dark); border-radius:8px 0 0 8px; padding:6px 4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Ones</div>
+          <div style="font-size:26px; font-weight:700; color:var(--coral-dark);">1</div>
+        </div>
+        <div style="width:18px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+        <div style="width:44px; border:2px solid var(--coral-mid); border-left:none; padding:6px 4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:9px; color:var(--coral-dark);">Tenths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--coral-dark);">8</div>
+        </div>
+        <div style="width:44px; border:2px solid var(--coral-mid); border-left:none; border-radius:0 8px 8px 0; padding:6px 4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:9px; color:var(--coral-dark);">Hundredths</div>
+          <div style="font-size:22px; font-weight:700; color:var(--coral-dark);">9</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>The grayed-out columns do not matter!</strong> Even though 1.89 has bigger tenths (8 vs 4) and bigger hundredths (9 vs 7), those comparisons are irrelevant because the Ones column already decided the winner — 3 &gt; 1.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    3.47 <strong>&gt;</strong> 1.89 — the Ones column decides it! ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Same Ones, compare the Tenths</div>
+  <div class="example-label">Compare: <strong>4.73</strong> and <strong>4.29</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Both numbers have <strong>4</strong> in the Ones column — so we must move right and compare the Tenths:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:0; justify-content:center;">
+    <div style="width:52px; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="width:22px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:13px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; border-radius:0 8px 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Hundredths</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:0; margin-bottom:6px; justify-content:center;">
+    <div style="width:52px; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:8px 4px; text-align:center;">
+      <div style="font-size:22px; font-weight:700; color:var(--text-sec);">4</div>
+      <div style="font-size:8px; color:var(--text-sec);">same ✓</div>
+    </div>
+    <div style="width:22px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+    <div style="width:52px; border:2px solid var(--blue-dark); border-top:none; border-left:none; padding:8px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">7</div>
+      <div style="font-size:8px; color:var(--blue-dark); font-weight:700;">7 &gt; 2 ✓</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--blue-mid); border-top:none; border-left:none; border-radius:0 0 8px 0; padding:8px 4px; text-align:center; opacity:0.4;">
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">3</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:0; margin-bottom:6px; justify-content:center;">
+    <div style="width:52px; border:2px solid var(--coral-mid); border-radius:0 0 0 8px; padding:8px 4px; text-align:center;">
+      <div style="font-size:22px; font-weight:700; color:var(--text-sec);">4</div>
+      <div style="font-size:8px; color:var(--text-sec);">same ✓</div>
+    </div>
+    <div style="width:22px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+    <div style="width:52px; border:2px solid var(--coral-dark); border-left:none; padding:8px 4px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:22px; font-weight:700; color:var(--coral-dark);">2</div>
+      <div style="font-size:8px; color:var(--coral-dark); font-weight:700;">2 &lt; 7 ✗</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--coral-mid); border-left:none; border-radius:0 0 8px 0; padding:8px 4px; text-align:center; opacity:0.4;">
+      <div style="font-size:22px; font-weight:700; color:var(--coral-dark);">9</div>
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    The Hundredths column is grayed out — we do not need it. The Tenths column settled it: 7 tenths &gt; 2 tenths, so 4.73 is bigger.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    4.73 <strong>&gt;</strong> 4.29 — the Tenths column decides it! ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Same Ones AND same Tenths: compare Hundredths</div>
+  <div class="example-label">Compare: <strong>6.54</strong> and <strong>6.58</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">This is the trickiest case — we must go all the way to the Hundredths column before we find a difference:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
+
+    <div style="display:flex; flex-direction:column; gap:4px; align-items:center;">
+      <div style="font-size:11px; color:var(--text-sec); font-weight:700;">6.54</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:44px; border:2px solid var(--blue-mid); border-radius:6px 0 0 6px; padding:4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:8px; color:var(--text-sec);">Ones: 6</div>
+          <div style="font-size:16px; font-weight:700; color:var(--text-sec);">6</div>
+        </div>
+        <div style="width:12px; background:var(--amber); border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:white;">.</div>
+        <div style="width:44px; border:2px solid var(--blue-mid); border-left:none; padding:4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:8px; color:var(--text-sec);">Tenths: 5</div>
+          <div style="font-size:16px; font-weight:700; color:var(--text-sec);">5</div>
+        </div>
+        <div style="width:44px; border:2px solid var(--blue-dark); border-left:none; border-radius:0 6px 6px 0; padding:4px; text-align:center; background:var(--blue-light);">
+          <div style="font-size:8px; color:var(--blue-dark); font-weight:700;">Hundredths</div>
+          <div style="font-size:16px; font-weight:700; color:var(--blue-dark);">4</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; margin-top:20px;">
+      <div style="background:var(--amber-light); border-radius:6px; padding:4px 8px; font-size:10px; color:var(--amber-dark); font-weight:700;">Ones: 6 = 6 ✓</div>
+      <div style="background:var(--amber-light); border-radius:6px; padding:4px 8px; font-size:10px; color:var(--amber-dark); font-weight:700;">Tenths: 5 = 5 ✓</div>
+      <div style="background:var(--green-light); border-radius:6px; padding:4px 8px; font-size:10px; color:var(--green-dark); font-weight:700;">Hundredths: 4 &lt; 8 !</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:4px; align-items:center;">
+      <div style="font-size:11px; color:var(--text-sec); font-weight:700;">6.58</div>
+      <div style="display:flex; gap:0;">
+        <div style="width:44px; border:2px solid var(--coral-mid); border-radius:6px 0 0 6px; padding:4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:8px; color:var(--text-sec);">Ones: 6</div>
+          <div style="font-size:16px; font-weight:700; color:var(--text-sec);">6</div>
+        </div>
+        <div style="width:12px; background:var(--amber); border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:white;">.</div>
+        <div style="width:44px; border:2px solid var(--coral-mid); border-left:none; padding:4px; text-align:center; background:white; opacity:0.5;">
+          <div style="font-size:8px; color:var(--text-sec);">Tenths: 5</div>
+          <div style="font-size:16px; font-weight:700; color:var(--text-sec);">5</div>
+        </div>
+        <div style="width:44px; border:2px solid var(--coral-dark); border-left:none; border-radius:0 6px 6px 0; padding:4px; text-align:center; background:var(--coral-light);">
+          <div style="font-size:8px; color:var(--coral-dark); font-weight:700;">Hundredths</div>
+          <div style="font-size:16px; font-weight:700; color:var(--coral-dark);">8</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    6.54 <strong>&lt;</strong> 6.58 — the Hundredths column finally decides it! ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — The trap: don't be fooled by more digits!</div>
+  <div class="example-label">Compare: <strong>0.9</strong> and <strong>0.72</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Many pupils think 0.72 is bigger because it has more digits. But comparing column by column shows the truth. Always line up the decimal points first:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:6px; justify-content:center;">
+    <div style="width:52px; border:2px solid var(--blue-mid); border-radius:8px 0 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Ones</div>
+    </div>
+    <div style="width:22px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:13px; font-weight:700; color:white;">.</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Tenths</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--blue-mid); border-left:none; border-radius:0 8px 0 0; padding:6px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700;">Hundredths</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:0; margin-bottom:2px; justify-content:center;">
+    <div style="width:52px; border:2px solid var(--blue-mid); border-top:none; border-radius:0 0 0 8px; padding:8px 4px; text-align:center; background:white; opacity:0.4;">
+      <div style="font-size:20px; font-weight:700; color:var(--text-sec);">0</div>
+    </div>
+    <div style="width:22px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+    <div style="width:52px; border:2px solid var(--blue-dark); border-top:none; border-left:none; padding:8px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:20px; font-weight:700; color:var(--blue-dark);">9</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--blue-mid); border-top:none; border-left:none; border-radius:0 0 8px 0; padding:8px 4px; text-align:center; background:var(--amber-light);">
+      <div style="font-size:20px; font-weight:700; color:var(--amber-dark);">0</div>
+      <div style="font-size:8px; color:var(--amber-dark);">(empty = 0)</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:0; margin-bottom:10px; justify-content:center;">
+    <div style="width:52px; border:2px solid var(--coral-mid); border-radius:0 0 0 8px; padding:8px 4px; text-align:center; background:white; opacity:0.4;">
+      <div style="font-size:20px; font-weight:700; color:var(--text-sec);">0</div>
+    </div>
+    <div style="width:22px; border-left:2px solid var(--amber-dark); border-right:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white;">.</div>
+    <div style="width:52px; border:2px solid var(--coral-dark); border-left:none; padding:8px 4px; text-align:center; background:var(--coral-light);">
+      <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">7</div>
+    </div>
+    <div style="width:52px; border:2px solid var(--coral-mid); border-left:none; border-radius:0 0 8px 0; padding:8px 4px; text-align:center; background:var(--coral-light); opacity:0.5;">
+      <div style="font-size:20px; font-weight:700; color:var(--coral-dark);">2</div>
+    </div>
+  </div>
+
+  <div style="background:var(--coral-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--coral-dark); margin-bottom:10px;">
+    <strong>The trap explained:</strong> 0.9 has 9 tenths. 0.72 has only 7 tenths. Nine tenths is bigger than seven tenths — we do not even need to look at the hundredths! The extra digit in 0.72 is a red herring.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    0.9 <strong>&gt;</strong> 0.72 — more digits does NOT mean bigger! ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: whose jump was longer?</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Three pupils jump in a long jump contest. Kola jumps 2.35 m, Bisi jumps 2.4 m and Ade jumps 2.38 m. Who jumped the furthest?"</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Strategy:</strong> Compare all three distances column by column.</div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--blue-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--blue-light);">
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Pupil</div>
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Distance</div>
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Ones</div>
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Tenths</div>
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--coral-dark);">Hundredths</div>
+    </div>
+    ${[
+      ['Kola','2.35','2','3','5',''],
+      ['Bisi','2.4','2','4','0','★ Winner!'],
+      ['Ade','2.38','2','3','8',''],
+    ].map(([name,dist,o,t,h,note],i) => `
+      <div style="display:flex; background:${i===1?'var(--green-light)':'white'}; border-top:1px solid var(--blue-mid);">
+        <div style="flex:1; padding:6px 10px; font-size:12px; font-weight:700; color:${i===1?'var(--green-dark)':'var(--blue-dark)'}; border-right:1px solid var(--blue-mid);">${name}</div>
+        <div style="flex:1; padding:6px 10px; font-size:12px; font-weight:700; color:${i===1?'var(--green-dark)':'var(--blue-dark)'}; border-right:1px solid var(--blue-mid);">${dist} m</div>
+        <div style="flex:1; padding:6px 10px; font-size:12px; color:var(--text-sec); border-right:1px solid var(--blue-mid);">${o}</div>
+        <div style="flex:1; padding:6px 10px; font-size:12px; font-weight:${i===1?'700':'400'}; color:${i===1?'var(--green-dark)':'var(--text-sec)'}; border-right:1px solid var(--blue-mid);">${t} ${i===1?'← biggest':''}</div>
+        <div style="flex:1; padding:6px 10px; font-size:12px; color:var(--text-sec);">${h} ${note}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    All three share the same Ones (2). Move to Tenths: Bisi has 4 tenths, Kola and Ade both have 3 tenths. Since 4 &gt; 3, Bisi wins — we do not even need to compare the hundredths of Kola and Ade for the top spot.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Bisi jumped furthest: 2.4 m &gt; 2.38 m &gt; 2.35 m ✓
+  </div>
+</div>
+
+
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 5</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Which symbol correctly compares <strong>3.7</strong> and <strong>3.4</strong>?
+        ${mcqBlock(['3.7 < 3.4','3.7 = 3.4','3.7 > 3.4'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Which is larger: <strong>0.6</strong> or <strong>0.58</strong>?
+        ${mcqBlock(['0.58 — it has more digits','They are equal','0.6 — it has more tenths'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Which symbol correctly compares <strong>5.83</strong> and <strong>5.87</strong>?
+        ${mcqBlock(['5.83 > 5.87','5.83 < 5.87','5.83 = 5.87'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Emeka has 4.50 m of rope. Ngozi has 4.5 m of rope. Who has more?
+        ${mcqBlock(['Emeka — 4.50 is bigger than 4.5','Ngozi — 4.5 is bigger than 4.50','Neither — 4.50 and 4.5 are equal'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Which column do we compare FIRST when comparing two decimals?
+        ${mcqBlock(['Hundredths','Ones','Tenths'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Which is the smallest: <strong>7.09</strong>, <strong>7.9</strong> or <strong>7.19</strong>?
+        ${mcqBlock(['7.9','7.19','7.09'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Tunde scores 8.45 in a gymnastics event. Amaka scores 8.54. Whose score is higher?
+        ${mcqBlock(['Tunde — 8.45 > 8.54','They are equal','Amaka — 8.54 > 8.45'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Which symbol correctly compares <strong>0.30</strong> and <strong>0.3</strong>?
+        ${mcqBlock(['0.30 > 0.3','0.30 < 0.3','0.30 = 0.3'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Dayo says that when comparing decimals, the number with more digits after the decimal point is always bigger. Is he right?
+        ${mcqBlock(['Yes — more digits always means bigger','No — you must compare column by column from the left','Only if the Ones digits are the same'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Four runners finish a race. Their times in seconds are 12.5, 12.47, 12.09 and 12.5. Which time is the fastest (smallest)?
+        ${mcqBlock(['12.5','12.47','12.09'], 2)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+// Decimals B — Step 6: Order decimals
+const DEC_B_STEP6 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B6</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 6 — Order decimals</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "In Step 5 we compared <strong>two</strong> decimals. Now we put a whole <strong>group</strong> of decimals in order — either from smallest to largest (<strong>ascending</strong>) or from largest to smallest (<strong>descending</strong>). The method is the same: compare column by column from the left. The smartest approach is to sort in stages — first group by Ones, then sort each group by Tenths, then by Hundredths if needed. Think of it like sorting children into height order — you look at the tallest feature first!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The big picture — ascending vs descending order</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">These are the two directions we can order numbers. Always check which direction the question asks for:</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="flex:1; min-width:140px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:8px;">Ascending — smallest first</div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        ${['1.23','2.45','3.07','4.80','5.99'].map((n,i) => `
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:16px; height:16px; background:var(--blue); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:9px; font-weight:700;">${i+1}</div>
+            <div style="font-size:13px; font-weight:700; color:var(--blue-dark);">${n}</div>
+            <div style="flex:1; height:6px; background:var(--blue); border-radius:3px; width:${(i+1)*16}%; opacity:0.6;"></div>
+          </div>
+        `).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:6px;">Gets BIGGER as you go down ↓</div>
+    </div>
+
+    <div style="flex:1; min-width:140px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:8px;">Descending — largest first</div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        ${['5.99','4.80','3.07','2.45','1.23'].map((n,i) => `
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:16px; height:16px; background:var(--coral); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:9px; font-weight:700;">${i+1}</div>
+            <div style="font-size:13px; font-weight:700; color:var(--coral-dark);">${n}</div>
+            <div style="flex:1; height:6px; background:var(--coral); border-radius:3px; width:${(5-i)*16}%; opacity:0.6;"></div>
+          </div>
+        `).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:6px;">Gets SMALLER as you go down ↓</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Quick check:</strong> After ordering, always verify your first and last numbers make sense. In ascending order, the first number must be the smallest. In descending order, the first number must be the largest.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Order three decimals: tenths only</div>
+  <div class="example-label">Write in ascending order: <strong>0.7, 0.3, 0.9</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">All three have 0 ones — so we only need to compare the Tenths digits: 7, 3 and 9. Order these as we would whole numbers:</div>
+
+  <div style="display:flex; gap:8px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+    ${[['0.3','3 tenths','var(--blue)'],['0.7','7 tenths','var(--amber)'],['0.9','9 tenths','var(--coral)']].map(([n,label,col]) => `
+      <div style="text-align:center;">
+        <div style="font-size:22px; font-weight:700; color:${col};">${n}</div>
+        <div style="font-size:10px; color:var(--text-sec);">${label}</div>
+        <svg width="60" height="32" viewBox="0 0 60 32">
+          <rect x="0" y="8" width="${parseInt(n.split('.')[1])*6}" height="16" rx="3" fill="${col}" fill-opacity="0.7"/>
+        </svg>
+      </div>
+    `).join(`<div style="font-size:22px; color:var(--text-sec); align-self:center;">&lt;</div>`)}
+  </div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:10px;">Place on the number line to double-check:</div>
+
+  <svg width="100%" height="60" viewBox="0 0 340 60">
+    <line x1="20" y1="32" x2="320" y2="32" stroke="var(--blue-dark)" stroke-width="2"/>
+    <polygon points="320,28 330,32 320,36" fill="var(--blue-dark)"/>
+    <line x1="20" y1="22" x2="20" y2="42" stroke="var(--blue-dark)" stroke-width="2"/>
+    <text x="20" y="56" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">0</text>
+    <line x1="320" y1="22" x2="320" y2="42" stroke="var(--blue-dark)" stroke-width="2"/>
+    <text x="320" y="56" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">1</text>
+    <circle cx="110" cy="32" r="7" fill="var(--blue)" stroke="white" stroke-width="1.5"/>
+    <text x="110" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">0.3</text>
+    <circle cx="230" cy="32" r="7" fill="var(--amber)" stroke="white" stroke-width="1.5"/>
+    <text x="230" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">0.7</text>
+    <circle cx="290" cy="32" r="7" fill="var(--coral)" stroke="white" stroke-width="1.5"/>
+    <text x="290" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">0.9</text>
+  </svg>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700; margin-top:8px;">
+    Ascending order: <strong>0.3, 0.7, 0.9</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Order four decimals with the same Ones digit</div>
+  <div class="example-label">Write in ascending order: <strong>3.72, 3.19, 3.85, 3.07</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">All four start with 3 in the Ones column — so we sort by Tenths first, then Hundredths if needed:</div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--blue-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--blue-light);">
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Number</div>
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--text-sec); border-right:1px solid var(--blue-mid);">Ones</div>
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Tenths ← sort here</div>
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--coral-dark);">Hundredths</div>
+    </div>
+    ${[['3.07','3','0','7'],['3.19','3','1','9'],['3.72','3','7','2'],['3.85','3','8','5']].map(([n,o,t,h],i) => `
+      <div style="display:flex; background:${i%2===0?'white':'var(--blue-light)'}; border-top:1px solid var(--blue-mid);">
+        <div style="flex:1; padding:6px 8px; font-size:13px; font-weight:700; color:var(--green-dark); border-right:1px solid var(--blue-mid);">${i+1}. ${n}</div>
+        <div style="flex:1; padding:6px 8px; font-size:13px; color:var(--text-sec); border-right:1px solid var(--blue-mid);">${o}</div>
+        <div style="flex:1; padding:6px 8px; font-size:13px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">${t}</div>
+        <div style="flex:1; padding:6px 8px; font-size:13px; color:var(--coral-dark);">${h}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    The Tenths digits are 7, 1, 8 and 0. Order them: 0 &lt; 1 &lt; 7 &lt; 8. So the order is 3.07, 3.19, 3.72, 3.85. No need to use Hundredths here!
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Ascending order: <strong>3.07, 3.19, 3.72, 3.85</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — When Tenths are the same: use Hundredths to break the tie</div>
+  <div class="example-label">Write in descending order: <strong>5.43, 5.41, 5.48, 5.46</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">All four have the same Ones (5) AND the same Tenths (4). We must go to the Hundredths to sort them. Descending means largest first:</div>
+
+  <div style="display:flex; gap:6px; margin:12px 0 14px; justify-content:center; flex-wrap:wrap; align-items:flex-end;">
+    ${[['5.48','8','var(--coral)'],['5.46','6','var(--amber)'],['5.43','3','var(--blue)'],['5.41','1','var(--purple)']].map(([n,h,col],i) => `
+      <div style="text-align:center;">
+        <div style="font-size:9px; color:var(--text-sec); margin-bottom:2px;">${i+1}${i===0?' (largest)':i===3?' (smallest)':''}</div>
+        <div style="width:54px; height:${parseInt(h)*8}px; background:${col}; border-radius:4px 4px 0 0; opacity:0.7;"></div>
+        <div style="width:54px; border-top:2px solid var(--blue-dark);">
+          <div style="font-size:13px; font-weight:700; color:${col};">${n}</div>
+          <div style="font-size:9px; color:var(--text-sec);">h=${h}</div>
+        </div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    Hundredths digits: 3, 1, 8, 6. Descending order of hundredths: 8 &gt; 6 &gt; 3 &gt; 1 → numbers are 5.48, 5.46, 5.43, 5.41.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Descending order: <strong>5.48, 5.46, 5.43, 5.41</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Mixed Ones digits: sort in stages</div>
+  <div class="example-label">Write in ascending order: <strong>2.4, 1.93, 2.07, 1.8, 2.4</strong></div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">When Ones digits differ, group by Ones first, then sort within each group:</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="flex:1; min-width:130px; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--blue-dark); margin-bottom:6px;">Ones = 1 group</div>
+      <div style="font-size:12px; color:var(--blue-dark); margin-bottom:4px;">1.93 and 1.8</div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Compare Tenths: 8 vs 9</div>
+      <div style="font-size:12px; font-weight:700; color:var(--blue-dark);">1.8 &lt; 1.93</div>
+    </div>
+
+    <div style="flex:1; min-width:130px; background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px;">
+      <div style="font-size:11px; font-weight:700; color:var(--coral-dark); margin-bottom:6px;">Ones = 2 group</div>
+      <div style="font-size:12px; color:var(--coral-dark); margin-bottom:4px;">2.4, 2.07 and 2.4</div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:6px;">Tenths: 0, 4, 4 → 2.07 smallest</div>
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">2.4 appears twice — equal!</div>
+      <div style="font-size:12px; font-weight:700; color:var(--coral-dark);">2.07 &lt; 2.4 = 2.4</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>Stage method:</strong> All Ones=1 numbers come before Ones=2 numbers. Within each group, sort by Tenths. Duplicate values (2.4 appears twice) sit together.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Ascending order: <strong>1.8, 1.93, 2.07, 2.4, 2.4</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: race times</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Five pupils run a 50 metre race. Their times in seconds are: Kola 8.54 s, Bisi 8.09 s, Emeka 9.1 s, Ngozi 8.47 s and Tunde 8.54 s. Place them in order from fastest (shortest time) to slowest (longest time). Who wins?"</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Remember:</strong> In a race, the fastest runner has the <strong>smallest</strong> time. So fastest = ascending order.</div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--blue-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--blue-light);">
+      <div style="flex:0 0 28px; padding:6px 4px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid); text-align:center;">Pos.</div>
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Pupil</div>
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Time (s)</div>
+      <div style="flex:1; padding:6px 8px; font-size:10px; font-weight:700; color:var(--text-sec);">Note</div>
+    </div>
+    ${[
+      ['1st','Bisi','8.09','Smallest time — winner! 🏆'],
+      ['2nd','Ngozi','8.47',''],
+      ['3rd=','Kola','8.54','Tied'],
+      ['3rd=','Tunde','8.54','Tied'],
+      ['5th','Emeka','9.1','Largest time — slowest'],
+    ].map(([pos,name,time,note],i) => `
+      <div style="display:flex; background:${i===0?'var(--green-light)':i%2===0?'white':'var(--blue-light)'}; border-top:1px solid var(--blue-mid);">
+        <div style="flex:0 0 28px; padding:6px 4px; font-size:11px; font-weight:700; color:var(--green-dark); border-right:1px solid var(--blue-mid); text-align:center;">${pos}</div>
+        <div style="flex:1; padding:6px 8px; font-size:12px; font-weight:700; color:${i===0?'var(--green-dark)':'var(--blue-dark)'}; border-right:1px solid var(--blue-mid);">${name}</div>
+        <div style="flex:1; padding:6px 8px; font-size:12px; font-weight:700; color:${i===0?'var(--green-dark)':'var(--blue-dark)'}; border-right:1px solid var(--blue-mid);">${time} s</div>
+        <div style="flex:1; padding:6px 8px; font-size:10px; color:var(--text-sec);">${note}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Order: 8.09, 8.47, 8.54, 8.54, 9.1 — <strong>Bisi wins!</strong> ✓
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 6</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Write <strong>0.8, 0.2, 0.5</strong> in ascending order.
+        ${mcqBlock(['0.8, 0.5, 0.2','0.5, 0.2, 0.8','0.2, 0.5, 0.8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Write <strong>4.7, 4.1, 4.9, 4.3</strong> in descending order.
+        ${mcqBlock(['4.9, 4.7, 4.3, 4.1','4.1, 4.3, 4.7, 4.9','4.9, 4.3, 4.7, 4.1'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Which is the correct ascending order for <strong>7.34, 7.38, 7.31</strong>?
+        ${mcqBlock(['7.31, 7.34, 7.38','7.38, 7.34, 7.31','7.34, 7.31, 7.38'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Adaeze orders 3.6, 2.9 and 3.1 and writes: 2.9, 3.1, 3.6. Is she correct?
+        ${mcqBlock(['No — 3.6 should come first','Yes — this is correct ascending order','No — 3.1 should come first'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        What is the largest decimal in this group: <strong>5.6, 5.09, 5.72, 5.8</strong>?
+        ${mcqBlock(['5.72','5.09','5.8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Bayo orders <strong>1.5, 1.50, 1.05</strong> in ascending order. What is the correct order?
+        ${mcqBlock(['1.5, 1.50, 1.05','1.05, 1.5, 1.50','1.05, 1.50, 1.5'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Four swimmers finish a race with times 6.7 s, 6.07 s, 6.73 s and 6.3 s. Who comes second (second smallest time)?
+        ${mcqBlock(['6.07 s','6.3 s','6.7 s'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Which group is correctly ordered in descending order?
+        ${mcqBlock(['0.4, 0.37, 0.09','0.09, 0.37, 0.4','0.37, 0.4, 0.09'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Emeka says that 0.99 is always the largest decimal you can make with two decimal places. Ngozi disagrees. Who is right?
+        ${mcqBlock(['Emeka — 0.99 is the biggest possible','Ngozi — numbers like 1.01 or 5.67 are bigger','Both are right in different situations'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Five temperatures are recorded: 12.4°C, 9.87°C, 12.04°C, 9.9°C and 11.5°C. Write them in descending order. What is the second highest temperature?
+        ${mcqBlock(['12.04°C','11.5°C','12.4°C'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+// Decimals B — Step 7: Round to the nearest whole number
+const DEC_B_STEP7 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B7</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 7 — Round to the nearest whole number</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "Rounding a decimal to the nearest whole number means finding the <strong>whole number it is closest to</strong>. Imagine a number line with whole numbers as villages. The decimal is a traveller — which village is it closest to? We look at the <strong>tenths digit</strong> to decide. If the tenths digit is <strong>5 or more</strong>, we round UP to the next whole number. If the tenths digit is <strong>4 or less</strong>, we round DOWN and keep the same whole number. The decimal part disappears!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The golden rounding rule</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="flex:1; min-width:140px; background:var(--blue-light); border:2px solid var(--blue-dark); border-radius:8px; padding:10px; text-align:center;">
+      <div style="font-size:32px; font-weight:700; color:var(--blue-dark); margin-bottom:4px;">0 1 2 3 4</div>
+      <div style="font-size:11px; color:var(--blue-dark); font-weight:700;">Tenths digit is 4 or less</div>
+      <div style="font-size:11px; color:var(--blue-dark); margin-top:4px;">→ Round <strong>DOWN</strong></div>
+      <div style="font-size:11px; color:var(--blue-dark);">(keep same whole number)</div>
+    </div>
+
+    <div style="flex:1; min-width:140px; background:var(--coral-light); border:2px solid var(--coral-dark); border-radius:8px; padding:10px; text-align:center;">
+      <div style="font-size:32px; font-weight:700; color:var(--coral-dark); margin-bottom:4px;">5 6 7 8 9</div>
+      <div style="font-size:11px; color:var(--coral-dark); font-weight:700;">Tenths digit is 5 or more</div>
+      <div style="font-size:11px; color:var(--coral-dark); margin-top:4px;">→ Round <strong>UP</strong></div>
+      <div style="font-size:11px; color:var(--coral-dark);">(add 1 to whole number)</div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>Memory trick:</strong> "Five and above, give it a shove — round UP! Four and below, let it go — round DOWN!" Only the tenths digit matters. The hundredths digit is ignored when rounding to the nearest whole number.
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Round down: tenths digit is less than 5</div>
+  <div class="example-label">Round <strong>3.2</strong> to the nearest whole number</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The tenths digit is <strong>2</strong>. Since 2 &lt; 5, we round down — 3.2 stays closer to 3 than to 4:</div>
+
+  <svg width="100%" height="90" viewBox="0 0 360 90">
+    <defs>
+      <marker id="arrDown" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--blue-dark)"/>
+      </marker>
+    </defs>
+    <line x1="20" y1="50" x2="340" y2="50" stroke="var(--blue-dark)" stroke-width="2"/>
+    <line x1="20"  y1="40" x2="20"  y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="74" text-anchor="middle" font-size="13" font-weight="700" fill="var(--blue-dark)">3</text>
+    <line x1="340" y1="40" x2="340" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="var(--blue-dark)">4</text>
+    <line x1="180" y1="44" x2="180" y2="56" stroke="var(--blue-mid)" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="180" y="74" text-anchor="middle" font-size="10" fill="var(--text-sec)">3.5 (halfway)</text>
+    <!-- 3.2 position: 20 + 0.2*320 = 84 -->
+    <circle cx="84" cy="50" r="8" fill="var(--coral)" stroke="white" stroke-width="1.5"/>
+    <text x="84"  y="34" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">3.2</text>
+    <!-- Arrow pointing left to 3 -->
+    <path d="M76,50 L28,50" fill="none" stroke="var(--blue-dark)" stroke-width="2.5" marker-end="url(#arrDown)"/>
+    <text x="52" y="42" text-anchor="middle" font-size="10" fill="var(--blue-dark)" font-weight="700">rounds to 3</text>
+    <!-- Distance labels -->
+    <text x="52"  y="86" text-anchor="middle" font-size="9" fill="var(--blue-dark)">0.2 away</text>
+    <text x="212" y="86" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.8 away</text>
+  </svg>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; align-items:center; justify-content:center;">
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:3px;">Tenths digit</div>
+      <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">2</div>
+      <div style="font-size:10px; color:var(--blue-dark);">2 &lt; 5 → round DOWN</div>
+    </div>
+    <div style="font-size:22px; color:var(--amber-dark);">→</div>
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:3px;">Rounded answer</div>
+      <div style="font-size:28px; font-weight:700; color:var(--green-dark);">3</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    3.2 rounded to the nearest whole number = <strong>3</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Round up: tenths digit is 5 or more</div>
+  <div class="example-label">Round <strong>6.7</strong> to the nearest whole number</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">The tenths digit is <strong>7</strong>. Since 7 ≥ 5, we round up — 6.7 is closer to 7 than to 6:</div>
+
+  <svg width="100%" height="90" viewBox="0 0 360 90">
+    <defs>
+      <marker id="arrUp" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral-dark)"/>
+      </marker>
+    </defs>
+    <line x1="20" y1="50" x2="340" y2="50" stroke="var(--blue-dark)" stroke-width="2"/>
+    <line x1="20"  y1="40" x2="20"  y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="74" text-anchor="middle" font-size="13" font-weight="700" fill="var(--blue-dark)">6</text>
+    <line x1="340" y1="40" x2="340" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="var(--blue-dark)">7</text>
+    <line x1="180" y1="44" x2="180" y2="56" stroke="var(--blue-mid)" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="180" y="74" text-anchor="middle" font-size="10" fill="var(--text-sec)">6.5 (halfway)</text>
+    <!-- 6.7 position: 20 + 0.7*320 = 244 -->
+    <circle cx="244" cy="50" r="8" fill="var(--coral)" stroke="white" stroke-width="1.5"/>
+    <text x="244" y="34" text-anchor="middle" font-size="11" font-weight="700" fill="var(--coral-dark)">6.7</text>
+    <!-- Arrow pointing right to 7 -->
+    <path d="M252,50 L332,50" fill="none" stroke="var(--coral-dark)" stroke-width="2.5" marker-end="url(#arrUp)"/>
+    <text x="292" y="42" text-anchor="middle" font-size="10" fill="var(--coral-dark)" font-weight="700">rounds to 7</text>
+    <text x="132" y="86" text-anchor="middle" font-size="9" fill="var(--text-sec)">0.7 away</text>
+    <text x="292" y="86" text-anchor="middle" font-size="9" fill="var(--coral-dark)">0.3 away ← closer!</text>
+  </svg>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; align-items:center; justify-content:center;">
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:3px;">Tenths digit</div>
+      <div style="font-size:28px; font-weight:700; color:var(--coral-dark);">7</div>
+      <div style="font-size:10px; color:var(--coral-dark);">7 ≥ 5 → round UP</div>
+    </div>
+    <div style="font-size:22px; color:var(--amber-dark);">→</div>
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:8px 14px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:3px;">Rounded answer</div>
+      <div style="font-size:28px; font-weight:700; color:var(--green-dark);">7</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    6.7 rounded to the nearest whole number = <strong>7</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — The special case: exactly halfway (tenths = 5)</div>
+  <div class="example-label">Round <strong>4.5</strong> to the nearest whole number</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">4.5 sits <strong>exactly halfway</strong> between 4 and 5. By the rounding rule, a tenths digit of 5 means we always round <strong>UP</strong>:</div>
+
+  <svg width="100%" height="80" viewBox="0 0 360 80">
+    <defs>
+      <marker id="arrMid" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--coral-dark)"/>
+      </marker>
+    </defs>
+    <line x1="20" y1="44" x2="340" y2="44" stroke="var(--blue-dark)" stroke-width="2"/>
+    <line x1="20"  y1="34" x2="20"  y2="54" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="20"  y="68" text-anchor="middle" font-size="13" font-weight="700" fill="var(--blue-dark)">4</text>
+    <line x1="340" y1="34" x2="340" y2="54" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    <text x="340" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="var(--blue-dark)">5</text>
+    <!-- 4.5 exactly in middle -->
+    <circle cx="180" cy="44" r="9" fill="var(--amber)" stroke="white" stroke-width="1.5"/>
+    <text x="180" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--amber-dark)">4.5 — exactly halfway!</text>
+    <!-- Arrow up to 5 -->
+    <path d="M188,44 L332,44" fill="none" stroke="var(--coral-dark)" stroke-width="2.5" marker-end="url(#arrMid)"/>
+    <text x="260" y="34" text-anchor="middle" font-size="10" fill="var(--coral-dark)" font-weight="700">rule: round UP → 5</text>
+  </svg>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark); margin-bottom:10px;">
+    <strong>The rule:</strong> When the tenths digit is exactly 5, we always round up. This is the agreed rule used everywhere in mathematics. 4.5 → <strong>5</strong>.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    4.5 rounded to the nearest whole number = <strong>5</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Hundredths do NOT affect rounding to nearest whole</div>
+  <div class="example-label">Round <strong>8.49</strong> to the nearest whole number</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Many pupils see the 9 in the hundredths and think it makes the number round up. But we only look at the <strong>tenths digit</strong> when rounding to the nearest whole number:</div>
+
+  <div style="display:flex; gap:0; margin-bottom:14px; justify-content:center;">
+    <div style="width:60px; border:2px solid var(--blue-mid); border-radius:8px 0 0 8px; padding:8px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Ones</div>
+      <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">8</div>
+    </div>
+    <div style="width:22px; border-top:2px solid var(--amber-dark); border-bottom:2px solid var(--amber-dark); background:var(--amber); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:white;">.</div>
+    <div style="width:60px; border:2px solid var(--blue-dark); border-left:none; padding:8px 4px; text-align:center; background:var(--blue-light);">
+      <div style="font-size:9px; color:var(--blue-dark); font-weight:700;">Tenths ← LOOK HERE</div>
+      <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">4</div>
+      <div style="font-size:9px; color:var(--blue-dark);">4 &lt; 5 → round DOWN</div>
+    </div>
+    <div style="width:60px; border:2px solid var(--coral-mid); border-left:none; border-radius:0 8px 8px 0; padding:8px 4px; text-align:center; background:var(--coral-light); opacity:0.5;">
+      <div style="font-size:9px; color:var(--coral-dark); font-weight:700;">Hundredths (IGNORE)</div>
+      <div style="font-size:26px; font-weight:700; color:var(--coral-dark);">9</div>
+    </div>
+  </div>
+
+  <div style="background:var(--coral-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--coral-dark); margin-bottom:10px;">
+    <strong>Common mistake:</strong> "9 is big so I should round up!" — NO! The 9 is in Hundredths. We ignore it. Only the <strong>Tenths digit (4)</strong> controls the rounding. 4 &lt; 5 so we round DOWN.
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    8.49 rounded to the nearest whole number = <strong>8</strong> ✓ (NOT 9!)
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: rounding a distance</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Funke measures the length of her classroom and gets 8.6 metres. Ade measures the width and gets 4.3 metres. Round each measurement to the nearest whole metre."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Length: 8.6 m</strong> — Tenths digit is 6. Since 6 ≥ 5, round <strong>UP</strong>.</div>
+  <div style="font-size:11px; color:var(--text-sec); margin-bottom:12px;"><strong>Width: 4.3 m</strong> — Tenths digit is 3. Since 3 &lt; 5, round <strong>DOWN</strong>.</div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; justify-content:center;">
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px 18px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">Length 8.6 m</div>
+      <div style="font-size:13px; color:var(--coral-dark); margin-bottom:4px;">Tenths = 6 ≥ 5</div>
+      <div style="font-size:22px; font-weight:700; color:var(--coral-dark);">→ 9 m</div>
+    </div>
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 18px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">Width 4.3 m</div>
+      <div style="font-size:13px; color:var(--blue-dark); margin-bottom:4px;">Tenths = 3 &lt; 5</div>
+      <div style="font-size:22px; font-weight:700; color:var(--blue-dark);">→ 4 m</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    Length ≈ <strong>9 m</strong> and Width ≈ <strong>4 m</strong> to the nearest whole metre ✓
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 7</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Round <strong>5.3</strong> to the nearest whole number.
+        ${mcqBlock(['6','4','5'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Round <strong>2.8</strong> to the nearest whole number.
+        ${mcqBlock(['2','4','3'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Which digit do we look at when rounding to the nearest whole number?
+        ${mcqBlock(['Hundredths digit','Ones digit','Tenths digit'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Round <strong>9.5</strong> to the nearest whole number.
+        ${mcqBlock(['9','10','9.5'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Kola rounds 7.49 and gets 8. Has he rounded correctly?
+        ${mcqBlock(['Yes — 9 is big so round up','No — the tenths digit is 4 so it rounds down to 7','Only if he ignores the 9'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        A piece of wood measures 3.6 m. Rounded to the nearest metre, how long is it?
+        ${mcqBlock(['3 m','4 m','3.5 m'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Which of these decimals rounds to <strong>6</strong>?
+        ${mcqBlock(['5.49', '6.51', '5.72'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Zainab weighs 32.5 kg. Emeka weighs 31.8 kg. What is the difference in their rounded weights?
+        ${mcqBlock(['0 kg','2 kg','1 kg'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Tunde says that 4.45 and 4.49 both round to the same whole number. Is he right?
+        ${mcqBlock(['No — 4.49 rounds to 5 because of the 9','No — they round to different numbers','Yes — both have 4 in the tenths, so both round down to 4'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> Three parcels weigh 2.7 kg, 3.4 kg and 4.5 kg. What is the total weight after each parcel is rounded to the nearest kg?
+        ${mcqBlock(['11 kg','10 kg','9 kg'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
+
+
+// Decimals B — Step 8: Halves and quarters as decimals
+const DEC_B_STEP8 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">B8</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 8 — Halves and quarters as decimals</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "You already know fractions like ½ and ¼ very well. Now we discover their decimal twins! One half is the same as <strong>0.5</strong>. One quarter is the same as <strong>0.25</strong>. Three quarters is <strong>0.75</strong>. These four facts are some of the most useful in all of mathematics — they come up in money, measurements, sport scores and cooking every single day. Once you know these by heart, you can move between fractions and decimals instantly!"
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">The essential facts — memorise these four!</div>
+
+  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; justify-content:center;">
+    ${[
+      ['½','1/2','0.5','0.50','var(--blue-light)','var(--blue-dark)','var(--blue-mid)',50],
+      ['¼','1/4','0.25','0.25','var(--coral-light)','var(--coral-dark)','var(--coral-mid)',25],
+      ['¾','3/4','0.75','0.75','var(--purple-light)','var(--purple-dark)','var(--purple-mid)',75],
+      ['1','4/4','1.00','1.00','var(--green-light)','var(--green-dark)','var(--green-mid)',100],
+    ].map(([sym,frac,dec,dec2,bg,col,border,pct]) => `
+      <div style="background:${bg}; border:2px solid ${border}; border-radius:10px; padding:10px; text-align:center; min-width:70px; flex:1;">
+        <div style="font-size:28px; font-weight:700; color:${col};">${sym}</div>
+        <div style="font-size:11px; color:${col}; margin-bottom:4px;">${frac}</div>
+        <div style="font-size:20px; font-weight:700; color:${col};">${dec}</div>
+        <div style="height:8px; background:${col}; border-radius:4px; margin:6px 0; width:${pct}%; opacity:0.6;"></div>
+        <div style="font-size:9px; color:${col};">${pct}/100 squares</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="background:var(--amber-light); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--amber-dark);">
+    <strong>How to remember:</strong> Half = 5 tenths = 0.5 · Quarter = 25 hundredths = 0.25 · Three-quarters = 75 hundredths = 0.75 · Notice that quarter facts use the number 25 — like 25p coins in a pound!
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 1 — Why is ½ = 0.5?</div>
+  <div class="example-label">Show that <strong>½ = 0.5</strong> using a bar and a grid</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">One half means splitting into 2 equal parts and taking 1. We can show the same amount on a tenths bar and a hundredths grid:</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); font-weight:700; margin-bottom:4px;">Tenths bar: 5 out of 10</div>
+      <div style="display:flex; gap:0;">
+        ${Array.from({length:10}, (_,i) => `<div style="width:28px; height:32px; background:${i<5?'var(--blue)':'var(--blue-light)'}; border:1px solid var(--blue-dark); ${i===0?'border-radius:4px 0 0 4px':''}${i===9?'border-right:1px solid var(--blue-dark);border-radius:0 4px 4px 0':''}; border-left:${i>0?'none':'1px solid var(--blue-dark)'};"></div>`).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--blue-dark); margin-top:4px; font-weight:700;">= 5 tenths = 0.5</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); font-weight:700; margin-bottom:4px;">Hundredths grid: 50 out of 100</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => {
+          const bg = i < 50 ? '#4A90D9' : '#ffffff';
+          const border = i < 50 ? '#2c6fad' : '#a0b8d0';
+          return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid ${border};box-sizing:border-box;"></div>`;
+        }).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:4px; font-weight:700;">= 50 hundredths = 0.50 = 0.5</div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    ½ = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin:0 5px;"><span style="display:block;border-bottom:1px solid;line-height:1;">5</span><span style="display:block;line-height:1;">10</span></span> = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin:0 5px;"><span style="display:block;border-bottom:1px solid;line-height:1;">50</span><span style="display:block;line-height:1;">100</span></span> = <strong>0.5</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 2 — Why is ¼ = 0.25?</div>
+  <div class="example-label">Show that <strong>¼ = 0.25</strong> using a 100-square grid</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">One quarter means splitting into 4 equal parts and taking 1. The 100-square splits into 4 groups of 25 squares — so one quarter = 25 hundredths = 0.25:</div>
+
+  <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:14px;">
+
+    <div style="text-align:center;">
+      <div style="font-size:10px; color:var(--text-sec); margin-bottom:4px;">100 ÷ 4 = 25 squares per quarter:</div>
+      <div style="display:flex; flex-wrap:wrap; width:120px;">
+        ${Array.from({length:100}, (_,i) => {
+          const bg = i < 25 ? '#E05A5A' : '#ffffff';
+          const border = i < 25 ? '#b71c1c' : '#d0a0a0';
+          return `<div style="width:12px;height:12px;background:${bg};border:0.5px solid ${border};box-sizing:border-box;"></div>`;
+        }).join('')}
+      </div>
+      <div style="font-size:10px; color:var(--coral-dark); margin-top:4px; font-weight:700;">25 shaded = one quarter</div>
+    </div>
+
+    <div style="flex:1; min-width:110px; display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+      <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:8px 10px; font-size:11px; color:var(--coral-dark);">
+        100 squares ÷ 4 = <strong>25 per quarter</strong>
+      </div>
+      <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:8px 10px; font-size:11px; color:var(--blue-dark);">
+        25 hundredths = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:0.9em; margin:0 3px;"><span style="display:block;border-bottom:0.5px solid;line-height:1;">25</span><span style="display:block;line-height:1;">100</span></span> = <strong>0.25</strong>
+      </div>
+      <div style="background:var(--amber-light); border-radius:8px; padding:8px 10px; font-size:11px; color:var(--amber-dark);">
+        <strong>Remember:</strong> ¼ = 0.25 — the digits 2 and 5 come from the number 25!
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    ¼ = <span style="display:inline-block;text-align:center;vertical-align:middle;font-size:1em; margin:0 5px;"><span style="display:block;border-bottom:1px solid;line-height:1;">25</span><span style="display:block;line-height:1;">100</span></span> = <strong>0.25</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 3 — Three quarters and mixed numbers</div>
+  <div class="example-label">Write <strong>2¾</strong> as a decimal</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">We know ¾ = 0.75. A mixed number like 2¾ just adds the whole part in front of the decimal:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="text-align:center; background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 16px;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">Whole part</div>
+      <div style="font-size:28px; font-weight:700; color:var(--blue-dark);">2</div>
+    </div>
+
+    <div style="font-size:24px; color:var(--text-sec);">+</div>
+
+    <div style="text-align:center; background:var(--purple-light); border:1px solid var(--purple-mid); border-radius:8px; padding:10px 16px;">
+      <div style="font-size:10px; color:var(--purple-dark); margin-bottom:4px;">Fraction part ¾</div>
+      <div style="font-size:28px; font-weight:700; color:var(--purple-dark);">0.75</div>
+    </div>
+
+    <div style="font-size:24px; color:var(--text-sec);">=</div>
+
+    <div style="text-align:center; background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:10px 16px;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:4px;">As a decimal</div>
+      <div style="font-size:28px; font-weight:700; color:var(--green-dark);">2.75</div>
+    </div>
+
+  </div>
+
+  <div style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; justify-content:center; align-items:center;">
+    <div style="display:flex; gap:4px; align-items:center;">
+      <div style="width:44px; height:36px; background:var(--blue); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:13px; font-weight:700;">1</div>
+      <div style="width:44px; height:36px; background:var(--blue); border-radius:4px; display:flex; align-items:center; justify-content:center; color:white; font-size:13px; font-weight:700;">1</div>
+    </div>
+    <div style="font-size:13px; color:var(--text-sec);">+</div>
+    <div style="display:flex; gap:0;">
+      ${Array.from({length:4}, (_,i) => `<div style="width:22px; height:36px; background:${i<3?'var(--purple)':'var(--purple-light)'}; border:1px solid var(--purple-dark); ${i===0?'border-radius:4px 0 0 4px':''}${i===3?'border-radius:0 4px 4px 0;border-left:none':'border-left:none'};"></div>`).join('')}
+    </div>
+    <div style="font-size:11px; color:var(--purple-dark);">3 of 4 quarters shaded = 0.75</div>
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2¾ = 2 + 0.75 = <strong>2.75</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 4 — Converting: decimal → fraction</div>
+  <div class="example-label">Write <strong>3.5</strong> as a mixed number</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;">Working backwards: the decimal part 0.5 = ½. The whole number 3 stays as 3. Put them together:</div>
+
+  <div style="display:flex; gap:10px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="background:var(--coral-light); border:1px solid var(--coral-mid); border-radius:8px; padding:10px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--coral-dark); margin-bottom:4px;">Decimal</div>
+      <div style="font-size:26px; font-weight:700; color:var(--coral-dark);">3.5</div>
+    </div>
+
+    <div style="text-align:center; font-size:13px; color:var(--text-sec);">
+      <div>0.5 = ½</div>
+      <div style="font-size:20px; color:var(--amber-dark);">→</div>
+    </div>
+
+    <div style="background:var(--blue-light); border:1px solid var(--blue-mid); border-radius:8px; padding:10px 16px; text-align:center;">
+      <div style="font-size:10px; color:var(--blue-dark); margin-bottom:4px;">Mixed number</div>
+      <div style="font-size:26px; font-weight:700; color:var(--blue-dark);">3½</div>
+    </div>
+
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:0; margin-bottom:14px; border:1.5px solid var(--blue-mid); border-radius:8px; overflow:hidden;">
+    <div style="display:flex; background:var(--blue-light);">
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Decimal</div>
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark); border-right:1px solid var(--blue-mid);">Decimal part</div>
+      <div style="flex:1; padding:6px 10px; font-size:10px; font-weight:700; color:var(--blue-dark);">Mixed number</div>
+    </div>
+    ${[['1.5','0.5 = ½','1½'],['2.25','0.25 = ¼','2¼'],['4.75','0.75 = ¾','4¾'],['3.5','0.5 = ½','3½']].map(([d,dp,mn],i)=>`
+      <div style="display:flex; background:${i%2===0?'white':'var(--blue-light)'}; border-top:1px solid var(--blue-mid);">
+        <div style="flex:1; padding:6px 10px; font-size:13px; font-weight:700; color:var(--coral-dark); border-right:1px solid var(--blue-mid);">${d}</div>
+        <div style="flex:1; padding:6px 10px; font-size:12px; color:var(--text-sec); border-right:1px solid var(--blue-mid);">${dp}</div>
+        <div style="flex:1; padding:6px 10px; font-size:13px; font-weight:700; color:var(--green-dark);">${mn}</div>
+      </div>
+    `).join('')}
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    3.5 = 3 + 0.5 = 3 + ½ = <strong>3½</strong> ✓
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: sharing pizza</div>
+  <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Mama buys 3 pizzas for a party. By the end of the evening, 2 whole pizzas and three quarters of the third pizza have been eaten. Write the total amount eaten as a decimal."</div>
+
+  <div style="font-size:11px; color:var(--text-sec); margin:10px 0 8px;"><strong>Think:</strong> 2 whole pizzas + ¾ of a pizza = 2¾ pizzas = 2 + 0.75 = <strong>2.75</strong> pizzas eaten.</div>
+
+  <div style="display:flex; gap:8px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
+
+    <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+      <div style="width:52px; height:52px; background:var(--amber); border-radius:50%; border:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700;">Pizza 1</div>
+      <div style="width:52px; height:52px; background:var(--amber); border-radius:50%; border:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700;">Pizza 2</div>
+      <div style="position:relative; width:52px; height:52px;">
+        <div style="width:52px; height:52px; background:var(--amber-light); border-radius:50%; border:2px solid var(--amber-dark);"></div>
+        <div style="position:absolute; top:0; left:0; width:52px; height:52px; border-radius:50%; overflow:hidden;">
+          <div style="position:absolute; top:0; left:0; width:75%; height:100%; background:var(--amber);"></div>
+        </div>
+        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(0deg);"></div>
+        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(90deg);"></div>
+        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(180deg);"></div>
+        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(270deg);"></div>
+      </div>
+    </div>
+
+    <div style="font-size:22px; color:var(--amber-dark);">=</div>
+
+    <div style="background:var(--green-light); border:1px solid var(--green-mid); border-radius:8px; padding:10px 18px; text-align:center;">
+      <div style="font-size:10px; color:var(--green-dark); margin-bottom:4px;">Total eaten</div>
+      <div style="font-size:26px; font-weight:700; color:var(--green-dark);">2.75</div>
+      <div style="font-size:10px; color:var(--green-dark);">pizzas</div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding:8px; background:var(--green-light); border-radius:8px; color:var(--green-dark); font-weight:700;">
+    2¾ pizzas = 2 + ¾ = 2 + 0.75 = <strong>2.75 pizzas eaten</strong> ✓
+  </div>
+</div>
+
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 8</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">
+        Write <strong>½</strong> as a decimal.
+        ${mcqBlock(['0.25','0.5','0.75'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">
+        Write <strong>¾</strong> as a decimal.
+        ${mcqBlock(['0.75','0.25','0.34'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">
+        Write <strong>0.25</strong> as a fraction.
+        ${mcqBlock(['½','¼','¾'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">
+        Write <strong>4¼</strong> as a decimal.
+        ${mcqBlock(['4.5','4.14','4.25'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">
+        Kola has 3.75 metres of ribbon. Write this as a mixed number.
+        ${mcqBlock(['3½ m','3¼ m','3¾ m'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">
+        Which decimal is <strong>NOT</strong> equal to one of the quarter fractions?
+        ${mcqBlock(['0.25','0.5','0.35'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">
+        Ngozi runs 1.5 km in the morning and 0.75 km in the evening. Write both distances as fractions and find the total.
+        ${mcqBlock(['1½ + ¾ = 2¼ km','1½ + ¾ = 2½ km','1¼ + ¾ = 2 km'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">
+        Put these in ascending order: <strong>0.5, ¼, 0.75, ½</strong>
+        ${mcqBlock(['0.5, ¼, 0.75, ½','¼, 0.5, ½, 0.75','¼, ½, 0.5, 0.75'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">
+        <strong>Think Deeper:</strong> Emeka says 0.5 = ½ = 0.50 = 5/10 = 50/100. Are all of these the same value?
+        ${mcqBlock(['No — they are written differently so they must be different values','Yes — they are all equal, just written in different forms','Only 0.5 and 0.50 are the same'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">
+        <strong>BOSS LEVEL:</strong> A recipe needs 1¾ cups of flour and ¼ cup of sugar. Tunde measures 2.25 cups of flour and 0.5 cups of sugar. Does Tunde have the right amounts?
+        ${mcqBlock(['Yes — both are correct','No — flour is correct but sugar should be 0.25 cups','No — both amounts are wrong'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+`;
+
 
 // --- MONEY ---
 const MONEY_STEP1 = ``;
