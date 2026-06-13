@@ -11671,6 +11671,7 @@ const DEC_B_STEP8 = `
 </div>
 
 
+
 <div class="card">
   <div class="card-title">Example 5 — Word problem: sharing pizza</div>
   <div class="warmup" style="background:var(--purple-light); color:var(--purple-dark);">📖 "Mama buys 3 pizzas for a party. By the end of the evening, 2 whole pizzas and three quarters of the third pizza have been eaten. Write the total amount eaten as a decimal."</div>
@@ -11680,18 +11681,59 @@ const DEC_B_STEP8 = `
   <div style="display:flex; gap:8px; margin:12px 0 14px; align-items:center; flex-wrap:wrap; justify-content:center;">
 
     <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
-      <div style="width:52px; height:52px; background:var(--amber); border-radius:50%; border:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700;">Pizza 1</div>
-      <div style="width:52px; height:52px; background:var(--amber); border-radius:50%; border:2px solid var(--amber-dark); display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700;">Pizza 2</div>
-      <div style="position:relative; width:52px; height:52px;">
-        <div style="width:52px; height:52px; background:var(--amber-light); border-radius:50%; border:2px solid var(--amber-dark);"></div>
-        <div style="position:absolute; top:0; left:0; width:52px; height:52px; border-radius:50%; overflow:hidden;">
-          <div style="position:absolute; top:0; left:0; width:75%; height:100%; background:var(--amber);"></div>
-        </div>
-        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(0deg);"></div>
-        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(90deg);"></div>
-        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(180deg);"></div>
-        <div style="position:absolute; top:50%; left:50%; width:1px; height:26px; background:var(--amber-dark); transform:translate(-50%,-100%) rotate(270deg);"></div>
+
+      <!-- Pizza 1 — fully eaten (whole circle) -->
+      <div style="text-align:center;">
+        <svg width="56" height="56" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="25" fill="#D4860B" stroke="#8B5E00" stroke-width="2"/>
+          <line x1="28" y1="28" x2="28" y2="3"  stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="28" y1="28" x2="53" y2="28" stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="28" y1="28" x2="28" y2="53" stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="28" y1="28" x2="3"  y2="28" stroke="#8B5E00" stroke-width="1.5"/>
+          <text x="28" y="32" text-anchor="middle" font-size="9" font-weight="700" fill="white">Pizza 1</text>
+        </svg>
       </div>
+
+      <!-- Pizza 2 — fully eaten (whole circle) -->
+      <div style="text-align:center;">
+        <svg width="56" height="56" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="25" fill="#D4860B" stroke="#8B5E00" stroke-width="2"/>
+          <line x1="28" y1="28" x2="28" y2="3"  stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="28" y1="28" x2="53" y2="28" stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="28" y1="28" x2="28" y2="53" stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="28" y1="28" x2="3"  y2="28" stroke="#8B5E00" stroke-width="1.5"/>
+          <text x="28" y="32" text-anchor="middle" font-size="9" font-weight="700" fill="white">Pizza 2</text>
+        </svg>
+      </div>
+
+      <!-- Pizza 3 — ¾ eaten, ¼ remaining -->
+      <!--
+        ¾ of 360° = 270°. Starting from 12 o'clock (top), sweeping clockwise 270°.
+        Centre: cx=28, cy=28, r=25.
+        Start point (12 o'clock): x=28, y=3
+        End point (270° clockwise from top = 9 o'clock position):
+          x = cx + r·sin(270°) = 28 + 25·(−1) = 3
+          y = cy − r·cos(270°) = 28 − 25·(0)  = 28
+        large-arc-flag=1 because 270° > 180°
+        sweep-flag=1 for clockwise
+      -->
+      <div style="text-align:center;">
+        <svg width="56" height="56" viewBox="0 0 56 56">
+          <!-- Uneaten quarter background -->
+          <circle cx="28" cy="28" r="25" fill="#F5D99A" stroke="#8B5E00" stroke-width="2"/>
+          <!-- Three-quarter eaten slice (shaded) -->
+          <path d="M28,28 L28,3 A25,25 0 1,1 3,28 Z" fill="#D4860B"/>
+          <!-- Quarter dividing lines (cross) -->
+          <line x1="28" y1="3"  x2="28" y2="53" stroke="#8B5E00" stroke-width="1.5"/>
+          <line x1="3"  y1="28" x2="53" y2="28" stroke="#8B5E00" stroke-width="1.5"/>
+          <!-- Outer ring on top -->
+          <circle cx="28" cy="28" r="25" fill="none" stroke="#8B5E00" stroke-width="2"/>
+          <!-- Label -->
+          <text x="22" y="20" text-anchor="middle" font-size="8" font-weight="700" fill="white">¾</text>
+          <text x="22" y="30" text-anchor="middle" font-size="7" fill="white">eaten</text>
+        </svg>
+      </div>
+
     </div>
 
     <div style="font-size:22px; color:var(--amber-dark);">=</div>
