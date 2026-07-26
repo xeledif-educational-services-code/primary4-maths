@@ -16742,16 +16742,2337 @@ const TIME_STEP5 = `
 
 
 
-// --- SHAPE ---
-const SHAPE_STEP1 = ``;
-const SHAPE_STEP2 = ``;
-const SHAPE_STEP3 = ``;
-const SHAPE_STEP4 = ``;
-const SHAPE_STEP5 = ``;
-const SHAPE_STEP6 = ``;
-const SHAPE_STEP7 = ``;
-const SHAPE_STEP8 = ``;
+// ============================================================
+// SHAPE — Summer Term | Year 4 Maths
+// Steps 1–8 complete lesson content
+// Nigerian names throughout; UK curriculum standard.
+// Rich SVG diagrams in every worked example and many exercises.
+// Drop these const declarations in place of the empty
+// SHAPE_STEP1 … SHAPE_STEP8 placeholders in the main HTML file.
+// ============================================================
 
+
+// ============================================================
+// STEP 1 — Understand angles as turns
+// ============================================================
+const SHAPE_STEP1 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--blue-light);color:var(--blue-dark);border:0.5px solid var(--blue-mid);">🔄</div>
+  <div>
+    <div class="day-label" style="color:var(--blue-dark);">Step 1 — Understand angles as turns</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    "An <strong>angle</strong> is simply a measure of how much something has <strong>turned</strong>.
+     Imagine you are standing in your school playground facing the gate.
+     If you spin your body around, how far you turn is an angle.
+     A full spin all the way back to the start is a <strong>full turn</strong>.
+     Half a spin is a <strong>half turn</strong>. A quarter spin — like turning to face the wall on your right — is a <strong>quarter turn</strong>, also called a <strong>right angle</strong>."
+  </div>
+</div>
+
+<!-- TURN TYPES VISUAL -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">The four key turns</div>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;">
+
+    <!-- Full turn -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r="44" fill="var(--blue-light)" stroke="var(--blue-mid)" stroke-width="1.5"/>
+        <!-- full circle arc arrow -->
+        <path d="M55,14 A41,41 0 1,1 54,14" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="54,14 48,22 60,20" fill="var(--blue)"/>
+        <!-- centre dot -->
+        <circle cx="55" cy="55" r="4" fill="var(--blue-dark)"/>
+        <!-- start line -->
+        <line x1="55" y1="55" x2="55" y2="14" stroke="var(--blue-dark)" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="55" y="65" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">360°</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--blue-dark);margin-top:4px;">Full turn</div>
+      <div style="font-size:10px;color:var(--text-sec);">All the way around</div>
+    </div>
+
+    <!-- Half turn -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r="44" fill="var(--purple-light)" stroke="var(--purple-mid)" stroke-width="1.5"/>
+        <!-- shaded half -->
+        <path d="M55,11 A44,44 0 0,1 55,99 L55,55 Z" fill="var(--purple)" opacity="0.18"/>
+        <!-- arc arrow -->
+        <path d="M55,11 A44,44 0 0,1 55,99" fill="none" stroke="var(--purple)" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="55,99 48,90 60,88" fill="var(--purple)"/>
+        <circle cx="55" cy="55" r="4" fill="var(--purple-dark)"/>
+        <line x1="55" y1="55" x2="55" y2="11" stroke="var(--purple-dark)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="55" y1="55" x2="55" y2="99" stroke="var(--purple-dark)" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="55" y="63" text-anchor="middle" font-size="10" font-weight="700" fill="var(--purple-dark)">180°</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--purple-dark);margin-top:4px;">Half turn</div>
+      <div style="font-size:10px;color:var(--text-sec);">Facing the other way</div>
+    </div>
+
+    <!-- Quarter turn -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r="44" fill="var(--green-light)" stroke="var(--green-mid)" stroke-width="1.5"/>
+        <!-- shaded quarter -->
+        <path d="M55,55 L55,11 A44,44 0 0,1 99,55 Z" fill="var(--green)" opacity="0.22"/>
+        <!-- arc arrow -->
+        <path d="M55,11 A44,44 0 0,1 99,55" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="99,55 89,50 91,62" fill="var(--green)"/>
+        <circle cx="55" cy="55" r="4" fill="var(--green-dark)"/>
+        <line x1="55" y1="55" x2="55" y2="11" stroke="var(--green-dark)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="55" y1="55" x2="99" y2="55" stroke="var(--green-dark)" stroke-width="2" stroke-dasharray="4 3"/>
+        <!-- right angle marker -->
+        <polyline points="55,45 65,45 65,55" fill="none" stroke="var(--green-dark)" stroke-width="1.5"/>
+        <text x="58" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">90°</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--green-dark);margin-top:4px;">Quarter turn</div>
+      <div style="font-size:10px;color:var(--text-sec);">= right angle</div>
+    </div>
+
+    <!-- Three-quarter turn -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r="44" fill="var(--amber-light)" stroke="var(--amber-mid)" stroke-width="1.5"/>
+        <!-- shaded 3/4 -->
+        <path d="M55,55 L55,11 A44,44 0 1,1 11,55 Z" fill="var(--amber)" opacity="0.18"/>
+        <path d="M55,11 A44,44 0 1,1 11,55" fill="none" stroke="var(--amber)" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="11,55 20,48 18,62" fill="var(--amber)"/>
+        <circle cx="55" cy="55" r="4" fill="var(--amber-dark)"/>
+        <line x1="55" y1="55" x2="55" y2="11" stroke="var(--amber-dark)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="55" y1="55" x2="11" y2="55" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="55" y="65" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">270°</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--amber-dark);margin-top:4px;">Three-quarter turn</div>
+      <div style="font-size:10px;color:var(--text-sec);">270°</div>
+    </div>
+
+  </div>
+
+  <!-- Clockwise / anticlockwise -->
+  <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:160px;background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:10px;">
+      <div style="font-size:12px;font-weight:700;color:var(--blue-dark);margin-bottom:4px;">🕐 Clockwise</div>
+      <div style="font-size:11px;color:var(--blue-dark);">Turns in the same direction as clock hands — to the right when you start facing up.</div>
+    </div>
+    <div style="flex:1;min-width:160px;background:var(--coral-light);border:1px solid var(--coral-mid);border-radius:8px;padding:10px;">
+      <div style="font-size:12px;font-weight:700;color:var(--coral-dark);margin-bottom:4px;">🔄 Anticlockwise</div>
+      <div style="font-size:11px;color:var(--coral-dark);">Turns in the opposite direction to clock hands — to the left when you start facing up.</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Identifying turns from a compass</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Emeka is facing North. He makes a quarter turn clockwise. Which direction does he now face?"
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="120" height="120" viewBox="0 0 120 120">
+      <!-- compass rose -->
+      <circle cx="60" cy="60" r="50" fill="var(--blue-light)" stroke="var(--blue-mid)" stroke-width="1.5"/>
+      <text x="60" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">N</text>
+      <text x="60" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text-sec)">S</text>
+      <text x="108" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">E ✓</text>
+      <text x="12" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text-sec)">W</text>
+      <!-- cross lines -->
+      <line x1="60" y1="20" x2="60" y2="100" stroke="var(--border)" stroke-width="1"/>
+      <line x1="20" y1="60" x2="100" y2="60" stroke="var(--border)" stroke-width="1"/>
+      <!-- start arrow (North) -->
+      <line x1="60" y1="60" x2="60" y2="22" stroke="var(--blue-dark)" stroke-width="3" stroke-linecap="round"/>
+      <!-- arc of quarter turn -->
+      <path d="M60,22 A38,38 0 0,1 98,60" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-dasharray="5 3"/>
+      <polygon points="98,60 88,52 90,65" fill="var(--green)"/>
+      <!-- end arrow (East) -->
+      <line x1="60" y1="60" x2="98" y2="60" stroke="var(--green-dark)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="60" r="4" fill="var(--blue-dark)"/>
+    </svg>
+    <div style="font-size:12px;color:var(--text-sec);line-height:1.8;flex:1;min-width:180px;">
+      <div style="color:var(--blue-dark);font-weight:700;">Start: facing North ↑</div>
+      <div>Quarter turn (90°) clockwise →</div>
+      <div style="color:var(--green-dark);font-weight:700;">End: facing East →</div>
+      <div style="margin-top:6px;font-size:11px;background:var(--green-light);border-radius:6px;padding:6px 10px;color:var(--green-dark);">
+        N → E → S → W → N<br/>Each step = quarter turn clockwise
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Emeka now faces <strong>East</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Half turn</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Aisha is facing South. She makes a half turn anticlockwise. Which direction does she face?"
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="120" height="120" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="var(--purple-light)" stroke="var(--purple-mid)" stroke-width="1.5"/>
+      <text x="60" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">N ✓</text>
+      <text x="60" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">S (start)</text>
+      <text x="108" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text-sec)">E</text>
+      <text x="12" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text-sec)">W</text>
+      <line x1="60" y1="20" x2="60" y2="100" stroke="var(--border)" stroke-width="1"/>
+      <line x1="20" y1="60" x2="100" y2="60" stroke="var(--border)" stroke-width="1"/>
+      <!-- start arrow South -->
+      <line x1="60" y1="60" x2="60" y2="98" stroke="var(--purple-dark)" stroke-width="3" stroke-linecap="round"/>
+      <!-- half turn anticlockwise arc -->
+      <path d="M60,98 A38,38 0 0,0 60,22" fill="none" stroke="var(--purple)" stroke-width="2.5" stroke-dasharray="5 3"/>
+      <polygon points="60,22 53,32 67,30" fill="var(--purple)"/>
+      <!-- end arrow North -->
+      <line x1="60" y1="60" x2="60" y2="22" stroke="var(--green-dark)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="60" r="4" fill="var(--purple-dark)"/>
+    </svg>
+    <div style="font-size:12px;color:var(--text-sec);line-height:1.8;flex:1;min-width:180px;">
+      <div style="color:var(--purple-dark);font-weight:700;">Start: facing South ↓</div>
+      <div>Half turn (180°) anticlockwise</div>
+      <div style="color:var(--green-dark);font-weight:700;">End: facing North ↑</div>
+      <div style="margin-top:6px;font-size:11px;background:var(--amber-light);border-radius:6px;padding:6px 10px;color:var(--amber-dark);">
+        A half turn always takes you to the <strong>opposite</strong> direction — clockwise or anticlockwise makes no difference!
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Aisha now faces <strong>North</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Three-quarter turn</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Funmi is facing West. She makes a three-quarter turn clockwise. Which direction does she face?"
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      <strong>Strategy:</strong> Three-quarter clockwise = same as quarter turn anticlockwise. Count three clockwise steps from W.
+    </div>
+    <div style="background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);font-family:monospace;">
+      W →(CW)→ N →(CW)→ E →(CW)→ S
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Funmi now faces <strong>South</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Turns on a grid (robot moves)</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "A robot starts facing right (East). It makes two quarter turns clockwise. Which direction does it face?"
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="200" height="80" viewBox="0 0 200 80">
+      <!-- Robot faces right -->
+      <rect x="5" y="25" width="30" height="30" rx="5" fill="var(--blue-light)" stroke="var(--blue-mid)" stroke-width="1.5"/>
+      <text x="20" y="45" text-anchor="middle" font-size="14">🤖</text>
+      <text x="20" y="70" text-anchor="middle" font-size="9" fill="var(--blue-dark)">East</text>
+      <line x1="35" y1="40" x2="55" y2="40" stroke="var(--blue)" stroke-width="2" marker-end="url(#arr)"/>
+      <!-- turn 1 -->
+      <text x="75" y="35" text-anchor="middle" font-size="9" fill="var(--purple-dark)">¼ CW</text>
+      <path d="M65,30 Q80,20 80,40" fill="none" stroke="var(--purple)" stroke-width="2" stroke-dasharray="4 2"/>
+      <polygon points="80,40 74,33 85,34" fill="var(--purple)"/>
+      <!-- Robot 2 faces down -->
+      <rect x="90" y="25" width="30" height="30" rx="5" fill="var(--purple-light)" stroke="var(--purple-mid)" stroke-width="1.5"/>
+      <text x="105" y="45" text-anchor="middle" font-size="14">🤖</text>
+      <text x="105" y="70" text-anchor="middle" font-size="9" fill="var(--purple-dark)">South</text>
+      <!-- turn 2 -->
+      <text x="140" y="35" text-anchor="middle" font-size="9" fill="var(--coral-dark)">¼ CW</text>
+      <path d="M120,40 Q145,25 155,40" fill="none" stroke="var(--coral)" stroke-width="2" stroke-dasharray="4 2"/>
+      <polygon points="155,40 148,34 159,33" fill="var(--coral)"/>
+      <!-- Robot 3 faces left -->
+      <rect x="160" y="25" width="30" height="30" rx="5" fill="var(--coral-light)" stroke="var(--coral-mid)" stroke-width="1.5"/>
+      <text x="175" y="45" text-anchor="middle" font-size="14">🤖</text>
+      <text x="175" y="70" text-anchor="middle" font-size="9" fill="var(--coral-dark)">West</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;">
+      East → ¼ CW → <strong>South</strong> → ¼ CW → <strong>West</strong><br/>
+      Two quarter turns clockwise = a half turn.
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    The robot faces <strong>West</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 5 -->
+<div class="card">
+  <div class="card-title">Example 5 — Calculating total degrees</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Chukwudi makes a quarter turn then a half turn in the same direction. How many degrees does he turn altogether? Is this more or less than a full turn?"
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      Quarter turn = <strong>90°</strong>. Half turn = <strong>180°</strong>.
+    </div>
+    <div style="background:var(--purple-light);border:1px solid var(--purple-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--purple-dark);">
+      90° + 180° = 270°
+    </div>
+    <div style="background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);">
+      Full turn = 360°. 270° &lt; 360°, so this is <strong>less</strong> than a full turn (it is a three-quarter turn).
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Total = <strong>270°</strong> — a three-quarter turn, less than a full turn ✓
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 1</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">How many degrees is a quarter turn?
+        ${mcqBlock(['180°','90°','45°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">Temi faces North and makes a quarter turn clockwise. Which direction does she face?
+        ${mcqBlock(['West','South','East'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">How many degrees is a full turn?
+        ${mcqBlock(['180°','270°','360°'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">Bola faces East and makes a half turn. Which direction does she face now?
+        ${mcqBlock(['North','West','South'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">Which turn is equal to 270°?
+        ${mcqBlock(['Half turn','Three-quarter turn','Full turn'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">Kelechi faces South and makes three quarter turns anticlockwise. Which direction does he face?
+        ${mcqBlock(['West','East','North'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">A clockwise quarter turn from West leads to which direction?
+        ${mcqBlock(['South','North','East'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">Two quarter turns clockwise equals which type of turn?
+        ${mcqBlock(['Full turn','Half turn','Three-quarter turn'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Adaeze makes a three-quarter turn anticlockwise from North. Emeka makes a quarter turn clockwise from North. Do they end up facing the same direction?
+        ${mcqBlock(['Yes — both face West','No — Adaeze faces East, Emeka faces East','Yes — both face East'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> Ngozi makes 5 quarter turns clockwise. What single turn is equivalent to this, and which direction does she face if she started facing North?
+        ${mcqBlock(['Full turn + quarter turn; faces East','Half turn + quarter turn; faces West','1¼ turns; faces South'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 2 — Identify angles
+// ============================================================
+const SHAPE_STEP2 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--purple-light);color:var(--purple-dark);border:0.5px solid var(--purple-mid);">📐</div>
+  <div>
+    <div class="day-label" style="color:var(--purple-dark);">Step 2 — Identify angles</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--purple-mid);">
+  <div class="card-title" style="color:var(--purple-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    "Now we name the different sized angles we can see in shapes and pictures.
+     Think of angles like different sized openings — like how wide you open a door.
+     A tiny opening is an <strong>acute angle</strong>. Opening it exactly to a right angle is a <strong>right angle</strong>.
+     Opening it past the right angle is an <strong>obtuse angle</strong>. Pulling it all the way flat is a <strong>straight line angle</strong>. Opening wider still gives a <strong>reflex angle</strong>."
+  </div>
+</div>
+
+<!-- ANGLE TYPES GALLERY -->
+<div class="card" style="border-color:var(--purple-mid);">
+  <div class="card-title" style="color:var(--purple-dark);">The five angle types</div>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;">
+
+    ${[
+      ['Acute','Less than 90°','var(--blue)','var(--blue-light)','var(--blue-dark)', 40],
+      ['Right','Exactly 90°','var(--green)','var(--green-light)','var(--green-dark)', 90],
+      ['Obtuse','Between 90° and 180°','var(--amber)','var(--amber-light)','var(--amber-dark)', 130],
+      ['Straight','Exactly 180°','var(--coral)','var(--coral-light)','var(--coral-dark)', 180],
+      ['Reflex','Between 180° and 360°','var(--purple)','var(--purple-light)','var(--purple-dark)', 230],
+    ].map(([name, desc, col, light, dark, deg])=>{
+      const r=50, cx=65, cy=65;
+      const a1=(-90)*(Math.PI/180);
+      const a2=(deg-90)*(Math.PI/180);
+      const x1=cx+r*Math.cos(a1); const y1=cy+r*Math.sin(a1);
+      const x2=cx+r*Math.cos(a2); const y2=cy+r*Math.sin(a2);
+      const large=deg>180?1:0;
+      const isRight=deg===90;
+      const isStraight=deg===180;
+      return `
+        <div style="text-align:center;flex:1;min-width:110px;">
+          <svg width="130" height="130" viewBox="0 0 130 130">
+            <circle cx="${cx}" cy="${cy}" r="52" fill="${light}" stroke="${col}" stroke-width="1" opacity="0.5"/>
+            <!-- shaded sector -->
+            <path d="M${cx},${cy} L${x1.toFixed(1)},${y1.toFixed(1)} A${r},${r} 0 ${large},1 ${x2.toFixed(1)},${y2.toFixed(1)} Z"
+              fill="${col}" opacity="0.22"/>
+            <!-- two arms -->
+            <line x1="${cx}" y1="${cy}" x2="${x1.toFixed(1)}" y2="${y1.toFixed(1)}" stroke="${dark}" stroke-width="3" stroke-linecap="round"/>
+            <line x1="${cx}" y1="${cy}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${dark}" stroke-width="3" stroke-linecap="round"/>
+            <!-- right angle marker -->
+            ${isRight?`<polyline points="${(cx+14).toFixed(1)},${cy} ${(cx+14).toFixed(1)},${(cy-14).toFixed(1)} ${cx},${(cy-14).toFixed(1)}" fill="none" stroke="${dark}" stroke-width="1.8"/>`:''}
+            <!-- arc -->
+            ${!isStraight?`<path d="M${(cx+r*0.45*Math.cos(a1)).toFixed(1)},${(cy+r*0.45*Math.sin(a1)).toFixed(1)} A${r*0.45},${r*0.45} 0 ${large},1 ${(cx+r*0.45*Math.cos(a2)).toFixed(1)},${(cy+r*0.45*Math.sin(a2)).toFixed(1)}" fill="none" stroke="${col}" stroke-width="2"/>`:
+            `<line x1="${(cx-52).toFixed(1)}" y1="${cy}" x2="${(cx+52).toFixed(1)}" y2="${cy}" stroke="${dark}" stroke-width="3" stroke-linecap="round"/>`}
+            <!-- label -->
+            <text x="${cx}" y="${cy+10}" text-anchor="middle" font-size="11" font-weight="700" fill="${dark}">${deg === 180 ? '180°' : deg+'°'}</text>
+            <circle cx="${cx}" cy="${cy}" r="3.5" fill="${dark}"/>
+          </svg>
+          <div style="font-size:12px;font-weight:700;color:${dark};margin-top:2px;">${name}</div>
+          <div style="font-size:10px;color:var(--text-sec);">${desc}</div>
+        </div>
+      `;
+    }).join('')}
+
+  </div>
+
+  <div style="margin-top:12px;background:var(--amber-light);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);">
+    <strong>Quick test — use your hand!</strong> Make an "L" shape with your thumb and index finger. That opening is a right angle (90°).
+    An acute angle is smaller than that "L". An obtuse angle is wider than the "L" but not flat. A reflex angle is more than a straight line.
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Identifying angles in a triangle</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    📖 "Adaeze draws a triangle with angles 40°, 60° and 80°. Name each angle type."
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="180" height="140" viewBox="0 0 180 140">
+      <!-- triangle -->
+      <polygon points="90,10 10,130 170,130" fill="var(--purple-light)" stroke="var(--purple-mid)" stroke-width="2"/>
+      <!-- arc at top (40°) -->
+      <path d="M90,10 m0,18 A18,18 0 0,1 ${(90+18*Math.sin(40*Math.PI/180)).toFixed(1)},${(10+18-18*Math.cos(40*Math.PI/180)).toFixed(1)}" fill="none" stroke="var(--blue)" stroke-width="2"/>
+      <text x="90" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">40° acute</text>
+      <!-- arc at left (60°) -->
+      <text x="28" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">60°</text>
+      <text x="28" y="130" text-anchor="middle" font-size="9" fill="var(--amber-dark)">acute</text>
+      <!-- arc at right (80°) -->
+      <text x="152" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">80°</text>
+      <text x="152" y="130" text-anchor="middle" font-size="9" fill="var(--green-dark)">acute</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:150px;">
+      <div><span style="color:var(--blue-dark);font-weight:700;">40°</span> — acute (less than 90°)</div>
+      <div><span style="color:var(--amber-dark);font-weight:700;">60°</span> — acute (less than 90°)</div>
+      <div><span style="color:var(--green-dark);font-weight:700;">80°</span> — acute (less than 90°)</div>
+      <div style="margin-top:6px;background:var(--blue-light);border-radius:6px;padding:5px 8px;color:var(--blue-dark);font-size:11px;">
+        All three are acute! This is called an <strong>acute triangle</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Right angle in a shape</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    📖 "Identify the right angles in this rectangle."
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="180" height="110" viewBox="0 0 180 110">
+      <rect x="20" y="20" width="140" height="70" fill="var(--green-light)" stroke="var(--green-mid)" stroke-width="2"/>
+      <!-- right angle markers at each corner -->
+      <polyline points="20,30 30,30 30,20" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+      <polyline points="150,30 150,20 160,20" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+      <polyline points="20,80 30,80 30,90" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+      <polyline points="150,80 150,90 160,90" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+      <text x="90" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">4 right angles</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:150px;">
+      Every corner of a rectangle has a <strong>right angle (90°)</strong>.<br/>
+      The small square symbol □ always marks a right angle.<br/>
+      <span style="color:var(--green-dark);font-weight:700;">Total: 4 right angles.</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Obtuse angle</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    📖 "Iyke draws an angle of 115°. What type of angle is it?"
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="150" height="120" viewBox="0 0 150 120">
+      <line x1="75" y1="90" x2="140" y2="90" stroke="var(--amber-dark)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="75" y1="90" x2="${(75+65*Math.cos((180-115)*Math.PI/180)).toFixed(1)}" y2="${(90-65*Math.sin((180-115)*Math.PI/180)).toFixed(1)}" stroke="var(--amber-dark)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M110,90 A35,35 0 0,0 ${(75+35*Math.cos((180-115)*Math.PI/180)).toFixed(1)},${(90-35*Math.sin((180-115)*Math.PI/180)).toFixed(1)}" fill="none" stroke="var(--amber)" stroke-width="2"/>
+      <circle cx="75" cy="90" r="3.5" fill="var(--amber-dark)"/>
+      <text x="100" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="var(--amber-dark)">115°</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:150px;">
+      115° is between 90° and 180°.<br/>
+      <span style="color:var(--amber-dark);font-weight:700;">→ Obtuse angle.</span><br/>
+      <div style="margin-top:5px;background:var(--amber-light);border-radius:6px;padding:5px 8px;color:var(--amber-dark);">
+        <strong>Memory trick:</strong> "Obtuse" sounds like "Obese" — it's the wider, fatter angle!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Reflex angle</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    📖 "An angle in a shape measures 310°. What type of angle is this? Can it be inside a regular polygon?"
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="130" height="130" viewBox="0 0 130 130">
+      <circle cx="65" cy="65" r="52" fill="var(--purple-light)" stroke="var(--purple-mid)" stroke-width="1"/>
+      <path d="M65,65 L65,13 A52,52 0 1,1 ${(65+52*Math.cos((310-90)*Math.PI/180)).toFixed(1)},${(65+52*Math.sin((310-90)*Math.PI/180)).toFixed(1)} Z" fill="var(--purple)" opacity="0.25"/>
+      <line x1="65" y1="65" x2="65" y2="13" stroke="var(--purple-dark)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="65" y1="65" x2="${(65+52*Math.cos((310-90)*Math.PI/180)).toFixed(1)}" y2="${(65+52*Math.sin((310-90)*Math.PI/180)).toFixed(1)}" stroke="var(--purple-dark)" stroke-width="3" stroke-linecap="round"/>
+      <text x="65" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">310°</text>
+      <circle cx="65" cy="65" r="3.5" fill="var(--purple-dark)"/>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:150px;">
+      310° is between 180° and 360°.<br/>
+      <span style="color:var(--purple-dark);font-weight:700;">→ Reflex angle.</span><br/>
+      Reflex angles cannot be interior angles of regular polygons (the inside angles of regular shapes are always less than 180°).
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 5 — Spot the angles in real life -->
+<div class="card">
+  <div class="card-title">Example 5 — Angles in everyday objects</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    📖 "Adaobi looks around the classroom. Can you name the angle type at each marked point?"
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin:12px 0;">
+    ${[
+      ['Corner of a book','90°','Right angle','var(--green-light)','var(--green-dark)'],
+      ['Slice of pizza (~30°)','30°','Acute angle','var(--blue-light)','var(--blue-dark)'],
+      ['Open scissors (~120°)','120°','Obtuse angle','var(--amber-light)','var(--amber-dark)'],
+      ['Flat desk surface','180°','Straight angle','var(--coral-light)','var(--coral-dark)'],
+    ].map(([obj,deg,type,light,dark])=>`
+      <div style="flex:1;min-width:130px;background:${light};border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;color:${dark};margin-bottom:2px;">${obj}</div>
+        <div style="font-size:18px;font-weight:900;color:${dark};font-family:monospace;">${deg}</div>
+        <div style="font-size:11px;color:${dark};margin-top:2px;">${type}</div>
+      </div>
+    `).join('')}
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 2</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">1</div>
+      <div class="ex-text">An angle of 75° is:
+        ${mcqBlock(['Obtuse','Right','Acute'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">2</div>
+      <div class="ex-text">An angle of 142° is:
+        ${mcqBlock(['Acute','Obtuse','Reflex'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">3</div>
+      <div class="ex-text">Which symbol marks a right angle on a diagram?
+        ${mcqBlock(['A curved arc','A small square □','An arrow'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">4</div>
+      <div class="ex-text">Seun draws a 200° angle. What type is it?
+        ${mcqBlock(['Obtuse','Straight','Reflex'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">5</div>
+      <div class="ex-text">How many right angles does a square have?
+        ${mcqBlock(['2','3','4'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">6</div>
+      <div class="ex-text">An angle of exactly 180° is called a:
+        ${mcqBlock(['Reflex angle','Straight angle','Obtuse angle'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">7</div>
+      <div class="ex-text">Zara draws an angle between 90° and 180°. This must be:
+        ${mcqBlock(['Acute','Reflex','Obtuse'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">8</div>
+      <div class="ex-text">The hands of a clock at 3 o'clock form which type of angle?
+        ${mcqBlock(['Acute','Right','Obtuse'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Ike says every triangle must have at least one acute angle. Is he correct?
+        ${mcqBlock(['No — all angles can be obtuse','Yes — always at least one acute angle','Only in right-angle triangles'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> A reflex angle measures 250°. What is the size of the smaller angle on the other side?
+        ${mcqBlock(['100°','110°','120°'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 3 — Compare and order angles
+// ============================================================
+const SHAPE_STEP3 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--teal-light);color:var(--teal-dark);border:0.5px solid var(--teal);">↕️</div>
+  <div>
+    <div class="day-label" style="color:var(--teal-dark);">Step 3 — Compare and order angles</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--teal);">
+  <div class="card-title" style="color:var(--teal-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    "Comparing angles is like comparing the width of a door opening — the wider the opening, the bigger the angle.
+     We can compare angles by <strong>looking</strong> (estimating), by <strong>folding paper</strong> to make a right-angle tester,
+     or by using a <strong>protractor</strong> to measure exactly.
+     When ordering, we always put them smallest to largest (or largest to smallest) and write their names or degrees."
+  </div>
+</div>
+
+<!-- RIGHT ANGLE TESTER VISUAL -->
+<div class="card" style="border-color:var(--teal);">
+  <div class="card-title" style="color:var(--teal-dark);">The right-angle tester trick</div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px;">
+    <svg width="200" height="100" viewBox="0 0 200 100">
+      <!-- paper folded twice -->
+      <rect x="10" y="20" width="80" height="60" rx="4" fill="var(--teal-light)" stroke="var(--teal)" stroke-width="1.5"/>
+      <line x1="50" y1="20" x2="50" y2="80" stroke="var(--teal-dark)" stroke-width="1.5" stroke-dasharray="4 2"/>
+      <line x1="10" y1="50" x2="90" y2="50" stroke="var(--teal-dark)" stroke-width="1.5" stroke-dasharray="4 2"/>
+      <text x="50" y="12" text-anchor="middle" font-size="9" fill="var(--teal-dark)">Fold twice → right angle</text>
+      <!-- three angles compared -->
+      <text x="115" y="20" font-size="9" fill="var(--blue-dark)" font-weight="700">Smaller than □</text>
+      <line x1="115" y1="60" x2="150" y2="60" stroke="var(--blue-dark)" stroke-width="2.5"/>
+      <line x1="115" y1="60" x2="${(115+35*Math.cos(50*Math.PI/180)).toFixed(1)}" y2="${(60-35*Math.sin(50*Math.PI/180)).toFixed(1)}" stroke="var(--blue-dark)" stroke-width="2.5"/>
+      <text x="155" y="50" font-size="9" fill="var(--amber-dark)" font-weight="700">Bigger than □</text>
+      <line x1="155" y1="80" x2="190" y2="80" stroke="var(--amber-dark)" stroke-width="2.5"/>
+      <line x1="155" y1="80" x2="${(155+35*Math.cos(120*Math.PI/180)).toFixed(1)}" y2="${(80-35*Math.sin(120*Math.PI/180)).toFixed(1)}" stroke="var(--amber-dark)" stroke-width="2.5"/>
+    </svg>
+    <div style="font-size:11px;color:var(--teal-dark);line-height:1.8;flex:1;min-width:160px;">
+      <strong>How to use:</strong><br/>
+      1. Fold a piece of paper in half, then in half again.<br/>
+      2. The corner you get is exactly 90°.<br/>
+      3. Place it on an angle — if the angle is smaller, it's acute. If bigger, it's obtuse.
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Comparing two angles by sight</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    📖 "Angle A = 55°. Angle B = 110°. Which is greater? How much greater?"
+  </div>
+  <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="280" height="100" viewBox="0 0 280 100">
+      <!-- Angle A -->
+      <line x1="30" y1="85" x2="100" y2="85" stroke="var(--blue-dark)" stroke-width="2.5"/>
+      <line x1="30" y1="85" x2="${(30+70*Math.cos((180-55)*Math.PI/180)).toFixed(1)}" y2="${(85-70*Math.sin((180-55)*Math.PI/180)).toFixed(1)}" stroke="var(--blue-dark)" stroke-width="2.5"/>
+      <path d="M70,85 A40,40 0 0,0 ${(30+40*Math.cos((180-55)*Math.PI/180)).toFixed(1)},${(85-40*Math.sin((180-55)*Math.PI/180)).toFixed(1)}" fill="none" stroke="var(--blue)" stroke-width="2"/>
+      <circle cx="30" cy="85" r="3" fill="var(--blue-dark)"/>
+      <text x="60" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-dark)">A = 55°</text>
+      <!-- Angle B -->
+      <line x1="160" y1="85" x2="250" y2="85" stroke="var(--amber-dark)" stroke-width="2.5"/>
+      <line x1="160" y1="85" x2="${(160+75*Math.cos((180-110)*Math.PI/180)).toFixed(1)}" y2="${(85-75*Math.sin((180-110)*Math.PI/180)).toFixed(1)}" stroke="var(--amber-dark)" stroke-width="2.5"/>
+      <path d="M210,85 A50,50 0 0,0 ${(160+50*Math.cos((180-110)*Math.PI/180)).toFixed(1)},${(85-50*Math.sin((180-110)*Math.PI/180)).toFixed(1)}" fill="none" stroke="var(--amber)" stroke-width="2"/>
+      <circle cx="160" cy="85" r="3" fill="var(--amber-dark)"/>
+      <text x="200" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="var(--amber-dark)">B = 110°</text>
+    </svg>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:10px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">Angle B (110°) &gt; Angle A (55°)</div>
+    <div style="background:var(--teal-light);border:1px solid var(--teal);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--teal-dark);">Difference: 110° − 55° = <strong>55°</strong></div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Angle B is greater by <strong>55°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Ordering three angles smallest to largest</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    📖 "Order these angles from smallest to largest: 125°, 45°, 90°, 210°."
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px;justify-content:center;">
+    ${[[45,'var(--blue)','var(--blue-light)','var(--blue-dark)'],[90,'var(--green)','var(--green-light)','var(--green-dark)'],[125,'var(--amber)','var(--amber-light)','var(--amber-dark)'],[210,'var(--purple)','var(--purple-light)','var(--purple-dark)']].map(([deg,col,light,dark],i)=>{
+      const a2=(deg-90)*(Math.PI/180); const r=36;
+      const x2=(55+r*Math.cos(a2)).toFixed(1); const y2=(55+r*Math.sin(a2)).toFixed(1);
+      const large=deg>180?1:0;
+      return `
+      <div style="text-align:center;">
+        <div style="font-size:11px;font-weight:700;color:${dark};margin-bottom:3px;">Rank ${i+1}</div>
+        <svg width="110" height="110" viewBox="0 0 110 110">
+          <path d="M55,55 L55,19 A36,36 0 ${large},1 ${x2},${y2} Z" fill="${col}" opacity="0.2"/>
+          <line x1="55" y1="55" x2="55" y2="19" stroke="${dark}" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="55" y1="55" x2="${x2}" y2="${y2}" stroke="${dark}" stroke-width="2.5" stroke-linecap="round"/>
+          ${deg===90?`<polyline points="55,45 65,45 65,55" fill="none" stroke="${dark}" stroke-width="1.8"/>`:`<path d="M55,${19+12} A12,12 0 ${large},1 ${(55+12*Math.cos(a2)).toFixed(1)},${(55+12*Math.sin(a2)).toFixed(1)}" fill="none" stroke="${col}" stroke-width="2"/>`}
+          <text x="55" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="${dark}">${deg}°</text>
+          <circle cx="55" cy="55" r="3" fill="${dark}"/>
+        </svg>
+      </div>`;
+    }).join('')}
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Order: <strong>45° → 90° → 125° → 210°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Using angle types to compare without measuring</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    📖 "Without measuring, put these angles in order: one acute, one reflex, one right angle, one obtuse."
+  </div>
+  <div style="overflow-x:auto;margin:12px 0;">
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead><tr style="background:var(--teal);color:white;">
+        <th style="padding:7px 10px;text-align:left;">Type</th>
+        <th style="padding:7px 10px;text-align:left;">Range</th>
+        <th style="padding:7px 10px;text-align:left;">Order</th>
+      </tr></thead>
+      <tbody>
+        ${[['Acute','Less than 90°','1st (smallest)','var(--blue-light)','var(--blue-dark)'],
+           ['Right angle','Exactly 90°','2nd','var(--green-light)','var(--green-dark)'],
+           ['Obtuse','90° to 180°','3rd','var(--amber-light)','var(--amber-dark)'],
+           ['Reflex','180° to 360°','4th (largest)','var(--purple-light)','var(--purple-dark)']].map(([t,r,o,bg,fg])=>`
+        <tr style="background:${bg};">
+          <td style="padding:7px 10px;font-weight:700;color:${fg};">${t}</td>
+          <td style="padding:7px 10px;color:${fg};">${r}</td>
+          <td style="padding:7px 10px;font-weight:700;color:${fg};">${o}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Angles in a triangle (always add to 180°)</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    📖 "A triangle has angles 35°, 75°, and 70°. Order them and check they add up to 180°."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      <strong>Order:</strong> 35° &lt; 70° &lt; 75° — all acute.
+    </div>
+    <div style="background:var(--teal-light);border:1px solid var(--teal);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--teal-dark);">
+      35° + 70° + 75° = 180° ✓
+    </div>
+    <div style="background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);">
+      <strong>Key fact:</strong> The angles in any triangle <em>always</em> add up to exactly 180°.
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Smallest to largest: <strong>35° → 70° → 75°</strong>. Sum = 180° ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 5 -->
+<div class="card">
+  <div class="card-title">Example 5 — Finding a missing angle to enable ordering</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    📖 "Nkechi has four angles: 88°, 132°, an unknown angle C that is a right angle, and 27°. Order all four."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      <strong>Identify angle C:</strong> Right angle = 90°.
+    </div>
+    <div style="background:var(--teal-light);border:1px solid var(--teal);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--teal-dark);">
+      All four angles: 27°, 88°, 90°, 132°
+    </div>
+    <div style="background:var(--purple-light);border:1px solid var(--purple-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--purple-dark);">
+      Types: acute, acute, right, obtuse
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Order: <strong>27° → 88° → 90° → 132°</strong> ✓
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 3</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">1</div>
+      <div class="ex-text">Which is larger: 65° or 72°?
+        ${mcqBlock(['65°','72°','They are equal'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">2</div>
+      <div class="ex-text">Order from smallest: 180°, 90°, 45°, 270°.
+        ${mcqBlock(['45° → 90° → 180° → 270°','90° → 45° → 180° → 270°','270° → 180° → 90° → 45°'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">3</div>
+      <div class="ex-text">Two angles are 55° and 95°. What is the difference between them?
+        ${mcqBlock(['30°','40°','50°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">4</div>
+      <div class="ex-text">A triangle has angles 50°, 60°, and a missing angle. What is the missing angle?
+        ${mcqBlock(['60°','70°','80°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">5</div>
+      <div class="ex-text">Which of these angles is the greatest: acute, right, or obtuse?
+        ${mcqBlock(['Acute','Right','Obtuse'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">6</div>
+      <div class="ex-text">Uchenna says 89° is greater than a right angle. Is she correct?
+        ${mcqBlock(['Yes','No — a right angle is 90° which is greater','They are equal'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">7</div>
+      <div class="ex-text">A straight angle minus a right angle equals:
+        ${mcqBlock(['180°','270°','90°'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">8</div>
+      <div class="ex-text">Order from largest to smallest: 15°, 145°, 90°, 200°.
+        ${mcqBlock(['200° → 145° → 90° → 15°','15° → 90° → 145° → 200°','145° → 200° → 90° → 15°'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Can a triangle have two obtuse angles? Explain.
+        ${mcqBlock(['Yes, always','No — two obtuse angles add to more than 180°','Only in right-angled triangles'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> Emeka lists four angles: one that is double 45°, one that is half of 180°, one that is 30° more than a right angle, and one that is 10° less than a straight angle. Order them smallest to largest.
+        ${mcqBlock(['90° → 90° → 120° → 170°','90°=90°, 120°, 170°: equal first two, then 120°, then 170°','45° → 90° → 120° → 170°'], 1)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 4 — Triangles
+// ============================================================
+const SHAPE_STEP4 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">△</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 4 — Triangles</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "A <strong>triangle</strong> is a 2-D shape with exactly 3 straight sides and 3 angles.
+     Its angles always add up to <strong>180°</strong> — no matter what kind of triangle it is.
+     We classify triangles by their <strong>sides</strong> (are any sides equal?) and by their <strong>angles</strong> (what types of angle do they have?)."
+  </div>
+</div>
+
+<!-- TRIANGLE TYPES GALLERY -->
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">The four main triangle types</div>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px;">
+
+    <!-- Equilateral -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="130" height="120" viewBox="0 0 130 120">
+        <polygon points="65,10 10,110 120,110" fill="var(--blue-light)" stroke="var(--blue)" stroke-width="2.5"/>
+        <!-- tick marks on all three sides -->
+        <line x1="35" y1="62" x2="41" y2="56" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="38" y1="65" x2="44" y2="59" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="65" y1="62" x2="71" y2="56" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="68" y1="65" x2="74" y2="59" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="63" y1="110" x2="67" y2="104" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="60" y1="107" x2="64" y2="101" stroke="var(--blue-dark)" stroke-width="2"/>
+        <!-- angle arcs all 60° -->
+        <text x="65" y="28" text-anchor="middle" font-size="9" fill="var(--blue-dark)">60°</text>
+        <text x="22" y="108" text-anchor="middle" font-size="9" fill="var(--blue-dark)">60°</text>
+        <text x="108" y="108" text-anchor="middle" font-size="9" fill="var(--blue-dark)">60°</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--blue-dark);">Equilateral</div>
+      <div style="font-size:10px;color:var(--text-sec);">3 equal sides, 3 equal angles (60° each)</div>
+    </div>
+
+    <!-- Isosceles -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="130" height="120" viewBox="0 0 130 120">
+        <polygon points="65,8 15,112 115,112" fill="var(--green-light)" stroke="var(--green)" stroke-width="2.5"/>
+        <!-- tick marks on two equal sides -->
+        <line x1="38" y1="62" x2="44" y2="56" stroke="var(--green-dark)" stroke-width="2.5"/>
+        <line x1="86" y1="62" x2="80" y2="56" stroke="var(--green-dark)" stroke-width="2.5"/>
+        <!-- equal angle arcs at base -->
+        <text x="65" y="26" text-anchor="middle" font-size="9" fill="var(--green-dark)">apex</text>
+        <text x="26" y="110" text-anchor="middle" font-size="9" fill="var(--green-dark)">base∠</text>
+        <text x="104" y="110" text-anchor="middle" font-size="9" fill="var(--green-dark)">base∠</text>
+        <!-- double tick at base -->
+        <line x1="59" y1="112" x2="63" y2="106" stroke="var(--green-dark)" stroke-width="2"/>
+        <line x1="67" y1="112" x2="71" y2="106" stroke="var(--green-dark)" stroke-width="2"/>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--green-dark);">Isosceles</div>
+      <div style="font-size:10px;color:var(--text-sec);">2 equal sides, 2 equal base angles</div>
+    </div>
+
+    <!-- Scalene -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="130" height="120" viewBox="0 0 130 120">
+        <polygon points="20,110 115,110 85,15" fill="var(--amber-light)" stroke="var(--amber)" stroke-width="2.5"/>
+        <text x="30" y="108" text-anchor="middle" font-size="9" fill="var(--amber-dark)">A</text>
+        <text x="110" y="108" text-anchor="middle" font-size="9" fill="var(--amber-dark)">B</text>
+        <text x="88" y="28" text-anchor="middle" font-size="9" fill="var(--amber-dark)">C</text>
+        <text x="65" y="78" text-anchor="middle" font-size="9" fill="var(--amber-dark)">all sides</text>
+        <text x="65" y="90" text-anchor="middle" font-size="9" fill="var(--amber-dark)">different</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--amber-dark);">Scalene</div>
+      <div style="font-size:10px;color:var(--text-sec);">3 different side lengths, 3 different angles</div>
+    </div>
+
+    <!-- Right-angled -->
+    <div style="text-align:center;flex:1;min-width:130px;">
+      <svg width="130" height="120" viewBox="0 0 130 120">
+        <polygon points="20,110 20,20 115,110" fill="var(--coral-light)" stroke="var(--coral)" stroke-width="2.5"/>
+        <!-- right angle marker -->
+        <polyline points="20,95 35,95 35,110" fill="none" stroke="var(--coral-dark)" stroke-width="2"/>
+        <text x="65" y="80" text-anchor="middle" font-size="9" fill="var(--coral-dark)">right</text>
+        <text x="65" y="92" text-anchor="middle" font-size="9" fill="var(--coral-dark)">angle 90°</text>
+      </svg>
+      <div style="font-size:12px;font-weight:700;color:var(--coral-dark);">Right-angled</div>
+      <div style="font-size:10px;color:var(--text-sec);">One angle = exactly 90°</div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:12px;background:var(--amber-light);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);">
+    <strong>Key fact:</strong> The three angles of ANY triangle always add up to <strong>180°</strong>.
+    Tick marks on sides show equal lengths. Arc marks show equal angles.
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Classifying a triangle by its sides</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    📖 "Adaeze draws a triangle with sides 5 cm, 5 cm, and 8 cm. What type is it?"
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="160" height="130" viewBox="0 0 160 130">
+      <polygon points="80,10 10,120 150,120" fill="var(--green-light)" stroke="var(--green)" stroke-width="2.5"/>
+      <text x="30" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">5 cm</text>
+      <text x="130" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green-dark)">5 cm</text>
+      <text x="80" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="var(--amber-dark)">8 cm</text>
+      <!-- tick marks -->
+      <line x1="44" y1="64" x2="50" y2="58" stroke="var(--green-dark)" stroke-width="2.5"/>
+      <line x1="110" y1="64" x2="104" y2="58" stroke="var(--green-dark)" stroke-width="2.5"/>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;flex:1;min-width:150px;">
+      Two sides are equal (5 cm = 5 cm). The third side is different (8 cm).<br/>
+      <span style="color:var(--green-dark);font-weight:700;">→ Isosceles triangle</span><br/>
+      The two base angles are also equal.
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Adaeze's triangle is <strong>isosceles</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Finding a missing angle in a triangle</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    📖 "A triangle has angles 62° and 48°. Find the third angle."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      <strong>Key fact:</strong> Angles in a triangle add up to 180°.
+    </div>
+    <div style="background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--amber-dark);">
+      Third angle = 180° − 62° − 48° = 70°
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Third angle = <strong>70°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Right-angled triangle</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    📖 "Chukwudi draws a triangle with a 90° angle and one angle of 35°. Find the third angle. What type is the triangle?"
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="160" height="130" viewBox="0 0 160 130">
+      <polygon points="20,120 20,20 150,120" fill="var(--coral-light)" stroke="var(--coral)" stroke-width="2.5"/>
+      <polyline points="20,105 35,105 35,120" fill="none" stroke="var(--coral-dark)" stroke-width="2"/>
+      <text x="20" y="15" text-anchor="middle" font-size="10" fill="var(--blue-dark)">35°</text>
+      <text x="28" y="118" text-anchor="middle" font-size="10" fill="var(--coral-dark)">90°</text>
+      <text x="142" y="118" text-anchor="middle" font-size="10" fill="var(--amber-dark)">?°</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;flex:1;min-width:150px;">
+      180° − 90° − 35° = <strong>55°</strong><br/>
+      Has one 90° angle → <strong>right-angled triangle</strong>.<br/>
+      Also scalene (all sides different).
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Third angle = <strong>55°</strong>. Triangle is right-angled (and scalene) ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Isosceles triangle: finding two equal angles</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    📖 "An isosceles triangle has an apex angle of 40°. What are the two base angles?"
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      The two base angles are <strong>equal</strong> in an isosceles triangle.
+    </div>
+    <div style="background:var(--green-light);border:1px solid var(--green-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--green-dark);">
+      Remaining angle = 180° − 40° = 140°<br/>
+      Each base angle = 140° ÷ 2 = 70°
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Both base angles = <strong>70°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 5 -->
+<div class="card">
+  <div class="card-title">Example 5 — Equilateral triangle properties</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    📖 "Ifunanya says 'in an equilateral triangle all sides are 7 cm and all angles are 60°.' Verify this using the angle sum rule."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      If all three angles are equal: 180° ÷ 3 = 60° each.
+    </div>
+    <div style="background:var(--purple-light);border:1px solid var(--purple-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--purple-dark);">
+      60° + 60° + 60° = 180° ✓
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Ifunanya is correct — all angles 60°, sum = 180° ✓
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 4</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">1</div>
+      <div class="ex-text">How many sides does a triangle have?
+        ${mcqBlock(['2','3','4'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">2</div>
+      <div class="ex-text">What do the three angles of any triangle always add up to?
+        ${mcqBlock(['360°','180°','90°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">3</div>
+      <div class="ex-text">A triangle has sides 4 cm, 4 cm and 4 cm. What type is it?
+        ${mcqBlock(['Scalene','Isosceles','Equilateral'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">4</div>
+      <div class="ex-text">A triangle has angles 90°, 45° and 45°. What type is it?
+        ${mcqBlock(['Equilateral','Scalene right-angled','Isosceles right-angled'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">5</div>
+      <div class="ex-text">Two angles in a triangle are 70° and 55°. Find the third angle.
+        ${mcqBlock(['55°','65°','60°'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">6</div>
+      <div class="ex-text">Which triangle has all three sides a different length?
+        ${mcqBlock(['Equilateral','Isosceles','Scalene'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">7</div>
+      <div class="ex-text">An isosceles triangle has a base angle of 50°. What is the apex angle?
+        ${mcqBlock(['70°','80°','100°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">8</div>
+      <div class="ex-text">Can a triangle have two right angles?
+        ${mcqBlock(['Yes','No — they would already add up to 180°','Only in a square'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Zara says an equilateral triangle is also always isosceles. Is she correct?
+        ${mcqBlock(['No — they are completely different','Yes — it has at least two equal sides','Only sometimes'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> A right-angled isosceles triangle has one angle of 90°. What are the other two angles, and what is the sum of all three?
+        ${mcqBlock(['45°, 45°; sum = 180°','60°, 30°; sum = 180°','50°, 40°; sum = 180°'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 5 — Quadrilaterals
+// ============================================================
+const SHAPE_STEP5 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--coral-light);color:var(--coral-dark);border:0.5px solid var(--coral-mid);">▭</div>
+  <div>
+    <div class="day-label" style="color:var(--coral-dark);">Step 5 — Quadrilaterals</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--coral-mid);">
+  <div class="card-title" style="color:var(--coral-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    "A <strong>quadrilateral</strong> is any 2-D shape with exactly <strong>4 straight sides</strong> and <strong>4 angles</strong>.
+     The word comes from Latin — 'quad' = four, 'lateral' = sides.
+     Like the quadrilateral family at a reunion, they all share the same family trait (4 sides),
+     but each member has its own special properties — parallel sides, equal sides, right angles, and so on.
+     The angles of any quadrilateral <em>always</em> add up to <strong>360°</strong>."
+  </div>
+</div>
+
+<!-- QUADRILATERAL GALLERY -->
+<div class="card" style="border-color:var(--coral-mid);">
+  <div class="card-title" style="color:var(--coral-dark);">The quadrilateral family</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:10px;">
+
+    <!-- Square -->
+    <div style="text-align:center;">
+      <svg width="120" height="110" viewBox="0 0 120 110">
+        <rect x="20" y="10" width="80" height="80" fill="var(--blue-light)" stroke="var(--blue)" stroke-width="2.5"/>
+        <polyline points="20,22 32,22 32,10" fill="none" stroke="var(--blue-dark)" stroke-width="1.8"/>
+        <polyline points="88,22 88,10 100,10" fill="none" stroke="var(--blue-dark)" stroke-width="1.8"/>
+        <polyline points="20,78 32,78 32,90" fill="none" stroke="var(--blue-dark)" stroke-width="1.8"/>
+        <polyline points="88,78 88,90 100,90" fill="none" stroke="var(--blue-dark)" stroke-width="1.8"/>
+        <!-- tick marks all sides -->
+        <line x1="56" y1="10" x2="60" y2="6" stroke="var(--blue-dark)" stroke-width="2"/><line x1="60" y1="10" x2="64" y2="6" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="56" y1="90" x2="60" y2="86" stroke="var(--blue-dark)" stroke-width="2"/><line x1="60" y1="90" x2="64" y2="86" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="20" y1="46" x2="16" y2="50" stroke="var(--blue-dark)" stroke-width="2"/><line x1="20" y1="50" x2="16" y2="54" stroke="var(--blue-dark)" stroke-width="2"/>
+        <line x1="100" y1="46" x2="104" y2="50" stroke="var(--blue-dark)" stroke-width="2"/><line x1="100" y1="50" x2="104" y2="54" stroke="var(--blue-dark)" stroke-width="2"/>
+        <text x="60" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">Square</text>
+      </svg>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">4 equal sides, 4 right angles</div>
+    </div>
+
+    <!-- Rectangle -->
+    <div style="text-align:center;">
+      <svg width="140" height="110" viewBox="0 0 140 110">
+        <rect x="10" y="20" width="120" height="65" fill="var(--green-light)" stroke="var(--green)" stroke-width="2.5"/>
+        <polyline points="10,32 22,32 22,20" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+        <polyline points="118,32 118,20 130,20" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+        <polyline points="10,73 22,73 22,85" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+        <polyline points="118,73 118,85 130,85" fill="none" stroke="var(--green-dark)" stroke-width="1.8"/>
+        <!-- double ticks on long sides -->
+        <line x1="66" y1="20" x2="70" y2="15" stroke="var(--green-dark)" stroke-width="2"/><line x1="70" y1="20" x2="74" y2="15" stroke="var(--green-dark)" stroke-width="2"/>
+        <line x1="66" y1="85" x2="70" y2="80" stroke="var(--green-dark)" stroke-width="2"/><line x1="70" y1="85" x2="74" y2="80" stroke="var(--green-dark)" stroke-width="2"/>
+        <text x="70" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">Rectangle</text>
+      </svg>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">2 pairs of equal parallel sides, 4 right angles</div>
+    </div>
+
+    <!-- Parallelogram -->
+    <div style="text-align:center;">
+      <svg width="130" height="110" viewBox="0 0 130 110">
+        <polygon points="30,85 100,85 100,25 30,25" transform="translate(15,0) skewX(-15)" fill="var(--amber-light)" stroke="var(--amber)" stroke-width="2.5"/>
+        <text x="65" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">Parallelogram</text>
+      </svg>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">2 pairs of parallel sides, opposite angles equal</div>
+    </div>
+
+    <!-- Rhombus -->
+    <div style="text-align:center;">
+      <svg width="120" height="110" viewBox="0 0 120 110">
+        <polygon points="60,10 105,55 60,100 15,55" fill="var(--purple-light)" stroke="var(--purple)" stroke-width="2.5"/>
+        <!-- tick marks all sides -->
+        <line x1="80" y1="30" x2="85" y2="35" stroke="var(--purple-dark)" stroke-width="2"/>
+        <line x1="84" y1="76" x2="80" y2="80" stroke="var(--purple-dark)" stroke-width="2"/>
+        <line x1="38" y1="76" x2="34" y2="80" stroke="var(--purple-dark)" stroke-width="2"/>
+        <line x1="34" y1="32" x2="38" y2="28" stroke="var(--purple-dark)" stroke-width="2"/>
+        <text x="60" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="var(--purple-dark)">Rhombus</text>
+      </svg>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">4 equal sides, 2 pairs parallel, no right angles (usually)</div>
+    </div>
+
+    <!-- Trapezium -->
+    <div style="text-align:center;">
+      <svg width="130" height="110" viewBox="0 0 130 110">
+        <polygon points="30,90 100,90 85,20 45,20" fill="var(--teal-light)" stroke="var(--teal)" stroke-width="2.5"/>
+        <!-- parallel marks -->
+        <line x1="60" y1="20" x2="64" y2="14" stroke="var(--teal-dark)" stroke-width="2"/>
+        <line x1="60" y1="90" x2="64" y2="84" stroke="var(--teal-dark)" stroke-width="2"/>
+        <text x="65" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="var(--teal-dark)">Trapezium</text>
+      </svg>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">Exactly 1 pair of parallel sides</div>
+    </div>
+
+    <!-- Kite -->
+    <div style="text-align:center;">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <polygon points="60,8 95,55 60,108 25,55" fill="var(--pink-light)" stroke="var(--pink)" stroke-width="2.5"/>
+        <!-- two pairs of equal adjacent sides -->
+        <line x1="75" y1="29" x2="80" y2="34" stroke="var(--pink-dark)" stroke-width="2"/>
+        <line x1="44" y1="29" x2="40" y2="34" stroke="var(--pink-dark)" stroke-width="2"/>
+        <line x1="38" y1="77" x2="34" y2="74" stroke="var(--pink-dark)" stroke-width="2"/><line x1="41" y1="81" x2="37" y2="78" stroke="var(--pink-dark)" stroke-width="2"/>
+        <line x1="82" y1="77" x2="86" y2="74" stroke="var(--pink-dark)" stroke-width="2"/><line x1="79" y1="81" x2="83" y2="78" stroke="var(--pink-dark)" stroke-width="2"/>
+        <text x="60" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="var(--pink-dark)">Kite</text>
+      </svg>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">2 pairs of adjacent equal sides</div>
+    </div>
+
+  </div>
+  <div style="margin-top:12px;background:var(--coral-light);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--coral-dark);">
+    <strong>Key fact:</strong> The 4 angles of any quadrilateral always add up to <strong>360°</strong>
+    (because you can split any quadrilateral into 2 triangles, each with 180°).
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Properties of a rectangle</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    📖 "Obiageli draws a rectangle 8 cm long and 3 cm wide. List 4 properties of her rectangle."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin:12px 0 14px;">
+    ${['Opposite sides are equal and parallel (8 cm = 8 cm; 3 cm = 3 cm)','All 4 angles are right angles (90°)','Diagonals are equal in length and bisect each other','It is also a parallelogram (a special one with right angles)'].map((p,i)=>`
+      <div style="display:flex;gap:10px;align-items:center;background:var(--coral-light);border:1px solid var(--coral-mid);border-radius:8px;padding:7px 12px;">
+        <div style="width:22px;height:22px;background:var(--coral);border-radius:50%;color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${i+1}</div>
+        <div style="font-size:11px;color:var(--coral-dark);">${p}</div>
+      </div>
+    `).join('')}
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Missing angle in a quadrilateral</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    📖 "A quadrilateral has angles 85°, 110°, 95° and a missing angle d. Find angle d."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      Angles in a quadrilateral sum to 360°.
+    </div>
+    <div style="background:var(--coral-light);border:1px solid var(--coral-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--coral-dark);">
+      d = 360° − 85° − 110° − 95° = 70°
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Angle d = <strong>70°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Square vs rhombus</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    📖 "Emeka says a square is a type of rhombus. Is he correct?"
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 14px;">
+    <div style="flex:1;min-width:140px;background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:10px;">
+      <div style="font-size:11px;font-weight:700;color:var(--blue-dark);">Rhombus properties</div>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:4px;">• 4 equal sides ✓<br/>• 2 pairs of parallel sides ✓<br/>• Does NOT need 90° angles</div>
+    </div>
+    <div style="flex:1;min-width:140px;background:var(--green-light);border:1px solid var(--green-mid);border-radius:8px;padding:10px;">
+      <div style="font-size:11px;font-weight:700;color:var(--green-dark);">Square properties</div>
+      <div style="font-size:10px;color:var(--text-sec);margin-top:4px;">• 4 equal sides ✓<br/>• 2 pairs of parallel sides ✓<br/>• 4 right angles — extra property!</div>
+    </div>
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;font-size:11px;color:var(--amber-dark);margin-bottom:8px;">
+    A square has all rhombus properties PLUS right angles. So a square IS a special rhombus.
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Emeka is <strong>correct</strong> — a square is a special type of rhombus ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Identifying a quadrilateral from clues</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    📖 "Ngozi describes her shape: 'It has 4 sides. Only one pair of sides is parallel. No sides are equal.' What shape is it?"
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">4 sides → quadrilateral ✓</div>
+    <div style="background:var(--teal-light);border:1px solid var(--teal);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--teal-dark);">Exactly one pair of parallel sides → eliminates square, rectangle, rhombus, parallelogram</div>
+    <div style="background:var(--coral-light);border:1px solid var(--coral-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--coral-dark);">No equal sides → eliminates kite and isosceles trapezium</div>
+    <div style="background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);">→ Scalene trapezium</div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Ngozi's shape is a <strong>trapezium</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 5 -->
+<div class="card">
+  <div class="card-title">Example 5 — Perimeter of a quadrilateral</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    📖 "Babatunde draws a parallelogram with sides 9 cm and 5 cm. What is the perimeter?"
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="180" height="100" viewBox="0 0 180 100">
+      <polygon points="30,85 150,85 165,15 45,15" fill="var(--purple-light)" stroke="var(--purple)" stroke-width="2.5"/>
+      <text x="90" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">9 cm</text>
+      <text x="90" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">9 cm</text>
+      <text x="22" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">5 cm</text>
+      <text x="165" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="var(--purple-dark)">5 cm</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);flex:1;min-width:140px;">
+      Opposite sides of a parallelogram are equal.<br/>
+      P = 9 + 9 + 5 + 5 = <strong>28 cm</strong>
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Perimeter = <strong>28 cm</strong> ✓
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 5</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">1</div>
+      <div class="ex-text">How many sides does a quadrilateral have?
+        ${mcqBlock(['3','4','5'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">2</div>
+      <div class="ex-text">What do the angles of any quadrilateral add up to?
+        ${mcqBlock(['180°','270°','360°'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">3</div>
+      <div class="ex-text">Which quadrilateral has exactly one pair of parallel sides?
+        ${mcqBlock(['Rhombus','Trapezium','Kite'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">4</div>
+      <div class="ex-text">A quadrilateral has angles 100°, 80°, 90° and a missing angle. Find the missing angle.
+        ${mcqBlock(['80°','90°','100°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">5</div>
+      <div class="ex-text">Which shape has 4 equal sides AND 4 right angles?
+        ${mcqBlock(['Rectangle','Rhombus','Square'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">6</div>
+      <div class="ex-text">Is a rectangle always a parallelogram?
+        ${mcqBlock(['No','Yes','Only sometimes'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">7</div>
+      <div class="ex-text">A kite has two pairs of equal sides. Which pairs are equal?
+        ${mcqBlock(['Opposite sides','Adjacent (neighbouring) sides','All four sides'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">8</div>
+      <div class="ex-text">A rhombus has sides of 7 cm. What is its perimeter?
+        ${mcqBlock(['21 cm','28 cm','14 cm'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Kola says all squares are rectangles but not all rectangles are squares. Is he correct?
+        ${mcqBlock(['No — squares and rectangles are completely different','Yes — squares have all rectangle properties plus equal sides','Only sometimes'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> A parallelogram has angles of 65° and 115°. What are the other two angles, and do they all add to 360°?
+        ${mcqBlock(['65° and 115°; yes, 65+115+65+115=360°','90° and 90°; no','75° and 105°; yes'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 6 — Polygons
+// ============================================================
+const SHAPE_STEP6 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">⬡</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 6 — Polygons</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "A <strong>polygon</strong> is any closed 2-D shape made entirely of straight sides.
+     'Poly' means many, 'gon' means angle.
+     Triangles and quadrilaterals are both polygons — but so are pentagons, hexagons and beyond!
+     A <strong>regular polygon</strong> has ALL sides equal AND all angles equal.
+     An <strong>irregular polygon</strong> has sides or angles of different sizes."
+  </div>
+</div>
+
+<!-- POLYGON GALLERY -->
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Regular polygon gallery</div>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px;">
+    ${[
+      [3,'Triangle',60,'var(--blue)','var(--blue-light)'],
+      [4,'Square',90,'var(--green)','var(--green-light)'],
+      [5,'Pentagon',108,'var(--amber)','var(--amber-light)'],
+      [6,'Hexagon',120,'var(--purple)','var(--purple-light)'],
+      [7,'Heptagon',128.6,'var(--teal)','var(--teal-light)'],
+      [8,'Octagon',135,'var(--coral)','var(--coral-light)'],
+    ].map(([n,name,intAngle,col,light])=>{
+      const cx=55,cy=55,r=42;
+      const pts=Array.from({length:n},(_,i)=>{
+        const a=(i*2*Math.PI/n - Math.PI/2);
+        return `${(cx+r*Math.cos(a)).toFixed(1)},${(cy+r*Math.sin(a)).toFixed(1)}`;
+      }).join(' ');
+      return `
+        <div style="text-align:center;flex:1;min-width:100px;">
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <polygon points="${pts}" fill="${light}" stroke="${col}" stroke-width="2.5"/>
+            <text x="55" y="60" text-anchor="middle" font-size="10" font-weight="700" fill="${col}">${n} sides</text>
+          </svg>
+          <div style="font-size:11px;font-weight:700;color:${col};margin-top:2px;">${name}</div>
+          <div style="font-size:10px;color:var(--text-sec);">Each angle: ${intAngle}°</div>
+        </div>
+      `;
+    }).join('')}
+  </div>
+  <div style="margin-top:12px;background:var(--green-light);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--green-dark);">
+    <strong>Interior angle formula for regular polygons:</strong> Interior angle = (n − 2) × 180° ÷ n, where n = number of sides.
+    <br/><strong>Example:</strong> Pentagon (n=5): (5−2) × 180° ÷ 5 = 540° ÷ 5 = <strong>108°</strong>
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Naming polygons by their sides</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    📖 "Amaka finds 3 shapes: one with 6 sides, one with 8 sides, one with 5 sides. Name each shape."
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 14px;">
+    ${[[6,'Hexagon','var(--purple-light)','var(--purple-dark)'],[8,'Octagon','var(--coral-light)','var(--coral-dark)'],[5,'Pentagon','var(--amber-light)','var(--amber-dark)']].map(([n,nm,light,dark])=>`
+      <div style="flex:1;min-width:100px;background:${light};border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:20px;font-weight:900;color:${dark};">${n}</div>
+        <div style="font-size:10px;color:${dark};">sides</div>
+        <div style="font-size:13px;font-weight:700;color:${dark};margin-top:4px;">${nm}</div>
+      </div>
+    `).join('')}
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Regular vs irregular polygon</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    📖 "Tunde draws two hexagons. One has all sides 4 cm and all angles 120°. The other has sides of different lengths. Which is regular?"
+  </div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <!-- Regular hexagon -->
+    <div style="flex:1;min-width:130px;text-align:center;">
+      <svg width="130" height="120" viewBox="0 0 130 120">
+        ${(()=>{const pts=Array.from({length:6},(_,i)=>{const a=i*60*Math.PI/180-Math.PI/2;return `${(65+48*Math.cos(a)).toFixed(1)},${(60+48*Math.sin(a)).toFixed(1)}`;}).join(' ');return `<polygon points="${pts}" fill="var(--green-light)" stroke="var(--green)" stroke-width="2.5"/>
+        <text x="65" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">Regular</text>
+        <text x="65" y="78" text-anchor="middle" font-size="9" fill="var(--green-dark)">all sides = 4 cm</text>`;})()}
+      </svg>
+      <div style="font-size:11px;color:var(--green-dark);font-weight:700;">Regular Hexagon ✓</div>
+    </div>
+    <!-- Irregular hexagon -->
+    <div style="flex:1;min-width:130px;text-align:center;">
+      <svg width="130" height="120" viewBox="0 0 130 120">
+        <polygon points="20,100 50,15 95,25 120,60 100,105 40,110" fill="var(--amber-light)" stroke="var(--amber)" stroke-width="2.5"/>
+        <text x="70" y="68" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">Irregular</text>
+        <text x="70" y="82" text-anchor="middle" font-size="9" fill="var(--amber-dark)">different sides</text>
+      </svg>
+      <div style="font-size:11px;color:var(--amber-dark);font-weight:700;">Irregular Hexagon</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Sum of interior angles</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    📖 "What is the sum of interior angles in a hexagon? Show how to work it out."
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      <strong>Method:</strong> Split the hexagon into triangles from one vertex. A hexagon makes 4 triangles.
+    </div>
+    <svg width="200" height="120" viewBox="0 0 200 120" style="display:block;margin:0 auto;">
+      ${(()=>{const pts=Array.from({length:6},(_,i)=>{const a=i*60*Math.PI/180-Math.PI/2;return [(100+50*Math.cos(a)).toFixed(1),(60+50*Math.sin(a)).toFixed(1)];});const polyStr=pts.map(p=>p.join(',')).join(' ');const diags=[[0,2],[0,3],[0,4]].map(([s,e])=>`<line x1="${pts[s][0]}" y1="${pts[s][1]}" x2="${pts[e][0]}" y2="${pts[e][1]}" stroke="var(--blue)" stroke-width="1.5" stroke-dasharray="5 3"/>`).join('');return `<polygon points="${polyStr}" fill="var(--green-light)" stroke="var(--green)" stroke-width="2"/>${diags}<text x="100" y="65" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">4 triangles</text>`;})()}
+    </svg>
+    <div style="background:var(--green-light);border:1px solid var(--green-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--green-dark);">
+      4 × 180° = 720°
+    </div>
+    <div style="background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--amber-dark);">
+      Formula: (n − 2) × 180° = (6 − 2) × 180° = 4 × 180° = <strong>720°</strong>
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Sum of interior angles of a hexagon = <strong>720°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Each interior angle of a regular polygon</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    📖 "Chidi draws a regular octagon. What is each interior angle?"
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0 14px;">
+    <div style="background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--blue-dark);">
+      Sum of interior angles = (8 − 2) × 180° = 6 × 180° = 1,080°
+    </div>
+    <div style="background:var(--green-light);border:1px solid var(--green-mid);border-radius:8px;padding:8px 14px;font-size:13px;font-family:monospace;color:var(--green-dark);">
+      Each angle = 1,080° ÷ 8 = 135°
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:8px;color:var(--green-dark);font-weight:700;">
+    Each interior angle = <strong>135°</strong> ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 5 -->
+<div class="card">
+  <div class="card-title">Example 5 — Is it a polygon? Sorting shapes</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    📖 "Funmi lists these shapes. Which are polygons and which are not? Circle, equilateral triangle, rectangle, semicircle, regular hexagon."
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px;">
+    ${[['Circle','❌ Not a polygon','Has curved sides','var(--coral-light)','var(--coral-dark)'],
+       ['Equilateral triangle','✅ Polygon','3 straight sides','var(--blue-light)','var(--blue-dark)'],
+       ['Rectangle','✅ Polygon','4 straight sides','var(--green-light)','var(--green-dark)'],
+       ['Semicircle','❌ Not a polygon','Has a curved side','var(--coral-light)','var(--coral-dark)'],
+       ['Regular hexagon','✅ Polygon','6 straight sides','var(--purple-light)','var(--purple-dark)']].map(([name,verdict,reason,light,dark])=>`
+      <div style="flex:1;min-width:130px;background:${light};border-radius:8px;padding:9px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;color:${dark};">${name}</div>
+        <div style="font-size:13px;margin:3px 0;">${verdict}</div>
+        <div style="font-size:10px;color:${dark};">${reason}</div>
+      </div>
+    `).join('')}
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 6</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">1</div>
+      <div class="ex-text">What is a polygon with 5 sides called?
+        ${mcqBlock(['Hexagon','Pentagon','Octagon'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">2</div>
+      <div class="ex-text">Is a circle a polygon?
+        ${mcqBlock(['Yes','No — it has a curved side','Only if it is a regular shape'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">3</div>
+      <div class="ex-text">What is the sum of interior angles in a pentagon?
+        ${mcqBlock(['360°','540°','720°'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">4</div>
+      <div class="ex-text">A regular polygon has each interior angle = 120°. How many sides does it have?
+        ${mcqBlock(['5','6','8'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">5</div>
+      <div class="ex-text">What is the name of a regular polygon with 8 sides?
+        ${mcqBlock(['Heptagon','Hexagon','Octagon'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">6</div>
+      <div class="ex-text">How many triangles can you split a pentagon into (from one vertex)?
+        ${mcqBlock(['2','3','4'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">7</div>
+      <div class="ex-text">An irregular hexagon has angles 100°, 130°, 90°, 115°, 125°, and a missing angle. Find the missing angle.
+        ${mcqBlock(['110°','120°','100°'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">8</div>
+      <div class="ex-text">Each interior angle of a regular polygon is 108°. What is the shape?
+        ${mcqBlock(['Hexagon','Pentagon','Octagon'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Sola says a square is a regular polygon. Is she correct?
+        ${mcqBlock(['No — only hexagons and pentagons are regular','Yes — all sides equal AND all angles equal (90°)','Only if the sides are more than 5 cm'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> What is each interior angle of a regular 10-sided polygon (decagon)?
+        ${mcqBlock(['144°','150°','160°'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 7 — Lines of symmetry
+// ============================================================
+const SHAPE_STEP7 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--pink-light);color:var(--pink-dark);border:0.5px solid var(--pink);">🪞</div>
+  <div>
+    <div class="day-label" style="color:var(--pink-dark);">Step 7 — Lines of symmetry</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--pink);">
+  <div class="card-title" style="color:var(--pink-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--pink-light);color:var(--pink-dark);">
+    "A <strong>line of symmetry</strong> is like an invisible mirror placed on a shape.
+     If you fold the shape along the line, both halves match perfectly — like a butterfly's wings.
+     We say the shape has <strong>reflective symmetry</strong>.
+     Some shapes have one line of symmetry, some have many, and some have none at all."
+  </div>
+</div>
+
+<!-- SYMMETRY SHOWCASE -->
+<div class="card" style="border-color:var(--pink);">
+  <div class="card-title" style="color:var(--pink-dark);">Lines of symmetry in regular polygons</div>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px;">
+    ${[
+      [3,'Equilateral △','3 lines','var(--blue)','var(--blue-light)'],
+      [4,'Square','4 lines','var(--green)','var(--green-light)'],
+      [5,'Regular Pentagon','5 lines','var(--amber)','var(--amber-light)'],
+      [6,'Regular Hexagon','6 lines','var(--purple)','var(--purple-light)'],
+    ].map(([n,name,lines,col,light])=>{
+      const cx=55,cy=55,r=42;
+      const pts=Array.from({length:n},(_,i)=>{
+        const a=(i*2*Math.PI/n - Math.PI/2);
+        return `${(cx+r*Math.cos(a)).toFixed(1)},${(cy+r*Math.sin(a)).toFixed(1)}`;
+      }).join(' ');
+      // draw symmetry lines
+      const symLines=Array.from({length:n},(_,i)=>{
+        const a=(i*Math.PI/n - Math.PI/2);
+        const x1=(cx+(r+8)*Math.cos(a)).toFixed(1);
+        const y1=(cy+(r+8)*Math.sin(a)).toFixed(1);
+        const x2=(cx-(r+8)*Math.cos(a)).toFixed(1);
+        const y2=(cy-(r+8)*Math.sin(a)).toFixed(1);
+        return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.7"/>`;
+      }).join('');
+      return `
+        <div style="text-align:center;flex:1;min-width:110px;">
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <polygon points="${pts}" fill="${light}" stroke="${col}" stroke-width="2.5"/>
+            ${symLines}
+          </svg>
+          <div style="font-size:11px;font-weight:700;color:${col};margin-top:2px;">${name}</div>
+          <div style="font-size:10px;color:var(--text-sec);">${lines} of symmetry</div>
+        </div>
+      `;
+    }).join('')}
+  </div>
+  <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:150px;background:var(--pink-light);border:1px solid var(--pink);border-radius:8px;padding:9px;font-size:11px;color:var(--pink-dark);">
+      <strong>Regular polygons:</strong> A regular polygon with n sides has exactly <strong>n lines of symmetry</strong>.
+    </div>
+    <div style="flex:1;min-width:150px;background:var(--amber-light);border:1px solid var(--amber-mid);border-radius:8px;padding:9px;font-size:11px;color:var(--amber-dark);">
+      <strong>Rectangle:</strong> 2 lines of symmetry (not 4 — the diagonals are NOT lines of symmetry).
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="card">
+  <div class="card-title">Example 1 — Lines of symmetry in a letter</div>
+  <div class="warmup" style="background:var(--pink-light);color:var(--pink-dark);">
+    📖 "Adaeze writes the capital letter 'A'. How many lines of symmetry does it have?"
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="120" height="120" viewBox="0 0 120 120">
+      <!-- letter A -->
+      <polygon points="60,10 10,110 30,110 60,50 90,110 110,110" fill="var(--pink-light)" stroke="var(--pink)" stroke-width="2.5"/>
+      <!-- crossbar -->
+      <rect x="35" y="72" width="50" height="8" fill="var(--pink)" opacity="0.6"/>
+      <!-- line of symmetry -->
+      <line x1="60" y1="5" x2="60" y2="115" stroke="var(--pink-dark)" stroke-width="2" stroke-dasharray="6 3"/>
+      <text x="60" y="120" text-anchor="middle" font-size="9" fill="var(--pink-dark)">1 line of symmetry</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;flex:1;min-width:140px;">
+      The vertical dashed line splits the letter A into two identical mirror halves.<br/>
+      <span style="color:var(--pink-dark);font-weight:700;">→ 1 line of symmetry (vertical)</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 2 -->
+<div class="card">
+  <div class="card-title">Example 2 — Lines of symmetry in a rectangle</div>
+  <div class="warmup" style="background:var(--pink-light);color:var(--pink-dark);">
+    📖 "Emeka says a rectangle has 4 lines of symmetry because it has 4 sides. Is he correct?"
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="200" height="120" viewBox="0 0 200 120">
+      <rect x="20" y="20" width="160" height="80" fill="var(--green-light)" stroke="var(--green)" stroke-width="2"/>
+      <!-- correct lines of symmetry -->
+      <line x1="100" y1="10" x2="100" y2="110" stroke="var(--green-dark)" stroke-width="2" stroke-dasharray="6 3"/>
+      <line x1="10" y1="60" x2="190" y2="60" stroke="var(--green-dark)" stroke-width="2" stroke-dasharray="6 3"/>
+      <!-- incorrect diagonal with X -->
+      <line x1="20" y1="20" x2="180" y2="100" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+      <text x="140" y="38" font-size="16" fill="var(--coral)">✗</text>
+      <text x="100" y="115" text-anchor="middle" font-size="9" fill="var(--green-dark)">2 lines ✓ (not 4 — diagonals don't work)</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;flex:1;min-width:140px;">
+      Only the vertical and horizontal lines create matching halves.<br/>
+      <span style="color:var(--coral-dark);font-weight:700;">Diagonals do NOT work</span> — folding along a diagonal gives two triangles, not two matching rectangles.<br/>
+      <span style="color:var(--green-dark);font-weight:700;">Rectangle has 2 lines of symmetry.</span>
+    </div>
+  </div>
+  <div style="text-align:center;padding:8px;background:var(--coral-light);border-radius:8px;color:var(--coral-dark);font-weight:700;">
+    Emeka is <strong>incorrect</strong> — a rectangle has only 2 lines of symmetry ✓
+  </div>
+</div>
+
+<!-- EXAMPLE 3 -->
+<div class="card">
+  <div class="card-title">Example 3 — Isosceles triangle symmetry</div>
+  <div class="warmup" style="background:var(--pink-light);color:var(--pink-dark);">
+    📖 "Ngozi draws an isosceles triangle. How many lines of symmetry does it have? Where is the line?"
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="160" height="130" viewBox="0 0 160 130">
+      <polygon points="80,10 15,120 145,120" fill="var(--blue-light)" stroke="var(--blue)" stroke-width="2.5"/>
+      <!-- line of symmetry from apex to midpoint of base -->
+      <line x1="80" y1="5" x2="80" y2="128" stroke="var(--blue-dark)" stroke-width="2" stroke-dasharray="6 3"/>
+      <!-- tick marks on equal sides -->
+      <line x1="46" y1="64" x2="52" y2="58" stroke="var(--blue-dark)" stroke-width="2.5"/>
+      <line x1="108" y1="64" x2="102" y2="58" stroke="var(--blue-dark)" stroke-width="2.5"/>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;flex:1;min-width:140px;">
+      The line of symmetry runs from the <strong>apex</strong> (top point) to the <strong>midpoint of the base</strong>.<br/>
+      This creates two identical right-angled triangles.<br/>
+      <span style="color:var(--blue-dark);font-weight:700;">→ 1 line of symmetry</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="card">
+  <div class="card-title">Example 4 — Shape with NO symmetry</div>
+  <div class="warmup" style="background:var(--pink-light);color:var(--pink-dark);">
+    📖 "Kemi draws a scalene triangle. Does it have any lines of symmetry?"
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="160" height="130" viewBox="0 0 160 130">
+      <polygon points="20,115 130,115 95,20" fill="var(--amber-light)" stroke="var(--amber)" stroke-width="2.5"/>
+      <!-- labels showing all sides different -->
+      <text x="75" y="112" text-anchor="middle" font-size="9" fill="var(--amber-dark)">a</text>
+      <text x="118" y="75" text-anchor="middle" font-size="9" fill="var(--amber-dark)">b</text>
+      <text x="50" y="75" text-anchor="middle" font-size="9" fill="var(--amber-dark)">c</text>
+      <text x="80" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">a ≠ b ≠ c</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.8;flex:1;min-width:140px;">
+      A scalene triangle has all sides and angles different.<br/>
+      No fold line can make both halves match.<br/>
+      <span style="color:var(--coral-dark);font-weight:700;">→ 0 lines of symmetry</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 5 — Symmetry table -->
+<div class="card">
+  <div class="card-title">Example 5 — Symmetry reference table</div>
+  <div class="warmup" style="background:var(--pink-light);color:var(--pink-dark);">
+    📖 "Adaobi makes a symmetry reference table for her revision. Complete it."
+  </div>
+  <div style="overflow-x:auto;margin:12px 0;">
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead><tr style="background:var(--pink);color:white;">
+        <th style="padding:7px 10px;text-align:left;">Shape</th>
+        <th style="padding:7px 10px;text-align:centre;">Lines of symmetry</th>
+        <th style="padding:7px 10px;text-align:left;">Notes</th>
+      </tr></thead>
+      <tbody>
+        ${[['Equilateral triangle','3','All sides and angles equal'],
+           ['Isosceles triangle','1','From apex to midpoint of base'],
+           ['Scalene triangle','0','All sides different'],
+           ['Square','4','Horizontal, vertical, and 2 diagonal'],
+           ['Rectangle','2','Horizontal and vertical only'],
+           ['Rhombus','2','Along the two diagonals'],
+           ['Parallelogram','0','May look symmetrical but is not'],
+           ['Regular pentagon','5','One through each vertex'],
+           ['Regular hexagon','6','3 through vertices, 3 through edges'],
+           ['Circle','Infinite','Any diameter is a line of symmetry']].map(([shape,lines,note],i)=>`
+          <tr style="background:${i%2===0?'var(--pink-light)':'white'};">
+            <td style="padding:7px 10px;font-weight:600;color:var(--pink-dark);">${shape}</td>
+            <td style="padding:7px 10px;font-weight:700;color:var(--pink-dark);text-align:center;">${lines}</td>
+            <td style="padding:7px 10px;font-size:10px;color:var(--text-sec);">${note}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 7</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">1</div>
+      <div class="ex-text">How many lines of symmetry does an equilateral triangle have?
+        ${mcqBlock(['1','2','3'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">2</div>
+      <div class="ex-text">How many lines of symmetry does a square have?
+        ${mcqBlock(['2','4','6'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">3</div>
+      <div class="ex-text">A scalene triangle has how many lines of symmetry?
+        ${mcqBlock(['0','1','3'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">4</div>
+      <div class="ex-text">Temi folds a rectangle along its diagonal. Does this show a line of symmetry?
+        ${mcqBlock(['Yes','No — the two halves do not match exactly','Only for a square'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">5</div>
+      <div class="ex-text">Which capital letter has exactly 1 line of symmetry: A, S, or X?
+        ${mcqBlock(['S','X','A'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">6</div>
+      <div class="ex-text">How many lines of symmetry does a regular hexagon have?
+        ${mcqBlock(['3','4','6'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">7</div>
+      <div class="ex-text">A parallelogram has how many lines of symmetry?
+        ${mcqBlock(['0','2','4'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--pink-light);color:var(--pink-dark);">8</div>
+      <div class="ex-text">An isosceles trapezium (a trapezium with equal slanted sides) has how many lines of symmetry?
+        ${mcqBlock(['0','1','2'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Amaka says a circle has exactly 4 lines of symmetry. Is she correct?
+        ${mcqBlock(['Yes','No — a circle has infinitely many lines of symmetry','No — a circle has 0 lines of symmetry'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> Eze draws a shape with exactly 5 lines of symmetry. All sides and all angles are equal. What shape is it, and what is each interior angle?
+        ${mcqBlock(['Regular pentagon; 108°','Regular hexagon; 120°','Regular heptagon; 128.6°'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+// ============================================================
+// STEP 8 — Complete a symmetric figure
+// ============================================================
+const SHAPE_STEP8 = `
+
+<div class="day-header">
+  <div class="day-icon" style="background:var(--blue-light);color:var(--blue-dark);border:0.5px solid var(--blue-mid);">✏️</div>
+  <div>
+    <div class="day-label" style="color:var(--blue-dark);">Step 8 — Complete a symmetric figure</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Summer 2026</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    "When we complete a symmetric figure, we reflect the given half in the <strong>mirror line</strong>.
+     Think of it like a real mirror — every point on one side appears at the <strong>same distance</strong> on the other side of the mirror line.
+     The trick is to count the squares carefully and plot the reflection point by point."
+  </div>
+</div>
+
+<!-- HOW-TO GUIDE -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">3-step method for completing a symmetric figure</div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;">
+    ${[
+      ['1','Pick a point','Choose a vertex (corner) on the given half of the shape.','var(--blue)','var(--blue-light)','var(--blue-dark)'],
+      ['2','Count to the mirror line','Count how many squares that point is from the mirror line.','var(--purple)','var(--purple-light)','var(--purple-dark)'],
+      ['3','Count the same on the other side','Go the same number of squares on the other side. Mark the reflected point.','var(--green)','var(--green-light)','var(--green-dark)'],
+    ].map(([num,title,desc,col,light,dark])=>`
+      <div style="display:flex;gap:10px;align-items:flex-start;background:${light};border:1.5px solid ${col};border-radius:8px;padding:9px 12px;">
+        <div style="width:28px;height:28px;background:${col};border-radius:50%;color:white;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${num}</div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:${dark};">${title}</div>
+          <div style="font-size:11px;color:${dark};opacity:0.85;">${desc}</div>
+        </div>
+      </div>
+    `).join('')}
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;font-size:11px;color:var(--amber-dark);margin-top:10px;">
+    <strong>Key rule:</strong> Reflected points are always the <em>same perpendicular distance</em> from the mirror line — never more, never less.
+    Connect the reflected points in the same order to complete the shape.
+  </div>
+</div>
+
+<!-- EXAMPLE 1 — Vertical mirror line -->
+<div class="card">
+  <div class="card-title">Example 1 — Reflecting in a vertical mirror line</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Adaeze has drawn half a shape on a grid. The dashed line is the mirror line. Complete the shape."
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="260" height="200" viewBox="0 0 260 200">
+      <!-- grid -->
+      ${Array.from({length:11},(_,i)=>`<line x1="${i*24+8}" y1="8" x2="${i*24+8}" y2="200" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      ${Array.from({length:9},(_,i)=>`<line x1="8" y1="${i*24+8}" x2="260" y2="${i*24+8}" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      <!-- mirror line (vertical, x=128) -->
+      <line x1="128" y1="4" x2="128" y2="200" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="8 4"/>
+      <text x="128" y="196" text-anchor="middle" font-size="9" fill="var(--pink-dark)">mirror</text>
+      <!-- given half: L-shape on left side -->
+      <polygon points="32,32 104,32 104,80 80,80 80,128 32,128" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="2" opacity="0.85"/>
+      <!-- reflected half: L-shape on right side -->
+      <polygon points="128,32 200,32 200,128 152,128 152,80 128,80" fill="var(--purple-light)" stroke="var(--purple-dark)" stroke-width="2" stroke-dasharray="5 2" opacity="0.85"/>
+      <!-- labels -->
+      <text x="68" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">given</text>
+      <text x="165" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="var(--purple-dark)">reflected</text>
+      <!-- distance arrows -->
+      <line x1="104" y1="32" x2="128" y2="32" stroke="var(--blue)" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="116" y="28" text-anchor="middle" font-size="8" fill="var(--blue-dark)">1 sq</text>
+      <line x1="128" y1="32" x2="152" y2="32" stroke="var(--purple)" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="140" y="28" text-anchor="middle" font-size="8" fill="var(--purple-dark)">1 sq</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:160px;">
+      <div style="margin-bottom:6px;"><strong>Key points and distances:</strong></div>
+      <div>• Top-left corner of given shape is <strong>6 squares</strong> left of mirror → reflected point is 6 squares right</div>
+      <div>• Each corner is measured and reflected the same way</div>
+      <div>• The purple shape is the completed reflection ✓</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 2 — Horizontal mirror line -->
+<div class="card">
+  <div class="card-title">Example 2 — Reflecting in a horizontal mirror line</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "The top half of a shape is given. The mirror line is horizontal. Reflect to complete the shape."
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="220" height="230" viewBox="0 0 220 230">
+      ${Array.from({length:10},(_,i)=>`<line x1="${i*24+8}" y1="8" x2="${i*24+8}" y2="224" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      ${Array.from({length:10},(_,i)=>`<line x1="8" y1="${i*24+8}" x2="216" y2="${i*24+8}" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      <!-- mirror line horizontal at y=120 -->
+      <line x1="4" y1="120" x2="220" y2="120" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="8 4"/>
+      <text x="4" y="118" font-size="9" fill="var(--pink-dark)">mirror</text>
+      <!-- top half: a staircase shape -->
+      <polygon points="32,32 80,32 80,72 128,72 128,120 32,120" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="2" opacity="0.9"/>
+      <!-- reflected bottom half -->
+      <polygon points="32,120 128,120 128,168 80,168 80,208 32,208" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="2" stroke-dasharray="5 2" opacity="0.9"/>
+      <text x="80" y="88" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-dark)">given top</text>
+      <text x="80" y="155" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">reflection</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:150px;">
+      Each row of the top half is mirrored into a corresponding row in the bottom half.<br/>
+      The staircase shape goes <strong>up</strong> on the left, so its reflection goes <strong>down</strong> on the left.
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 3 — Counting squares method -->
+<div class="card">
+  <div class="card-title">Example 3 — Step-by-step counting method</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Emeka is given a shape with 3 labelled vertices to reflect in a vertical mirror line. Show the counting method."
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="260" height="180" viewBox="0 0 260 180">
+      ${Array.from({length:11},(_,i)=>`<line x1="${i*24+8}" y1="8" x2="${i*24+8}" y2="178" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      ${Array.from({length:8},(_,i)=>`<line x1="8" y1="${i*24+8}" x2="260" y2="${i*24+8}" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      <!-- mirror line at x=128 -->
+      <line x1="128" y1="4" x2="128" y2="178" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="7 3"/>
+      <!-- triangle vertices on left -->
+      <circle cx="32" cy="32" r="5" fill="var(--blue)"/>
+      <text x="24" y="28" font-size="9" font-weight="700" fill="var(--blue-dark)">A</text>
+      <circle cx="80" cy="128" r="5" fill="var(--blue)"/>
+      <text x="66" y="128" font-size="9" font-weight="700" fill="var(--blue-dark)">B</text>
+      <circle cx="104" cy="56" r="5" fill="var(--blue)"/>
+      <text x="106" y="54" font-size="9" font-weight="700" fill="var(--blue-dark)">C</text>
+      <!-- shape lines -->
+      <polygon points="32,32 80,128 104,56" fill="var(--blue-light)" stroke="var(--blue)" stroke-width="2" opacity="0.7"/>
+      <!-- distance labels A: 4 squares left (4*24=96, so 128-96=32) wait - A is at x=32, mirror at 128, dist=96/24=4 squares -->
+      <line x1="32" y1="32" x2="128" y2="32" stroke="var(--blue)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="80" y="28" text-anchor="middle" font-size="8" fill="var(--blue-dark)">4 sq</text>
+      <!-- reflected A: x=128+(128-32)=224, y=32 -->
+      <circle cx="224" cy="32" r="5" fill="var(--purple)"/>
+      <text x="226" y="28" font-size="9" font-weight="700" fill="var(--purple-dark)">A'</text>
+      <line x1="128" y1="32" x2="224" y2="32" stroke="var(--purple)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="176" y="28" text-anchor="middle" font-size="8" fill="var(--purple-dark)">4 sq</text>
+      <!-- reflected B: x=128+(128-80)=176, y=128 -->
+      <circle cx="176" cy="128" r="5" fill="var(--purple)"/>
+      <text x="178" y="126" font-size="9" font-weight="700" fill="var(--purple-dark)">B'</text>
+      <!-- reflected C: x=128+(128-104)=152, y=56 -->
+      <circle cx="152" cy="56" r="5" fill="var(--purple)"/>
+      <text x="154" y="54" font-size="9" font-weight="700" fill="var(--purple-dark)">C'</text>
+      <!-- reflected shape -->
+      <polygon points="224,32 176,128 152,56" fill="var(--purple-light)" stroke="var(--purple)" stroke-width="2" opacity="0.7" stroke-dasharray="5 2"/>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:2;flex:1;min-width:150px;">
+      <div><strong>A</strong> is 4 squares left → <strong>A'</strong> is 4 squares right</div>
+      <div><strong>B</strong> is 2 squares left → <strong>B'</strong> is 2 squares right</div>
+      <div><strong>C</strong> is 1 square left → <strong>C'</strong> is 1 square right</div>
+      <div style="margin-top:6px;background:var(--green-light);border-radius:6px;padding:5px 8px;color:var(--green-dark);">
+        Connect A'B'C' in the same order to draw the reflected triangle ✓
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLE 4 — Checking symmetry -->
+<div class="card">
+  <div class="card-title">Example 4 — Checking if a completed figure is correct</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "Funmi has completed a symmetric figure. How can she check it is correct?"
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin:12px 0 14px;">
+    ${[['1','Measure distances','Pick each vertex on the reflected half and measure its distance from the mirror line. It must equal the distance of the original vertex.','var(--blue)','var(--blue-light)','var(--blue-dark)'],
+       ['2','Fold test','Imagine folding the paper along the mirror line. Both halves should overlap exactly.','var(--green)','var(--green-light)','var(--green-dark)'],
+       ['3','Count squares','Count grid squares from each point to the mirror line on both sides — the count must match.','var(--amber)','var(--amber-light)','var(--amber-dark)']].map(([n,title,desc,col,light,dark])=>`
+      <div style="display:flex;gap:10px;align-items:flex-start;background:${light};border:1px solid ${col};border-radius:8px;padding:8px 12px;">
+        <div style="width:24px;height:24px;background:${col};border-radius:50%;color:white;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${n}</div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:${dark};">${title}</div>
+          <div style="font-size:10px;color:${dark};opacity:0.85;">${desc}</div>
+        </div>
+      </div>
+    `).join('')}
+  </div>
+</div>
+
+<!-- EXAMPLE 5 — Full worked symmetric figure -->
+<div class="card">
+  <div class="card-title">Example 5 — Complete the house shape</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    📖 "The left half of a house shape is drawn on a grid with a vertical mirror line. Reflect it to show the complete house."
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;margin:12px 0 14px;">
+    <svg width="280" height="230" viewBox="0 0 280 230">
+      ${Array.from({length:12},(_,i)=>`<line x1="${i*24+8}" y1="8" x2="${i*24+8}" y2="225" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      ${Array.from({length:10},(_,i)=>`<line x1="8" y1="${i*24+8}" x2="278" y2="${i*24+8}" stroke="var(--border-light)" stroke-width="0.8"/>`).join('')}
+      <!-- mirror line at x=140 -->
+      <line x1="140" y1="4" x2="140" y2="225" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="8 4"/>
+      <!-- left half house: roof triangle top + wall rectangle -->
+      <!-- roof: peak at (140,16), left corner at (56,88), right corner (=mirror) at (140,88) -->
+      <polygon points="140,16 56,88 140,88" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="2"/>
+      <!-- wall: from (56,88) to (140,88) to (140,208) to (56,208) -->
+      <rect x="56" y="88" width="84" height="120" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="2"/>
+      <!-- door left half -->
+      <rect x="104" y="160" width="36" height="48" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+      <!-- window left -->
+      <rect x="64" y="110" width="30" height="28" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+      <!-- reflected right half -->
+      <!-- roof right: peak at (140,16), right corner at (224,88), left corner(=mirror) at (140,88) -->
+      <polygon points="140,16 224,88 140,88" fill="var(--coral-light)" stroke="var(--coral-dark)" stroke-width="2" stroke-dasharray="5 2"/>
+      <!-- wall right -->
+      <rect x="140" y="88" width="84" height="120" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="2" stroke-dasharray="5 2"/>
+      <!-- door right half (mirror of door: was 104–140, so reflected is 140–176) -->
+      <rect x="140" y="160" width="36" height="48" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5" stroke-dasharray="4 2"/>
+      <!-- window right (mirror of window at 64-94, so reflected: 140+(140-94)=186 to 140+(140-64)=216) -->
+      <rect x="186" y="110" width="30" height="28" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5" stroke-dasharray="4 2"/>
+      <!-- labels -->
+      <text x="90" y="50" text-anchor="middle" font-size="10" fill="var(--coral-dark)" font-weight="700">given</text>
+      <text x="190" y="50" text-anchor="middle" font-size="10" fill="var(--purple-dark)" font-weight="700">reflected ✓</text>
+    </svg>
+    <div style="font-size:11px;color:var(--text-sec);line-height:1.9;flex:1;min-width:150px;">
+      The <span style="color:var(--coral-dark);font-weight:700;">solid lines</span> are the given half.<br/>
+      The <span style="color:var(--purple-dark);font-weight:700;">dashed lines</span> show the completed reflection.<br/>
+      Every point has been mirrored at the <strong>same distance</strong> from the pink mirror line.<br/>
+      The completed house is perfectly symmetrical ✓
+    </div>
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 8</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">A point is 3 squares to the left of a vertical mirror line. Where is its reflection?
+        ${mcqBlock(['3 squares above the line','3 squares to the right of the line','6 squares to the right'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">When reflecting, the reflected point must be:
+        ${mcqBlock(['The same distance above the mirror as the original','The same perpendicular distance from the mirror as the original','Twice the distance from the mirror'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">A point sits exactly ON the mirror line. Where does it reflect to?
+        ${mcqBlock(['It moves to the opposite side','It stays in the same place','It moves twice as far'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">Adaeze reflects a triangle in a vertical mirror line. The triangle has 3 vertices. How many reflected vertices does she need to plot?
+        ${mcqBlock(['1','2','3'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">On a grid, vertex A is at (2, 3) and the mirror line is x = 5. What are the coordinates of A's reflection?
+        ${mcqBlock(['(8, 3)','(2, 7)','(8, 6)'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">The right half of a shape is reflected in a horizontal mirror line. Where does a point 4 squares above the mirror line appear in the reflection?
+        ${mcqBlock(['4 squares to the right','4 squares below the mirror line','8 squares above'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">After reflecting a shape, what should you always check?
+        ${mcqBlock(['That the reflected shape is the same colour','That each vertex is the same distance from the mirror on both sides','That the shape gets bigger'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">Funmi reflects a rectangle in its vertical line of symmetry. The result is:
+        ${mcqBlock(['A triangle','The same rectangle (both halves match)','A different rectangle'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text"><strong>Think Deeper:</strong> Tunde draws half a shape on a grid. The half has 4 vertices. After reflecting, how many vertices will the COMPLETE shape have (assuming no vertices sit on the mirror line)?
+        ${mcqBlock(['4','6','8'], 2)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text"><strong>BOSS LEVEL:</strong> Obi reflects a shape in a vertical mirror line at x = 6. Vertex P is at (2, 4). Vertex Q is at (4, 7). What are the coordinates of P' and Q'?
+        ${mcqBlock(["P'=(10, 4), Q'=(8, 7)","P'=(8, 4), Q'=(10, 7)","P'=(10, 4), Q'=(10, 7)"], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+
+    
 // --- STATISTICS ---
 const STATS_STEP1 = ``;
 const STATS_STEP2 = ``;
