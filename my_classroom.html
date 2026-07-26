@@ -318,6 +318,1139 @@ function handleMCQ(btn, isCorrect) {
 }
 
 /* ============================================================
+   Autumn — Multiplication and division A  (Steps 1–6
+   ============================================================ */
+
+// --- MULTIPLICATION & DIVISION A ---
+/* ── Step 1: Multiples of 3 ── */
+const MULT_A_STEP1 = `
+<div class="day-header">
+  <div class="day-icon" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid var(--green-mid);">M1</div>
+  <div>
+    <div class="day-label" style="color:var(--green-dark);">Step 1 — Multiples of 3</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Autumn 2025</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">
+    "A <strong>multiple of 3</strong> is any number you land on when you count in equal jumps of 3, starting from 0: 3, 6, 9, 12, 15 &hellip; Think of a frog hopping along a number line — every hop is exactly 3 spaces. Every number the frog lands on is a multiple of 3. Numbers in between the hops are <em>not</em> multiples of 3."
+  </div>
+</div>
+
+<!-- EXAMPLE 1: concrete groups of 3 -->
+<div class="card">
+  <div class="card-title">Example 1 — Counting in groups of 3 (concrete)</div>
+  <div class="card-body" style="margin-bottom:8px;">Each box below holds exactly 3 counters. Count the boxes, then count all the counters.</div>
+  <div class="steps-row">
+    ${[1,2,3,4].map(n => `
+    <div class="step-box">
+      <div class="step-num" style="color:var(--green-dark);">${n} box${n>1?'es':''}</div>
+      <svg class="shape-svg" width="90" height="60" viewBox="0 0 90 60">
+        <rect x="10" y="10" width="70" height="40" rx="6" fill="var(--green-light)" stroke="var(--green-dark)" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="7" fill="#5DCAA5" stroke="var(--green-dark)" stroke-width="1"/>
+        <circle cx="45" cy="30" r="7" fill="#5DCAA5" stroke="var(--green-dark)" stroke-width="1"/>
+        <circle cx="60" cy="30" r="7" fill="#5DCAA5" stroke="var(--green-dark)" stroke-width="1"/>
+      </svg>
+      <div class="step-caption" style="color:var(--green-dark);">${n} &times; 3 = <strong>${n*3}</strong></div>
+    </div>`).join('')}
+  </div>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; Every time we add another box of 3, the total is a <strong>multiple of 3</strong>: 3, 6, 9, 12 &hellip;
+  </div>
+</div>
+
+<!-- EXAMPLE 2: number line skip counting -->
+<div class="card">
+  <div class="card-title">Example 2 — Skip counting on a number line (pictorial)</div>
+  <svg class="shape-svg" width="320" height="70" viewBox="0 0 320 70">
+    <line x1="10" y1="40" x2="310" y2="40" stroke="var(--green-dark)" stroke-width="2"/>
+    ${[0,1,2,3,4,5,6,7,8,9,10].map(i=>{
+      const x = 10 + i*30;
+      const isMultiple = true; // every mark here IS a multiple of 3 since we only mark 0,3,6...
+      return `<line x1="${x}" y1="32" x2="${x}" y2="48" stroke="var(--green-dark)" stroke-width="2"/>
+              <text x="${x}" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green-dark)">${i*3}</text>`;
+    }).join('')}
+    ${[0,1,2,3,4,5,6,7,8,9].map(i=>{
+      const x1 = 10+i*30, x2 = 10+(i+1)*30;
+      const midx = (x1+x2)/2;
+      return `<path d="M${x1},20 Q${midx},2 ${x2},20" fill="none" stroke="#1D9E75" stroke-width="1.5"/>
+              <text x="${midx}" y="14" text-anchor="middle" font-size="8" fill="#0F6E56">+3</text>`;
+    }).join('')}
+  </svg>
+  <div class="card-body" style="margin-top:6px;">Every hop adds 3. The frog lands on <strong>0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30</strong> — these are all multiples of 3.</div>
+</div>
+
+<!-- EXAMPLE 3: array test for "is it a multiple of 3?" - FIXED -->
+<div class="card">
+  <div class="card-title">Example 3 — Is 14 a multiple of 3? (the array test)</div>
+  <div class="card-body" style="margin-bottom:10px;">Try to arrange 14 counters into equal rows of 3. If there is nothing left over, it's a multiple of 3.</div>
+  
+  <svg class="shape-svg" width="320" height="135" viewBox="0 0 320 135" style="display:block; margin:0 auto;">
+    <!-- 4 full rows of 3 = 12 counters -->
+    ${[0,1,2,3].map(row => [0,1,2].map(col => {
+      return `<circle cx="${30+col*32}" cy="${18+row*24}" r="9" fill="#85B7EB" stroke="var(--blue-dark)" stroke-width="1.2"/>`;
+    }).join('')).join('')}
+    
+    <!-- Dashed box for incomplete row -->
+    <rect x="18" y="108" width="68" height="22" rx="6" fill="none" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="5,3"/>
+    
+    <!-- 2 leftover counters -->
+    <circle cx="30" cy="120" r="9" fill="#F0997B" stroke="var(--coral-dark)" stroke-width="1.2"/>
+    <circle cx="62" cy="120" r="9" fill="#F0997B" stroke="var(--coral-dark)" stroke-width="1.2"/>
+    
+    <!-- Label -->
+    <text x="100" y="124" font-size="11" font-weight="500" fill="var(--coral-dark)">2 left over — not a full row!</text>
+  </svg>
+
+  <div style="background:var(--coral-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--coral-dark);line-height:1.4;">
+    ✗ &nbsp; 14 makes 4 full rows of 3, with <strong>2 left over</strong>. Since something is left over, <strong>14 is NOT a multiple of 3</strong>.
+  </div>
+</div>
+
+<!-- EXAMPLE 4: spotting the pattern in a 100-square style row -->
+<div class="card">
+  <div class="card-title">Example 4 — Spotting the pattern of multiples of 3</div>
+  <div class="card-body" style="margin-bottom:8px;">Numbers 1 to 20 are shown below. The multiples of 3 are shaded green.</div>
+  <svg class="shape-svg" width="320" height="40" viewBox="0 0 320 40">
+    ${Array.from({length:20},(_,i)=>i+1).map((n,i)=>{
+      const isMult = n % 3 === 0;
+      return `<rect x="${10+i*15}" y="5" width="13" height="25" rx="3" fill="${isMult ? '#5DCAA5' : '#F2F2F2'}" stroke="${isMult ? 'var(--green-dark)' : '#ccc'}" stroke-width="1"/>
+              <text x="${16+i*15}" y="21" text-anchor="middle" font-size="8" font-weight="${isMult?'700':'400'}" fill="${isMult?'white':'#888'}">${n}</text>`;
+    }).join('')}
+  </svg>
+  <div class="card-body" style="margin-top:8px;">Notice the shaded numbers are exactly <strong>3 apart</strong> every time: 3, 6, 9, 12, 15, 18. This regular gap is the signature of a times-table pattern.</div>
+</div>
+
+<!-- EXAMPLE 5: word problem -->
+<div class="card">
+  <div class="card-title">Example 5 — Word problem using multiples of 3</div>
+  <div class="warmup" style="background:var(--green-light);color:var(--green-dark);">📖 "Tables in the school hall seat 3 pupils each. If 7 tables are set out, how many pupils can be seated? Is 24 pupils possible with a whole number of tables?"</div>
+  <div class="steps-row" style="margin-top:10px;">
+    <div class="step-box">
+      <div class="step-num" style="color:var(--green-dark);">Part 1</div>
+      <svg class="shape-svg" width="120" height="45" viewBox="0 0 120 45">
+        <text x="60" y="20" text-anchor="middle" font-size="13" fill="var(--green-dark)">7 &times; 3 = 21</text>
+      </svg>
+      <div class="step-caption" style="color:var(--green-dark);">21 pupils can be seated</div>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step-box">
+      <div class="step-num" style="color:var(--green-dark);">Part 2</div>
+      <svg class="shape-svg" width="130" height="45" viewBox="0 0 130 45">
+        <text x="65" y="20" text-anchor="middle" font-size="12" fill="var(--green-dark)">24 &divide; 3 = 8</text>
+      </svg>
+      <div class="step-caption" style="color:var(--green-dark);">Yes — 24 = 8 tables exactly</div>
+    </div>
+  </div>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; Because 24 is a multiple of 3, it can always be shared into exact groups of 3 with nothing left over.
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--green-mid);">
+  <div class="card-title" style="color:var(--green-dark);">Exercises — Step 1</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">1</div>
+      <div class="ex-text">Count in 3s starting from 0. What is the 5th number you say?
+        <span class="ex-tag" style="background:var(--blue-light);color:var(--blue-dark);">Skip count</span>
+        ${mcqBlock(['15','12','18'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">2</div>
+      <div class="ex-text">Which of these is a multiple of 3?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Identify</span>
+        ${mcqBlock(['17','21','25'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">3</div>
+      <div class="ex-text">Arrange 18 counters into equal rows of 3. How many rows do you get, with none left over?
+        <span class="ex-tag" style="background:var(--blue-light);color:var(--blue-dark);">Array test</span>
+        ${mcqBlock(['6 rows','5 rows, 3 left over','7 rows'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">4</div>
+      <div class="ex-text">Is 20 a multiple of 3? Explain using the array test.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['No — 6 rows of 3 with 2 left over','Yes — exactly 20 rows','No — it is a multiple of 4 instead'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">5</div>
+      <div class="ex-text">A minibus has rows that seat 3 children each. There are 9 rows. How many children fit in total?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['27','24','30'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">6</div>
+      <div class="ex-text">What number comes next in this sequence: 3, 6, 9, 12, ___?
+        <span class="ex-tag" style="background:var(--blue-light);color:var(--blue-dark);">Skip count</span>
+        ${mcqBlock(['14','15','16'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">7</div>
+      <div class="ex-text">Which number is NOT a multiple of 3: 15, 22, or 27?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Identify</span>
+        ${mcqBlock(['15','22','27'], 1)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">8</div>
+      <div class="ex-text">There are 30 pencils shared equally among some cups, 3 pencils per cup. How many cups are needed?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['10 cups','9 cups','12 cups'], 0)}
+      </div>
+    </div>
+
+<!-- IMPROVED EXERCISE 9 -->
+<div class="exercise-item">
+  <div class="ex-num" style="background:var(--green-light);color:var(--green-dark);">9</div>
+  <div class="ex-text">
+    Look at the number line from Example 2.
+    <br><br>
+    <strong>a)</strong> Including 0 as the 1st landing, what is the 11th number the frog lands on?
+    <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Count with zero</span>
+    ${mcqBlock(['30','33','27'], 0)}
+    <div style="font-size:12px; margin:4px 0 10px 0; color:var(--text-muted);">Hint: 0 is 1st, 3 is 2nd... 30 is 11th.</div>
+
+    <strong>b)</strong> If the frog takes ONE more hop after 30, where will it land? That is the 11th multiple of 3 when we start counting from 3.
+    <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+    ${mcqBlock(['33','30','36'], 0)}
+  </div>
+</div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">BOSS LEVEL: Ade says "every multiple of 3 is an odd number." Is Ade correct? Use an example to prove your answer.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span>
+        ${mcqBlock(['No — 6 is a multiple of 3 and it is even','Yes — Ade is correct','No multiples of 3 are ever even'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+/* ── Step 2: Multiply and divide by 6 ── */
+const MULT_A_STEP2 = `
+<div class="day-header">
+  <div class="day-icon" style="background:var(--blue-light);color:var(--blue-dark);border:0.5px solid var(--blue-mid);">M2</div>
+  <div>
+    <div class="day-label" style="color:var(--blue-dark);">Step 2 — Multiply and divide by 6</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Autumn 2025</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">
+    "Here is a secret shortcut: <strong>6 is double 3</strong> (6 = 2 &times; 3). That means every fact in the 6 times-table is just <strong>double</strong> the matching fact in the 3 times-table you already know! Multiplying by 6 = multiply by 3, then double. Dividing by 6 = halve first, then divide by 3."
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 1 — A group of 6 is two groups of 3 (concrete)</div>
+  <svg class="shape-svg" width="200" height="70" viewBox="0 0 200 70">
+    <rect x="10" y="10" width="80" height="50" rx="6" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+    ${[0,1,2].map(i=>`<circle cx="${30+i*22}" cy="25" r="7" fill="#85B7EB" stroke="var(--blue-dark)" stroke-width="1"/>`).join('')}
+    ${[0,1,2].map(i=>`<circle cx="${30+i*22}" cy="45" r="7" fill="#378ADD" stroke="var(--blue-dark)" stroke-width="1"/>`).join('')}
+    <line x1="10" y1="35" x2="90" y2="35" stroke="var(--blue-dark)" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="100" y="22" font-size="10" fill="var(--blue-dark)">3 (light)</text>
+    <text x="100" y="42" font-size="10" fill="var(--blue-dark)">+ 3 (dark)</text>
+    <text x="100" y="58" font-size="11" font-weight="700" fill="var(--blue-dark)">= 1 group of 6</text>
+  </svg>
+  <div class="card-body" style="margin-top:6px;">One box of 6 counters is really <strong>two rows of 3</strong> stacked together. This is why doubling a 3s-fact gives you the matching 6s-fact.</div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 2 — Doubling the 3 times-table to get the 6 times-table</div>
+  <div class="strategy-grid">
+    ${[1,2,3,4,5].map(n => `
+    <div class="strategy-card" style="background:var(--blue-light);border-color:#B5D4F4;text-align:center;">
+      <div class="s-title" style="color:var(--blue-dark);">${n} &times; 3 = ${n*3}</div>
+      <div class="s-body" style="color:var(--blue-mid);">double it &rarr; ${n} &times; 6 = <strong>${n*6}</strong></div>
+    </div>`).join('')}
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--amber-dark);">
+    💡 Once you spot the doubling pattern, you already know your entire 6 times-table from your 3 times-table!
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 3 — Dividing by 6 using a bar model</div>
+  <div class="card-body" style="margin-bottom:8px;">30 sweets are shared equally so that each bag holds 6. How many bags are needed?</div>
+  <svg class="shape-svg" width="280" height="55" viewBox="0 0 280 55">
+    <rect x="5" y="10" width="270" height="30" rx="3" fill="var(--blue-light)" stroke="var(--blue-dark)" stroke-width="1.5"/>
+    ${[1,2,3,4].map(i=>`<line x1="${5+i*54}" y1="10" x2="${5+i*54}" y2="40" stroke="var(--blue-dark)" stroke-width="1"/>`).join('')}
+    ${[0,1,2,3,4].map(i=>`<text x="${32+i*54}" y="29" text-anchor="middle" font-size="11" fill="var(--blue-dark)">6</text>`).join('')}
+    <text x="140" y="52" text-anchor="middle" font-size="11" fill="var(--blue-mid)">30 sweets in total, split into equal bags of 6</text>
+  </svg>
+  <div style="background:var(--blue-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--blue-dark);">
+    ✓ &nbsp; There are <strong>5 bags</strong>, because 30 &divide; 6 = 5 (check: 5 &times; 6 = 30).
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 4 — Skip counting in 6s on a number line</div>
+  <svg class="shape-svg" width="300" height="55" viewBox="0 0 300 55">
+    <line x1="10" y1="30" x2="290" y2="30" stroke="var(--blue-dark)" stroke-width="2"/>
+    ${[0,1,2,3,4,5].map(i=>{
+      const x = 10+i*56;
+      return `<line x1="${x}" y1="22" x2="${x}" y2="38" stroke="var(--blue-dark)" stroke-width="2"/>
+              <text x="${x}" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-dark)">${i*6}</text>`;
+    }).join('')}
+    ${[0,1,2,3,4].map(i=>{
+      const x1=10+i*56, x2=10+(i+1)*56, midx=(x1+x2)/2;
+      return `<path d="M${x1},18 Q${midx},2 ${x2},18" fill="none" stroke="#185FA5" stroke-width="1.5"/><text x="${midx}" y="12" text-anchor="middle" font-size="8" fill="#0C447C">+6</text>`;
+    }).join('')}
+  </svg>
+  <div class="card-body" style="margin-top:6px;">Each hop is 6 spaces. This gives 0, 6, 12, 18, 24, 30 — the 6 times-table.</div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 5 — Multiplication and division are linked (fact family)</div>
+  <div class="warmup" style="background:var(--blue-light);color:var(--blue-dark);">📖 "A baker puts 6 cupcakes in every box. She fills 7 boxes. How many cupcakes in total? If she instead had 42 cupcakes and wanted 6 in each box, how many boxes would she need?"</div>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--blue-light);border-color:#B5D4F4;">
+      <div class="s-title" style="color:var(--blue-dark);">Multiplication</div>
+      <div class="s-body" style="color:var(--blue-mid);font-size:15px;font-weight:700;">7 &times; 6 = 42</div>
+    </div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;">
+      <div class="s-title" style="color:var(--green-dark);">Division (the inverse)</div>
+      <div class="s-body" style="color:var(--green-mid);font-size:15px;font-weight:700;">42 &divide; 6 = 7</div>
+    </div>
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--amber-dark);">
+    💡 Multiplication and division are a <strong>fact family</strong> — the same three numbers (7, 6, 42) connect both operations.
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 2</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">1</div>
+      <div class="ex-text">Use doubling: if 4 &times; 3 = 12, what is 4 &times; 6?
+        <span class="ex-tag" style="background:var(--blue-light);color:var(--blue-dark);">Doubling strategy</span>
+        ${mcqBlock(['24','20','18'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">2</div>
+      <div class="ex-text">Calculate: 6 &times; 6
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Recall</span>
+        ${mcqBlock(['36','30','42'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">3</div>
+      <div class="ex-text">36 eggs are packed into boxes of 6. How many boxes are needed?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['6 boxes','7 boxes','5 boxes'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">4</div>
+      <div class="ex-text">Calculate: 48 &divide; 6
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Division</span>
+        ${mcqBlock(['8','9','7'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">5</div>
+      <div class="ex-text">Write the missing number: 9 &times; 6 = ___
+        <span class="ex-tag" style="background:var(--blue-light);color:var(--blue-dark);">Recall</span>
+        ${mcqBlock(['54','56','48'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">6</div>
+      <div class="ex-text">A pack of biscuits has 6 rows with 5 biscuits in each row. How many biscuits altogether?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['30','36','25'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">7</div>
+      <div class="ex-text">If 8 &times; 6 = 48, what is 48 &divide; 6 without recalculating?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['8 (fact families)','6','48'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">8</div>
+      <div class="ex-text">54 chairs are arranged in rows of 6. How many rows are there?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['9 rows','8 rows','10 rows'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--blue-light);color:var(--blue-dark);">9</div>
+      <div class="ex-text">Using the doubling strategy, explain how to work out 7 &times; 6 if you already know 7 &times; 3 = 21.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['Double 21 to get 42','Add 6 to 21 to get 27','Halve 21 to get 10.5'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">BOSS LEVEL: A minibus seats 6 pupils per row. A school books 3 minibuses, each with 5 full rows. How many pupils travel altogether?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span>
+        ${mcqBlock(['90','75','80'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+/* ── Step 3: 6 times-table and division facts ── */
+const MULT_A_STEP3 = `
+<div class="day-header">
+  <div class="day-icon" style="background:var(--purple-light);color:var(--purple-dark);border:0.5px solid var(--purple-mid);">M3</div>
+  <div>
+    <div class="day-label" style="color:var(--purple-dark);">Step 3 — 6 times-table and division facts</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Autumn 2025</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--purple-mid);">
+  <div class="card-title" style="color:var(--purple-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">
+    "Every multiplication fact has THREE related facts hiding inside it — this is called a <strong>fact family</strong>. Knowing 6 &times; 4 = 24 instantly also tells you 4 &times; 6 = 24, 24 &divide; 6 = 4, AND 24 &divide; 4 = 6. Learning the 6 times-table really means learning <em>four</em> facts at once for every multiplication you memorise!"
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 1 — One array, four facts</div>
+  <div class="card-body" style="margin-bottom:8px;">An array of 5 rows of 6 (or 6 rows of 5) gives us a whole family of facts.</div>
+  <svg class="shape-svg" width="150" height="100" viewBox="0 0 150 100">
+    ${[0,1,2,3,4].map(row => [0,1,2,3,4,5].map(col => `<circle cx="${15+col*22}" cy="${15+row*18}" r="6.5" fill="#AFA9EC" stroke="var(--purple-dark)" stroke-width="1"/>`).join('')).join('')}
+  </svg>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--purple-light);border-color:#CECBF6;"><div class="s-title" style="color:var(--purple-dark);font-size:14px;">6 &times; 5 = 30</div></div>
+    <div class="strategy-card" style="background:var(--purple-light);border-color:#CECBF6;"><div class="s-title" style="color:var(--purple-dark);font-size:14px;">5 &times; 6 = 30</div></div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);font-size:14px;">30 &divide; 6 = 5</div></div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);font-size:14px;">30 &divide; 5 = 6</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 2 — The full 6 times-table</div>
+  <div class="strategy-grid">
+    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(n=>`
+    <div class="strategy-card" style="background:${n%2===0?'var(--purple-light)':'#EEEDFE'};border-color:#CECBF6;text-align:center;">
+      <div class="s-title" style="color:var(--purple-dark);font-size:13px;">${n} &times; 6 = ${n*6}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 3 — Finding a missing number using the fact family</div>
+  <div class="card-body" style="margin-bottom:8px;">6 &times; ___ = 42. What goes in the gap?</div>
+  <div class="steps-row">
+    <div class="step-box">
+      <div class="step-num" style="color:var(--purple-dark);">Step 1 — Rewrite as division</div>
+      <svg class="shape-svg" width="130" height="45" viewBox="0 0 130 45"><text x="65" y="26" text-anchor="middle" font-size="13" fill="var(--purple-dark)">42 &divide; 6 = ?</text></svg>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step-box">
+      <div class="step-num" style="color:var(--purple-dark);">Step 2 — Recall the fact</div>
+      <svg class="shape-svg" width="130" height="45" viewBox="0 0 130 45"><text x="65" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="var(--purple-dark)">42 &divide; 6 = 7</text></svg>
+    </div>
+  </div>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; 6 &times; <strong>7</strong> = 42. Turning a missing-number multiplication into a division is the fastest way to solve it.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 4 — Checking a division fact by multiplying back</div>
+  <div class="card-body" style="margin-bottom:8px;">Is 60 &divide; 6 = 9 correct?</div>
+  <svg class="shape-svg" width="200" height="45" viewBox="0 0 200 45">
+    <text x="100" y="26" text-anchor="middle" font-size="14" fill="var(--purple-dark)">Check: 9 &times; 6 = 54 &ne; 60</text>
+  </svg>
+  <div style="background:var(--coral-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--coral-dark);">
+    ✗ &nbsp; 9 &times; 6 = 54, not 60 — so the division was wrong. The correct answer is 60 &divide; 6 = <strong>10</strong>, because 10 &times; 6 = 60. ✓
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--amber-dark);">
+    💡 Always check a division answer by multiplying it back — it should rebuild the original number exactly.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: mixed multiplication and division</div>
+  <div class="warmup" style="background:var(--purple-light);color:var(--purple-dark);">📖 "A vet has 66 tablets to give to dogs, 6 tablets per dog. How many dogs can be treated? If instead there were 11 dogs needing 6 tablets each, how many tablets are needed in total?"</div>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);">66 &divide; 6 = 11 dogs</div></div>
+    <div class="strategy-card" style="background:var(--purple-light);border-color:#CECBF6;"><div class="s-title" style="color:var(--purple-dark);">11 &times; 6 = 66 tablets</div></div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 3</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">1</div>
+      <div class="ex-text">If 6 &times; 8 = 48, what is 48 &divide; 8?
+        <span class="ex-tag" style="background:var(--purple-light);color:var(--purple-dark);">Fact family</span>
+        ${mcqBlock(['6','8','48'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">2</div>
+      <div class="ex-text">Find the missing number: 6 &times; ___ = 66
+        <span class="ex-tag" style="background:var(--purple-light);color:var(--purple-dark);">Missing number</span>
+        ${mcqBlock(['11','10','12'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">3</div>
+      <div class="ex-text">Calculate: 72 &divide; 6
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Recall</span>
+        ${mcqBlock(['12','11','13'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">4</div>
+      <div class="ex-text">Write all four facts in the family for 6, 9 and 54.
+        <span class="ex-tag" style="background:var(--purple-light);color:var(--purple-dark);">Fact family</span>
+        ${mcqBlock(['6×9=54, 9×6=54, 54÷6=9, 54÷9=6','6×9=54 only','54÷6=8'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">5</div>
+      <div class="ex-text">Check this working: "8 × 6 = 42." Is this correct? If not, what is the correct answer?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Checking</span>
+        ${mcqBlock(['Incorrect — it should be 48','Correct','Incorrect — it should be 54'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">6</div>
+      <div class="ex-text">A shop arranges 84 cans into shelves of 6 cans each. How many shelves are needed?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['14','12','16'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">7</div>
+      <div class="ex-text">Find the missing number: ___ &divide; 6 = 7
+        <span class="ex-tag" style="background:var(--purple-light);color:var(--purple-dark);">Missing number</span>
+        ${mcqBlock(['42','36','48'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">8</div>
+      <div class="ex-text">12 teams need 6 players each for a tournament. How many players are needed altogether?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['72','66','78'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--purple-light);color:var(--purple-dark);">9</div>
+      <div class="ex-text">Explain why 24 &divide; 6 and 24 &divide; 4 give different answers, even though both start with 24.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['Different divisors split 24 into different-sized equal groups','They should give the same answer','Division always gives the same answer regardless of divisor'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">BOSS LEVEL: Bimpe has 90 stickers. She wants to know how many friends can get 6 stickers each. Then she wonders what would happen if instead she shared 90 stickers equally among exactly 6 friends. Do these two questions have the same answer? Explain.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span>
+        ${mcqBlock(['Yes, both give 15, but they describe different real-world situations','No, the answers must be different','Cannot be worked out'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+/* ── Step 4: Multiply and divide by 9 ── */
+const MULT_A_STEP4 = `
+<div class="day-header">
+  <div class="day-icon" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid var(--amber-mid);">M4</div>
+  <div>
+    <div class="day-label" style="color:var(--amber-dark);">Step 4 — Multiply and divide by 9</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Autumn 2025</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--amber-mid);">
+  <div class="card-title" style="color:var(--amber-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">
+    "Multiplying by 9 has a brilliant shortcut: <strong>9 is one less than 10</strong>. So to work out any number &times; 9, first multiply by 10 (easy — just add a zero!), then <strong>subtract one group</strong> of that number. For example, 7 &times; 9 = (7 &times; 10) &minus; 7 = 70 &minus; 7 = 63."
+  </div>
+</div>
+
+<!-- EXAMPLE 1: concrete - one group missing from 10 -->
+<div class="card">
+  <div class="card-title">Example 1 — Take away one group from 10 groups (concrete)</div>
+  <div class="card-body" style="margin-bottom:8px;">Imagine 10 bags of 4 sweets, but one bag is empty (has 0 instead of 4). That is the same as having 9 full bags of 4.</div>
+  <svg class="shape-svg" width="300" height="55" viewBox="0 0 300 55">
+    ${[0,1,2,3,4,5,6,7,8].map(i=>`
+      <rect x="${5+i*32}" y="10" width="26" height="30" rx="4" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.2"/>
+      <text x="${18+i*32}" y="30" text-anchor="middle" font-size="11" fill="var(--amber-dark)">4</text>
+    `).join('')}
+    <rect x="${5+9*32}" y="10" width="26" height="30" rx="4" fill="none" stroke="var(--coral-dark)" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="${18+9*32}" y="30" text-anchor="middle" font-size="11" fill="var(--coral-dark)">0</text>
+    <text x="${18+9*32}" y="50" text-anchor="middle" font-size="8" fill="var(--coral-dark)">empty bag!</text>
+  </svg>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--amber-dark);">
+    ✓ &nbsp; 9 &times; 4 = 10 &times; 4 &minus; 4 = 40 &minus; 4 = <strong>36</strong>
+  </div>
+</div>
+
+<!-- EXAMPLE 2: the ×10 then subtract strategy table -->
+<div class="card">
+  <div class="card-title">Example 2 — The "&times;10, then take one group away" strategy</div>
+  <div class="strategy-grid">
+    ${[3,5,6,8].map(n => `
+    <div class="strategy-card" style="background:var(--amber-light);border-color:#FAC775;text-align:center;">
+      <div class="s-title" style="color:var(--amber-dark);">${n} &times; 9</div>
+      <div class="s-body" style="color:var(--amber-mid);">${n} &times; 10 = ${n*10}<br/>${n*10} &minus; ${n} = <strong>${n*9}</strong></div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- EXAMPLE 3: finger trick -->
+<div class="card">
+  <div class="card-title">Example 3 — The famous "9 times-table finger trick"</div>
+  <div class="card-body" style="margin-bottom:8px;">Hold up 10 fingers. To find 4 &times; 9, fold down your 4th finger. Count fingers before the fold, then after.</div>
+  <svg class="shape-svg" width="260" height="70" viewBox="0 0 260 70">
+    ${[0,1,2,3,4,5,6,7,8,9].map(i=>{
+      const folded = i===3;
+      const x = 10+i*24;
+      return `<rect x="${x}" y="${folded?35:10}" width="18" height="${folded?15:40}" rx="4" fill="${folded?'#F0997B':'#F9D9A0'}" stroke="var(--amber-dark)" stroke-width="1"/>`;
+    }).join('')}
+    <text x="55" y="60" font-size="10" fill="var(--amber-dark)">3 fingers up (tens)</text>
+    <text x="180" y="60" font-size="10" fill="var(--amber-dark)">6 fingers up (ones)</text>
+  </svg>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; 3 fingers before the fold + 6 fingers after = <strong>36</strong>, so 4 &times; 9 = 36. This works for any number 1&ndash;10!
+  </div>
+</div>
+
+<!-- EXAMPLE 4: division using the same relationship -->
+<div class="card">
+  <div class="card-title">Example 4 — Dividing by 9 using a bar model</div>
+  <div class="card-body" style="margin-bottom:8px;">45 flowers are shared equally into vases of 9 flowers each. How many vases?</div>
+  <svg class="shape-svg" width="270" height="55" viewBox="0 0 270 55">
+    <rect x="5" y="10" width="260" height="30" rx="3" fill="var(--amber-light)" stroke="var(--amber-dark)" stroke-width="1.5"/>
+    ${[1,2,3,4].map(i=>`<line x1="${5+i*52}" y1="10" x2="${5+i*52}" y2="40" stroke="var(--amber-dark)" stroke-width="1"/>`).join('')}
+    ${[0,1,2,3,4].map(i=>`<text x="${31+i*52}" y="29" text-anchor="middle" font-size="11" fill="var(--amber-dark)">9</text>`).join('')}
+  </svg>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; 45 &divide; 9 = <strong>5</strong> vases (check: 5 &times; 9 = 45).
+  </div>
+</div>
+
+<!-- EXAMPLE 5: word problem -->
+<div class="card">
+  <div class="card-title">Example 5 — Word problem using multiply and divide by 9</div>
+  <div class="warmup" style="background:var(--amber-light);color:var(--amber-dark);">📖 "A stadium has 9 seats in every row. There are 8 rows. How many seats altogether? If the stadium instead had 72 seats and 9 in every row, how many rows would there be?"</div>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--amber-light);border-color:#FAC775;"><div class="s-title" style="color:var(--amber-dark);">8 &times; 9 = 72 seats</div></div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);">72 &divide; 9 = 8 rows</div></div>
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 4</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">1</div>
+      <div class="ex-text">Use the &times;10 strategy: what is 6 &times; 9?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Strategy</span>
+        ${mcqBlock(['54','60','48'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">2</div>
+      <div class="ex-text">Use the finger trick: what is 7 &times; 9?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Finger trick</span>
+        ${mcqBlock(['63','56','72'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">3</div>
+      <div class="ex-text">Calculate: 81 &divide; 9
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Division</span>
+        ${mcqBlock(['9','8','10'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">4</div>
+      <div class="ex-text">63 pencils are shared into pots of 9. How many pots are needed?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['7','8','6'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">5</div>
+      <div class="ex-text">Find the missing number: 9 &times; ___ = 54
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Missing number</span>
+        ${mcqBlock(['6','5','7'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">6</div>
+      <div class="ex-text">A theatre has 9 seats per row and 9 rows. How many seats altogether?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['81','72','90'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">7</div>
+      <div class="ex-text">Show how to work out 8 &times; 9 using the "&times;10, subtract one group" strategy.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['8×10=80, then 80−8=72','8×10=80, then 80−9=71','8×9=8+9=17'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">8</div>
+      <div class="ex-text">Calculate: 99 &divide; 9
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Division</span>
+        ${mcqBlock(['11','10','12'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--amber-light);color:var(--amber-dark);">9</div>
+      <div class="ex-text">A school orders 9 boxes of paper, 12 sheets in each box. How many sheets in total?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['108','118','96'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">BOSS LEVEL: Kunle says "9 × 7 must be 70 − 7, so it equals 63." Is his method correct? Explain why it works.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span>
+        ${mcqBlock(['Yes — because 9×7 = 10×7 − 7 = 70−7 = 63','No — the correct method is 70+7','No — 9×7 is unrelated to 70'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+/* ── Step 5: 9 times-table and division facts ── */
+const MULT_A_STEP5 = `
+<div class="day-header">
+  <div class="day-icon" style="background:var(--coral-light);color:var(--coral-dark);border:0.5px solid var(--coral);">M5</div>
+  <div>
+    <div class="day-label" style="color:var(--coral-dark);">Step 5 — 9 times-table and division facts</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Autumn 2025</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--coral);">
+  <div class="card-title" style="color:var(--coral-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">
+    "Just like the 6 times-table, every 9-times fact belongs to a <strong>fact family</strong> of four related facts. The 9 times-table also has a magical digit pattern: <strong>the two digits of every answer always add up to 9</strong> (e.g. 9&times;4=36, and 3+6=9). Spotting this pattern helps you check your answers instantly."
+  </div>
+</div>
+
+<!-- EXAMPLE 1: digit-sum pattern -->
+<div class="card">
+  <div class="card-title">Example 1 — The digit-sum pattern of the 9 times-table</div>
+  <div class="strategy-grid">
+    ${[1,2,3,4,5,6,7,8,9,10].map(n=>{
+      const ans=n*9; const digits=String(ans).split('').map(Number); const sum=digits.reduce((a,b)=>a+b,0);
+      return `<div class="strategy-card" style="background:var(--coral-light);border-color:#F0997B;text-align:center;">
+        <div class="s-title" style="color:var(--coral-dark);font-size:13px;">${n} &times; 9 = ${ans}</div>
+        <div class="s-body" style="color:var(--coral-mid);font-size:11px;">digits add to ${sum}</div>
+      </div>`;
+    }).join('')}
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--amber-dark);">
+    💡 Every answer's digits add up to 9! This is a quick way to check if a 9-times answer could be correct.
+  </div>
+</div>
+
+<!-- EXAMPLE 2: fact family box for 9 -->
+<div class="card">
+  <div class="card-title">Example 2 — One array, four facts</div>
+  <svg class="shape-svg" width="170" height="90" viewBox="0 0 170 90">
+    ${[0,1,2,3].map(row => [0,1,2,3,4,5,6,7].map(col => `<circle cx="${12+col*20}" cy="${15+row*20}" r="6" fill="#F0997B" stroke="var(--coral-dark)" stroke-width="1"/>`).join('')).join('')}
+  </svg>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--coral-light);border-color:#F0997B;"><div class="s-title" style="color:var(--coral-dark);font-size:14px;">9 &times; 4 = 36</div></div>
+    <div class="strategy-card" style="background:var(--coral-light);border-color:#F0997B;"><div class="s-title" style="color:var(--coral-dark);font-size:14px;">4 &times; 9 = 36</div></div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);font-size:14px;">36 &divide; 9 = 4</div></div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);font-size:14px;">36 &divide; 4 = 9</div></div>
+  </div>
+</div>
+
+<!-- EXAMPLE 3: full reference table -->
+<div class="card">
+  <div class="card-title">Example 3 — The full 9 times-table</div>
+  <div class="strategy-grid">
+    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(n=>`
+    <div class="strategy-card" style="background:${n%2===0?'var(--coral-light)':'#FAECE7'};border-color:#F0997B;text-align:center;">
+      <div class="s-title" style="color:var(--coral-dark);font-size:13px;">${n} &times; 9 = ${n*9}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- EXAMPLE 4: missing number -->
+<div class="card">
+  <div class="card-title">Example 4 — Missing number problems</div>
+  <div class="card-body" style="margin-bottom:8px;">___ &divide; 9 = 6. What number is missing?</div>
+  <div class="steps-row">
+    <div class="step-box">
+      <div class="step-num" style="color:var(--coral-dark);">Step 1 — Rewrite as multiplication</div>
+      <svg class="shape-svg" width="130" height="45" viewBox="0 0 130 45"><text x="65" y="26" text-anchor="middle" font-size="13" fill="var(--coral-dark)">6 &times; 9 = ?</text></svg>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step-box">
+      <div class="step-num" style="color:var(--coral-dark);">Step 2 — Recall the fact</div>
+      <svg class="shape-svg" width="130" height="45" viewBox="0 0 130 45"><text x="65" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="var(--coral-dark)">6 &times; 9 = 54</text></svg>
+    </div>
+  </div>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; The missing number is <strong>54</strong>, because 54 &divide; 9 = 6.
+  </div>
+</div>
+
+<!-- EXAMPLE 5: word problem -->
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: choosing multiply or divide</div>
+  <div class="warmup" style="background:var(--coral-light);color:var(--coral-dark);">📖 "A farmer has 108 eggs. She packs them into trays of 9. How many trays does she need? Later, she buys 9 more trays, each holding 9 eggs. How many extra eggs is that?"</div>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);">108 &divide; 9 = 12 trays</div></div>
+    <div class="strategy-card" style="background:var(--coral-light);border-color:#F0997B;"><div class="s-title" style="color:var(--coral-dark);">9 &times; 9 = 81 extra eggs</div></div>
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 5</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">1</div>
+      <div class="ex-text">If 9 &times; 5 = 45, what is 45 &divide; 5?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Fact family</span>
+        ${mcqBlock(['9','5','45'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">2</div>
+      <div class="ex-text">Use the digit-sum check: could 9 &times; 6 = 53 be correct?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Checking</span>
+        ${mcqBlock(['No — 5+3=8, not 9, so it is wrong (correct answer 54)','Yes, it is correct','Cannot be checked this way'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">3</div>
+      <div class="ex-text">Calculate: 90 &divide; 9
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Recall</span>
+        ${mcqBlock(['10','9','11'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">4</div>
+      <div class="ex-text">Find the missing number: ___ &divide; 9 = 8
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Missing number</span>
+        ${mcqBlock(['72','81','63'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">5</div>
+      <div class="ex-text">117 chairs are placed in rows of 9. How many rows?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['13','12','14'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">6</div>
+      <div class="ex-text">Write all four facts in the family for 9, 7 and 63.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Fact family</span>
+        ${mcqBlock(['9×7=63, 7×9=63, 63÷9=7, 63÷7=9','9×7=63 only','63÷9=8'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">7</div>
+      <div class="ex-text">Calculate: 9 &times; 11
+        <span class="ex-tag" style="background:var(--green-light);color:var(--green-dark);">Recall</span>
+        ${mcqBlock(['99','108','90'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">8</div>
+      <div class="ex-text">A choir has 9 singers in each row across 6 rows. How many singers altogether?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['54','63','45'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">9</div>
+      <div class="ex-text">Explain why the digits of every answer in the 9 times-table (1–10) add up to 9.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['Because 9×n = 10×n − n, which always regroups to a digit sum of 9','It is just a coincidence with no reason','It only works for even numbers'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">BOSS LEVEL: A cinema has 9 rows of 9 seats. If 63 tickets have already been sold, how many empty seats remain?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span>
+        ${mcqBlock(['18 (81 total − 63 sold)','9','27'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+/* ── Step 6: The 3, 6 and 9 times-tables ── */
+const MULT_A_STEP6 = `
+<div class="day-header">
+  <div class="day-icon" style="background:var(--teal-light);color:var(--teal-dark);border:0.5px solid var(--teal);">M6</div>
+  <div>
+    <div class="day-label" style="color:var(--teal-dark);">Step 6 — The 3, 6 and 9 times-tables</div>
+    <div class="day-sub">5 worked examples · 10 exercises · Autumn 2025</div>
+  </div>
+</div>
+
+<div class="card" style="border-color:var(--teal);">
+  <div class="card-title" style="color:var(--teal-dark);">Key idea</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">
+    "The 3, 6 and 9 times-tables are a family! <strong>6 = double 3</strong>, and <strong>9 = triple 3</strong>. If you are confident with your 3 times-table, you can find any 6 or 9 fact by doubling or trebling. Spotting these connections means you really only need to memorise <em>one</em> times-table properly, not three!"
+  </div>
+</div>
+
+<!-- EXAMPLE 1: side-by-side comparison table -->
+<div class="card">
+  <div class="card-title">Example 1 — The three tables side by side</div>
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:12px;text-align:center;">
+      <thead>
+        <tr style="background:var(--teal);color:white;">
+          <th style="padding:6px;">n</th><th style="padding:6px;">n &times; 3</th><th style="padding:6px;">n &times; 6</th><th style="padding:6px;">n &times; 9</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${[1,2,3,4,5,6,7,8,9,10].map((n,i)=>`
+        <tr style="background:${i%2===0?'var(--teal-light)':'white'};">
+          <td style="padding:5px;font-weight:700;color:var(--teal-dark);">${n}</td>
+          <td style="padding:5px;color:var(--blue-dark);">${n*3}</td>
+          <td style="padding:5px;color:var(--purple-dark);">${n*6}</td>
+          <td style="padding:5px;color:var(--coral-dark);">${n*9}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--amber-dark);">
+    💡 Look along any row: the 6s number is always double the 3s number, and the 9s number is always three times the 3s number.
+  </div>
+</div>
+
+<!-- EXAMPLE 2: bar model comparing 3,6,9 for same n -->
+<div class="card">
+  <div class="card-title">Example 2 — Comparing 5 &times; 3, 5 &times; 6 and 5 &times; 9 as bars</div>
+  <svg class="shape-svg" width="280" height="90" viewBox="0 0 280 90">
+    <rect x="10" y="10" width="75" height="18" fill="#85B7EB" stroke="var(--blue-dark)" stroke-width="1"/>
+    <text x="90" y="24" font-size="11" fill="var(--blue-dark)">5 &times; 3 = 15</text>
+    <rect x="10" y="35" width="150" height="18" fill="#AFA9EC" stroke="var(--purple-dark)" stroke-width="1"/>
+    <text x="165" y="49" font-size="11" fill="var(--purple-dark)">5 &times; 6 = 30</text>
+    <rect x="10" y="60" width="225" height="18" fill="#F0997B" stroke="var(--coral-dark)" stroke-width="1"/>
+    <text x="240" y="74" font-size="11" fill="var(--coral-dark)">5 &times; 9 = 45</text>
+  </svg>
+  <div class="card-body" style="margin-top:6px;">Notice how the bars grow: the 6-bar is exactly double the 3-bar, and the 9-bar is exactly three times the 3-bar.</div>
+</div>
+
+<!-- EXAMPLE 3: spotting which table a number belongs to -->
+<div class="card">
+  <div class="card-title">Example 3 — Which times-table(s) does 18 belong to?</div>
+  <svg class="shape-svg" width="220" height="70" viewBox="0 0 220 70">
+    <ellipse cx="70" cy="35" rx="60" ry="30" fill="var(--blue-light)" fill-opacity="0.6" stroke="var(--blue-dark)" stroke-width="1.2"/>
+    <ellipse cx="120" cy="35" rx="60" ry="30" fill="var(--purple-light)" fill-opacity="0.6" stroke="var(--purple-dark)" stroke-width="1.2"/>
+    <text x="45" y="30" font-size="10" fill="var(--blue-dark)">3s: 3,6,9,</text>
+    <text x="45" y="42" font-size="10" fill="var(--blue-dark)">12,15,18</text>
+    <text x="145" y="30" font-size="10" fill="var(--purple-dark)">6s: 6,12,</text>
+    <text x="145" y="42" font-size="10" fill="var(--purple-dark)">18,24</text>
+    <text x="95" y="60" text-anchor="middle" font-size="10" font-weight="700" fill="var(--coral-dark)">18 is in BOTH!</text>
+  </svg>
+  <div style="background:var(--green-light);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:13px;color:var(--green-dark);">
+    ✓ &nbsp; 18 = 6 &times; 3 AND 18 = 3 &times; 6, so 18 is a multiple of both 3 and 6. It is NOT a multiple of 9 &times; a whole number under 3 though — actually 18 = 2 &times; 9, so it belongs to all three tables!
+  </div>
+</div>
+
+<!-- EXAMPLE 4: mixed missing number practice -->
+<div class="card">
+  <div class="card-title">Example 4 — Mixed missing-number practice</div>
+  <div class="strategy-grid">
+    <div class="strategy-card" style="background:var(--blue-light);border-color:#B5D4F4;"><div class="s-title" style="color:var(--blue-dark);">3 &times; ___ = 21 &rarr; <strong>7</strong></div></div>
+    <div class="strategy-card" style="background:var(--purple-light);border-color:#CECBF6;"><div class="s-title" style="color:var(--purple-dark);">___ &divide; 6 = 8 &rarr; <strong>48</strong></div></div>
+    <div class="strategy-card" style="background:var(--coral-light);border-color:#F0997B;"><div class="s-title" style="color:var(--coral-dark);">9 &times; ___ = 72 &rarr; <strong>8</strong></div></div>
+  </div>
+</div>
+
+<!-- EXAMPLE 5: word problem requiring choosing the correct table -->
+<div class="card">
+  <div class="card-title">Example 5 — Word problem: choosing the right table</div>
+  <div class="warmup" style="background:var(--teal-light);color:var(--teal-dark);">📖 "A class of 27 pupils is split into equal teams. Could the teams have 3 pupils each? Could they have 6 pupils each? Could they have 9 pupils each? Explain which team sizes work exactly."</div>
+  <div class="strategy-grid" style="margin-top:10px;">
+    <div class="strategy-card" style="background:var(--blue-light);border-color:#B5D4F4;"><div class="s-title" style="color:var(--blue-dark);">27 &divide; 3 = 9 ✓ works</div></div>
+    <div class="strategy-card" style="background:var(--coral-light);border-color:#F0997B;"><div class="s-title" style="color:var(--coral-dark);">27 &divide; 6 = 4 r 3 ✗ doesn't work</div></div>
+    <div class="strategy-card" style="background:var(--green-light);border-color:#9FE1CB;"><div class="s-title" style="color:var(--green-dark);">27 &divide; 9 = 3 ✓ works</div></div>
+  </div>
+  <div style="background:var(--amber-light);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px;color:var(--amber-dark);">
+    💡 27 is a multiple of 3 and of 9, but NOT of 6 — so only team sizes of 3 or 9 divide evenly.
+  </div>
+</div>
+
+<!-- EXERCISES -->
+<div class="card" style="border-color:var(--blue-mid);">
+  <div class="card-title" style="color:var(--blue-dark);">Exercises — Step 6</div>
+  <div class="exercise-list">
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">1</div>
+      <div class="ex-text">If 6 × 4 = 24, what is 3 × 4, using the halving connection?
+        <span class="ex-tag" style="background:var(--teal-light);color:var(--teal-dark);">Connections</span>
+        ${mcqBlock(['12','8','16'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">2</div>
+      <div class="ex-text">If 3 × 7 = 21, what is 9 × 7, using the trebling connection?
+        <span class="ex-tag" style="background:var(--teal-light);color:var(--teal-dark);">Connections</span>
+        ${mcqBlock(['63','42','56'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">3</div>
+      <div class="ex-text">Which of these numbers is a multiple of all three: 3, 6 AND 9?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Identify</span>
+        ${mcqBlock(['18','15','12'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">4</div>
+      <div class="ex-text">30 sweets are shared in equal groups. Which group size does NOT work exactly: 3, 6, or 9?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['9 (30÷9 leaves a remainder)','3','6'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">5</div>
+      <div class="ex-text">Calculate: 8 × 3, 8 × 6, and 8 × 9. What pattern do you notice?
+        <span class="ex-tag" style="background:var(--teal-light);color:var(--teal-dark);">Pattern</span>
+        ${mcqBlock(['24, 48, 72 — each is 24 more than the last','24, 48, 70','20, 48, 72'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">6</div>
+      <div class="ex-text">Find the missing number: ___ × 6 = 54
+        <span class="ex-tag" style="background:var(--teal-light);color:var(--teal-dark);">Missing number</span>
+        ${mcqBlock(['9','8','7'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">7</div>
+      <div class="ex-text">A row of chairs has 9 chairs. How many chairs are in 3 such rows? Which times-table fact does this use?
+        <span class="ex-tag" style="background:var(--amber-light);color:var(--amber-dark);">Word problem</span>
+        ${mcqBlock(['27, using 3 × 9','24, using 3 × 8','30, using 3 × 10'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">8</div>
+      <div class="ex-text">A school has 48 pupils to split into teams. Can they make equal teams of 6? Can they make equal teams of 9?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['Teams of 6 work (8 teams); teams of 9 do not','Both work equally','Neither works'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--teal-light);color:var(--teal-dark);">9</div>
+      <div class="ex-text">Explain in your own words why every multiple of 9 is also a multiple of 3.
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Think deeper</span>
+        ${mcqBlock(['Because 9 = 3 × 3, so any group of 9 is really 3 groups of 3','It is just a coincidence','Multiples of 9 are never multiples of 3'], 0)}
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <div class="ex-num" style="background:var(--coral-light);color:var(--coral-dark);">10</div>
+      <div class="ex-text">BOSS LEVEL: A charity packs 108 pens into boxes. They could use boxes of 3, 6, or 9. Which box size uses the FEWEST boxes, and how many boxes is that?
+        <span class="ex-tag" style="background:var(--coral-light);color:var(--coral-dark);">Boss level</span>
+        ${mcqBlock(['Boxes of 9 — needs 12 boxes','Boxes of 3 — needs 36 boxes','Boxes of 6 — needs 12 boxes'], 0)}
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
+
+
+    
+/* ============================================================
    SPRING — FRACTIONS  (Steps 1–8 pupil has covered; 9–15 priority)
    Steps 1–8: Generate 5 examples each (Sunday Study Session)
    Steps 9–15: placeholder for now, to be filled
@@ -15675,9 +16808,13 @@ const SCHEME = [
       {
         id:'multdivA', label:'Multiplication & Division A', col: TOPIC_PALETTE[3],
         steps:[
-          'Multiples of 3','Multiply and divide by 6','6 times-table and division facts',
-          'Multiply and divide by 9','9 times-table and division facts','The 3, 6 and 9 times-tables'
-        ].map(s=>({ label:s, content:null }))
+          { label:'Multiples of 3', content: MULT_A_STEP1 },
+          { label:'Multiply and divide by 6', content: MULT_A_STEP2 },
+          { label:'6 times-table and division facts', content: MULT_A_STEP3 },
+          { label:'Multiply and divide by 9', content: MULT_A_STEP4 },
+          { label:'9 times-table and division facts', content: MULT_A_STEP5 },
+          { label:'The 3, 6 and 9 times-tables', content: MULT_A_STEP6 },
+        ]
       },
     ]
   },
@@ -15710,43 +16847,43 @@ const SCHEME = [
       {
         id:'fractions', label:'Fractions', col: TOPIC_PALETTE[2],
         steps:[
-          { label:'Understand the whole',                        content: FRAC_STEP1 },
-          { label:'Count beyond 1',                              content: FRAC_STEP2 },
-          { label:'Partition a mixed number',                    content: FRAC_STEP3 },
-          { label:'Number lines with mixed numbers',             content: FRAC_STEP4 },
-          { label:'Compare and order mixed numbers',             content: FRAC_STEP5 },
-          { label:'Understand improper fractions',               content: FRAC_STEP6 },
+          { label:'Understand the whole', content: FRAC_STEP1 },
+          { label:'Count beyond 1', content: FRAC_STEP2 },
+          { label:'Partition a mixed number', content: FRAC_STEP3 },
+          { label:'Number lines with mixed numbers', content: FRAC_STEP4 },
+          { label:'Compare and order mixed numbers', content: FRAC_STEP5 },
+          { label:'Understand improper fractions', content: FRAC_STEP6 },
           { label:'Convert mixed numbers to improper fractions', content: FRAC_STEP7 },
           { label:'Convert improper fractions to mixed numbers', content: FRAC_STEP8 },
-          { label:'Equivalent fractions on a number line',       content: FRAC_STEP9  },
-          { label:'Equivalent fraction families',                content: FRAC_STEP10 },
-          { label:'Add two or more fractions',                   content: FRAC_STEP11 },
-          { label:'Add fractions and mixed numbers',             content: FRAC_STEP12 },
-          { label:'Subtract two fractions',                      content: FRAC_STEP13 },
-          { label:'Subtract from whole amounts',                 content: FRAC_STEP14 },
-          { label:'Subtract from mixed numbers',                 content: FRAC_STEP15 },
+          { label:'Equivalent fractions on a number line', content: FRAC_STEP9 },
+          { label:'Equivalent fraction families', content: FRAC_STEP10 },
+          { label:'Add two or more fractions', content: FRAC_STEP11 },
+          { label:'Add fractions and mixed numbers', content: FRAC_STEP12 },
+          { label:'Subtract two fractions', content: FRAC_STEP13 },
+          { label:'Subtract from whole amounts', content: FRAC_STEP14 },
+          { label:'Subtract from mixed numbers', content: FRAC_STEP15 },
         ]
       },
       {
         id:'decimalsA', label:'Decimals A ★ (Current)', col: TOPIC_PALETTE[3],
         steps:[
-          { label:'Tenths as fractions',                    content: DEC_A_STEP1 },
-          { label:'Tenths as decimals',                     content: DEC_A_STEP2 },
-          { label:'Tenths on a place value chart',          content: DEC_A_STEP3 },
-          { label:'Tenths on a number line',                content: DEC_A_STEP4 },
-          { label:'Divide a 1-digit number by 10',          content: DEC_A_STEP5 },
-          { label:'Divide a 2-digit number by 10',          content: DEC_A_STEP6 },
-          { label:'Hundredths as fractions',                content: DEC_A_STEP7 },
-          { label:'Hundredths as decimals',                 content: DEC_A_STEP8 },
-          { label:'Hundredths on a place value chart',     content: DEC_A_STEP9 },
-          { label:'Divide a 1- or 2-digit number by 100',  content: DEC_A_STEP10 },
+          { label:'Tenths as fractions', content: DEC_A_STEP1 },
+          { label:'Tenths as decimals', content: DEC_A_STEP2 },
+          { label:'Tenths on a place value chart', content: DEC_A_STEP3 },
+          { label:'Tenths on a number line', content: DEC_A_STEP4 },
+          { label:'Divide a 1-digit number by 10', content: DEC_A_STEP5 },
+          { label:'Divide a 2-digit number by 10', content: DEC_A_STEP6 },
+          { label:'Hundredths as fractions', content: DEC_A_STEP7 },
+          { label:'Hundredths as decimals', content: DEC_A_STEP8 },
+          { label:'Hundredths on a place value chart', content: DEC_A_STEP9 },
+          { label:'Divide a 1- or 2-digit number by 100', content: DEC_A_STEP10 },
         ]
       },
     ]
   },
   {
     id: 'summer',
-    emoji: '☀️',
+    emoji: '☀',
     label: 'Summer Term',
     meta: 'April – July 2026',
     col: TERM_COLORS.summer,
