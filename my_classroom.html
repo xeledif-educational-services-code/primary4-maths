@@ -3,12 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Year 4 Maths | Xeledif Educational Services</title>
-
-
+<title>Xeledif Maths LMS | Years 4–6</title>
 <style>
-
-
 :root {
     --blue:#378ADD; --blue-light:#E6F1FB; --blue-dark:#0C447C; --blue-mid:#185FA5;
     --green:#639922; --green-light:#EAF3DE; --green-dark:#27500A; --green-mid:#3B6D11;
@@ -17,67 +13,84 @@
     --teal:#1D9E75; --teal-light:#E1F5EE; --teal-dark:#085041;
     --coral:#D85A30; --coral-light:#FAECE7; --coral-dark:#712B13;
     --pink:#D4537E; --pink-light:#FBEAF0; --pink-dark:#72243E;
+    /* P5 accent — slightly richer, more mature */
+    --p5:#5B21B6; --p5-mid:#6D28D9; --p5-light:#EDE9FE; --p5-dark:#4C1D95;
     --text:#1a1a1a; --text-sec:#555; --text-ter:#888;
     --border:#ddd; --border-light:#eee;
     --bg:#fff; --bg-sec:#f8f8f8; --bg-ter:#f2f2f2;
     --radius:12px; --radius-sm:8px;
   }
-  * { box-sizing:border-box; margin:0; padding:0; }×
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color:var(--text); background:#f5f5f5; }
-
-  .page { max-width:860px; margin:0 auto; padding:1.5rem 1rem 3rem; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--text); background:#f5f5f5; }
+  .page { max-width:880px; margin:0 auto; padding:1.5rem 1rem 3rem; }
 
   /* HERO */
   .hero { background:var(--bg); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.5rem; margin-bottom:1.25rem; }
   .hero-row { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
-  .hero-avatar { width:46px; height:46px; background:var(--blue); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:600; color:white; flex-shrink:0; }
+  .hero-avatar { width:46px; height:46px; background:var(--purple); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:600; color:white; flex-shrink:0; }
   .hero-title { font-size:20px; font-weight:600; color:var(--text); }
   .hero-sub { font-size:13px; color:var(--text-sec); margin-top:2px; }
-  .badge { display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:12px; margin-right:5px; }
+  .badge { display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:12px; margin-right:5px; margin-bottom:4px; }
 
-  /* WEEK GROUPS */
-  .week-group { margin-bottom:1rem; border:0.5px solid var(--border); border-radius:var(--radius); overflow:hidden; }
-  .week-header { display:flex; align-items:center; gap:10px; padding:11px 14px; cursor:pointer; user-select:none; transition:opacity 0.15s; }
-  .week-header:hover { opacity:0.88; }
-  .week-dot { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; }
-  .week-title { font-size:13px; font-weight:600; flex:1; }
-  .week-meta { font-size:11px; opacity:0.7; }
-  .week-arrow { font-size:10px; opacity:0.6; transition:transform 0.2s; }
-  .week-arrow.open { transform:rotate(90deg); }
-  .week-tabs { display:none; padding:8px 10px 10px; border-top:0.5px solid var(--border-light); gap:6px; flex-wrap:wrap; background:var(--bg); }
-  .week-tabs.open { display:flex; }
+  /* LEVEL TABS */
+  .level-tabs-row { display:flex; gap:8px; margin-bottom:1.25rem; }
+  .level-tab { flex:1; padding:11px 8px; border-radius:var(--radius-sm); border:0.5px solid var(--border); font-size:14px; font-weight:700; cursor:pointer; background:var(--bg); color:var(--text-sec); text-align:center; transition:all .15s; font-family:inherit; }
+  .level-tab .lt-sub { display:block; font-size:10px; font-weight:600; opacity:.75; margin-top:2px; }
+  .level-tab:hover:not(.active) { background:var(--bg-sec); }
+  .level-pane { display:none; }
+  .level-pane.active { display:block; }
 
-  /* TABS */
-  .tab { padding:6px 13px; border-radius:20px; border:0.5px solid var(--border); font-size:12px; font-weight:600; cursor:pointer; background:transparent; color:var(--text-sec); white-space:nowrap; transition:all 0.15s; }
-  .tab:hover:not(.active) { background:var(--bg-sec); }
-  .tab.active { color:white; border-color:transparent; }
+  /* TERM ACCORDIONS */
+  .term-group { margin-bottom:1.25rem; border:0.5px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+  .term-header { display:flex; align-items:center; gap:10px; padding:13px 16px; cursor:pointer; user-select:none; transition:opacity 0.15s; }
+  .term-header:hover { opacity:0.88; }
+  .term-icon { font-size:18px; flex-shrink:0; }
+  .term-title { font-size:15px; font-weight:700; flex:1; }
+  .term-meta { font-size:11px; opacity:0.7; }
+  .term-arrow { font-size:10px; opacity:0.6; transition:transform 0.2s; }
+  .term-arrow.open { transform:rotate(90deg); }
+  .term-body { display:none; padding:8px 10px 12px; border-top:0.5px solid var(--border-light); background:var(--bg); }
+  .term-body.open { display:block; }
 
-  /* CONTENT AREA */
-  .content-area { margin-top:1.25rem; background:var(--bg); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.5rem; }
-  .content-area.hidden { display:none; }
+  /* TOPIC ACCORDIONS */
+  .topic-group { margin-bottom:8px; border:0.5px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; }
+  .topic-header { display:flex; align-items:center; gap:8px; padding:9px 12px; cursor:pointer; user-select:none; transition:opacity 0.15s; }
+  .topic-header:hover { opacity:0.85; }
+  .topic-dot { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0; }
+  .topic-title { font-size:13px; font-weight:600; flex:1; }
+  .topic-meta { font-size:11px; opacity:0.65; }
+  .topic-arrow { font-size:9px; opacity:0.55; transition:transform 0.2s; }
+  .topic-arrow.open { transform:rotate(90deg); }
+  .topic-body { display:none; border-top:0.5px solid var(--border-light); background:var(--bg-sec); }
+  .topic-body.open { display:block; }
 
-  /* CONTENT LABELS */
-  .gap-label { display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:12px; margin-right:4px; margin-bottom:12px; }
+  /* STEP TABS */
+  .step-tabs-row { display:flex; flex-wrap:wrap; gap:5px; padding:8px 10px; border-bottom:0.5px solid var(--border-light); background:var(--bg); }
+  .step-tab { padding:5px 11px; border-radius:16px; border:0.5px solid var(--border); font-size:11px; font-weight:600; cursor:pointer; background:transparent; color:var(--text-sec); white-space:nowrap; transition:all 0.15s; font-family:inherit; }
+  .step-tab:hover:not(.active) { background:var(--bg-sec); }
+  .step-tab.active { color:white; border-color:transparent; }
+  .step-content-area { padding:1rem 1rem 1.25rem; background:var(--bg); }
+  .step-content-area.hidden { display:none; }
 
   /* LESSON COMPONENTS */
   .day-header { display:flex; align-items:center; gap:12px; margin-bottom:1.25rem; }
   .day-icon { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0; }
   .day-label { font-size:17px; font-weight:600; }
   .day-sub { font-size:13px; color:var(--text-sec); margin-top:1px; }
-
   .card { background:var(--bg); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1rem; }
   .card-title { font-size:15px; font-weight:600; margin-bottom:8px; }
   .card-body { font-size:14px; color:var(--text-sec); line-height:1.7; }
-
-  .warmup { background:var(--blue-light); border-radius:var(--radius-sm); padding:12px 14px; font-size:14px; font-style:italic; color:var(--blue-dark); line-height:1.6; }
-
-  /* STEP EXAMPLES */
+  .warmup { background:var(--blue-light); border-radius:var(--radius-sm); padding:12px 14px; font-size:14px; font-style:italic; color:var(--blue-dark); line-height:1.6; margin-bottom:12px; }
   .steps-row { display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start; margin-top:8px; }
-  .step-box { flex:1; min-width:110px; text-align:center; }
+  .step-box { flex:1; min-width:100px; text-align:center; }
   .step-num { font-size:11px; font-weight:600; margin-bottom:6px; }
   .step-caption { font-size:11px; margin-top:6px; line-height:1.4; }
   .step-arrow { font-size:18px; color:var(--text-ter); align-self:center; padding-top:10px; }
-  .example-label { font-size:12px; font-weight:600; color:var(--text-sec); margin-bottom:8px; letter-spacing:0.04em; text-transform:uppercase; }
+  .strategy-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin-top:10px; }
+  .strategy-card { border-radius:var(--radius-sm); padding:12px; border:0.5px solid; }
+  .s-title { font-size:13px; font-weight:600; margin-bottom:4px; }
+  .s-body { font-size:12px; line-height:1.6; }
+  svg.shape-svg { display:block; margin:0 auto; }
 
   /* EXERCISES */
   .exercise-list { margin-top:4px; }
@@ -87,122 +100,113 @@
   .ex-text { flex:1; color:var(--text); line-height:1.6; }
   .ex-tag { font-size:11px; font-weight:600; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
 
+  /* MCQ */
+  .mcq-options { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .mcq-btn { padding:5px 14px; border-radius:16px; border:0.5px solid var(--border); font-size:11px; font-weight:600; cursor:pointer; background:var(--bg-sec); color:var(--text-sec); transition:all 0.15s; font-family:inherit; }
+  .mcq-btn:hover { background:var(--bg-ter); }
+  .mcq-feedback { display:none; margin-top:5px; font-size:11px; font-weight:600; padding:3px 10px; border-radius:10px; }
+  .mcq-feedback.correct { display:inline-block; background:#EAF3DE; color:#27500A; }
+  .mcq-feedback.wrong   { display:inline-block; background:#FAECE7; color:#712B13; }
+
   /* EMPTY STATE */
   .empty-state { display:flex; flex-direction:column; align-items:center; padding:2.5rem 1rem; text-align:center; gap:10px; }
   .empty-icon { width:46px; height:46px; border-radius:50%; background:var(--bg-sec); border:0.5px dashed var(--border); display:flex; align-items:center; justify-content:center; }
   .empty-title { font-size:15px; font-weight:600; color:var(--text); }
-  .empty-sub { font-size:13px; color:var(--text-sec); max-width:320px; line-height:1.6; }
-
-  /* STRATEGY GRID */
-  .strategy-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin-top:10px; }
-  .strategy-card { border-radius:var(--radius-sm); padding:12px; border:0.5px solid; }
-  .s-title { font-size:13px; font-weight:600; margin-bottom:4px; }
-  .s-body { font-size:12px; line-height:1.6; }
-
-  svg.shape-svg { display:block; margin:0 auto; }
-
-
-/* ── **************** NEW CSS CODE: 12 APRIL 2026 UPDATE ── */
-
-  /* ── TERM ACCORDIONS ── */
-.term-group { margin-bottom:1.25rem; border:0.5px solid var(--border); border-radius:var(--radius); overflow:hidden; }
-.term-header { display:flex; align-items:center; gap:10px; padding:13px 16px; cursor:pointer; user-select:none; transition:opacity 0.15s; }
-.term-header:hover { opacity:0.88; }
-.term-icon { font-size:18px; flex-shrink:0; }
-.term-title { font-size:15px; font-weight:700; flex:1; }
-.term-meta { font-size:11px; opacity:0.7; }
-.term-arrow { font-size:10px; opacity:0.6; transition:transform 0.2s; }
-.term-arrow.open { transform:rotate(90deg); }
-.term-body { display:none; padding:8px 10px 12px; border-top:0.5px solid var(--border-light); background:var(--bg); }
-.term-body.open { display:block; }
-
-/* ── SUB-ACCORDIONS (topics inside a term) ── */
-.topic-group { margin-bottom:8px; border:0.5px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; }
-.topic-header { display:flex; align-items:center; gap:8px; padding:9px 12px; cursor:pointer; user-select:none; transition:opacity 0.15s; }
-.topic-header:hover { opacity:0.85; }
-.topic-dot { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0; }
-.topic-title { font-size:13px; font-weight:600; flex:1; }
-.topic-meta { font-size:11px; opacity:0.65; }
-.topic-arrow { font-size:9px; opacity:0.55; transition:transform 0.2s; }
-.topic-arrow.open { transform:rotate(90deg); }
-.topic-body { display:none; border-top:0.5px solid var(--border-light); background:var(--bg-sec); }
-.topic-body.open { display:block; }
-
-/* ── STEP TABS inside a topic ── */
-.step-tabs-row { display:flex; flex-wrap:wrap; gap:5px; padding:8px 10px; border-bottom:0.5px solid var(--border-light); background:var(--bg); }
-.step-tab { padding:5px 11px; border-radius:16px; border:0.5px solid var(--border); font-size:11px; font-weight:600; cursor:pointer; background:transparent; color:var(--text-sec); white-space:nowrap; transition:all 0.15s; }
-.step-tab:hover:not(.active) { background:var(--bg-sec); }
-.step-tab.active { color:white; border-color:transparent; }
-
-/* ── INLINE STEP CONTENT ── */
-.step-content-area { padding:1rem 1rem 1.25rem; background:var(--bg); }
-.step-content-area.hidden { display:none; }
-
-/* ── MCQ OPTIONS ── */
-.mcq-options { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
-.mcq-btn { padding:5px 14px; border-radius:16px; border:0.5px solid var(--border); font-size:11px; font-weight:600; cursor:pointer; background:var(--bg-sec); color:var(--text-sec); transition:all 0.15s; }
-.mcq-btn:hover { background:var(--bg-ter); }
-.mcq-feedback { display:none; margin-top:5px; font-size:11px; font-weight:600; padding:3px 10px; border-radius:10px; }
-.mcq-feedback.correct { display:inline-block; background:#EAF3DE; color:#27500A; }
-.mcq-feedback.wrong   { display:inline-block; background:#FAECE7; color:#712B13; }
-
+  .empty-sub { font-size:13px; color:var(--text-sec); max-width:340px; line-height:1.6; }
 </style>
-
-
 </head>
 <body>
 <div class="page">
 
 <div class="hero">
   <div class="hero-row">
-    <div class="hero-avatar" style="background:var(--purple);font-size:15px;">Y4</div>
+    <div class="hero-avatar">XY</div>
     <div>
-      <div class="hero-title">Year 4 Maths — Full Scheme</div>
-      <div class="hero-sub">Xeledif Educational Services &nbsp;|&nbsp; UK Curriculum &nbsp;|&nbsp; 2025–2026</div>
+      <div class="hero-title">Xeledif Educational Services — Primary Mathematics</div>
+      <div class="hero-sub">UK Curriculum &nbsp;|&nbsp; Years 4–6 &nbsp;|&nbsp; CPA Mastery Method &nbsp;|&nbsp; 2026–2027</div>
     </div>
   </div>
   <div>
     <span class="badge" style="background:var(--blue-light);color:var(--blue-dark);border:0.5px solid #B5D4F4;">CPA Mastery Method</span>
     <span class="badge" style="background:var(--purple-light);color:var(--purple-dark);border:0.5px solid #CECBF6;">Virtual Learning</span>
-    <span class="badge" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid #FAC775;">🍂 Autumn 2025</span>
-    <span class="badge" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid #C0DD97;">🌱 Spring 2026</span>
-    <span class="badge" style="background:#FFF3E0;color:#E65100;border:0.5px solid #FFB74D;">☀️ Summer 2026</span>
+
+    <span class="badge" style="background:var(--amber-light);color:var(--amber-dark);border:0.5px solid #FAC775;">🍂 Autumn</span>
+    <span class="badge" style="background:var(--green-light);color:var(--green-dark);border:0.5px solid #C0DD97;">🌱 Spring</span>
+    <span class="badge" style="background:#FFF3E0;color:#E65100;border:0.5px solid #FFB74D;">☀️ Summer</span>
   </div>
 </div>
 
-  <div id="term-groups"></div>
-  
+<div class="level-tabs-row">
+  <button class="level-tab" data-color="#2E7D32" onclick="switchLevel('pane-p4',this)">Primary 4<span class="lt-sub">Year 4</span></button>
+  <button class="level-tab" data-color="#5B21B6" onclick="switchLevel('pane-p5',this)">Primary 5<span class="lt-sub">Year 5</span></button>
+  <button class="level-tab" data-color="#9A3412" onclick="switchLevel('pane-p6',this)">Primary 6<span class="lt-sub">Year 6</span></button>
+</div>
+
+<!-- ================= PRIMARY 4 PANE ================= -->
+<div class="level-pane" id="pane-p4">
+  <div id="p4-term-groups"></div>
+</div>
+
+<!-- ================= PRIMARY 5 PANE ================= -->
+<div class="level-pane active" id="pane-p5">
+  <div id="p5-term-groups"></div>
+</div>
+
+<!-- ================= PRIMARY 6 PANE ================= -->
+<div class="level-pane" id="pane-p6">
+  <div class="term-group" style="border-color:#F0997B;">
+    <div class="card" style="margin:1rem;">
+      <div class="card-title" style="color:var(--coral-dark);">🚧 Primary 6 — Coming in 2026–2027</div>
+      <div class="card-body">This section will open with exciting new challenges once you've completed the Primary 5 curriculum. Keep up the great work!</div>
+    </div>
+  </div>
+</div>
+
 </div>
 
 <script>
-
 /* ============================================================
-   MCQ HANDLER
+   SHARED ENGINE — used by Primary 4, 5 and 6
    ============================================================ */
-function handleMCQ(btn, isCorrect, questionEl) {
-  // clear previous feedback in this question
-  questionEl.querySelectorAll('.mcq-feedback').forEach(f => f.remove());
-  questionEl.querySelectorAll('.mcq-btn').forEach(b => {
-    b.style.background = '';
-    b.style.borderColor = '';
-    b.style.color = '';
-  });
-
-  const fb = document.createElement('div');
-  fb.className = 'mcq-feedback ' + (isCorrect ? 'correct' : 'wrong');
-  fb.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect — try again!';
-  btn.closest('.mcq-options').after(fb);
+function handleMCQ(btn, isCorrect) {
+    const container = btn.closest('.mcq-options');
+    const questionEl = btn.closest('.exercise-item') || container.parentElement;
+    questionEl.querySelectorAll('.mcq-feedback').forEach(f => f.remove());
+    questionEl.querySelectorAll('.mcq-btn').forEach(b => {
+        b.style.background=''; b.style.borderColor=''; b.style.color='';
+        b.style.opacity='1'; b.style.pointerEvents='';
+        if (b.innerText.startsWith('✓ ') || b.innerText.startsWith('✗ ')) b.innerText = b.innerText.substring(2);
+    });
+    const fb = document.createElement('div');
+    fb.className = 'mcq-feedback ' + (isCorrect ? 'correct' : 'wrong');
+    fb.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect — try again!';
+    container.after(fb);
+    if (isCorrect) {
+        btn.style.background = "var(--green)"; btn.style.color = "white"; btn.style.borderColor = "var(--green-dark)";
+        btn.innerText = "✓ " + btn.innerText;
+    } else {
+        btn.style.background = "var(--coral)"; btn.style.color = "white"; btn.style.borderColor = "var(--coral-dark)";
+        btn.innerText = "✗ " + btn.innerText;
+    }
+    container.querySelectorAll('.mcq-btn').forEach(b => {
+        b.style.pointerEvents = 'none';
+        if (b !== btn) b.style.opacity = "0.6";
+    });
 }
 
-/* ============================================================
-   COLOUR PALETTE — terms & topics
-   ============================================================ */
-   const TERM_COLORS = {
+function mcqBlock(options, correctIndex) {
+    const letters = ['A','B','C','D'];
+    let list = options.map((t,i)=>({text:t, isCorrect:i===correctIndex}));
+    for (let i=list.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [list[i],list[j]]=[list[j],list[i]]; }
+    const buttons = list.map((it,i)=>`<button class="mcq-btn" onclick="handleMCQ(this, ${it.isCorrect})">(${letters[i]}) ${it.text}</button>`).join('');
+    return `<div class="mcq-options">${buttons}</div>`;
+}
+
+const TERM_COLORS = {
   autumn: { bg:'#FFF8F0', border:'#FAC775', dot:'#BA7517', dotTxt:'white', title:'#633806', active:'#854F0B', light:'#FAEEDA' },
   spring: { bg:'#F0FAF4', border:'#9FE1CB', dot:'#1D9E75', dotTxt:'white', title:'#085041', active:'#0F6E56', light:'#E1F5EE' },
   summer: { bg:'#FFF0F5', border:'#ED93B1', dot:'#D4537E', dotTxt:'white', title:'#72243E', active:'#A03060', light:'#FBEAF0' },
 };
-
 const TOPIC_PALETTE = [
   { dot:'#378ADD', dotTxt:'white', active:'#185FA5', light:'#E6F1FB', border:'#B5D4F4', text:'#0C447C' },
   { dot:'#1D9E75', dotTxt:'white', active:'#0F6E56', light:'#E1F5EE', border:'#9FE1CB', text:'#085041' },
@@ -213,121 +217,480 @@ const TOPIC_PALETTE = [
 ];
 
 /* ============================================================
-   YOUR EXISTING LESSON CONTENT — paste your variables here
-   TASK1_CONTENT, TASK2_CONTENT, TASK3_CONTENT go here unchanged
+   SHARED SVG BUILDERS (reusable across ALL levels)
+   ============================================================ */
+const PLACE_META = {
+  M:['MILLIONS','#0F766E','#CCFBF1','#115E59',1000000],
+  HT:['HUNDRED THOUSANDS','#B45309','#FEF3C7','#92400E',100000],
+  TT:['TEN THOUSANDS','#BE185D','#FCE7F3','#9D174D',10000],
+  T:['THOUSANDS','#6D28D9','#EDE9FE','#5B21B6',1000],
+  H:['HUNDREDS','#1D4ED8','#DBEAFE','#1E40AF',100],
+  Te:['TENS','#15803D','#DCFCE7','#166534',10],
+  O:['ONES','#C2410C','#FFEDD5','#9A3412',1]
+};
+function pvGrid(pairs, title){
+  // pairs: [['T',7],['H',4],['Te',8],['O',2]]  (rightmost = ones)
+  const cw=68, n=pairs.length, W=n*cw+20, H=205;
+  let s = `<svg viewBox="0 0 ${W} ${H}" class="shape-svg" style="max-width:100%;height:auto;">`;
+  if(title) s += `<text x="${W/2}" y="17" text-anchor="middle" font-size="13" font-weight="700" fill="#333">${title}</text>`;
+  const y0 = 30;
+  pairs.forEach((p,i)=>{
+    const [k,d] = p, m = PLACE_META[k], x = 10+i*cw;
+    s += `<rect x="${x}" y="${y0}" width="${cw-8}" height="${H-y0-45}" rx="8" fill="${m[2]}" stroke="${m[1]}" stroke-width="1.5"/>`;
+    s += `<text x="${x+(cw-8)/2}" y="${y0+20}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${m[3]}">${m[0]}</text>`;
+    s += `<circle cx="${x+(cw-8)/2}" cy="${y0+65}" r="19" fill="${m[1]}"/>`;
+    s += `<text x="${x+(cw-8)/2}" y="${y0+71}" text-anchor="middle" font-size="20" font-weight="800" fill="white">${d}</text>`;
+    s += `<text x="${x+(cw-8)/2}" y="${H-24}" text-anchor="middle" font-size="10" font-weight="700" fill="${m[3]}">= ${(d*m[4]).toLocaleString('en-GB')}</text>`;
+  });
+  return s + '</svg>';
+}
+function numLine(min,max,step,marks){
+  const W=660,H=115,pad=45,y=58;
+  const X=v=>pad+(v-min)/(max-min)*(W-2*pad);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="shape-svg" style="max-width:100%;height:auto;">`;
+  s+=`<line x1="${pad-14}" y1="${y}" x2="${W-pad+14}" y2="${y}" stroke="#444" stroke-width="2.5"/>`;
+  s+=`<polygon points="${W-pad+14},${y} ${W-pad+2},${y-6} ${W-pad+2},${y+6}" fill="#444"/>`;
+  s+=`<polygon points="${pad-14},${y} ${pad-2},${y-6} ${pad-2},${y+6}" fill="#444"/>`;
+  for(let v=min; v<=max+0.001; v+=step){
+    const x=X(v);
+    s+=`<line x1="${x}" y1="${y-7}" x2="${x}" y2="${y+7}" stroke="#444" stroke-width="2"/>`;
+    s+=`<text x="${x}" y="${y+26}" text-anchor="middle" font-size="11" font-weight="600" fill="#333">${v.toLocaleString('en-GB')}</text>`;
+  }
+  (marks||[]).forEach(mk=>{
+    const x=X(mk[0]);
+    s+=`<circle cx="${x}" cy="${y}" r="5.5" fill="#6D28D9"/>`;
+    s+=`<text x="${x}" y="${y-14}" text-anchor="middle" font-size="11.5" font-weight="800" fill="#6D28D9">${mk[1]}</text>`;
+  });
+  return s+'</svg>';
+}
+function steps(items){
+  let s='<div class="steps-row">';
+  items.forEach((it,i)=>{
+    s+=`<div class="step-box"><div class="step-num" style="color:#6D28D9;">${it[0]}</div><div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:10px;padding:10px 6px;font-size:16px;font-weight:800;color:#4C1D95;">${it[1]}</div><div class="step-caption" style="color:#555;">${it[2]}</div></div>`;
+    if(i<items.length-1) s+='<div class="step-arrow">→</div>';
+  });
+  return s+'</div>';
+}
+function x10machine(vIn,lIn,vOut,lOut){
+  return `<svg viewBox="0 0 560 130" class="shape-svg" style="max-width:100%;height:auto;">
+    <rect x="10" y="35" width="150" height="60" rx="12" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="85" y="60" text-anchor="middle" font-size="14" font-weight="700" fill="#1E40AF">${lIn}</text>
+    <text x="85" y="80" text-anchor="middle" font-size="16" font-weight="800" fill="#1E40AF">${vIn}</text>
+    <rect x="205" y="25" width="150" height="80" rx="14" fill="#EDE9FE" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="280" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">THE ×10 MACHINE</text>
+    <text x="280" y="72" text-anchor="middle" font-size="11" font-weight="600" fill="#5B21B6">every digit moves</text>
+    <text x="280" y="88" text-anchor="middle" font-size="11" font-weight="600" fill="#5B21B6">ONE place left</text>
+    <line x1="162" y1="65" x2="203" y2="65" stroke="#6D28D9" stroke-width="3"/>
+    <polygon points="203,65 193,59 193,71" fill="#6D28D9"/>
+    <line x1="357" y1="65" x2="398" y2="65" stroke="#6D28D9" stroke-width="3"/>
+    <polygon points="398,65 388,59 388,71" fill="#6D28D9"/>
+    <rect x="400" y="35" width="150" height="60" rx="12" fill="#FEF3C7" stroke="#B45309" stroke-width="2"/>
+    <text x="475" y="60" text-anchor="middle" font-size="14" font-weight="700" fill="#92400E">${lOut}</text>
+    <text x="475" y="80" text-anchor="middle" font-size="16" font-weight="800" fill="#92400E">${vOut}</text>
+  </svg>`;
+}
+function dayHeader(icon,label,sub){
+  return `<div class="day-header"><div class="day-icon" style="background:#EDE9FE;color:#5B21B6;border:0.5px solid #6D28D9;">${icon}</div><div><div class="day-label" style="color:#5B21B6;">${label}</div><div class="day-sub">${sub}</div></div></div>`;
+}
+function exQ(num,text,options,correct,level){
+  const c={n:['var(--blue-light)','var(--blue-dark)'],t:['var(--purple-light)','var(--purple-dark)'],b:['var(--coral-light)','var(--coral-dark)']}[level||'n'];
+  return `<div class="exercise-item"><div class="ex-num" style="background:${c[0]};color:${c[1]};">${num}</div><div class="ex-text">${text}${mcqBlock(options,correct)}</div></div>`;
+}
+function exCard(stepNo,items){
+  return `<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">Exercises — Step ${stepNo}</div><div class="exercise-list">${items.join('')}</div></div>`;
+}
+
+/* ============================================================
+   PRIMARY 5 — PLACE VALUE LESSONS (Steps 1–10)
    ============================================================ */
 
-/* ------ PASTE TASK1_CONTENT HERE ------ */
-const TASK1_CONTENT = `... your existing content ...`;
+/* ---------- STEP 1 : Roman numerals to 1,000 ---------- */
+const P5_PV1 = `
+${dayHeader('PV1','Step 1 — Roman Numerals to 1,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;">
+  <div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Symbols of Ancient Rome</div>
+  <div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Long ago the Romans had no digits like 0, 1, 2, 3… they wrote numbers with <strong>letters</strong>! Can you read the clock?</div>
+  <svg viewBox="0 0 640 150" class="shape-svg" style="max-width:100%;height:auto;">
+    <text x="320" y="16" text-anchor="middle" font-size="13" font-weight="700" fill="#333">The 7 Roman symbols — learn these and you can build ANY number!</text>
+    ${[['I','1','one finger','#EEF2FF','#4F46E5'],['V','5','one hand','#EEF2FF','#4F46E5'],['X','10','two hands','#EEF2FF','#4F46E5'],['L','50','half of C','#FEF3C7','#B45309'],['C','100','century!','#FEF3C7','#B45309'],['D','500','half of M','#FCE7F3','#BE185D'],['M','1000','mega!','#FCE7F3','#BE185D']].map((s,i)=>`<g><rect x="${15+i*90}" y="30" width="80" height="95" rx="10" fill="${s[3]}" stroke="${s[4]}" stroke-width="1.5"/><text x="${55+i*90}" y="62" text-anchor="middle" font-size="26" font-weight="800" fill="${s[4]}">${s[0]}</text><text x="${55+i*90}" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#333">${s[1]}</text><text x="${55+i*90}" y="108" text-anchor="middle" font-size="9" fill="#666">${s[2]}</text></g>`).join('')}
+  </svg>
+  <div class="card-body" style="margin-top:10px;"><strong>🔑 The Two Golden Rules:</strong></div>
+  <div class="strategy-grid" style="margin-top:4px;">
+    <div class="strategy-card" style="background:#EEF2FF;border-color:#C7D2FE;"><div class="s-title" style="color:#4338CA;">Rule 1 — ADD (big ➜ small)</div><div class="s-body" style="color:#3730A3;">A smaller symbol <strong>AFTER</strong> a bigger one is ADDED. VI = 5+1 = <strong>6</strong> · LX = 50+10 = <strong>60</strong> · CX = 100+10 = <strong>110</strong></div></div>
+    <div class="strategy-card" style="background:#FEF3C7;border-color:#FCD34D;"><div class="s-title" style="color:#B45309;">Rule 2 — SUBTRACT (small ➜ big)</div><div class="s-body" style="color:#92400E;">A smaller symbol <strong>BEFORE</strong> a bigger one is SUBTRACTED. IV = 5−1 = <strong>4</strong> · XL = 50−10 = <strong>40</strong> · CM = 1000−100 = <strong>900</strong></div></div>
+  </div>
+  <div style="display:flex;gap:14px;align-items:center;margin-top:12px;flex-wrap:wrap;">
+    <div style="flex:0 0 195px;text-align:center;">
+      <svg viewBox="0 0 220 220" class="shape-svg" style="max-width:190px;height:auto;">
+        <circle cx="110" cy="110" r="95" fill="#FFFDF5" stroke="#B45309" stroke-width="6"/><circle cx="110" cy="110" r="82" fill="none" stroke="#FDE68A" stroke-width="2"/>
+        <g font-size="15" font-weight="700" fill="#7C2D12" text-anchor="middle"><text x="110" y="42">XII</text><text x="168" y="62">I</text><text x="192" y="112">II</text><text x="178" y="164">III</text><text x="140" y="192">IIII</text><text x="80" y="192">V</text><text x="38" y="164">VI</text><text x="26" y="112">VII</text><text x="38" y="62">VIII</text><text x="80" y="40">IX</text><text x="110" y="30">X</text><text x="152" y="42">XI</text></g>
+        <line x1="110" y1="110" x2="110" y2="55" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/><line x1="110" y1="110" x2="152" y2="128" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/><circle cx="110" cy="110" r="6" fill="#B45309"/>
+      </svg>
+      <div style="font-size:11px;color:#666;">A Roman numeral clock — the short hand points at III… it is <strong>3 o'clock</strong>!</div>
+    </div>
+    <div class="card-body" style="flex:1;min-width:240px;">📏 <strong>Never more than 3 in a row!</strong> The Romans never wrote 4 as IIII — they wrote <strong>IV</strong>. So 30 = XXX ✓ but 40 = XL ✓ (never XXXX ✗).<br><br>🏛️ <strong>Where we still see them:</strong> clock faces, book chapters, film sequels (Episode VII), royal names (Elizabeth II) and dates carved on monuments.</div>
+  </div>
+</div>
+<div class="card"><div class="card-title">Example 1 — Reading a Roman numeral: XXXVII</div><div class="card-body">Break it into pieces from LEFT to RIGHT, then add:</div>${steps([['X = 10','10','first symbol'],['X = 10','+ 10','second symbol'],['X = 10','+ 10','third symbol'],['V = 5','+ 5','add the five'],['I I = 2','+ 2','two more'],['TOTAL','= 37','XXXVII = 37']])}</div>
+<div class="card"><div class="card-title">Example 2 — Building a Roman numeral: 156</div><div class="card-body">Work from the <strong>biggest value down</strong>. How many hundreds? fifties? ones?</div>${steps([['Hundreds','C','100 → one C'],['Fifty','L','50 → one L'],['Six','VI','6 → V + I'],['JOIN','CLVI','156 = CLVI ✓']])}<div class="card-body" style="margin-top:10px;">💡 Check: C (100) + L (50) + V (5) + I (1) = <strong>156</strong>. Maximum 3 identical letters in a row: 300 = CCC ✓ but 400 = CD ✓ (never CCCC ✗).</div></div>
+<div class="card"><div class="card-title">Example 3 — The subtraction rule: write 49</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 49 is just before 50. Can you see a shortcut instead of XXXXVIIII?</div><div class="card-body">Split 49 into <strong>40 + 9</strong>. Both parts use the subtraction rule:</div><div class="strategy-grid" style="margin-top:8px;"><div class="strategy-card" style="background:#FEF3C7;border-color:#FCD34D;"><div class="s-title" style="color:#B45309;">40 = XL</div><div class="s-body" style="color:#92400E;">X (10) comes <em>before</em> L (50) → 50 − 10 = 40</div></div><div class="strategy-card" style="background:#FEF3C7;border-color:#FCD34D;"><div class="s-title" style="color:#B45309;">9 = IX</div><div class="s-body" style="color:#92400E;">I (1) comes <em>before</em> X (10) → 10 − 1 = 9</div></div></div><div style="text-align:center;margin-top:10px;font-size:18px;font-weight:800;color:#5B21B6;">XL + IX = <span style="background:#EDE9FE;padding:4px 14px;border-radius:10px;border:1.5px solid #6D28D9;">XLIX</span></div></div>
+<div class="card"><div class="card-title">Example 4 — A bigger one: DCCXLIX (uses every rule!)</div><div class="card-body">${steps([['D','500','biggest first'],['CC','+ 200','two hundreds (3 max ✓)'],['XL','+ 40','subtraction: 50−10'],['IX','+ 9','subtraction: 10−1'],['ADD','= 749','D + CC + XL + IX']])}</div><div class="card-body" style="margin-top:8px;">🔍 Golden rule of reading: a smaller letter <em>before</em> a bigger one is subtracted; otherwise added. <strong>DCCXLIX = 749</strong>.</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: a date carved on a bridge</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A bridge is carved with <strong>MCMXCVIII</strong>. What year was it built?</div><div class="card-body">Chunk it from the left:${steps([['M','1000','one thousand'],['CM','+ 900','100 before 1000 → 1000−100'],['XC','+ 90','10 before 100 → 100−10'],['VIII','+ 8','5 + 1 + 1 + 1'],['YEAR','= 1998','built in 1998!']])}</div></div>
+${exCard(1,[
+ exQ(1,'What number is VII?',['6','7','8'],1),
+ exQ(2,'What number is XL?',['60','40','90'],1),
+ exQ(3,'Write 24 as a Roman numeral.',['XXIIV','XXIV','XIVX'],1),
+ exQ(4,'What number is CD?',['600','500','400'],2),
+ exQ(5,'Write 90 as a Roman numeral.',['LXL','XXXXL','XC'],2),
+ exQ(6,'A film is called "Episode IX". Which episode is it?',['8','9','11'],1),
+ exQ(7,'What number is CCCXLV?',['345','335','355'],0),
+ exQ(8,'Which Roman numeral equals 500?',['C','L','D'],2),
+ exQ(9,'A clock&#39;s hour hand points at IV. What o&#39;clock is it?',['3 o&#39;clock','4 o&#39;clock','5 o&#39;clock'],1,'t'),
+ exQ(10,'BOSS LEVEL: A museum sign reads DCCCLXXXVIII. How old is the exhibit? (Hint: D + CCC + LXXX + VIII)',['888','838','788'],0,'b')])}`;
 
-/* ------ PASTE TASK2_CONTENT HERE ------ */
-const TASK2_CONTENT = `... your existing content ...`;
+/* ---------- STEP 2 : Numbers to 10,000 ---------- */
+const P5_PV2 = `
+${dayHeader('PV2','Step 2 — Numbers to 10,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Stepping into the Thousands</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> You can already build numbers to 1,000. Today we grow one more column — the THOUSANDS!</div>
+<div class="card-body">Remember: <strong>10 hundreds make 1 thousand</strong>. And if ten 1,000s group together, we get a brand-new column: <strong>ten thousand (10,000)</strong>. Watch the ×10 machine do its magic:</div>
+${x10machine('1,000','ONE THOUSAND','10,000','TEN THOUSAND')}
+${pvGrid([['T',7],['H',4],['Te',8],['O',2]],'The number 7,482 on a place value grid')}
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">10,000 has <strong>FIVE</strong> digits (1, 0, 0, 0, 0) — not four! Every time we cross a new power of ten, the number grows <em>one digit longer</em>.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Remember</div><div class="s-body" style="color:#27500A;">Counting in 1,000s: 1,000 · 2,000 · 3,000 … 9,000 · <strong>10,000</strong>. Each jump adds one thousand cube.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Building 7,482 on the grid</div><div class="card-body">Read each column and add the values:</div>${steps([['Thousands','7,000','7 × 1,000'],['Hundreds','+ 400','4 × 100'],['Tens','+ 80','8 × 10'],['Ones','+ 2','2 × 1'],['TOTAL','= 7,482','seven thousand, four hundred and eighty-two']])}</div>
+<div class="card"><div class="card-title">Example 2 — The zero is a hero: 6,037</div>${pvGrid([['T',6],['H',0],['Te',3],['O',7]],'6,037 — look what the zero is doing!')}<div class="card-body" style="margin-top:8px;">The 0 in the hundreds column <strong>holds the place empty</strong> — without it, 6,037 would collapse into 637! Zeros keep every digit in its correct column.</div></div>
+<div class="card"><div class="card-title">Example 3 — Counting on in thousands</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A truck delivers 1,000 bricks every stop. Where is it after each stop?</div><div class="card-body">Counting in 1,000s along a number line:</div>${numLine(0,10000,1000,[[7000,'7,000 bricks']])}</div>
+<div class="card"><div class="card-title">Example 4 — Using the ×10 machine: 10 × 1,000</div><div class="card-body">${x10machine('1,000','TEN LOTS OF 1,000','10,000','THE ANSWER')}Ten thousands make one <strong>ten-thousand</strong>. The machine shifts every digit one place to the left and fills the gap with a zero.</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: stadium seats</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A small stadium has 9 thousands, 6 hundreds and 5 tens of seats. How many seats?</div><div class="card-body">${steps([['Thousands','9,000','9 × 1,000 seats'],['Hundreds','+ 600','6 × 100 seats'],['Tens','+ 50','5 × 10 seats'],['Ones','+ 0','no loose seats'],['TOTAL','= 9,650','nine thousand, six hundred and fifty']])}</div></div>
+${exCard(2,[
+ exQ(1,'What is 10 × 1,000?',['10,000','1,000','100,000'],0),
+ exQ(2,'In 8,253, what does the digit 8 represent?',['8,000','800','80'],0),
+ exQ(3,'4,000 + 300 + 20 + 9 = ?',['4,329','4,239','3,429'],0),
+ exQ(4,'Which number has 6 thousands and 5 ones?',['6,005','6,500','6,050'],0),
+ exQ(5,'Continue the count: 2,000, 3,000, 4,000, ___',['5,000','6,000','4,100'],0),
+ exQ(6,'Write ten thousand in figures.',['10,000','1,000','100,000'],0),
+ exQ(7,'What is the value of the 9 in 7,090?',['90','900','9'],0),
+ exQ(8,'10,000 − 1,000 = ?',['9,000','1,009','11,000'],0),
+ exQ(9,'THINK DEEPER: I am a 4-digit number. My thousands digit is 5, hundreds digit is 2, tens digit is 0 and ones digit is 7. What am I?',['5,207','5,270','5,027'],0,'t'),
+ exQ(10,'BOSS LEVEL: A warehouse packs 1,000 pencils per box. There are 7 boxes, 4 packs of 100 and 3 loose pencils. How many pencils?',['7,403','7,430','7,304'],0,'b')])}`;
 
-/* ------ PASTE TASK3_CONTENT HERE ------ */
-const TASK3_CONTENT = `... your existing content ...`;
+/* ---------- STEP 3 : Numbers to 100,000 ---------- */
+const P5_PV3 = `
+${dayHeader('PV3','Step 3 — Numbers to 100,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Hundred Thousands</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Ten thousand fans in a stadium is a lot… but a full city is bigger still. Today we reach <strong>100,000</strong>!</div>
+<div class="card-body">Feed 10,000 through the ×10 machine and a new column appears — the <strong>hundred thousands</strong>:</div>
+${x10machine('10,000','TEN THOUSAND','100,000','ONE HUNDRED THOUSAND')}
+${pvGrid([['HT',8],['TT',3],['T',4],['H',5],['Te',0],['O',0]],'The number 834,500? No — 83,450! Only fill the columns you need.')}
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">100,000 is <strong>ten times</strong> bigger than 10,000 — not two times! Bigger numbers grow in <em>jumps of ×10</em>, not by adding one zero at a time randomly.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Remember</div><div class="s-body" style="color:#27500A;">Counting in 10,000s: 10,000 · 20,000 · 30,000 … 90,000 · <strong>100,000</strong>. Six digits!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Reading 83,450</div><div class="card-body">Name each column from the left:</div>${steps([['HT digit','80,000','8 hundred-thousands'],['TT digit','+ 3,000','3 ten-thousands'],['T digit','+ 4,000? No!','careful — it is 4 hundreds']]).replace('4,000? No!','400') /* clarity fix below */}</div>
+<div class="card"><div class="card-title">Example 2 — Zeros in the middle: 60,407</div>${pvGrid([['TT',6],['T',0],['H',4],['Te',0],['O',7]],'60,407 — two hero zeros!')}<div class="card-body" style="margin-top:8px;">Read it as <strong>sixty thousand, four hundred and seven</strong>. The zeros hold the thousand and tens columns empty.</div></div>
+<div class="card"><div class="card-title">Example 3 — Counting in 10,000s</div><div class="card-body">${numLine(0,100000,10000,[[40000,'40,000']])}Each mark is one more <strong>ten-thousand</strong>. What is 3 marks after 40,000? 50,000, 60,000, <strong>70,000</strong>.</div></div>
+<div class="card"><div class="card-title">Example 4 — Ten times ten thousand</div><div class="card-body">${x10machine('10,000','×10','100,000','ONE HUNDRED THOUSAND')}Every digit shifts one place left; the empty ones column is filled by a hero zero.</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: the big match</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A huge stadium holds nine ten-thousands of fans. How many is that in figures?</div><div class="card-body">${steps([['Nine','9','the digit 9'],['Ten-thousands','× 10,000','its column value'],['WRITE','90,000','ninety thousand fans!']])}</div></div>
+${exCard(3,[
+ exQ(1,'10 × 10,000 = ?',['100,000','10,000','1,000,000'],0),
+ exQ(2,'What is the value of the 7 in 73,500?',['70,000','7,000','700'],0),
+ exQ(3,'50,000 + 6,000 + 300 + 4 = ?',['56,304','50,634','56,340'],0),
+ exQ(4,'Which number is eighty thousand and six?',['80,006','86,000','8,006'],0),
+ exQ(5,'Count on in 10,000s from 40,000. What comes next?',['50,000','41,000','60,000'],0),
+ exQ(6,'How many digits does 100,000 have?',['6','5','7'],0),
+ exQ(7,'Write one hundred thousand in figures.',['100,000','10,000','1,000,000'],0),
+ exQ(8,'100,000 − 10,000 = ?',['90,000','99,000','10,000'],0),
+ exQ(9,'THINK DEEPER: My ten-thousands digit is 9, all other digits are 0 except 5 tens. What number am I?',['90,050','95,000','90,005'],0,'t'),
+ exQ(10,'BOSS LEVEL: A club sells 10,000 tickets a day for 8 days, then 2,500 more. How many tickets sold?',['82,500','80,250','85,200'],0,'b')])}`;
+
+/* ---------- STEP 4 : Numbers to 1,000,000 ---------- */
+const P5_PV4 = `
+${dayHeader('PV4','Step 4 — Numbers to 1,000,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Million!</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> One MILLION! Can you picture it? A million seconds is almost 12 whole days. A million pennies is £10,000!</div>
+<div class="card-body">One more trip through the ×10 machine takes 100,000 all the way to <strong>1,000,000</strong>:</div>
+${x10machine('100,000','ONE HUNDRED THOUSAND','1,000,000','ONE MILLION')}
+${pvGrid([['M',1],['HT',0],['TT',0],['T',0],['H',0],['Te',0],['O',0]],'One million = a 1 in the MILLIONS column and hero zeros everywhere else')}
+<div class="card-body" style="margin-top:8px;">🏙️ Whole cities have around a million people. A million is <strong>1,000 thousands</strong> — or <strong>10 hundred-thousands</strong>.</div>
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Count the zeros! <strong>100,000</strong> has five zeros; <strong>1,000,000</strong> has six. They are <em>ten times</em> different, not "about the same".</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The Million Staircase</div><div class="s-body" style="color:#27500A;">10,000 →(×10) 100,000 →(×10) 1,000,000. Two jumps of ten = one hundred times bigger overall!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Ten hundred-thousands</div><div class="card-body">${x10machine('100,000','10 LOTS OF 100,000','1,000,000','ONE MILLION')}The digit 1 moves from the hundred-thousands column into the brand-new <strong>millions</strong> column.</div></div>
+<div class="card"><div class="card-title">Example 2 — Counting in 100,000s to a million</div><div class="card-body">${numLine(0,1000000,100000,[[500000,'half way!']])}Say it with me: one hundred thousand, two hundred thousand … nine hundred thousand, <strong>ONE MILLION</strong>. Ten equal jumps.</div></div>
+<div class="card"><div class="card-title">Example 3 — How many thousands in a million?</div><div class="card-body">${steps([['1,000 × 1,000','?','a thousand thousands'],['Think','1,000 thousands','each worth 1,000'],['RESULT','= 1,000,000','1,000 × 1,000 = 1 million']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — The million staircase</div><div class="card-body">How much bigger is 1,000,000 than 10,000?${steps([['10,000','× 10','= 100,000'],['100,000','× 10','= 1,000,000'],['Two jumps','× 100','1,000,000 is 100× 10,000']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: city population</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A city has exactly one million people. Write the population in figures and in words.</div><div class="card-body">${steps([['Words','one million','say it first'],['Figures','1,000,000','a 1 and six zeros'],['Check','6 zeros','one for each column to the right']])}</div></div>
+${exCard(4,[
+ exQ(1,'10 × 100,000 = ?',['1,000,000','100,000','10,000,000'],0),
+ exQ(2,'How many zeros does 1,000,000 have?',['6','5','7'],0),
+ exQ(3,'Continue: 200,000, 300,000, ___',['400,000','300,100','200,000'],0),
+ exQ(4,'The value of the digit 1 in 1,000,000 is…',['one million','one hundred thousand','one thousand'],0),
+ exQ(5,'1,000 × 1,000 = ?',['1,000,000','100,000','10,000'],0),
+ exQ(6,'Which number is one million?',['1,000,000','100,000','1,100,000'],0),
+ exQ(7,'900,000 + 100,000 = ?',['1,000,000','900,100','990,000'],0),
+ exQ(8,'How many 10,000s are there in 1,000,000?',['100','10','1,000'],0),
+ exQ(9,'THINK DEEPER: 10 × 10 × 10 × 10 × 10 × 10 = ?',['1,000,000','100,000','10,000,000'],0,'t'),
+ exQ(10,'BOSS LEVEL: A prize of £100,000 is won 10 times in a row. What is the total?',['£1,000,000','£100,000','£110,000'],0,'b')])}`;
+
+/* ---------- STEP 5 : Read and write numbers to 1,000,000 ---------- */
+const P5_PV5 = `
+${dayHeader('PV5','Step 5 — Read and Write Numbers to 1,000,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Comma Bridge</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Say this out loud: 345678. Hard, right? Now try: <strong>345,678</strong>. Much easier — the comma is a tiny bridge that splits big numbers into bite-size chunks!</div>
+<svg viewBox="0 0 660 170" class="shape-svg" style="max-width:100%;height:auto;">
+  <text x="330" y="20" text-anchor="middle" font-size="14" font-weight="700" fill="#333">Reading 345,678 — the comma splits THOUSANDS from the REST</text>
+  <g font-family="sans-serif">
+    <rect x="60" y="40" width="260" height="55" rx="10" fill="#FEF3C7" stroke="#B45309" stroke-width="2"/>
+    <text x="190" y="75" text-anchor="middle" font-size="24" font-weight="800" fill="#92400E">345</text>
+    <rect x="340" y="40" width="260" height="55" rx="10" fill="#EDE9FE" stroke="#6D28D9" stroke-width="2"/>
+    <text x="470" y="75" text-anchor="middle" font-size="24" font-weight="800" fill="#5B21B6">678</text>
+    <text x="330" y="78" text-anchor="middle" font-size="26" font-weight="800" fill="#333">,</text>
+    <text x="190" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#92400E">"three hundred and forty-five THOUSAND"</text>
+    <text x="470" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#5B21B6">"six hundred and seventy-eight"</text>
+    <text x="330" y="152" text-anchor="middle" font-size="13" font-weight="700" fill="#333">TOGETHER: "three hundred and forty-five thousand, six hundred and seventy-eight"</text>
+  </g>
+</svg>
+<div class="strategy-grid" style="margin-top:8px;">
+  <div class="strategy-card" style="background:#EEF2FF;border-color:#C7D2FE;"><div class="s-title" style="color:#4338CA;">Rule 1 — count 3 digits back</div><div class="s-body" style="color:#3730A3;">Start from the RIGHT and count three digits — that is where the comma goes. 834721 → 834,721.</div></div>
+  <div class="strategy-card" style="background:#FEF3C7;border-color:#FCD34D;"><div class="s-title" style="color:#B45309;">Rule 2 — the bridge word</div><div class="s-body" style="color:#92400E;">The chunk before the comma is said with the word <strong>"thousand"</strong>. After the comma, just read it like a normal 3-digit number.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Zero trap</div><div class="s-body" style="color:#712B13;">40,006 is "forty thousand and six" — NOT "forty thousand, six hundred". Read zeros carefully, column by column.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Insert the comma: 834721</div><div class="card-body">${steps([['Start right','1','count back 3 digits'],['Count','7 · 2 · 1','these stay together'],['Comma','834,721','three before it!'],['Read','eight hundred and thirty-four thousand, seven hundred and twenty-one','say it aloud']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Words to figures: "six hundred and two thousand, four hundred and fifteen"</div><div class="card-body">The word <strong>thousand</strong> is your bridge — it splits the words into two chunks:</div>${steps([['Chunk 1','602','"six hundred and two" THOUSAND'],['Bridge',',','write the comma'],['Chunk 2','415','"four hundred and fifteen"'],['ANSWER','602,415','check: 6-0-2 , 4-1-5']])}</div>
+<div class="card"><div class="card-title">Example 3 — Figures to words: 57,908</div><div class="card-body">${steps([['Comma first','57,908','three digits back'],['Left chunk','57','"fifty-seven thousand"'],['Right chunk','908','"nine hundred and eight"'],['SAY','fifty-seven thousand, nine hundred and eight','✓']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Tricky zeros: 700,070</div><div class="card-body">${pvGrid([['HT',7],['TT',0],['T',0],['H',0],['Te',7],['O',0]],'700,070 — read every column, even the zeros')}${steps([['Left of comma','700','"seven hundred thousand"'],['Right of comma','070','just "seventy"!'],['SAY','seven hundred thousand and seventy','not "seven hundred thousand and seventy hundred"!']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: reading a house price</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> An estate agent says a house costs "six hundred and twenty-five thousand pounds". Write it on the advert.</div><div class="card-body">${steps([['Words before "thousand"','625','six hundred and twenty-five'],['Bridge',',','the comma'],['After the bridge','000','nothing more to add'],['PRICE','£625,000','six hundred and twenty-five thousand pounds']])}</div></div>
+${exCard(5,[
+ exQ(1,'Insert the comma: 483921',['483,921','4,839,21','48,3921'],0),
+ exQ(2,'Write in figures: four hundred thousand',['400,000','40,000','4,000,000'],0),
+ exQ(3,'250,000 in words is…',['two hundred and fifty thousand','twenty-five thousand','two hundred and five thousand'],0),
+ exQ(4,'60,408 in words is…',['sixty thousand, four hundred and eight','sixty thousand, four hundred and eighty','six thousand, four hundred and eight'],0),
+ exQ(5,'Which matches "three hundred and twelve thousand, six hundred"?',['312,600','312,006','312,060'],0),
+ exQ(6,'Where does the comma go in 1000000?',['1,000,000','100,000,0','10,00,000'],0),
+ exQ(7,'900,090 in words is…',['nine hundred thousand and ninety','nine hundred thousand, nine hundred','nine hundred and ninety thousand'],0),
+ exQ(8,'"Eight hundred and five thousand, thirty" in figures:',['805,030','850,030','805,300'],0),
+ exQ(9,'THINK DEEPER: "two hundred and four thousand, two hundred and four" = ?',['204,204','204,240','240,204'],0,'t'),
+ exQ(10,'BOSS LEVEL: A car costs "seven hundred and twenty-three thousand, five hundred pounds". Write the price.',['£723,500','£732,500','£723,050'],0,'b')])}`;
+
+/* ---------- STEP 6 : Place value within 1,000,000 ---------- */
+const P5_PV6 = `
+${dayHeader('PV6','Step 6 — Place Value within 1,000,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Digit Detective</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Look at 55,555. Every digit is a 5 — but is each 5 worth the same? <em>NO!</em> The first 5 is worth 50,000; the last is worth just 5. Same digit, wildly different jobs.</div>
+${pvGrid([['HT',6],['TT',2],['T',7],['H',3],['Te',4],['O',5]],'The number 627,345 — each column shows the VALUE of its digit')}
+<div class="card-body" style="margin-top:8px;">The <strong>digit</strong> is the symbol we write (like 7). The <strong>value</strong> is what that digit is worth because of its <em>column</em>. In 627,345 the digit 7 sits in the <strong>thousands</strong> column, so its value is <strong>7,000</strong>.</div>
+<div class="strategy-grid" style="margin-top:8px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Detective method</div><div class="s-body" style="color:#27500A;">1) Find the digit. 2) Look at its column. 3) Multiply: digit × column value. Value of 4 in 347,216 → 4 is in the ten-thousands column → 4 × 10,000 = <strong>40,000</strong>.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">In 408,030 the zeros are NOT "worth nothing so ignore them" — they hold the columns so the 8 stays in the ten-thousands and the 3 stays in the tens.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Value of the 4 in 347,216</div><div class="card-body">${steps([['Find it','3 4 7,216','the digit 4'],['Which column?','TEN THOUSANDS','look above it'],['Multiply','4 × 10,000','digit × column value'],['VALUE','= 40,000','forty thousand']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Building from values: 600,000 + 3,000 + 50 + 2</div><div class="card-body">Place each value into its own column — nothing else gets a digit:</div>${pvGrid([['HT',6],['TT',0],['T',3],['H',0],['Te',5],['O',2]],'')}<div class="card-body" style="margin-top:6px;">→ <strong>603,052</strong>. Notice: no hundreds and no ten-thousands were given, so hero zeros hold those columns.</div></div>
+<div class="card"><div class="card-title">Example 3 — Which digit is worth 700,000 in 872,450?</div><div class="card-body">${steps([['Hunt the column','HUNDRED THOUSANDS','700,000 lives here'],['Look inside','8 7 2,450','digit in that column'],['ANSWER','7','7 × 100,000 = 700,000 ✓']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Every value counted: 408,030</div><div class="card-body">${pvGrid([['HT',4],['TT',0],['T',8],['H',0],['Te',3],['O',0]],'Read the = signs under each column')}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: how far?</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A charity walk covers 804,600 metres. What is the value of the 8?</div><div class="card-body">${steps([['Find the 8','8 04,600','leftmost digit'],['Column','HUNDRED THOUSANDS','the biggest here'],['Value','8 × 100,000','multiply'],['ANSWER','= 800,000 m','eight hundred thousand metres']])}</div></div>
+${exCard(6,[
+ exQ(1,'What is the value of the 6 in 63,214?',['60,000','6,000','600'],0),
+ exQ(2,'In 385,412, which digit has the value 5,000?',['5','8','4'],0),
+ exQ(3,'700,000 + 40,000 + 3,000 + 200 + 9 = ?',['743,209','743,029','743,290'],0),
+ exQ(4,'In 902,756, the 0 tells us…',['there are 0 thousands (it holds the place)','the number is smaller than 902','nothing — ignore it'],0),
+ exQ(5,'What is the value of the 8 in 812,345?',['800,000','80,000','8,000'],0),
+ exQ(6,'The value 50,000 belongs to which digit in 457,923?',['5','4','7'],0),
+ exQ(7,'2 hundred-thousands, 9 ten-thousands, 0 thousands, 6 hundreds, 3 tens, 1 one = ?',['290,631','296,031','209,631'],0),
+ exQ(8,'In 333,333, what is the value of the FIRST 3?',['300,000','3,000','30'],0),
+ exQ(9,'THINK DEEPER: A number is 600,000 + 40,000 + 500 + 20 + 7. What is it?',['640,527','604,527','640,257'],0,'t'),
+ exQ(10,'BOSS LEVEL: In 345,216 the digit 4 jumps from the tens column to the ten-thousands column. How many times bigger is it now?',['1,000 times','100 times','10 times'],0,'b')])}`;
+
+/* ---------- STEP 7 : Powers of 10 ---------- */
+const P5_PV7 = `
+${dayHeader('PV7','Step 7 — Powers of 10','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Power Tower</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 10 × 10 = 100. 10 × 10 × 10 = 1,000. What happens if we keep multiplying by ten… forever?</div>
+<svg viewBox="0 0 660 200" class="shape-svg" style="max-width:100%;height:auto;">
+  <text x="330" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="#333">Powers of 10 — a tiny 10 with a tiny number on its shoulder grows HUGE</text>
+  ${[['10¹','10','1 zero','#DBEAFE','#1D4ED8'],['10²','100','2 zeros','#DCFCE7','#15803D'],['10³','1,000','3 zeros','#FEF3C7','#B45309'],['10⁴','10,000','4 zeros','#EDE9FE','#6D28D9'],['10⁵','100,000','5 zeros','#FCE7F3','#BE185D'],['10⁶','1,000,000','6 zeros','#CCFBF1','#0F766E']].map((p,i)=>`<g><rect x="${12+i*108}" y="35" width="98" height="130" rx="12" fill="${p[3]}" stroke="${p[4]}" stroke-width="2"/><text x="${61+i*108}" y="70" text-anchor="middle" font-size="20" font-weight="800" fill="${p[4]}">${p[0]}</text><text x="${61+i*108}" y="110" text-anchor="middle" font-size="16" font-weight="800" fill="#333">${p[1]}</text><text x="${61+i*108}" y="145" text-anchor="middle" font-size="10" fill="#666">${p[2]}</text></g>`).join('')}
+</svg>
+<div class="card-body" style="margin-top:6px;">The little shoulder number is called the <strong>power</strong> (or index). It tells you <em>how many tens to multiply together</em> — and it equals the number of zeros! So 10⁴ = 10 × 10 × 10 × 10 = <strong>10,000</strong>.</div>
+<div class="strategy-grid" style="margin-top:8px;">
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">10⁴ does <strong>NOT</strong> mean 10 × 4 = 40. The power counts how many times we multiply by ten: 10 × 10 × 10 × 10 = 10,000.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The power = the zeros</div><div class="s-body" style="color:#27500A;">10ⁿ is a 1 followed by n zeros. 10² = 100, 10³ = 1,000, 10⁶ = 1,000,000. Instant answers!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — What is 10⁴?</div><div class="card-body">${steps([['10⁴','4 tens','multiply ten four times'],['10 × 10','= 100','first pair'],['100 × 10','= 1,000','keep going'],['× 10 again','= 10,000','four tens!'],['ANSWER','10⁴ = 10,000','or: 1 with 4 zeros']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Write 1,000,000 as a power of 10</div><div class="card-body">${steps([['Count zeros','1,000,000','six zeros'],['Power','10⁶','the 6 matches the zeros'],['CHECK','10 × 10 × 10 × 10 × 10 × 10','six tens multiplied'],['= 1,000,000','✓','perfect match']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Adding powers: 10⁵ + 10⁴</div><div class="card-body">${steps([['10⁵','= 100,000','five zeros'],['10⁴','= 10,000','four zeros'],['ADD','100,000 + 10,000','= 110,000']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Multiplying by a power of 10</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> What is 3,400 × 10?</div><div class="card-body">${x10machine('3,400','SHIFT ONE PLACE','34,000','THE ANSWER')}Multiplying by 10ⁿ shifts every digit <strong>n places left</strong> and fills the gaps with zeros. 3,400 × 10 = <strong>34,000</strong>.</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: a millionaire in £10 notes</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> You have one million pounds in £10 notes. How many notes is that?</div><div class="card-body">${steps([['Total','£1,000,000','the fortune'],['Each note','£10','÷ by a power of ten'],['1,000,000 ÷ 10','= 100,000','one shift right'],['NOTES','100,000 notes','that is a VERY heavy wallet!']])}</div></div>
+${exCard(7,[
+ exQ(1,'10³ = ?',['1,000','100','10,000'],0),
+ exQ(2,'10⁵ = ?',['100,000','10,000','1,000,000'],0),
+ exQ(3,'10 × 10 × 10 × 10 × 10 = ?',['100,000','10,000','1,000,000'],0),
+ exQ(4,'1,000,000 written as a power of 10 is…',['10⁶','10⁵','10⁷'],0),
+ exQ(5,'10⁴ is the same as…',['10,000','40','1,000'],0),
+ exQ(6,'7,200 × 10 = ?',['72,000','7,200','720,000'],0),
+ exQ(7,'450 × 100 = ?',['45,000','4,500','450,000'],0),
+ exQ(8,'10⁶ − 10⁵ = ?',['900,000','90,000','990,000'],0),
+ exQ(9,'THINK DEEPER: How many zeros does 10⁷ have?',['7','6','8'],0,'t'),
+ exQ(10,'BOSS LEVEL: 10³ × 10² = ?',['100,000','10,000','1,000,000'],0,'b')])}`;
+
+/* ---------- STEP 8 : 10/100/1,000/10,000/100,000 more or less ---------- */
+const P5_PV8 = `
+${dayHeader('PV8','Step 8 — 10, 100, 1,000, 10,000 and 100,000 More or Less','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The +/- Machine</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 45,672 + 10. Does every digit change? NO — only the tens digit! Adding a power of ten changes exactly <strong>one column</strong>.</div>
+${pvGrid([['HT',4],['TT',5],['T',6],['H',7],['Te',2],['O','…']],'45,67_ + 10 → only the TENS column moves')}
+<div class="card-body" style="margin-top:8px;">The secret: <strong>+10 means bump the tens column by 1. +100 means bump the hundreds. +1,000 the thousands…</strong> and the same idea backwards for "less".</div>
+<div class="strategy-grid" style="margin-top:8px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Method</div><div class="s-body" style="color:#27500A;">Find the column named by the question, add or subtract 1 there, leave every other digit untouched.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Boundary warning</div><div class="s-body" style="color:#712B13;">99,999 + 1 makes the tens column roll over… then the hundreds… then ALL columns cascade into <strong>100,000</strong>!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — A chain: 45,672 → +10 → +100 → +1,000</div><div class="card-body">${steps([['Start','45,672','our number'],['+ 10','45,682','tens column: 7 → 8'],['+ 100','45,782','hundreds column: 6 → 7'],['+ 1,000','46,782','thousands column: 5 → 6']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Big jumps: 645,672 − 100,000</div><div class="card-body">${steps([['Find the column','HUNDRED THOUSANDS','the 6'],['Subtract 1','6 → 5','only this digit changes'],['ANSWER','545,672','645,672 − 100,000']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — The cascade: 99,999 + 1</div><div class="card-body">${steps([['99,999 + 1','tens full!','9+1 rolls over'],['cascade','each column rolls','99,999 → 100,000'],['RESULT','= 100,000','a new column is born!']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Mixing jumps: 128,450 + 10,000 then − 1,000</div><div class="card-body">${steps([['Start','128,450','our number'],['+ 10,000','138,450','ten-thousands: 2 → 3'],['− 1,000','137,450','thousands: 8 → 7'],['FINAL','137,450','two moves, two columns']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: filling the stadium</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A stadium holds 60,000 people. So far 47,250 have arrived. How many more can still come in?</div><div class="card-body">${steps([['Capacity','60,000','the target'],['Inside','− 47,250','already there'],['Subtract','60,000 − 47,250','column by column'],['ROOM FOR','12,750 more fans','60,000 − 47,250 = 12,750']])}</div></div>
+${exCard(8,[
+ exQ(1,'36,540 + 100 = ?',['36,640','37,540','36,550'],0),
+ exQ(2,'82,300 − 1,000 = ?',['81,300','82,000','83,300'],0),
+ exQ(3,'400,000 + 100,000 = ?',['500,000','410,000','400,100'],0),
+ exQ(4,'156,780 + 10,000 = ?',['166,780','157,780','156,880'],0),
+ exQ(5,'99,999 + 1 = ?',['100,000','99,998','100,001'],0),
+ exQ(6,'765,000 − 10,000 = ?',['755,000','765,100','764,000'],0),
+ exQ(7,'What is 1,000 less than 10,000?',['9,000','11,000','1,000'],0),
+ exQ(8,'638,250 + 100,000 = ?',['738,250','648,250','638,350'],0),
+ exQ(9,'THINK DEEPER: Start at 500,000. Subtract 100,000, then add 10,000. Where do you finish?',['410,000','400,000','510,000'],0,'t'),
+ exQ(10,'BOSS LEVEL: A stadium holds 60,000. 47,250 are inside. How many more can enter?',['12,750','12,570','13,750'],0,'b')])}`;
+
+/* ---------- STEP 9 : Partition numbers to 1,000,000 ---------- */
+const P5_PV9 = `
+${dayHeader('PV9','Step 9 — Partition Numbers to 1,000,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Splitting the Whole</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A chocolate bar of 100 squares can be snapped into 50 + 50, or 70 + 30, or 90 + 10. Big numbers snap apart in exactly the same way!</div>
+<svg viewBox="0 0 660 120" class="shape-svg" style="max-width:100%;height:auto;">
+  <text x="330" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="#333">Partitioning 548,213 — split the bar into its place-value parts</text>
+  <g font-family="sans-serif" font-weight="700">
+    <rect x="15" y="35" width="150" height="50" rx="8" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5"/><text x="90" y="65" text-anchor="middle" font-size="13" fill="#92400E">500,000</text>
+    <rect x="175" y="35" width="115" height="50" rx="8" fill="#FCE7F3" stroke="#BE185D" stroke-width="1.5"/><text x="232" y="65" text-anchor="middle" font-size="13" fill="#9D174D">40,000</text>
+    <rect x="300" y="35" width="100" height="50" rx="8" fill="#EDE9FE" stroke="#6D28D9" stroke-width="1.5"/><text x="350" y="65" text-anchor="middle" font-size="13" fill="#5B21B6">8,000</text>
+    <rect x="410" y="35" width="85" height="50" rx="8" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.5"/><text x="452" y="65" text-anchor="middle" font-size="13" fill="#1E40AF">200</text>
+    <rect x="505" y="35" width="65" height="50" rx="8" fill="#DCFCE7" stroke="#15803D" stroke-width="1.5"/><text x="537" y="65" text-anchor="middle" font-size="13" fill="#166534">10</text>
+    <rect x="580" y="35" width="65" height="50" rx="8" fill="#FFEDD5" stroke="#C2410C" stroke-width="1.5"/><text x="612" y="65" text-anchor="middle" font-size="13" fill="#9A3412">3</text>
+  </g>
+  <text x="330" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#333">500,000 + 40,000 + 8,000 + 200 + 10 + 3 = 548,213</text>
+</svg>
+<div class="strategy-grid" style="margin-top:8px;">
+  <div class="strategy-card" style="background:#EEF2FF;border-color:#C7D2FE;"><div class="s-title" style="color:#4338CA;">Standard partition</div><div class="s-body" style="color:#3730A3;">Split by EVERY column: 548,213 = 500,000 + 40,000 + 8,000 + 200 + 10 + 3.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">Flexible partition</div><div class="s-body" style="color:#27500A;">Split any way that adds back: 548,213 = 500,000 + 48,213 = 400,000 + 148,213… endless possibilities!</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ The test</div><div class="s-body" style="color:#712B13;">A partition is only correct if the parts ADD BACK to the original number. Always check!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Standard partition of 548,213</div><div class="card-body">${steps([['500,000','HT digit 5','hundred thousands'],['+ 40,000','TT digit 4','ten thousands'],['+ 8,000','T digit 8','thousands'],['+ 200 + 10 + 3','H, Te, O','the rest'],['FULL','500,000+40,000+8,000+200+10+3','= 548,213 ✓']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Partitioning with zeros: 620,507</div><div class="card-body">${pvGrid([['HT',6],['TT',2],['T',0],['H',5],['Te',0],['O',7]],'Zeros are simply skipped — the parts are still there')}620,507 = <strong>600,000 + 20,000 + 500 + 7</strong>. The zero columns contribute nothing, so they do not appear as parts.</div></div>
+<div class="card"><div class="card-title">Example 3 — Flexible partition: 548,213 = 500,000 + ?</div><div class="card-body">${steps([['Keep','500,000','one big part'],['What remains?','548,213 − 500,000','take away the part'],['CALCULATE','= 48,213','the missing piece'],['CHECK','500,000 + 48,213','= 548,213 ✓']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Find the missing part: 734,000 + ___ = 734,600</div><div class="card-body">${steps([['Target','734,600','the whole'],['Given','− 734,000','one part'],['GAP','= 600','the missing part'],['VERIFY','734,000 + 600','= 734,600 ✓']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: splitting the budget</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A school has a £250,000 budget. It spends £200,000 on a new library. How much is left for the rest?</div><div class="card-body">${steps([['Whole','£250,000','the budget'],['Part','− £200,000','the library'],['FLEXIBLE PARTITION','250,000 = 200,000 + 50,000','LEFT = £50,000']])}</div></div>
+${exCard(9,[
+ exQ(1,'The standard partition of 372,456 is…',['300,000 + 70,000 + 2,000 + 400 + 50 + 6','300,000 + 7,000 + 2,000 + 400 + 56','3 + 7 + 2 + 4 + 5 + 6'],0),
+ exQ(2,'812,300 = 800,000 + ___ + 300. The missing part?',['12,000','12,300','120,000'],0),
+ exQ(3,'Which is NOT a partition of 450,000?',['400,000 + 50,000','300,000 + 150,000','400,000 + 60,000'],2),
+ exQ(4,'600,000 + 7,000 + 90 + 4 = ?',['607,094','670,094','607,940'],0),
+ exQ(5,'235,800 = 200,000 + ___',['35,800','23,580','35,000'],0),
+ exQ(6,'900,000 + 900 + 9 = ?',['900,909','909,009','900,990'],0),
+ exQ(7,'___ + 40,000 + 3,000 = 243,000',['200,000','240,000','43,000'],0),
+ exQ(8,'A flexible partition of 750,000 is…',['700,000 + 50,000','75 + 0 + 0','7 + 5'],0),
+ exQ(9,'THINK DEEPER: Which pair BOTH shows 100,000 split into 2 parts?',['50,000 + 50,000 and 90,000 + 10,000','50,000 + 50,000 and 60,000 + 60,000','90,000 + 10,000 and 80,000 + 30,000'],0,'t'),
+ exQ(10,'BOSS LEVEL: 864,000 bricks: 800,000 for walls. Which option correctly partitions the REST (64,000)?',['60,000 + 4,000','64,000 + 0','600 + 40'],0,'b')])}`;
+
+/* ---------- STEP 10 : Number lines to 1,000,000 ---------- */
+const P5_PV10 = `
+${dayHeader('PV10','Step 10 — Number Lines to 1,000,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — The Zooming Line</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A number line to 1,000,000 would be far too long to draw in detail — so we draw only the <em>marks</em> and use the spaces between them wisely.</div>
+<div class="card-body">First, look at the WHOLE line with big 100,000 jumps:</div>
+${numLine(0,1000000,100000,[[500000,'500,000 — the half-way mark']])}
+<div class="card-body" style="margin-top:8px;">Then <strong>zoom in</strong> on one section and look closer:</div>
+${numLine(300000,400000,10000,[[345000,'345,000 — about half-way between 340k and 350k']])}
+<div class="strategy-grid" style="margin-top:8px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Three questions to ask</div><div class="s-body" style="color:#27500A;">1) What is the gap between marks (the interval)? 2) Which two marks is my number between? 3) Is it early, half-way, or late in that gap?</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">The marks are NOT always 1 apart! On the first line each gap is 100,000. Always read the labels before counting.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Where is 500,000 on the 0–1,000,000 line?</div><div class="card-body">${numLine(0,1000000,100000,[[500000,'exactly half-way!']])}Count the gaps: ten equal gaps from 0 to 1,000,000. After five gaps: 500,000 — <strong>the exact midpoint</strong>.</div></div>
+<div class="card"><div class="card-title">Example 2 — Counting the gaps: how many 100,000s to a million?</div><div class="card-body">${steps([['Line','0 to 1,000,000','the whole journey'],['Interval','100,000 per gap','read the labels'],['Count gaps','1,000,000 ÷ 100,000','= 10 gaps'],['ANSWER','10 jumps of 100,000','reach 1,000,000']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Estimating 350,000</div><div class="card-body">350,000 is not marked… but it sits between 300,000 and 400,000 — and 5 is half of 10, so it is <strong>half-way</strong> along that gap.${numLine(300000,400000,10000,[[350000,'350,000 ≈ half of the gap']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Zooming in to place 345,000</div><div class="card-body">${numLine(300000,400000,10000,[[345000,'345,000']])}Between 340,000 and 350,000, the dot lands about half-way → <strong>345,000</strong>. First find the gap, then the position inside it.</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: distances on a map</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Town A is at 250,000 m and Town B is at 750,000 m along a straight road. How far apart are they?</div><div class="card-body">${numLine(0,1000000,250000,[[250000,'Town A: 250,000 m'],[750000,'Town B: 750,000 m']])}${steps([['Read the line','A at 250,000 · B at 750,000','two dots'],['Subtract','750,000 − 250,000','the gap'],['DISTANCE','= 500,000 m','500 km apart!']])}</div></div>
+${exCard(10,[
+ exQ(1,'On a 0–1,000,000 line marked every 100,000, the half-way point is…',['500,000','100,000','50,000'],0),
+ exQ(2,'What is half-way between 200,000 and 300,000?',['250,000','50,000','230,000'],0),
+ exQ(3,'Continue: 100,000, 200,000, 300,000, ___',['400,000','300,100','200,000'],0),
+ exQ(4,'On a line marked 400,000 and 500,000, where does 450,000 belong?',['Half-way between them','Just after 400,000','Exactly on 500,000'],0),
+ exQ(5,'On a line where each gap is 10,000, what is one mark after 600,000?',['610,000','601,000','700,000'],0),
+ exQ(6,'What is a quarter of the way between 700,000 and 800,000?',['725,000','740,000','72500'],0),
+ exQ(7,'A dot sits very near the RIGHT end of a 0–1,000,000 line. About how big is the number?',['About 900,000','About 100,000','About 500,000'],0),
+ exQ(8,'How many 100,000 intervals are there from 0 to 1,000,000?',['10','100','1,000'],0),
+ exQ(9,'THINK DEEPER: A line from 500,000 to 600,000 is split into 10 equal parts. How big is each part?',['10,000','1,000','100,000'],0,'t'),
+ exQ(10,'BOSS LEVEL: On a 0–1,000,000 line, A sits at 250,000 and B at 750,000. How far apart are they?',['500,000','250,000','1,000,000'],0,'b')])}`;
 
 
 /* ============================================================
-   SCHEME DATA
-   Each step has: label, status ('live'|'placeholder'), content
-   For 'live' steps, content is an HTML string.
-   For 'placeholder' steps, content is null.
+   SCHEME DATA — Primary 5
+   ============================================================ */
+const SCHEME_P5 = [
+  {
+    id:'autumn', emoji:'🍂', label:'Autumn Term', meta:'September – December 2025',
+    col: TERM_COLORS.autumn, open: true,
+    topics: [
+      { id:'placevalue', label:'Place Value ★ (Current)', col: TOPIC_PALETTE[0],
+        steps: [
+          { label:'Roman numerals to 1,000', content: P5_PV1 },
+          { label:'Numbers to 10,000', content: P5_PV2 },
+          { label:'Numbers to 100,000', content: P5_PV3 },
+          { label:'Numbers to 1,000,000', content: P5_PV4 },
+          { label:'Read and write numbers to 1,000,000', content: P5_PV5 },
+          { label:'Place value within 1,000,000', content: P5_PV6 },
+          { label:'Powers of 10', content: P5_PV7 },
+          { label:'10, 100, 1,000, 10,000 and 100,000 more or less', content: P5_PV8 },
+          { label:'Partition numbers to 1,000,000', content: P5_PV9 },
+          { label:'Number lines to 1,000,000', content: P5_PV10 },
+          ...['Compare numbers to 100,000','Compare numbers to 1,000,000','Order numbers to 1,000,000','Round to the nearest 10, 100 or 1,000','Round to the nearest 10,000','Round to the nearest 100,000','Rounding in problem-solving contexts','Negative numbers in context','Count forwards and backwards through zero','Number sequences involving large numbers'].map(s=>({label:s, content:null}))
+        ]},
+      { id:'addsub', label:'Addition and Subtraction', col: TOPIC_PALETTE[1],
+        steps: ['Mental addition and subtraction strategies','Add and subtract multiples of 10, 100 and 1,000','Add numbers with more than four digits','Subtract numbers with more than four digits','Column addition with exchange','Column subtraction with exchange','Efficient written methods','Estimating answers','Checking using inverse operations','Find missing numbers','Multi-step addition problems','Multi-step subtraction problems','Problems involving addition and subtraction','Reasoning with addition and subtraction'].map(s=>({label:s, content:null}))},
+      { id:'multdivA', label:'Multiplication & Division A', col: TOPIC_PALETTE[3],
+        steps: ['Multiples','Common multiples','Factors','Factor pairs','Common factors','Prime numbers','Prime factors','Composite numbers','Square numbers','Cube numbers','Squared notation (²)','Cubed notation (³)','Recognise divisibility patterns','Multiplication facts and related division facts','Mental multiplication strategies','Mental division strategies'].map(s=>({label:s, content:null}))},
+      { id:'fractionsA', label:'Fractions A', col: TOPIC_PALETTE[2],
+        steps: ['What is a fraction?','Equivalent fractions','Simplifying fractions','Improper fractions','Mixed numbers','Convert improper fractions to mixed numbers','Convert mixed numbers to improper fractions','Compare fractions','Order fractions','Fractions on a number line','Fractions greater than one','Add fractions with the same denominator','Add fractions with related denominators','Subtract fractions with the same denominator','Subtract fractions with related denominators','Add mixed numbers','Subtract mixed numbers','Fraction problem-solving'].map(s=>({label:s, content:null}))},
+    ]
+  },
+  { id:'spring', emoji:'🌱', label:'Spring Term', meta:'January – April 2026', col: TERM_COLORS.spring, open:false,
+    topics: [
+      { id:'multdivB', label:'Multiplication & Division B', col: TOPIC_PALETTE[0], steps:['Multiply by 10, 100 and 1,000','Divide by 10, 100 and 1,000','Multiply a 4-digit number by a 1-digit number','Multiply a 4-digit number by a 2-digit number','Long multiplication','Divide up to 4 digits by a 1-digit number','Short division','Interpret remainders','Multi-step multiplication and division problems','Choosing efficient methods'].map(s=>({label:s,content:null}))},
+      { id:'fractionsB', label:'Fractions B', col: TOPIC_PALETTE[2], steps:['Multiply fractions by integers','Find fractions of quantities','Find fractions of amounts','Multiply a mixed number by an integer','Divide fractions by integers','Find the whole from a fraction','Fractions as division','Add fractions with different denominators','Subtract fractions with different denominators','Solve multi-step fraction problems'].map(s=>({label:s,content:null}))},
+      { id:'decperc', label:'Decimals & Percentages', col: TOPIC_PALETTE[3], steps:['Decimal place value','Thousandths','Decimal number lines','Equivalent fractions and decimals','Compare decimals','Order decimals','Round decimals','Multiply decimals by 10, 100 and 1,000','Divide decimals by 10, 100 and 1,000','Percentages as fractions','Percentages as decimals','Find simple percentages of quantities'].map(s=>({label:s,content:null}))},
+      { id:'perarea', label:'Perimeter & Area', col: TOPIC_PALETTE[1], steps:['What is perimeter?','Perimeter of rectangles','Perimeter of rectilinear shapes','Find missing lengths','What is area?','Calculate area by counting squares','Area of rectangles','Area of compound shapes','Compare area and perimeter'].map(s=>({label:s,content:null}))},
+      { id:'stats', label:'Statistics', col: TOPIC_PALETTE[4], steps:['Read tables','Interpret tables','Read line graphs','Interpret line graphs','Solve comparison problems from line graphs','Complete tables','Read timetables','Interpret timetables'].map(s=>({label:s,content:null}))},
+    ]},
+  { id:'summer', emoji:'☀️', label:'Summer Term', meta:'April – July 2026', col: TERM_COLORS.summer, open:false,
+    topics: [
+      { id:'shape', label:'Properties of Shape', col: TOPIC_PALETTE[3], steps:['Understand angles','Measure angles','Angles on a straight line','Angles around a point','Acute, obtuse and reflex angles','Triangles','Classifying triangles','Quadrilaterals','Regular and irregular polygons','Symmetry','Missing angles'].map(s=>({label:s,content:null}))},
+      { id:'posdir', label:'Position & Direction', col: TOPIC_PALETTE[0], steps:['Coordinates in the first quadrant','Plot coordinates','Draw shapes using coordinates','Translate shapes','Describe translations','Reflect shapes','Reflection in horizontal and vertical lines'].map(s=>({label:s,content:null}))},
+      { id:'decimals', label:'Decimals', col: TOPIC_PALETTE[2], steps:['Decimal place value','Thousandths','Add decimals','Subtract decimals','Decimal complements','Decimal multiplication','Decimal division','Solve decimal problems'].map(s=>({label:s,content:null}))},
+      { id:'negatives', label:'Negative Numbers', col: TOPIC_PALETTE[5], steps:['What are negative numbers?','Negative numbers on a number line','Compare negative numbers','Count forwards and backwards through zero','Positive and negative temperature','Negative numbers in real-life contexts'].map(s=>({label:s,content:null}))},
+      { id:'converting', label:'Converting Units', col: TOPIC_PALETTE[1], steps:['Metric units','Millimetres, centimetres and metres','Metres and kilometres','Kilograms and grams','Litres and millilitres','Units of time','Convert between seconds, minutes and hours','Solve conversion problems'].map(s=>({label:s,content:null}))},
+      { id:'volume', label:'Volume', col: TOPIC_PALETTE[4], steps:['What is volume?','Volume using cubes','Count cubes to find volume','Volume of cuboids','Calculate volume using multiplication','Volume and capacity'].map(s=>({label:s,content:null}))},
+    ]},
+];
+
+
+
+
+
+
+/* ============================================================
+   PRIMARY 4 — LESSON CONTENT
    ============================================================ */
 
-/* ── MCQ Engine: Randomized & Persistent Feedback ── */
-
-function mcqBlock(options, correctIndex) {
-    const letters = ['A', 'B', 'C'];
-    
-    // 1. Map options to objects to track the correct one during shuffle
-    let list = options.map((text, i) => ({
-        text: text,
-        isCorrect: i === correctIndex
-    }));
-
-    // 2. Shuffle the array randomly using Fisher-Yates for better randomness
-    for (let i = list.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [list[i], list[j]] = [list[j], list[i]];
-    }
-
-    // 3. Generate HTML
-    // We assign letters A, B, C based on the NEW position after the shuffle
-    const buttons = list.map((item, i) => {
-        return `
-            <button class="mcq-btn" 
-                onclick="handleMCQ(this, ${item.isCorrect})">
-                (${letters[i]}) ${item.text}
-            </button>
-        `;
-    }).join('');
-
-    return `<div class="mcq-options">${buttons}</div>`;
-}
-
-/**
- * Handles the click event for MCQ buttons.
- * Shows feedback message AND applies persistent styling.
- * @param {HTMLElement} btn - The clicked button element.
- * @param {boolean} isCorrect - Whether the choice is correct.
- */
-function handleMCQ(btn, isCorrect) {
-    const container = btn.closest('.mcq-options');
-    const questionEl = btn.closest('.exercise-item') || btn.closest('.ex-text') || container.parentElement;
-    
-    // Clear any previous feedback in this question
-    questionEl.querySelectorAll('.mcq-feedback').forEach(f => f.remove());
-    
-    // Reset all buttons in this question first
-    questionEl.querySelectorAll('.mcq-btn').forEach(b => {
-        b.style.background = '';
-        b.style.borderColor = '';
-        b.style.color = '';
-        b.style.opacity = '1';
-        b.style.pointerEvents = '';
-        // Remove any previous checkmarks/X marks from text
-        if (b.innerText.startsWith('✓ ') || b.innerText.startsWith('✗ ')) {
-            b.innerText = b.innerText.substring(2);
-        }
-    });
-
-    // Create and show feedback message
-    const fb = document.createElement('div');
-    fb.className = 'mcq-feedback ' + (isCorrect ? 'correct' : 'wrong');
-    fb.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect — try again!';
-    container.after(fb);
-
-    if (isCorrect) {
-        // Apply persistent green styling
-        btn.style.background = "var(--green)";
-        btn.style.color = "white";
-        btn.style.borderColor = "var(--green-dark)";
-        btn.innerText = "✓ " + btn.innerText;
-    } else {
-        // Apply persistent red/coral styling
-        btn.style.background = "var(--coral)";
-        btn.style.color = "white";
-        btn.style.borderColor = "var(--coral-dark)";
-        btn.innerText = "✗ " + btn.innerText;
-    }
-
-    // Disable all buttons in this specific question so the user can't change their answer
-    const allBtns = container.querySelectorAll('.mcq-btn');
-    allBtns.forEach(b => {
-        b.style.pointerEvents = 'none';
-        if (b !== btn) b.style.opacity = "0.6"; // Dim the unselected options
-    });
-}
-
-
-
-// --- PLACE VALUE ---
-// CPA Mastery Method (Concrete -> Pictorial -> Abstract)
-// Explanation of Intent:
-// This step introduces 3-digit place value (numbers up to 1,000) for Primary 4 learners.
-// - Concrete/Pictorial Stage: Visual representations using SVG Base-10 blocks (flats, rods, units) and color-coded place value counters.
-// - Abstract Stage: Standard numerical form, expanded notation, and grid representations.
-// - Assessment: 10 structured MCQ questions designed to test conceptual understanding, place zero-holding, word-to-number conversion, and multi-step reasoning.
 
 const PLACEVALUE_STEP1 = `
 <div class="day-header">
@@ -825,15 +1188,6 @@ const PLACEVALUE_STEP2 = `
 </div>
 `;
 
-
-
-
-// CPA Mastery Method (Concrete -> Pictorial -> Abstract)
-// Explanation of Intent:
-// This step develops spatial placement and interval calculation on number lines up to 1,000 for Primary 4 learners.
-// - Pictorial Stage: SVG visual number lines showing labeled intervals, start/end boundaries, and targeted markers.
-// - Abstract Stage: Step size calculation (Step Size = Total Range ÷ Number of Intervals) and finding values of marked points.
-// - Assessment: 10 structured MCQ questions covering interval estimation, missing tick mark values, and midpoints.
 
 const PLACEVALUE_STEP3 = `
 <div class="day-header">
@@ -28866,7 +29220,7 @@ const POS_STEP5 = ``;
 /* ============================================================
    FULL SCHEME DATA TREE
    ============================================================ */
-const SCHEME = [
+const SCHEME_P4= [
   {
     id: 'autumn',
     emoji: '🍂',
@@ -29098,23 +29452,22 @@ const SCHEME = [
   }
 ];
 
+
+
+
+
+
+
 /* ============================================================
-   ENGINE
+   RENDER ENGINE
    ============================================================ */
-function renderStepContent(step, topicCol) {
+function renderStepContent(step) {
   if (!step.content) {
-    return `<div class="step-content-area">
-      <div class="empty-state">
-        <div class="empty-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="8.5" stroke="#bbb" stroke-width="1.2"/>
-            <path d="M10 6v4l2.5 2.5" stroke="#bbb" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="empty-title">Coming soon</div>
-        <div class="empty-sub">Content for <strong>${step.label}</strong> will be added by your teacher. Check back soon!</div>
-      </div>
-    </div>`;
+    return `<div class="step-content-area"><div class="empty-state">
+      <div class="empty-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#bbb" stroke-width="1.2"/><path d="M10 6v4l2.5 2.5" stroke="#bbb" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      <div class="empty-title">Coming soon</div>
+      <div class="empty-sub">Content for <strong>${step.label}</strong> will be added by your teacher. Check back soon!</div>
+    </div></div>`;
   }
   return `<div class="step-content-area">${step.content}</div>`;
 }
@@ -29124,32 +29477,20 @@ function buildTopic(topic, termId) {
   const topicDiv = document.createElement('div');
   topicDiv.className = 'topic-group';
   topicDiv.style.borderColor = col.border;
-
-  // topic header
   const hdr = document.createElement('div');
   hdr.className = 'topic-header';
   hdr.style.background = col.light;
-  hdr.innerHTML = `
-    <div class="topic-dot" style="background:${col.dot};color:${col.dotTxt};">${topic.steps.length}</div>
+  hdr.innerHTML = `<div class="topic-dot" style="background:${col.dot};color:${col.dotTxt};">${topic.steps.length}</div>
     <div class="topic-title" style="color:${col.text};">${topic.label}</div>
     <div class="topic-meta" style="color:${col.text};">${topic.steps.length} steps</div>
-    <div class="topic-arrow" id="tarr-${termId}-${topic.id}" style="color:${col.text};">&#9654;</div>
-  `;
-
-  // topic body
+    <div class="topic-arrow" id="tarr-${termId}-${topic.id}" style="color:${col.text};">&#9654;</div>`;
   const body = document.createElement('div');
   body.className = 'topic-body';
   body.id = `tbody-${termId}-${topic.id}`;
-
-  // step tabs row
   const tabsRow = document.createElement('div');
   tabsRow.className = 'step-tabs-row';
-
-  // content area (inline, directly below tabs)
   const contentArea = document.createElement('div');
   contentArea.className = 'step-content-area hidden';
-  contentArea.id = `scontent-${termId}-${topic.id}`;
-
   topic.steps.forEach((step, si) => {
     const hasContent = !!step.content;
     const btn = document.createElement('button');
@@ -29157,86 +29498,69 @@ function buildTopic(topic, termId) {
     btn.innerHTML = `<span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:${hasContent?col.active:'#ccc'};margin-right:4px;vertical-align:middle;"></span>Step ${si+1}`;
     btn.title = step.label;
     btn.onclick = () => {
-      // deactivate all tabs in this topic
-      tabsRow.querySelectorAll('.step-tab').forEach(t => {
-        t.classList.remove('active');
-        t.style.background = '';
-        t.style.color = '';
-        t.style.borderColor = '';
-      });
-      btn.classList.add('active');
-      btn.style.background = col.active;
-      btn.style.color = 'white';
-      btn.style.borderColor = col.active;
-
+      tabsRow.querySelectorAll('.step-tab').forEach(t => { t.classList.remove('active'); t.style.background=''; t.style.color=''; t.style.borderColor=''; });
+      btn.classList.add('active'); btn.style.background = col.active; btn.style.color = 'white'; btn.style.borderColor = col.active;
       contentArea.classList.remove('hidden');
-      contentArea.innerHTML = renderStepContent(step, col);
-      // attach MCQ handlers (already inline via onclick in HTML strings)
+      contentArea.innerHTML = renderStepContent(step);
       contentArea.scrollIntoView({ behavior:'smooth', block:'nearest' });
     };
     tabsRow.appendChild(btn);
   });
-
-  body.appendChild(tabsRow);
-  body.appendChild(contentArea);
-
+  body.appendChild(tabsRow); body.appendChild(contentArea);
   hdr.onclick = () => {
     const b = document.getElementById(`tbody-${termId}-${topic.id}`);
     const a = document.getElementById(`tarr-${termId}-${topic.id}`);
     const isOpen = b.classList.contains('open');
-    b.classList.toggle('open', !isOpen);
-    a.classList.toggle('open', !isOpen);
+    b.classList.toggle('open', !isOpen); a.classList.toggle('open', !isOpen);
   };
-
-  topicDiv.appendChild(hdr);
-  topicDiv.appendChild(body);
+  topicDiv.appendChild(hdr); topicDiv.appendChild(body);
   return topicDiv;
 }
 
-function build() {
-  const container = document.getElementById('term-groups');
-  SCHEME.forEach(term => {
+function build(containerId, scheme) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = '';
+  scheme.forEach(term => {
     const col = term.col;
     const termDiv = document.createElement('div');
     termDiv.className = 'term-group';
     termDiv.style.borderColor = col.border;
-
     const hdr = document.createElement('div');
     hdr.className = 'term-header';
     hdr.style.background = col.bg;
-    hdr.innerHTML = `
-      <div class="term-icon">${term.emoji}</div>
+    hdr.innerHTML = `<div class="term-icon">${term.emoji}</div>
       <div class="term-title" style="color:${col.title};">${term.label}</div>
       <div class="term-meta" style="color:${col.title};">${term.meta}</div>
-      <div class="term-arrow${term.open?' open':''}" id="termarr-${term.id}" style="color:${col.title};">&#9654;</div>
-    `;
-
+      <div class="term-arrow${term.open?' open':''}" id="termarr-${containerId}-${term.id}" style="color:${col.title};">&#9654;</div>`;
     const body = document.createElement('div');
-    body.id = `termbody-${term.id}`;
+    body.id = `termbody-${containerId}-${term.id}`;
     body.className = 'term-body' + (term.open ? ' open' : '');
-
-    term.topics.forEach(topic => {
-      body.appendChild(buildTopic(topic, term.id));
-    });
-
+    term.topics.forEach(topic => body.appendChild(buildTopic(topic, containerId + '-' + term.id)));
     hdr.onclick = () => {
-      const b = document.getElementById(`termbody-${term.id}`);
-      const a = document.getElementById(`termarr-${term.id}`);
+      const b = document.getElementById(`termbody-${containerId}-${term.id}`);
+      const a = document.getElementById(`termarr-${containerId}-${term.id}`);
       const isOpen = b.classList.contains('open');
-      b.classList.toggle('open', !isOpen);
-      a.classList.toggle('open', !isOpen);
+      b.classList.toggle('open', !isOpen); a.classList.toggle('open', !isOpen);
     };
-
-    termDiv.appendChild(hdr);
-    termDiv.appendChild(body);
+    termDiv.appendChild(hdr); termDiv.appendChild(body);
     container.appendChild(termDiv);
   });
 }
 
-build();
+function switchLevel(id, btn) {
+  document.querySelectorAll('.level-tab').forEach(t => { t.classList.remove('active'); t.style.background=''; t.style.color=''; });
+  document.querySelectorAll('.level-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active'); btn.style.background = btn.dataset.color; btn.style.color = 'white';
+  document.getElementById(id).classList.add('active');
+}
 
+/* ---- boot ---- */
+build('p5-term-groups', SCHEME_P5);
+build('p4-term-groups', SCHEME_P4);
+document.querySelector('.level-tab[data-color="#5B21B6"]').classList.add('active');
+document.querySelector('.level-tab[data-color="#5B21B6"]').style.background = '#5B21B6';
+document.querySelector('.level-tab[data-color="#5B21B6"]').style.color = 'white';
 </script>
-
-
 </body>
 </html>
