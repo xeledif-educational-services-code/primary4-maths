@@ -647,7 +647,91 @@ ${dayHeader('PV5','Step 5 — Read and Write Numbers to 1,000,000','CPA Mastery 
 <div class="card"><div class="card-title">Example 1 — Insert the comma: 834721</div><div class="card-body">${steps([['Start right','1','count back 3 digits'],['Count','7 · 2 · 1','these stay together'],['Comma','834,721','three before it!'],['Read','eight hundred and thirty-four thousand, seven hundred and twenty-one','say it aloud']])}</div></div>
 <div class="card"><div class="card-title">Example 2 — Words to figures: "six hundred and two thousand, four hundred and fifteen"</div><div class="card-body">The word <strong>thousand</strong> is your bridge — it splits the words into two chunks:</div>${steps([['Chunk 1','602','"six hundred and two" THOUSAND'],['Bridge',',','write the comma'],['Chunk 2','415','"four hundred and fifteen"'],['ANSWER','602,415','check: 6-0-2 , 4-1-5']])}</div>
 <div class="card"><div class="card-title">Example 3 — Figures to words: 57,908</div><div class="card-body">${steps([['Comma first','57,908','three digits back'],['Left chunk','57','"fifty-seven thousand"'],['Right chunk','908','"nine hundred and eight"'],['SAY','fifty-seven thousand, nine hundred and eight','✓']])}</div></div>
-<div class="card"><div class="card-title">Example 4 — Tricky zeros: 700,070</div><div class="card-body">${pvGrid([['HT',7],['TT',0],['T',0],['H',0],['Te',7],['O',0]],'700,070 — read every column, even the zeros')}${steps([['Left of comma','700','"seven hundred thousand"'],['Right of comma','070','just "seventy"!'],['SAY','seven hundred thousand and seventy','not "seven hundred thousand and seventy hundred"!']])}</div></div>
+
+
+
+<div class="card"><div class="card-title">Example 4 — Tricky zeros: 700,070</div>
+
+<div class="card-body" style="text-align:center;font-size:15px;font-weight:700;color:#5B21B6;margin:6px 0 8px;">
+  700,070 — read <em>every</em> column, even the zeros
+</div>
+
+<!-- Place-value grid -->
+<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:6px 0 14px;">
+
+  <div style="background:#FEF3C7;border:1.5px solid #B45309;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#92400E;line-height:1.15;word-break:break-word;">HUNDRED<br>THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#B45309;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">7</div>
+    <div style="font-size:10px;font-weight:700;color:#92400E;">= 700,000</div>
+  </div>
+
+  <div style="background:#FCE7F3;border:1.5px solid #BE185D;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.7;">
+    <div style="font-size:9px;font-weight:700;color:#9D174D;line-height:1.15;word-break:break-word;">TEN<br>THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #BE185D;color:#BE185D;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#9D174D;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#BE185D;margin-top:1px;">holds the place</div>
+  </div>
+
+  <div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.7;">
+    <div style="font-size:9px;font-weight:700;color:#5B21B6;line-height:1.15;">THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #6D28D9;color:#6D28D9;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#5B21B6;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#6D28D9;margin-top:1px;">holds the place</div>
+  </div>
+
+  <div style="background:#DBEAFE;border:1.5px solid #1D4ED8;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.7;">
+    <div style="font-size:9px;font-weight:700;color:#1E40AF;line-height:1.15;">HUNDREDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #1D4ED8;color:#1D4ED8;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#1E40AF;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#1D4ED8;margin-top:1px;">holds the place</div>
+  </div>
+
+  <div style="background:#DCFCE7;border:1.5px solid #15803D;border-radius:8px;padding:8px 3px;text-align:center;box-shadow:0 0 0 2px #15803D inset;">
+    <div style="font-size:9px;font-weight:700;color:#166534;line-height:1.15;">TENS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#15803D;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;box-shadow:0 0 0 3px #86EFAC;">7</div>
+    <div style="font-size:10px;font-weight:700;color:#166534;">= 70</div>
+    <div style="font-size:8px;font-weight:700;color:#15803D;margin-top:1px;">← the "seventy"</div>
+  </div>
+
+  <div style="background:#FFEDD5;border:1.5px solid #C2410C;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.7;">
+    <div style="font-size:9px;font-weight:700;color:#9A3412;line-height:1.15;">ONES</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #C2410C;color:#C2410C;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#9A3412;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#C2410C;margin-top:1px;">holds the place</div>
+  </div>
+
+</div>
+
+<!-- Read → Read → Say flow -->
+<div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:10px;align-items:stretch;margin:6px 0 10px;">
+
+  <div style="text-align:center;">
+    <div style="font-size:11px;font-weight:700;color:#5B21B6;margin-bottom:6px;">Left of comma</div>
+    <div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:10px;padding:14px 10px;font-size:16px;font-weight:800;color:#4C1D95;">700</div>
+    <div style="font-size:11px;color:#555;margin-top:6px;">"seven hundred thousand"</div>
+  </div>
+
+  <div style="text-align:center;">
+    <div style="font-size:11px;font-weight:700;color:#5B21B6;margin-bottom:6px;">Right of comma</div>
+    <div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:10px;padding:14px 10px;font-size:16px;font-weight:800;color:#4C1D95;">070</div>
+    <div style="font-size:11px;color:#555;margin-top:6px;">just "seventy"!</div>
+  </div>
+
+  <div style="text-align:center;">
+    <div style="font-size:11px;font-weight:700;color:#5B21B6;margin-bottom:6px;">SAY</div>
+    <div style="background:#4C1D95;border:1.5px solid #4C1D95;border-radius:10px;padding:14px 10px;font-size:14px;font-weight:800;color:#fff;line-height:1.35;">
+      seven hundred thousand<br>and seventy
+    </div>
+    <div style="font-size:11px;color:#9A3412;margin-top:6px;">
+      <strong>not</strong> "seven hundred thousand<br>and seventy hundred"!
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
 <div class="card"><div class="card-title">Example 5 — Real life: reading a house price</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> An estate agent says a house costs "six hundred and twenty-five thousand pounds". Write it on the advert.</div><div class="card-body">${steps([['Words before "thousand"','625','six hundred and twenty-five'],['Bridge',',','the comma'],['After the bridge','000','nothing more to add'],['PRICE','£625,000','six hundred and twenty-five thousand pounds']])}</div></div>
 ${exCard(5,[
  exQ(1,'Insert the comma: 483921',['483,921','4,839,21','48,3921'],0),
@@ -728,9 +812,155 @@ ${dayHeader('PV6','Step 6 — Place Value within 1,000,000','CPA Mastery Approac
 </div></div>
 
 <div class="card"><div class="card-title">Example 1 — Value of the 4 in 347,216</div><div class="card-body">${steps([['Find it','3 4 7,216','the digit 4'],['Which column?','TEN THOUSANDS','look above it'],['Multiply','4 × 10,000','digit × column value'],['VALUE','= 40,000','forty thousand']])}</div></div>
-<div class="card"><div class="card-title">Example 2 — Building from values: 600,000 + 3,000 + 50 + 2</div><div class="card-body">Place each value into its own column — nothing else gets a digit:</div>${pvGrid([['HT',6],['TT',0],['T',3],['H',0],['Te',5],['O',2]],'')}<div class="card-body" style="margin-top:6px;">→ <strong>603,052</strong>. Notice: no hundreds and no ten-thousands were given, so hero zeros hold those columns.</div></div>
+
+
+<div class="card"><div class="card-title">Example 2 — Building from values: 600,000 + 3,000 + 50 + 2</div>
+
+<div class="card-body" style="margin-bottom:10px;">Place each value into its own column — nothing else gets a digit.</div>
+
+<!-- The given partition, colour-matched to the columns below -->
+<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 12px;">
+  <span style="background:#FEF3C7;border:1.5px solid #B45309;color:#92400E;font-size:12px;font-weight:700;padding:5px 10px;border-radius:10px;">600,000</span>
+  <span style="color:#888;font-size:14px;align-self:center;">+</span>
+  <span style="background:#EDE9FE;border:1.5px solid #6D28D9;color:#5B21B6;font-size:12px;font-weight:700;padding:5px 10px;border-radius:10px;">3,000</span>
+  <span style="color:#888;font-size:14px;align-self:center;">+</span>
+  <span style="background:#DCFCE7;border:1.5px solid #15803D;color:#166534;font-size:12px;font-weight:700;padding:5px 10px;border-radius:10px;">50</span>
+  <span style="color:#888;font-size:14px;align-self:center;">+</span>
+  <span style="background:#FFEDD5;border:1.5px solid #C2410C;color:#9A3412;font-size:12px;font-weight:700;padding:5px 10px;border-radius:10px;">2</span>
+</div>
+
+<!-- Place-value grid -->
+<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:0 0 10px;">
+
+  <!-- HT — given -->
+  <div style="background:#FEF3C7;border:1.5px solid #B45309;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#92400E;line-height:1.15;word-break:break-word;">HUNDRED<br>THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#B45309;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">6</div>
+    <div style="font-size:10px;font-weight:700;color:#92400E;">= 600,000</div>
+    <div style="font-size:8px;font-weight:700;color:#B45309;margin-top:1px;">✓ from 600,000</div>
+  </div>
+
+  <!-- TT — hero zero -->
+  <div style="background:#FCE7F3;border:1.5px dashed #BE185D;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.7;">
+    <div style="font-size:9px;font-weight:700;color:#9D174D;line-height:1.15;word-break:break-word;">TEN<br>THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #BE185D;color:#BE185D;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#9D174D;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#BE185D;margin-top:1px;">held by hero zero</div>
+  </div>
+
+  <!-- T — given -->
+  <div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#5B21B6;line-height:1.15;">THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#6D28D9;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">3</div>
+    <div style="font-size:10px;font-weight:700;color:#5B21B6;">= 3,000</div>
+    <div style="font-size:8px;font-weight:700;color:#6D28D9;margin-top:1px;">✓ from 3,000</div>
+  </div>
+
+  <!-- H — hero zero -->
+  <div style="background:#DBEAFE;border:1.5px dashed #1D4ED8;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.7;">
+    <div style="font-size:9px;font-weight:700;color:#1E40AF;line-height:1.15;">HUNDREDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #1D4ED8;color:#1D4ED8;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#1E40AF;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#1D4ED8;margin-top:1px;">held by hero zero</div>
+  </div>
+
+  <!-- Te — given -->
+  <div style="background:#DCFCE7;border:1.5px solid #15803D;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#166534;line-height:1.15;">TENS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#15803D;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">5</div>
+    <div style="font-size:10px;font-weight:700;color:#166534;">= 50</div>
+    <div style="font-size:8px;font-weight:700;color:#15803D;margin-top:1px;">✓ from 50</div>
+  </div>
+
+  <!-- O — given -->
+  <div style="background:#FFEDD5;border:1.5px solid #C2410C;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#9A3412;line-height:1.15;">ONES</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#C2410C;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">2</div>
+    <div style="font-size:10px;font-weight:700;color:#9A3412;">= 2</div>
+    <div style="font-size:8px;font-weight:700;color:#C2410C;margin-top:1px;">✓ from 2</div>
+  </div>
+
+</div>
+
+<div class="card-body" style="margin-top:6px;">→ <strong>603,052</strong>. Notice: no hundreds and no ten-thousands were given, so <strong>hero zeros</strong> hold those columns empty.</div>
+</div>
+
+
 <div class="card"><div class="card-title">Example 3 — Which digit is worth 700,000 in 872,450?</div><div class="card-body">${steps([['Hunt the column','HUNDRED THOUSANDS','700,000 lives here'],['Look inside','8 7 2,450','digit in that column'],['ANSWER','7','7 × 100,000 = 700,000 ✓']])}</div></div>
-<div class="card"><div class="card-title">Example 4 — Every value counted: 408,030</div><div class="card-body">${pvGrid([['HT',4],['TT',0],['T',8],['H',0],['Te',3],['O',0]],'Read the = signs under each column')}</div></div>
+
+
+<div class="card"><div class="card-title">Example 4 — Every value counted: 408,030</div>
+
+<div class="card-body" style="text-align:center;font-size:15px;font-weight:700;color:#5B21B6;margin:6px 0 10px;">
+  Read the <strong>=</strong> signs under each column
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:0 0 12px;">
+
+  <!-- HT — contributes 400,000 -->
+  <div style="background:#FEF3C7;border:1.5px solid #B45309;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#92400E;line-height:1.15;word-break:break-word;">HUNDRED<br>THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#B45309;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">4</div>
+    <div style="font-size:11px;font-weight:800;color:#92400E;">= 400,000</div>
+    <div style="font-size:8px;font-weight:700;color:#B45309;margin-top:1px;">✓ counted</div>
+  </div>
+
+  <!-- TT — zero -->
+  <div style="background:#FCE7F3;border:1.5px dashed #BE185D;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.55;">
+    <div style="font-size:9px;font-weight:700;color:#9D174D;line-height:1.15;word-break:break-word;">TEN<br>THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #BE185D;color:#BE185D;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#9D174D;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#BE185D;margin-top:1px;">adds nothing</div>
+  </div>
+
+  <!-- T — contributes 8,000 -->
+  <div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#5B21B6;line-height:1.15;">THOUSANDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#6D28D9;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">8</div>
+    <div style="font-size:11px;font-weight:800;color:#5B21B6;">= 8,000</div>
+    <div style="font-size:8px;font-weight:700;color:#6D28D9;margin-top:1px;">✓ counted</div>
+  </div>
+
+  <!-- H — zero -->
+  <div style="background:#DBEAFE;border:1.5px dashed #1D4ED8;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.55;">
+    <div style="font-size:9px;font-weight:700;color:#1E40AF;line-height:1.15;">HUNDREDS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #1D4ED8;color:#1D4ED8;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#1E40AF;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#1D4ED8;margin-top:1px;">adds nothing</div>
+  </div>
+
+  <!-- Te — contributes 30 -->
+  <div style="background:#DCFCE7;border:1.5px solid #15803D;border-radius:8px;padding:8px 3px;text-align:center;">
+    <div style="font-size:9px;font-weight:700;color:#166534;line-height:1.15;">TENS</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#15803D;color:#fff;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">3</div>
+    <div style="font-size:11px;font-weight:800;color:#166534;">= 30</div>
+    <div style="font-size:8px;font-weight:700;color:#15803D;margin-top:1px;">✓ counted</div>
+  </div>
+
+  <!-- O — zero -->
+  <div style="background:#FFEDD5;border:1.5px dashed #C2410C;border-radius:8px;padding:8px 3px;text-align:center;opacity:0.55;">
+    <div style="font-size:9px;font-weight:700;color:#9A3412;line-height:1.15;">ONES</div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:2px dashed #C2410C;color:#C2410C;font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:8px auto;">0</div>
+    <div style="font-size:10px;font-weight:700;color:#9A3412;">= 0</div>
+    <div style="font-size:8px;font-weight:700;color:#C2410C;margin-top:1px;">adds nothing</div>
+  </div>
+
+</div>
+
+<!-- The "read the = signs" sum line -->
+<div style="background:#EDE9FE;border:1.5px solid #6D28D9;border-radius:10px;padding:12px 14px;margin:0 0 6px;text-align:center;">
+  <div style="font-size:11px;font-weight:700;color:#5B21B6;margin-bottom:6px;">Now add up the values that are left:</div>
+  <div style="font-size:15px;font-weight:800;color:#4C1D95;line-height:1.5;">
+    400,000 &nbsp;+&nbsp; 8,000 &nbsp;+&nbsp; 30 &nbsp;=&nbsp; <span style="color:#B45309;">408,030</span>
+  </div>
+</div>
+
+<div class="card-body" style="margin-top:6px;text-align:center;">
+  The three zeros <strong>add nothing</strong> — so we can skip them and just add the parts that count.
+</div>
+</div>
+
+
 <div class="card"><div class="card-title">Example 5 — Real life: how far?</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A charity walk covers 804,600 metres. What is the value of the 8?</div><div class="card-body">${steps([['Find the 8','8 04,600','leftmost digit'],['Column','HUNDRED THOUSANDS','the biggest here'],['Value','8 × 100,000','multiply'],['ANSWER','= 800,000 m','eight hundred thousand metres']])}</div></div>
 ${exCard(6,[
  exQ(1,'What is the value of the 6 in 63,214?',['60,000','6,000','600'],0),
