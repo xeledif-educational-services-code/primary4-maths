@@ -1865,56 +1865,100 @@ ${exCard(20,[
 `;
 
 
-/* ============================================================
-    SCHEME DATA — Primary 5
-   ============================================================ */
+// Intent: Structure the complete curriculum data for Primary 5 (Autumn, Spring, and Summer terms)
+// Why this approach was taken: Grouping topics inside hierarchical term objects allows the frontend rendering 
+// engine to dynamically loop through terms, topics, and individual steps (lessons) without breaking the DOM.
+// All autumn topics (including the newly added Place Value steps up to Step 20) are explicitly kept 
+// within the 'autumn' term's 'topics' array to prevent rendering undefined layout cards.
+
 const SCHEME_P5 = [
   {
-    id:'autumn', emoji:'🍂', label:'Autumn Term', meta:'September – December 2025',
-    col: TERM_COLORS.autumn, open: true,
+    id: 'autumn', 
+    emoji: '🍂', 
+    label: 'Autumn Term', 
+    meta: 'September – December 2025',
+    col: TERM_COLORS.autumn, 
+    open: true,
     topics: [
-      { id:'placevalue', label:'Place Value ★ (Current)', col: TOPIC_PALETTE[0],
+      { 
+        id: 'placevalue', 
+        label: 'Place Value ★ (Current)', 
+        col: TOPIC_PALETTE[0],
         steps: [
-          { label:'Roman numerals to 1,000', content: P5_PV1 },
-          { label:'Numbers to 10,000', content: P5_PV2 },
-          { label:'Numbers to 100,000', content: P5_PV3 },
-          { label:'Numbers to 1,000,000', content: P5_PV4 },
-          { label:'Read and write numbers to 1,000,000', content: P5_PV5 },
-          { label:'Place value within 1,000,000', content: P5_PV6 },
-          { label:'Powers of 10', content: P5_PV7 },
-          { label:'10, 100, 1,000, 10,000 and 100,000 more or less', content: P5_PV8 },
-          { label:'Partition numbers to 1,000,000', content: P5_PV9 },
-          { label:'Number lines to 1,000,000', content: P5_PV10 },
-          { label:'Compare numbers to 100,000', content: P5_PV11 },
-          { label:'Compare numbers to 1,000,000', content: P5_PV12 },
-          { label:'Order numbers to 1,000,000', content: P5_PV13 },
-          { label:'Round to the nearest 10, 100 or 1,000', content: P5_PV14 },
-          { label:'Round to the nearest 10,000', content: P5_PV15 },
-          { label:'Round to the nearest 100,000', content: P5_PV16 },
-          { label:'Rounding in problem-solving contexts', content: P5_PV17 },
-          { label:'Negative numbers in context', content: P5_PV18 },
-          { label:'Count forwards and backwards through zero', content: P5_PV19 },
-          { label:'Number sequences involving large numbers', content: P5_PV20 }
-        ]}
+          { label: 'Roman numerals to 1,000', content: P5_PV1 },
+          { label: 'Numbers to 10,000', content: P5_PV2 },
+          { label: 'Numbers to 100,000', content: P5_PV3 },
+          { label: 'Numbers to 1,000,000', content: P5_PV4 },
+          { label: 'Read and write numbers to 1,000,000', content: P5_PV5 },
+          { label: 'Place value within 1,000,000', content: P5_PV6 },
+          { label: 'Powers of 10', content: P5_PV7 },
+          { label: '10, 100, 1,000, 10,000 and 100,000 more or less', content: P5_PV8 },
+          { label: 'Partition numbers to 1,000,000', content: P5_PV9 },
+          { label: 'Number lines to 1,000,000', content: P5_PV10 },
+          { label: 'Compare numbers to 100,000', content: P5_PV11 },
+          { label: 'Compare numbers to 1,000,000', content: P5_PV12 },
+          { label: 'Order numbers to 1,000,000', content: P5_PV13 },
+          { label: 'Round to the nearest 10, 100 or 1,000', content: P5_PV14 },
+          { label: 'Round to the nearest 10,000', content: P5_PV15 },
+          { label: 'Round to the nearest 100,000', content: P5_PV16 },
+          { label: 'Rounding in problem-solving contexts', content: P5_PV17 },
+          { label: 'Negative numbers in context', content: P5_PV18 },
+          { label: 'Count forwards and backwards through zero', content: P5_PV19 },
+          { label: 'Number sequences involving large numbers', content: P5_PV20 }
+        ]
+      },
+      { 
+        id: 'addsub', 
+        label: 'Addition and Subtraction', 
+        col: TOPIC_PALETTE[1],
+        // Why map() is used here: Quickly maps raw string titles into structured step objects with null content placeholders.
+        steps: ['Mental addition and subtraction strategies','Add and subtract multiples of 10, 100 and 1,000','Add numbers with more than four digits','Subtract numbers with more than four digits','Column addition with exchange','Column subtraction with exchange','Efficient written methods','Estimating answers','Checking using inverse operations','Find missing numbers','Multi-step addition problems','Multi-step subtraction problems','Problems involving addition and subtraction','Reasoning with addition and subtraction'].map(s => ({ label: s, content: null }))
+      },
+      { 
+        id: 'multdivA', 
+        label: 'Multiplication & Division A', 
+        col: TOPIC_PALETTE[3],
+        steps: ['Multiples','Common multiples','Factors','Factor pairs','Common factors','Prime numbers','Prime factors','Composite numbers','Square numbers','Cube numbers','Squared notation (²)','Cubed notation (³)','Recognise divisibility patterns','Multiplication facts and related division facts','Mental multiplication strategies','Mental division strategies'].map(s => ({ label: s, content: null }))
+      },
+      { 
+        id: 'fractionsA', 
+        label: 'Fractions A', 
+        col: TOPIC_PALETTE[2],
+        steps: ['What is a fraction?','Equivalent fractions','Simplifying fractions','Improper fractions','Mixed numbers','Convert improper fractions to mixed numbers','Convert mixed numbers to improper fractions','Compare fractions','Order fractions','Fractions on a number line','Fractions greater than one','Add fractions with the same denominator','Add fractions with related denominators','Subtract fractions with the same denominator','Subtract fractions with related denominators','Add mixed numbers','Subtract mixed numbers','Fraction problem-solving'].map(s => ({ label: s, content: null }))
+      }
     ]
   },
-  { id:'spring', emoji:'🌱', label:'Spring Term', meta:'January – April 2026', col: TERM_COLORS.spring, open:false,
+  { 
+    id: 'spring', 
+    emoji: '🌱', 
+    label: 'Spring Term', 
+    meta: 'January – April 2026', 
+    col: TERM_COLORS.spring, 
+    open: false,
     topics: [
-      { id:'multdivB', label:'Multiplication & Division B', col: TOPIC_PALETTE[0], steps:['Multiply by 10, 100 and 1,000','Divide by 10, 100 and 1,000','Multiply a 4-digit number by a 1-digit number','Multiply a 4-digit number by a 2-digit number','Long multiplication','Divide up to 4 digits by a 1-digit number','Short division','Interpret remainders','Multi-step multiplication and division problems','Choosing efficient methods'].map(s=>({label:s,content:null}))},
-      { id:'fractionsB', label:'Fractions B', col: TOPIC_PALETTE[2], steps:['Multiply fractions by integers','Find fractions of quantities','Find fractions of amounts','Multiply a mixed number by an integer','Divide fractions by integers','Find the whole from a fraction','Fractions as division','Add fractions with different denominators','Subtract fractions with different denominators','Solve multi-step fraction problems'].map(s=>({label:s,content:null}))},
-      { id:'decperc', label:'Decimals & Percentages', col: TOPIC_PALETTE[3], steps:['Decimal place value','Thousandths','Decimal number lines','Equivalent fractions and decimals','Compare decimals','Order decimals','Round decimals','Multiply decimals by 10, 100 and 1,000','Divide decimals by 10, 100 and 1,000','Percentages as fractions','Percentages as decimals','Find simple percentages of quantities'].map(s=>({label:s,content:null}))},
-      { id:'perarea', label:'Perimeter & Area', col: TOPIC_PALETTE[1], steps:['What is perimeter?','Perimeter of rectangles','Perimeter of rectilinear shapes','Find missing lengths','What is area?','Calculate area by counting squares','Area of rectangles','Area of compound shapes','Compare area and perimeter'].map(s=>({label:s,content:null}))},
-      { id:'stats', label:'Statistics', col: TOPIC_PALETTE[4], steps:['Read tables','Interpret tables','Read line graphs','Interpret line graphs','Solve comparison problems from line graphs','Complete tables','Read timetables','Interpret timetables'].map(s=>({label:s,content:null}))},
-    ]},
-  { id:'summer', emoji:'☀️', label:'Summer Term', meta:'April – July 2026', col: TERM_COLORS.summer, open:false,
+      { id: 'multdivB', label: 'Multiplication & Division B', col: TOPIC_PALETTE[0], steps: ['Multiply by 10, 100 and 1,000','Divide by 10, 100 and 1,000','Multiply a 4-digit number by a 1-digit number','Multiply a 4-digit number by a 2-digit number','Long multiplication','Divide up to 4 digits by a 1-digit number','Short division','Interpret remainders','Multi-step multiplication and division problems','Choosing efficient methods'].map(s => ({ label: s, content: null })) },
+      { id: 'fractionsB', label: 'Fractions B', col: TOPIC_PALETTE[2], steps: ['Multiply fractions by integers','Find fractions of quantities','Find fractions of amounts','Multiply a mixed number by an integer','Divide fractions by integers','Find the whole from a fraction','Fractions as division','Add fractions with different denominators','Subtract fractions with different denominators','Solve multi-step fraction problems'].map(s => ({ label: s, content: null })) },
+      { id: 'decperc', label: 'Decimals & Percentages', col: TOPIC_PALETTE[3], steps: ['Decimal place value','Thousandths','Decimal number lines','Equivalent fractions and decimals','Compare decimals','Order decimals','Round decimals','Multiply decimals by 10, 100 and 1,000','Divide decimals by 10, 100 and 1,000','Percentages as fractions','Percentages as decimals','Find simple percentages of quantities'].map(s => ({ label: s, content: null })) },
+      { id: 'perarea', label: 'Perimeter & Area', col: TOPIC_PALETTE[1], steps: ['What is perimeter?','Perimeter of rectangles','Perimeter of rectilinear shapes','Find missing lengths','What is area?','Calculate area by counting squares','Area of rectangles','Area of compound shapes','Compare area and perimeter'].map(s => ({ label: s, content: null })) },
+      { id: 'stats', label: 'Statistics', col: TOPIC_PALETTE[4], steps: ['Read tables','Interpret tables','Read line graphs','Interpret line graphs','Solve comparison problems from line graphs','Complete tables','Read timetables','Interpret timetables'].map(s => ({ label: s, content: null })) }
+    ]
+  },
+  { 
+    id: 'summer', 
+    emoji: '☀️', 
+    label: 'Summer Term', 
+    meta: 'April – July 2026', 
+    col: TERM_COLORS.summer, 
+    open: false,
     topics: [
-      { id:'shape', label:'Properties of Shape', col: TOPIC_PALETTE[3], steps:['Understand angles','Measure angles','Angles on a straight line','Angles around a point','Acute, obtuse and reflex angles','Triangles','Classifying triangles','Quadrilaterals','Regular and irregular polygons','Symmetry','Missing angles'].map(s=>({label:s,content:null}))},
-      { id:'posdir', label:'Position & Direction', col: TOPIC_PALETTE[0], steps:['Coordinates in the first quadrant','Plot coordinates','Draw shapes using coordinates','Translate shapes','Describe translations','Reflect shapes','Reflection in horizontal and vertical lines'].map(s=>({label:s,content:null}))},
-      { id:'decimals', label:'Decimals', col: TOPIC_PALETTE[2], steps:['Decimal place value','Thousandths','Add decimals','Subtract decimals','Decimal complements','Decimal multiplication','Decimal division','Solve decimal problems'].map(s=>({label:s,content:null}))},
-      { id:'negatives', label:'Negative Numbers', col: TOPIC_PALETTE[5], steps:['What are negative numbers?','Negative numbers on a number line','Compare negative numbers','Count forwards and backwards through zero','Positive and negative temperature','Negative numbers in real-life contexts'].map(s=>({label:s,content:null}))},
-      { id:'converting', label:'Converting Units', col: TOPIC_PALETTE[1], steps:['Metric units','Millimetres, centimetres and metres','Metres and kilometres','Kilograms and grams','Litres and millilitres','Units of time','Convert between seconds, minutes and hours','Solve conversion problems'].map(s=>({label:s,content:null}))},
-      { id:'volume', label:'Volume', col: TOPIC_PALETTE[4], steps:['What is volume?','Volume using cubes','Count cubes to find volume','Volume of cuboids','Calculate volume using multiplication','Volume and capacity'].map(s=>({label:s,content:null}))},
-    ]},
+      { id: 'shape', label: 'Properties of Shape', col: TOPIC_PALETTE[3], steps: ['Understand angles','Measure angles','Angles on a straight line','Angles around a point','Acute, obtuse and reflex angles','Triangles','Classifying triangles','Quadrilaterals','Regular and irregular polygons','Symmetry','Missing angles'].map(s => ({ label: s, content: null })) },
+      { id: 'posdir', label: 'Position & Direction', col: TOPIC_PALETTE[0], steps: ['Coordinates in the first quadrant','Plot coordinates','Draw shapes using coordinates','Translate shapes','Describe translations','Reflect shapes','Reflection in horizontal and vertical lines'].map(s => ({ label: s, content: null })) },
+      { id: 'decimals', label: 'Decimals', col: TOPIC_PALETTE[2], steps: ['Decimal place value','Thousandths','Add decimals','Subtract decimals','Decimal complements','Decimal multiplication','Decimal division','Solve decimal problems'].map(s => ({ label: s, content: null })) },
+      { id: 'negatives', label: 'Negative Numbers', col: TOPIC_PALETTE[5], steps: ['What are negative numbers?','Negative numbers on a number line','Compare negative numbers','Count forwards and backwards through zero','Positive and negative temperature','Negative numbers in real-life contexts'].map(s => ({ label: s, content: null })) },
+      { id: 'converting', label: 'Converting Units', col: TOPIC_PALETTE[1], steps: ['Metric units','Millimetres, centimetres and metres','Metres and kilometres','Kilograms and grams','Litres and millilitres','Units of time','Convert between seconds, minutes and hours','Solve conversion problems'].map(s => ({ label: s, content: null })) },
+      { id: 'volume', label: 'Volume', col: TOPIC_PALETTE[4], steps: ['What is volume?','Volume using cubes','Count cubes to find volume','Volume of cuboids','Calculate volume using multiplication','Volume and capacity'].map(s => ({ label: s, content: null })) }
+    ]
+  }
 ];
 
 /* ============================================================
