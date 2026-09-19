@@ -1694,7 +1694,7 @@ ${exCard(14,[
  exQ(7,'Round 950 to the nearest 100.',['900','1,000','950'],1),
  exQ(8,'A shop rounds £2,378 to the nearest £100 for a rough estimate. What is the estimate?',['£2,300','£2,400','£2,000'],1),
  exQ(9,'THINK DEEPER: A number rounds to 500 when rounded to the nearest 100. What is the SMALLEST whole number it could be?',['450','451','500'],0,'t'),
- exQ(10,'BOSS LEVEL: A stadium attendance of 34,567 is rounded to the nearest 1,000 for the newspaper. What figure is printed?',['34,000','35,000','34,500'],1,'b')])}
+ exQ(10,'BOSS LEVEL: A stadium attendance of 34,567 is rounded to the nearest 1,000 for the newspaper. What figure is printed?',['34,000','35,000','34,500'],1,'b')])}`;
 
 /* ---------- STEP 15 : Round to the nearest 10,000 ---------- */
 const P5_PV15 = `
@@ -1724,241 +1724,235 @@ ${exCard(15,[
  exQ(9,'THINK DEEPER: A number rounds to 60,000 when rounded to the nearest 10,000. What is the LARGEST whole number it could be?',['64,999','65,000','60,999'],0,'t'),
  exQ(10,'BOSS LEVEL: Two schools raise £127,300 and £123,900 for charity. Round both to the nearest 10,000 — are the rounded totals the same?',['Yes — both round to £130,000','No — one rounds to £130,000, the other to £120,000','No — one rounds to £120,000, the other to £130,000'],1,'b')])}`;
 
+
 /* ---------- STEP 16 : Round to the nearest 100,000 ---------- */
 const P5_PV16 = `
 ${dayHeader('PV16','Step 16 — Round to the Nearest 100,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
-<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Zooming Out to the Hundred-Thousands</div>
-<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> When rounding to the nearest 100,000, we look at the TEN-THOUSANDS digit to decide whether to round up or down.</div>
-${numLine(300000,400000,100000,[[345600,'345,600']])}
-<div class="card-body">345,600 has a ten-thousands digit of 4 — less than 5 — so it rounds DOWN to <strong>300,000</strong>.</div>
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — One More Zoom Out</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> The golden rounding rule has worked for 10, 100, 1,000 and 10,000 — and it works EXACTLY the same way for 100,000! Just look one column to the right of the place you're rounding to.</div>
+${numLine(300000,400000,100000,[[362000,'362,000']])}
+<div class="card-body">362,000's ten-thousands digit is 6 — five or more — so it rounds UP to <strong>400,000</strong>.</div>
 <div class="strategy-grid" style="margin-top:10px;">
-  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The Golden Rule</div><div class="s-body" style="color:#27500A;">Locate the hundred-thousands place. Look at the digit immediately to its right: the TEN-THOUSANDS digit. 0-4 round down; 5-9 round up.</div></div>
-  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Do not let smaller digits like hundreds or thousands distract you. Only the ten-thousands digit determines the rounding direction here!</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The Golden Rule (still unchanged!)</div><div class="s-body" style="color:#27500A;">To round to the nearest 100,000, look at the TEN-THOUSANDS digit. 0-4 → round down. 5-9 → round up.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">The bigger the place value you round to, the MORE digits turn into zero. Rounding 362,000 to the nearest 100,000 changes five digits, not just one.</div></div>
 </div></div>
-<div class="card"><div class="card-title">Example 1 — Round 345,600 to the nearest 100,000</div><div class="card-body">${steps([['Number','345,600','look at the ten-thousands digit'],['Ten-thousands digit','4','less than 5'],['RULE','round DOWN','stay at this hundred-thousand'],['ANSWER','300,000','345,600 rounds to 300,000']])}</div></div>
-<div class="card"><div class="card-title">Example 2 — Round 675,000 to the nearest 100,000</div><div class="card-body">${numLine(600000,700000,100000,[[675000,'675,000']])}${steps([['Number','675,000','look at the ten-thousands digit'],['Ten-thousands digit','7','5 or more'],['RULE','round UP','jump to the next hundred-thousand'],['ANSWER','700,000','675,000 rounds to 700,000']])}</div></div>
-<div class="card"><div class="card-title">Example 3 — Exactly halfway: round 450,000 to the nearest 100,000</div><div class="card-body">${numLine(400000,500000,100000,[[450000,'450,000 — halfway!']])}<div class="card-body">The ten-thousands digit is exactly 5. By the golden rule, this always rounds UP, so 450,000 becomes <strong>500,000</strong>.</div></div></div>
-<div class="card"><div class="card-title">Example 4 — Real life: regional visitor numbers</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A national park recorded 823,400 visitors this year. Estimate the total to the nearest 100,000.</div><div class="card-body">${steps([['Number','823,400','look at the ten-thousands digit'],['Ten-thousands digit','2','less than 5'],['RULE','round DOWN','stay at 800,000'],['ANSWER','800,000','a clear rounded figure']])}</div></div>
-<div class="card"><div class="card-title">Example 5 — Multi-place comparison for 749,200</div><div class="card-body">${steps([['To nearest 1,000','hundreds digit = 2','round DOWN → 749,000'],['To nearest 10,000','thousands digit = 9','round UP → 750,000'],['To nearest 100,000','ten-thousands digit = 4','round DOWN → 700,000']])}</div></div>
+<div class="card"><div class="card-title">Example 1 — Round 362,000 to the nearest 100,000</div><div class="card-body">${steps([['Number','362,000','look at the ten-thousands digit'],['Ten-thousands digit','6','5 or more'],['RULE','round UP','jump to the next hundred-thousand'],['ANSWER','400,000','362,000 rounds to 400,000']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Exactly halfway: round 250,000 to the nearest 100,000</div><div class="card-body">${numLine(200000,300000,100000,[[250000,'250,000 — halfway!']])}${steps([['Number','250,000','look at the ten-thousands digit'],['Ten-thousands digit','5','exactly halfway'],['RULE','round UP (5 always rounds up)','jump to the next hundred-thousand'],['ANSWER','300,000','250,000 rounds to 300,000']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Round 718,400 to the nearest 100,000</div><div class="card-body">${numLine(700000,800000,100000,[[718400,'718,400']])}${steps([['Number','718,400','look at the ten-thousands digit'],['Ten-thousands digit','1','less than 5'],['RULE','round DOWN','stay at this hundred-thousand'],['ANSWER','700,000','718,400 rounds to 700,000']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Real life: rounding a city's population</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A city's population is 456,789. A world atlas wants to round it to the nearest 100,000 for a simple map label.</div><div class="card-body">${steps([['Number','456,789','look at the ten-thousands digit'],['Ten-thousands digit','5','5 or more'],['RULE','round UP','jump to the next hundred-thousand'],['ANSWER','500,000','a tidy label for the map']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Comparing three roundings of 649,300</div><div class="card-body">${steps([['To nearest 1,000','hundreds digit = 3','round DOWN → 649,000'],['To nearest 10,000','thousands digit = 9','round UP → 650,000'],['To nearest 100,000','ten-thousands digit = 4','round DOWN → 600,000'],['NOTICE','three different answers!','the bigger the rounding place, the bigger the "jump" can be']])}</div></div>
 ${exCard(16,[
-  exQ(1,'Round 345,600 to the nearest 100,000.',['300,000','400,000','350,000'],0),
-  exQ(2,'Round 675,000 to the nearest 100,000.',['600,000','700,000','650,000'],1),
-  exQ(3,'Round 450,000 to the nearest 100,000 (halfway rule: round up).',['400,000','500,000','450,000'],1),
-  exQ(4,'Round 823,400 to the nearest 100,000.',['800,000','900,000','820,000'],0),
-  exQ(5,'Which digit do you examine to round a number to the nearest 100,000?',['The thousands digit','The ten-thousands digit','The hundreds digit'],1),
-  exQ(6,'Round 150,000 to the nearest 100,000.',['100,000','200,000','150,000'],1),
-  exQ(7,'Round 912,450 to the nearest 100,000.',['900,000','1,000,000','910,000'],0),
-  exQ(8,'Round 549,999 to the nearest 100,000.',['500,000','600,000','550,000'],0),
-  exQ(9,'THINK DEEPER: A number rounds to 400,000 when rounded to the nearest 100,000. What is the LARGEST whole number it could be?',['449,999','450,000','409,999'],0,'t'),
-  exQ(10,'BOSS LEVEL: Round 850,000 to the nearest 100,000.',['800,000','900,000','850,000'],1,'b')])}`;
+ exQ(1,'Round 362,000 to the nearest 100,000.',['300,000','400,000','350,000'],1),
+ exQ(2,'Round 250,000 to the nearest 100,000 (halfway rule: round up).',['200,000','300,000','250,000'],1),
+ exQ(3,'Round 718,400 to the nearest 100,000.',['700,000','800,000','750,000'],0),
+ exQ(4,'Round the population 456,789 to the nearest 100,000.',['400,000','500,000','450,000'],1),
+ exQ(5,'Which digit do you look at to round a number to the nearest 100,000?',['The thousands digit','The ten-thousands digit','The hundred-thousands digit'],1),
+ exQ(6,'Round 925,000 to the nearest 100,000.',['900,000','1,000,000','950,000'],0),
+ exQ(7,'Round 649,300 to the nearest 100,000.',['600,000','700,000','650,000'],0),
+ exQ(8,'Round 84,000 to the nearest 100,000.',['0','100,000','80,000'],1),
+ exQ(9,'THINK DEEPER: A number rounds to 700,000 when rounded to the nearest 100,000. What is the SMALLEST whole number it could be?',['649,999','650,000','700,000'],1,'t'),
+ exQ(10,'BOSS LEVEL: Two cities have populations 649,300 and 651,800. Round both to the nearest 100,000 — are the rounded totals the same?',['Yes — both round to 700,000','No — one rounds to 600,000, the other to 700,000','No — one rounds to 700,000, the other to 600,000'],1,'b')])}`;
 
+ 
 /* ---------- STEP 17 : Rounding in problem-solving contexts ---------- */
 const P5_PV17 = `
 ${dayHeader('PV17','Step 17 — Rounding in Problem-Solving Contexts','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
-<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Estimating Before Calculating</div>
-<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> In real life, we often round numbers *before* adding or subtracting to quickly check if our answers make sense or to make calculations manageable!</div>
-<div class="card-body">If you buy a laptop for £478 and a desk for £215, rounding first gives £500 + £200 = £700 as a quick estimate.</div>
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Rounding as a Reasonableness Check</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Sometimes you don't need an exact answer straight away — you need a quick, sensible ESTIMATE. Rounding numbers before you calculate lets you check whether your exact answer "feels right", and helps you spot mistakes.</div>
 <div class="strategy-grid" style="margin-top:10px;">
-  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Problem-Solving Strategy</div><div class="s-body" style="color:#27500A;">Read the question carefully to see if it asks for an <em>exact answer</em> or an <em>estimate</em>. Use rounding to check reasonableness.</div></div>
-  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Never round intermediate steps too early if you need high precision, but always round when estimating totals or checking sanity!</div></div>
+  <div class="strategy-card" style="background:#EEF2FF;border-color:#C7D2FE;"><div class="s-title" style="color:#4338CA;">Step 1 — Round first</div><div class="s-body" style="color:#3730A3;">Round each number to a sensible place value (often the biggest place value they share) BEFORE you calculate.</div></div>
+  <div class="strategy-card" style="background:#FEF3C7;border-color:#FCD34D;"><div class="s-title" style="color:#B45309;">Step 2 — Estimate</div><div class="s-body" style="color:#92400E;">Do the calculation with the rounded numbers. This gives a quick estimate — not the exact answer, but close to it.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">Step 3 — Compare</div><div class="s-body" style="color:#27500A;">If your exact answer is close to the estimate, it is probably correct. If it is wildly different, check your working again!</div></div>
 </div></div>
-<div class="card"><div class="card-title">Example 1 — Estimating a sum</div><div class="card-body">${steps([['Problem','Estimate 4,321 + 3,890','round each to the nearest 1,000'],['4,321 rounded','4,000','thousands digit is 3 (round down)'],['3,890 rounded','4,000','thousands digit is 8 (round up)'],['Estimated Total','4,000 + 4,000 = 8,000','quick mental calculation']])}</div></div>
-<div class="card"><div class="card-title">Example 2 — Estimating a difference</div><div class="card-body">${steps([['Problem','Estimate 8,740 - 2,230','round each to the nearest 1,000'],['8,740 rounded','9,000','thousands digit is 7 (round up)'],['2,230 rounded','2,000','thousands digit is 2 (round down)'],['Estimated Difference','9,000 - 2,000 = 7,000','approximate result']])}</div></div>
-<div class="card"><div class="card-title">Example 3 — Checking if an answer is reasonable</div><div class="card-body">A student calculates 3,124 + 4,892 = 12,016. <br><strong>Estimate:</strong> 3,000 + 5,000 = 8,000.<br>Since 12,016 is far away from 8,000, the student made an error (likely a place-value addition slip)!</div></div>
-<div class="card"><div class="card-title">Example 4 — Working backwards from a rounded value</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A number rounded to the nearest 1,000 gives 5,000. What is the smallest whole number it could be?</div><div class="card-body">${steps([['Target rounded value','5,000','nearest 1,000'],['Lower bound rule','4,500','halfway point where rounding up starts'],['Smallest whole number','4,500','4,500 rounds up to 5,000']])}</div></div>
-<div class="card"><div class="card-title">Example 5 — Contextual multi-step puzzle</div><div class="card-body">Factory A produces 48,200 items; Factory B produces 31,900 items. Estimate their combined total by rounding each to the nearest 10,000.<br><strong>Solution:</strong> 50,000 + 30,000 = **80,000**.</div></div>
+<div class="card"><div class="card-title">Example 1 — Estimating a sum: 4,872 + 3,145</div><div class="card-body">${steps([['Round 4,872','→ 5,000','to the nearest 1,000'],['Round 3,145','→ 3,000','to the nearest 1,000'],['ESTIMATE','5,000 + 3,000 = 8,000','a quick sensible answer'],['ACTUAL','4,872 + 3,145 = 8,017','very close to the estimate ✓']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Estimating a difference: 82,400 − 35,700</div><div class="card-body">${steps([['Round 82,400','→ 82,000','to the nearest 1,000'],['Round 35,700','→ 36,000','to the nearest 1,000'],['ESTIMATE','82,000 − 36,000 = 46,000','a quick sensible answer'],['ACTUAL','82,400 − 35,700 = 46,700','close to the estimate ✓']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Real life: weekend ticket sales</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Saturday's match sold 38,462 tickets. Sunday's match sold 41,150 tickets. Roughly how many tickets were sold across the weekend?</div><div class="card-body">${steps([['Round 38,462','→ 38,000','to the nearest 1,000'],['Round 41,150','→ 41,000','to the nearest 1,000'],['ESTIMATE','38,000 + 41,000','= 79,000 tickets, roughly']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Checking a written calculation</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A pupil calculates 128,563 + 214,208 = 342,771. Is this a reasonable answer?</div><div class="card-body">${steps([['Round 128,563','→ 130,000','to the nearest 10,000'],['Round 214,208','→ 210,000','to the nearest 10,000'],['ESTIMATE','130,000 + 210,000 = 340,000','close to 342,771'],['CONCLUSION','the answer is REASONABLE','it is very close to the estimate']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Choosing the right degree of accuracy</div><div class="card-body">Not every situation needs the same amount of rounding. The context tells you how much accuracy you need:</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;">
+  ${[['Paying for 3 items in a shop','Exact amount needed — no rounding!','var(--coral-light)','var(--coral-dark)'],
+     ['Estimating a football crowd','Round to the nearest 1,000 or 10,000','var(--blue-light)','var(--blue-dark)'],
+    ['A country\u2019s population in the news','Round to the nearest 100,000 or million','var(--green-light)','var(--green-dark)'],
+     ['Checking if a sum answer looks right','Round to the nearest 1,000 or 10,000','var(--amber-light)','var(--amber-dark)']].map(([ctx,rule,light,dark])=>`
+    <div style="flex:1;min-width:180px;background:${light};border-radius:8px;padding:10px;">
+      <div style="font-size:12px;font-weight:700;color:${dark};margin-bottom:4px;">${ctx}</div>
+      <div style="font-size:11px;color:${dark};">${rule}</div>
+    </div>`).join('')}
+</div>
+</div>
 ${exCard(17,[
-  exQ(1,'Estimate 3,420 + 4,890 by rounding both to the nearest 1,000.',['7,000','8,000','9,000'],1),
-  exQ(2,'Estimate 7,850 - 3,120 by rounding both to the nearest 1,000.',['4,000','5,000','6,000'],1),
-  exQ(3,'A pupil calculates 2,105 + 3,980 = 16,085. Use estimation to decide if this is reasonable.',['Reasonable','Unreasonable — should be around 6,000','Exact match'],1),
-  exQ(4,'A number rounded to the nearest 100 gives 700. What is the smallest whole number it could be?',['650','651','700'],1),
-  exQ(5,'A stadium has 48,230 seats. Rounded to the nearest 10,000, what is the capacity?',['40,000','50,000','48,000'],1),
-  exQ(6,'Estimate the product or sum: 198 + 402 rounded to the nearest 100.',['500','600','700'],1),
-  exQ(7,'A shop sells 1,234 items in January and 2,890 items in February. Estimate total sales to the nearest 1,000.',['3,000','4,000','5,000'],1),
-  exQ(8,'Which strategy is best for checking if a large calculation is correct?',['Recalculating the exact digits three times','Estimating by rounding numbers first','Guessing based on the first digit'],1),
-  exQ(9,'THINK DEEPER: When rounded to the nearest 1,000, a number is 8,000. What is the largest possible whole number it could be?',['8,499','8,500','8,999'],0,'t'),
-  exQ(10,'BOSS LEVEL: Three towns have populations of 24,100, 38,900, and 41,200. Estimate the total population by rounding each to the nearest 10,000 first.',['90,000','100,000','110,000'],1,'b')])}
-`;
+ exQ(1,'Estimate 3,921 + 2,876 by rounding each to the nearest 1,000.',['5,000','6,000','7,000'],2),
+ exQ(2,'Estimate 47,300 − 21,900 by rounding each to the nearest 1,000.',['25,000','35,000','15,000'],0),
+ exQ(3,'A pupil calculates 3,482 + 2,614 = 6,096. Round each number to the nearest 1,000 to check. Is the answer reasonable?',['Yes — the estimate is about 6,000','No — the estimate is about 3,000','No — the estimate is about 9,000'],0),
+ exQ(4,'When paying for shopping at the till, should you round the price?',['Yes, always round','No — you need the exact amount','Only round if it is over £100'],1),
+ exQ(5,'Estimate the total of two crowds: 62,450 and 58,900, rounding each to the nearest 10,000.',['110,000','120,000','130,000'],1),
+ exQ(6,'A pupil calculates 512,900 − 198,300 = 314,600. Estimate using rounding to the nearest 100,000 to check.',['About 300,000 — reasonable','About 700,000 — not reasonable','About 100,000 — not reasonable'],0),
+ exQ(7,'Which is the most sensible rounding for reporting a country\u2019s population in a newspaper headline?',['To the nearest 10','To the nearest 100,000','To the nearest 1'],1),
+ exQ(8,'Estimate 8,750 + 1,340 by rounding to the nearest 1,000.',['9,000','10,000','11,000'],1),
+ exQ(9,'THINK DEEPER: An estimate for a calculation is 40,000, but the exact answer worked out is 4,700. What does this suggest?',['The answer is correct','A mistake was probably made somewhere','Estimates are always wrong'],1,'t'),
+exQ(10,'BOSS LEVEL: A charity aims to raise £250,000. So far it has raised £96,400 and £118,750 from two events. Estimate (to the nearest 10,000) how much more is needed.',['About £30,000','About £40,000','About £50,000'],0,'b')])}`;
+
 
 /* ---------- STEP 18 : Negative numbers in context ---------- */
 const P5_PV18 = `
 ${dayHeader('PV18','Step 18 — Negative Numbers in Context','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
-<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Numbers Below Zero</div>
-<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> When numbers go below zero, we use a minus sign (-) to show they are negative. Think of a thermometer, deep sea levels, or basement floors in a building!</div>
-${numLine(-5,5,1,[[0,'0 (Zero)'],[-3,'-3°C']])}
-<div class="card-body">-3°C is read as "minus three degrees" or "negative three degrees". It is colder than 0°C.</div>
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Below Zero</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Not every number is zero or above! A NEGATIVE number is a value below zero — colder than freezing, owing money, or below sea level.</div>
+<svg viewBox="0 0 220 230" class="shape-svg" style="max-width:170px;height:auto;display:block;margin:0 auto;">
+  <rect x="65" y="20" width="24" height="170" rx="12" fill="#fff" stroke="#1D4ED8" stroke-width="2"/>
+  <rect x="70" y="148" width="14" height="57" fill="#D85A30"/>
+  <circle cx="77" cy="205" r="26" fill="#D85A30" stroke="#1D4ED8" stroke-width="2"/>
+  <line x1="89" y1="20" x2="100" y2="20" stroke="#333" stroke-width="1.5"/><text x="105" y="24" font-size="12" fill="#333">+10°C</text>
+  <line x1="89" y1="62" x2="100" y2="62" stroke="#333" stroke-width="1.5"/><text x="105" y="66" font-size="12" fill="#333">+5°C</text>
+  <line x1="89" y1="105" x2="100" y2="105" stroke="#333" stroke-width="2"/><text x="105" y="109" font-size="12" font-weight="700" fill="#333">0°C</text>
+  <line x1="89" y1="148" x2="100" y2="148" stroke="#D85A30" stroke-width="2.5"/><text x="105" y="152" font-size="12" fill="#D85A30" font-weight="700">−5°C</text>
+  <line x1="89" y1="190" x2="100" y2="190" stroke="#333" stroke-width="1.5"/><text x="105" y="194" font-size="12" fill="#333">−10°C</text>
+</svg>
+<div class="card-body" style="text-align:center;margin-top:6px;">The thermometer reads <strong>−5°C</strong> — that means 5 degrees BELOW freezing point (0°C).</div>
 <div class="strategy-grid" style="margin-top:10px;">
-  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The Golden Rule</div><div class="s-body" style="color:#27500A;">The further a negative number is from zero, the smaller its value actually is (e.g., -10 is colder/smaller than -2).</div></div>
-  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Do not think -5 is bigger because 5 is bigger! With negative numbers, the bigger the digit after the minus sign, the lower the actual value.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Reading negatives</div><div class="s-body" style="color:#27500A;">−5 is read as "negative five" or "minus five". The minus sign shows it is below zero, not that something is being subtracted.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">The MORE negative a number is, the SMALLER it is! −8 is smaller than −3, even though 8 is bigger than 3. Think of a thermometer: −8°C is colder (further below zero) than −3°C.</div></div>
 </div></div>
-<div class="card"><div class="card-title">Example 1 — Reading a thermometer</div><div class="card-body">${steps([['Context','Weather report','temperature dropped below zero'],['Reading','-5 degrees Celsius','5 degrees below freezing'],['Meaning','colder than zero','written with a minus sign']])}</div></div>
-<div class="card"><div class="card-title">Example 2 — Sea level elevations</div><div class="card-body">${steps([['Context','Scuba diving expedition','exploring underwater trench'],['Position','120 metres below sea level','represented as -120m'],['Meaning','depth under the surface','negative height']])}</div></div>
-<div class="card"><div class="card-title">Example 3 — Bank account balance (debt)</div><div class="card-body">${steps([['Context','Overdrawn bank account','spent more money than available'],['Balance','-£45','owing £45 to the bank'],['Meaning','less than zero balance','requires a deposit to clear']])}</div></div>
-<div class="card"><div class="card-title">Example 4 — Building floors below ground</div><div class="card-body">${steps([['Context','Underground parking garage','lift buttons in a skyscraper'],['Floor','Floor -2','two levels underground'],['Meaning','below the ground floor (0)','negative level indicator']])}</div></div>
-<div class="card"><div class="card-title">Example 5 — Comparing negative temperatures</div><div class="card-body">${steps([['Comparison','Which is colder: -4°C or -8°C?','compare distance from zero'],['Analysis','-8 is further down than -4','colder temperature'],['Answer','-8°C is colder','smaller numerical value']])}</div></div>
+<div class="card"><div class="card-title">Example 1 — Reading a thermometer</div><div class="card-body">${steps([['Freezing point','0°C','where water turns to ice'],['Marker on the thermometer','−5°C','5 degrees below freezing'],['MEANING','it is very cold','5 degrees colder than 0°C']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — A bank balance</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Tomiwa's bank account shows −£20. What does this mean?</div><div class="card-body">${steps([['Balance','−£20','a negative amount'],['MEANING','Tomiwa owes the bank £20','she has spent more than she had'],['This is called','being "overdrawn"','common banking term']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Comparing two negative numbers: −8 and −3</div><div class="card-body">${steps([['Think of a thermometer','−8°C and −3°C','which is colder?'],['−8°C','further below zero','colder!'],['ANSWER','−8 is SMALLER than −3','−8 &lt; −3']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Ordering a mix of positive and negative numbers</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Order these smallest to largest: −5, 3, −1, 0, 2</div>${numLine(-6,4,1,[[-5,'-5'],[-1,'-1'],[0,'0'],[2,'2'],[3,'3']])}<div class="card-body" style="margin-top:6px;">Reading the number line from LEFT to RIGHT gives the order automatically: <strong>−5 → −1 → 0 → 2 → 3</strong>.</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: mountains and sea level</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Mount Everest stands at +8,849 m above sea level. The shore of the Dead Sea sits at about −430 m (below sea level). Which is higher?</div>
+<svg viewBox="0 0 220 190" class="shape-svg" style="max-width:220px;height:auto;display:block;margin:0 auto;">
+  ${[[2,'2nd Floor (+2)'],[1,'1st Floor (+1)'],[0,'Ground (0 = sea level)'],[-1,'Basement 1 (−1)'],[-2,'Basement 2 (−2)']].map(([n,label],i)=>{
+    const y=8+i*36;
+    const fill = n<0 ? '#FBEAF0' : (n===0 ? '#FAEEDA' : '#E6F1FB');
+    const stroke = n<0 ? '#D4537E' : (n===0?'#BA7517':'#378ADD');
+    return `<rect x="15" y="${y}" width="190" height="30" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/><text x="110" y="${y+19}" text-anchor="middle" font-size="11" font-weight="700" fill="${stroke}">${label}</text>`;
+  }).join('')}
+</svg>
+<div class="card-body" style="margin-top:6px;">Just like floors of a building above and below ground, sea level is our "0". Everest (+8,849 m) is far ABOVE zero; the Dead Sea shore (−430 m) is BELOW zero. Since positive numbers are always bigger than negative numbers, <strong>Everest is higher</strong>.</div>
+</div>
 ${exCard(18,[
-  exQ(1,'What does a negative temperature like -4°C mean?',['4 degrees above zero','4 degrees below zero','Exactly zero degrees'],1),
-  exQ(2,'Which temperature is colder: -2°C or -7°C?',['-2°C','-7°C','They are equal'],1),
-  exQ(3,'A submarine is at -150 metres. What does this represent?',['150 metres above sea level','150 metres below sea level','At sea level'],1),
-  exQ(4,'If your bank balance is -£30, what does that mean?',['You have £30 savings','You owe £30','You have £0'],1),
-  exQ(5, 'You park your car on floor -2. Where is your car?',['On the second floor upstairs','Two floors below ground level','On the ground floor'],1),
-  exQ(6,'Which of these is the lowest (coldest) temperature?',['1°C','-1°C','-6°C'],2),
-  exQ(7,'A fish swims at -12m and another at -25m. Which fish is deeper?',['The fish at -12m','The fish at -25m','They are at the same depth'],1),
-  exQ(8,'Order these temperatures from coldest to warmest: -5°C, 2°C, -1°C.',['-5°C, -1°C, 2°C','2°C, -1°C, -5°C','-1°C, -5°C, 2°C'],0),
-  exQ(9,'THINK DEEPER: Which number is greater: -12 or -3?',['-12','-3','They are equal'],1,'t'),
-  exQ(10,'BOSSLEVEL: City A is -6°C and City B is 2°C. What is the difference in temperature between the two cities?',['4°C','6°C','8°C'],2,'b')])}
+ exQ(1,'What does a temperature of −4°C mean?',['4 degrees above freezing','4 degrees below freezing','It is not possible'],1),
+ exQ(2,'A bank balance shows −£15. What does this mean?',['There is £15 in the account','The account owes the bank £15','The account has exactly £0'],1),
+ exQ(3,'Which is smaller: −6 or −2?',['−6','−2','They are equal'],0),
+ exQ(4,'Order from smallest to largest: −3, 2, −1, 0',['−3 → −1 → 0 → 2','2 → 0 → −1 → −3','−1 → −3 → 0 → 2'],0),
+ exQ(5,'Which is colder: −10°C or −4°C?',['−10°C','−4°C','They are the same'],0),
+ exQ(6,'A lift is at floor −2 (2 floors below ground). Is this above or below ground level?',['Above','Below','Exactly at ground level'],1),
+ exQ(7,'Which number is warmer: 0°C or −1°C?',['0°C','−1°C','They are the same'],0),
+ exQ(8,'Which list correctly shows numbers from coldest to warmest?',['−5°C, −2°C, 3°C','3°C, −2°C, −5°C','−2°C, −5°C, 3°C'],0),
+ exQ(9,'THINK DEEPER: Is a negative number ever bigger than a positive number?',['Yes, sometimes','No — every positive number is bigger than every negative number','Only if the negative number is very large'],1,'t'),
+ exQ(10,'BOSS LEVEL: A submarine is at −250 m (250 m below sea level). A plane is at +9,000 m. How many metres apart are they in height?',['8,750 m','9,250 m','8,250 m'],1,'b')])}`;
 
 /* ---------- STEP 19 : Count forwards and backwards through zero ---------- */
 const P5_PV19 = `
 ${dayHeader('PV19','Step 19 — Count Forwards and Backwards Through Zero','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
-<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Crossing the Zero Boundary</div>
-<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Counting through zero is like walking up and down a staircase that goes underground! Watch how numbers transition smoothly from positive to negative.</div>
-${numLine(-4,4,1,[[0,'0']])}
-<div class="card-body">Counting back from 2: 2, 1, 0, -1, -2, -3. Counting forward from -2: -2, -1, 0, 1, 2.</div>
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Crossing the Zero Bridge</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Counting through zero is just like counting normally — zero is simply a stepping stone in the middle, not a wall! −3, −2, −1, 0, 1, 2, 3 … keep the same steady steps all the way through.</div>
+${numLine(-6,6,1,[[-3,'-3'],[0,'0'],[3,'3']])}
 <div class="strategy-grid" style="margin-top:10px;">
-  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Counting Tip</div><div class="s-body" style="color:#27500A;">When crossing zero backwards, subtract step-by-step until you hit zero, then continue counting down into negatives.</div></div>
-  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Do not skip zero! Zero is an essential step when moving between positive and negative numbers.</div></div>
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The key trick</div><div class="s-body" style="color:#27500A;">Count the steps as if zero were not special at all. To go from −3 to 4, count: −3,−2,−1,0,1,2,3,4 — that is 7 steps in total.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Don't forget to count the "0" step itself, and don't skip straight from −1 to 1! Zero always gets its own place in the sequence.</div></div>
 </div></div>
-<div class="card"><div class="card-title">Example 1 — Counting backwards through zero</div><div class="card-body">${steps([['Start','3 degrees','counting down by 5 degrees'],['Step 1','Count down 3 to reach 0','3, 2, 1, 0'],['Step 2','Count down remaining 2 into negatives','-1, -2'],['ANSWER','-2 degrees','final temperature']])}</div></div>
-<div class="card"><div class="card-title">Example 2 — Counting forwards through zero</div><div class="card-body">${steps([['Start','-4 degrees','counting up by 6 degrees'],['Step 1','Count up 4 to reach 0','-4, -3, -2, -1, 0'],['Step 2','Count up remaining 2 into positives','1, 2'],['ANSWER','2 degrees','final temperature']])}</div></div>
-<div class="card"><div class="card-title">Example 3 — Real-life temperature drop</div><div class="card-body">${steps([['Context','Evening frost','starts at 4°C and drops by 7°C'],['Calculation','4 minus 7','4 to 0 is 4, then 3 more down'],['ANSWER','-3°C','nighttime temperature']])}</div></div>
-<div class="card"><div class="card-title">Example 4 — Submarine ascending</div><div class="card-body">${steps([['Context','Deep sea exploration','submarine rises from -50m by 30m'],['Calculation','-50 + 30','moves 30m closer to the surface'],['ANSWER','-20m','new depth position']])}</div></div>
-<div class="card"><div class="card-title">Example 5 — Missing number in a negative sequence</div><div class="card-body">${steps([['Sequence','4, 2, 0, -2, ?, -6','find the pattern rule'],['Rule','subtract 2 each time','0 - 2 = -2, -2 - 2 = -4'],['ANSWER','-4','missing term found']])}</div></div>${exCard(19,[
-  exQ(1,'Count back 5 from 2. What number do you land on?['-3','-2','3'],0),
-  exQ(2,'Count forward 6 from -4. What number do you land on?['2','1','-2'],0),
-  exQ(3,'The temperature is 3°C and drops by 5°C. What is the new temperature?['-2°C','-3°C','2°C'],0),
-  exQ(4,'What comes next in the sequence: 3, 2, 1, 0, -1, ?['-2','-3','0'],0),
-  exQ(5,'A lift starts at floor 2 and goes down 4 floors. Which floor does it reach?['-1','-2','-3'],1),
-  exQ(6,'Count back 7 from 4.',['-2','-3','-4'],1),
-  exQ(7,'Find the missing number: -5, -3, -1, ?, 3['-2','0','2'],1),
-  exQ(8,'Water freezes at 0°C. If it is currently -3°C, how much must it warm up to reach freezing point?['2°C','3°C','4°C'],1),
-  exQ(9,'THINK DEEPER: If you start at -6 and count forwards by 8, what number do you reach?',['1','2','3'],1,'t'),
-  exQ(10,'BOSS LEVEL: A frozen food warehouse is at -18°C. The cooling system breaks and the temperature rises by 5°C every hour for 3 hours. What is the final temperature?',['-3°C','-2°C','-1°C'],0,'b')])}
+<div class="card"><div class="card-title">Example 1 — Counting forward through zero in ones</div><div class="card-body">${numLine(-5,5,1,[[-5,'start'],[5,'end']])}${steps([['Start','−5','begin here'],['Count on','−4,−3,−2,−1,0,1,2,3,4','ten steps forward'],['END','5','−5 to 5 is 10 steps']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Counting backward through zero in steps of 2</div><div class="card-body">${numLine(-6,6,2,[[6,'start'],[-6,'end']])}${steps([['Start','6','begin here'],['Count back in 2s','4, 2, 0, −2, −4','five steps back'],['END','−6','6 down to −6 in steps of 2']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Rising temperature crossing zero</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Overnight the temperature was −4°C. By midday it had risen by 9 degrees. What is the midday temperature?</div><div class="card-body">${steps([['Start','−4°C','overnight temperature'],['Count up','9 degrees','−4,−3,−2,−1,0,1,2,3,4,5'],['ANSWER','5°C','−4 + 9 = 5']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Falling temperature crossing zero</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> At 3pm it was 3°C. By 9pm the temperature had fallen by 8 degrees. What is the temperature at 9pm?</div><div class="card-body">${steps([['Start','3°C','afternoon temperature'],['Count down','8 degrees','3,2,1,0,−1,−2,−3,−4,−5'],['ANSWER','−5°C','3 − 8 = −5']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real life: a lift crossing ground level</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A lift starts at floor 3 and travels down to basement floor −2. How many floors does it travel through in total?</div><div class="card-body">${steps([['Start','floor 3','above ground'],['Count down through zero','3,2,1,0,−1,−2','crossing "ground" (0)'],['ANSWER','5 floors','the lift travels 5 floors down']])}</div></div>
+${exCard(19,[
+ exQ(1,'Count on from −3 in ones: −3, −2, −1, ___',['0','1','−4'],0),
+ exQ(2,'Count back from 4 in ones: 4, 3, 2, 1, ___',['0','−1','2'],0),
+ exQ(3,'The temperature is −2°C. It rises by 6 degrees. What is the new temperature?',['4°C','8°C','−8°C'],0),
+ exQ(4,'The temperature is 5°C. It falls by 9 degrees. What is the new temperature?',['−4°C','4°C','14°C'],0),
+ exQ(5,'How many steps are there from −4 to 3 (counting in ones)?',['7','8','1'],0),
+ exQ(6,'Count backwards in 3s from 6: 6, 3, 0, ___',['−1','−3','3'],1),
+ exQ(7,'A lift goes from floor 2 down to floor −3. How many floors does it pass through?',['1','5','6'],1),
+ exQ(8,'Count on in 5s from −10: −10, −5, 0, ___',['5','10','−15'],0),
+ exQ(9,'THINK DEEPER: Starting at −6 and counting forward in steps of 4, will the sequence ever land exactly on 0?',['Yes — −6,−2,2,... never lands on 0','No — it lands on 0 after some steps','It is impossible to know'],0,'t'),
+ exQ(10,'BOSS LEVEL: A submarine dives from the surface (0 m) to −45 m, then rises 62 m. What depth or height is it at now?',['+17 m (17 m above the surface)','−17 m (17 m below the surface)','+107 m'],0,'b')])}`;
 
 /* ---------- STEP 20 : Number sequences involving large numbers ---------- */
 const P5_PV20 = `
 ${dayHeader('PV20','Step 20 — Number Sequences Involving Large Numbers','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
-<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Finding the Large Step Rule</div>
-<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Number sequences with large numbers follow the exact same rules as smaller numbers — find the difference between two adjacent terms to spot the pattern rule!</div>
-${numLine(100000,150000,10000,[[100000,'100k'],[110000,'+10k']])}
-<div class="card-body">Sequence: 100,000, 110,000, 120,000... The rule is adding 10,000 each time.</div>
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Spotting the Pattern</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A number sequence is a list of numbers that follows a RULE. With big numbers, the method is exactly the same as with small numbers — find the gap between terms, then keep applying it!</div>
+${numLine(120000,150000,5000,[[125000,'125,000'],[135000,'135,000'],[145000,'145,000']])}
 <div class="strategy-grid" style="margin-top:10px;">
-  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Sequence Strategy</div><div class="s-body" style="color:#27500A;">Subtract a term from the one right after it to find the exact step size (increment or decrement).</div></div>
-  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Check all given terms! Make sure the rule applies consistently across the entire sequence before filling in blanks.</div></div>
+  <div class="strategy-card" style="background:#EEF2FF;border-color:#C7D2FE;"><div class="s-title" style="color:#4338CA;">Step 1 — Find the gap</div><div class="s-body" style="color:#3730A3;">Subtract one term from the next: 130,000 − 125,000 = 5,000. That is the "step" or "common difference".</div></div>
+  <div class="strategy-card" style="background:#FEF3C7;border-color:#FCD34D;"><div class="s-title" style="color:#B45309;">Step 2 — Check it twice</div><div class="s-body" style="color:#92400E;">Always check the gap between AT LEAST two pairs of terms before trusting the pattern — one gap could be a coincidence!</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Sequences can go DOWN as well as up! Always check whether the numbers are increasing or decreasing before continuing the pattern.</div></div>
 </div></div>
-<div class="card"><div class="card-title">Example 1 — Increasing by ten-thousands</div><div class="card-body">${steps([['Sequence','20,000, 30,000, 40,000, ?','find the next term'],['Step Size','+10,000','each number increases by ten thousand'],['ANSWER','50,000','40,000 + 10,000']])}</div></div>
-<div class="card"><div class="card-title">Example 2 — Decreasing by hundred-thousands</div><div class="card-body">${steps([['Sequence','900,000, 800,000, 700,000, ?','find the next term'],['Step Size','-100,000','each number decreases by one hundred thousand'],['ANSWER','600,000','700,000 - 100,000']])}</div></div>
-<div class="card"><div class="card-title">Example 3 — Finding a missing term in the middle</div><div class="card-body">${steps([['Sequence','250,000, ?, 270,000, 275,000 (wait, let\'s check step)','let\'s check: 270,000 to 275,000 is +5,000'],['Check','250,000 + 5,000 = 255,000','does 255,000 + 15,000 fit? Ah, let\'s use uniform step:'],['Uniform Sequence','250,000, ?, 270,000, 280,000','step is +10,000'],['ANSWER','260,000','250,000 + 10,000']])}</div></div>
-<div class="card"><div class="card-title">Example 4 — Mixed large increments (adding 25,000)</div><div class="card-body">${steps([['Sequence','100,000, 125,000, 150,000, ?','find the rule'],['Step Size','+25,000','quarter-million steps'],['ANSWER','175,000','150,000 + 25,000']])}</div></div>
-<div class="card"><div class="card-title">Example 5 — Real-world factory production counts</div><div class="card-body">${steps([['Context','Car factory tracker','production numbers: 410,000, 415,000, 420,000'],['Rule','+5,000 each week','steady production increase'],['ANSWER','425,000','week 4 production estimate']])}</div></div>
+<div class="card"><div class="card-title">Example 1 — Continue an increasing sequence</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 125,000, 130,000, 135,000, ___, ___</div><div class="card-body">${steps([['Find the gap','130,000 − 125,000','= 5,000'],['Check again','135,000 − 130,000','= 5,000 ✓ confirmed'],['CONTINUE','135,000 + 5,000','= 140,000'],['NEXT','140,000 + 5,000','= 145,000']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Continue a decreasing sequence</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 800,000, 750,000, 700,000, ___, ___</div><div class="card-body">${steps([['Find the gap','800,000 − 750,000','= 50,000'],['Direction','numbers are getting smaller','so we SUBTRACT each time'],['CONTINUE','700,000 − 50,000','= 650,000'],['NEXT','650,000 − 50,000','= 600,000']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Find a missing term in the middle</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 20,000, ___, 40,000, 50,000</div><div class="card-body">${steps([['Look at known gap','50,000 − 40,000','= 10,000'],['Apply backwards','40,000 − 10,000','= 30,000'],['CHECK','30,000 − 20,000','= 10,000 ✓ matches!'],['MISSING TERM','30,000','fits perfectly between 20,000 and 40,000']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Real life: growing savings</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Bimpe starts with £150,000 in savings and adds £25,000 every year. How much will she have after 3 years?</div><div class="card-body">${steps([['Start (year 0)','£150,000','the beginning'],['Year 1','150,000 + 25,000 = £175,000','one jump'],['Year 2','175,000 + 25,000 = £200,000','two jumps'],['Year 3','200,000 + 25,000 = £225,000','three jumps'],['ANSWER','£225,000','after 3 years']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Sequence crossing a big milestone</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> 995,000, 996,000, 997,000, ... Which term will reach exactly 1,000,000?</div><div class="card-body">${steps([['Gap','996,000 − 995,000','= 1,000'],['Continue','997,000 + 1,000','= 998,000'],['Continue','998,000 + 1,000','= 999,000'],['Continue','999,000 + 1,000','= 1,000,000'],['ANSWER','the 6th term','995,000 is 1st, 1,000,000 is the 6th term']])}</div></div>
 ${exCard(20,[
-  exQ(1,'What is the missing number: 300,000, 310,000, 320,000, ?',['325,000','330,000','340,000'],1),
-  exQ(2,'What is the rule for this sequence: 800,000, 750,000, 700,000?',['Subtract 50,000','Add 50,000','Subtract 100,000'],0),
-  exQ(3,'Find the missing number: 150,000, ?, 250,000, 300,000',['175,000','200,000','220,000'],1),
-  exQ(4,'What comes next in the sequence: 425,000, 450,000, 475,000, ?',['490,000','500,000','525,000'],1),
-  exQ(5,'If a sequence decreases by 10,000 each time, what comes before 500,000?',['490,000','510,000','400,000'],1),
-  exQ(6,'What is the next number: 123,400, 123,500, 123,600, ?',['123,700','124,000','133,600'],0),
-  exQ(7,'Find the missing term: ?, 620,000, 630,000, 640,000',['600,000','610,000','615,000'],1),
-  exQ(8,'A sequence starts at 1,000,000 and subtracts 200,000 each step. What is the 3rd term?',['800,000','600,000','400,000'],1),
-  exQ(9,'THINK DEEPER: A sequence has a rule of adding 25,000. If it starts at 450,000, what is the 4th term?',['500,000','525,000','550,000'],1,'t'),
-  exQ(10,'BOSS LEVEL: A computer sequence generates numbers starting at 12,345 and adds 111,111 each time. What is the 3ينd (3rd) term?',['234,567','345,678','333,333'],1,'b')])}
-`;
+ exQ(1,'Continue the sequence: 300,000, 310,000, 320,000, ___',['325,000','330,000','340,000'],1),
+ exQ(2,'Continue the sequence: 900,000, 800,000, 700,000, ___',['650,000','600,000','750,000'],1),
+ exQ(3,'Find the missing term: 15,000, 25,000, ___, 45,000',['30,000','35,000','40,000'],1),
+ exQ(4,'What is the "step" in this sequence: 60,000, 65,000, 70,000, 75,000?',['5,000','10,000','500'],0),
+ exQ(5,'Is the sequence 500,000, 450,000, 400,000 increasing or decreasing?',['Increasing','Decreasing','Neither'],1),
+ exQ(6,'Continue: 128,000, 130,000, 132,000, ___',['133,000','134,000','136,000'],1),
+ exQ(7,'A savings account starts at £200,000 and grows by £30,000 each year. What is the balance after 2 years?',['£230,000','£260,000','£290,000'],1),
+ exQ(8,'Find the missing term: 750,000, ___, 550,000, 450,000',['700,000','650,000','600,000'],1),
+ exQ(9,'THINK DEEPER: A sequence starts at 50,000 and increases by 50,000 each time. Will 275,000 ever appear in the sequence?',['Yes, it is the 5th term','No — 275,000 is not a multiple of 50,000','Yes, it is the 6th term'],1,'t'),
+ exQ(10,'BOSS LEVEL: A sequence is 995,000, 996,000, 997,000, … Which term number is exactly 1,000,000?',['4th term','5th term','6th term'],2,'b')])}`;
 
 
-// Intent: Structure the complete curriculum data for Primary 5 (Autumn, Spring, and Summer terms)
-// Why this approach was taken: Grouping topics inside hierarchical term objects allows the frontend rendering 
-// engine to dynamically loop through terms, topics, and individual steps (lessons) without breaking the DOM.
-// All autumn topics (including the newly added Place Value steps up to Step 20) are explicitly kept 
-// within the 'autumn' term's 'topics' array to prevent rendering undefined layout cards.
 
+/* ============================================================
+   SCHEME DATA — Primary 5
+   ============================================================ */
 const SCHEME_P5 = [
   {
-    id: 'autumn', 
-    emoji: '🍂', 
-    label: 'Autumn Term', 
-    meta: 'September – December 2025',
-    col: TERM_COLORS.autumn, 
-    open: true,
+    id:'autumn', emoji:'🍂', label:'Autumn Term', meta:'September – December 2025',
+    col: TERM_COLORS.autumn, open: true,
     topics: [
-      { 
-        id: 'placevalue', 
-        label: 'Place Value ★ (Current)', 
-        col: TOPIC_PALETTE[0],
+      { id:'placevalue', label:'Place Value ★ (Current)', col: TOPIC_PALETTE[0],
         steps: [
-          { label: 'Roman numerals to 1,000', content: P5_PV1 },
-          { label: 'Numbers to 10,000', content: P5_PV2 },
-          { label: 'Numbers to 100,000', content: P5_PV3 },
-          { label: 'Numbers to 1,000,000', content: P5_PV4 },
-          { label: 'Read and write numbers to 1,000,000', content: P5_PV5 },
-          { label: 'Place value within 1,000,000', content: P5_PV6 },
-          { label: 'Powers of 10', content: P5_PV7 },
-          { label: '10, 100, 1,000, 10,000 and 100,000 more or less', content: P5_PV8 },
-          { label: 'Partition numbers to 1,000,000', content: P5_PV9 },
-          { label: 'Number lines to 1,000,000', content: P5_PV10 },
-          { label: 'Compare numbers to 100,000', content: P5_PV11 },
-          { label: 'Compare numbers to 1,000,000', content: P5_PV12 },
-          { label: 'Order numbers to 1,000,000', content: P5_PV13 },
-          { label: 'Round to the nearest 10, 100 or 1,000', content: P5_PV14 },
-          { label: 'Round to the nearest 10,000', content: P5_PV15 },
-          { label: 'Round to the nearest 100,000', content: P5_PV16 },
-          { label: 'Rounding in problem-solving contexts', content: P5_PV17 },
-          { label: 'Negative numbers in context', content: P5_PV18 },
-          { label: 'Count forwards and backwards through zero', content: P5_PV19 },
-          { label: 'Number sequences involving large numbers', content: P5_PV20 }
-        ]
-      },
-      { 
-        id: 'addsub', 
-        label: 'Addition and Subtraction', 
-        col: TOPIC_PALETTE[1],
-        // Why map() is used here: Quickly maps raw string titles into structured step objects with null content placeholders.
-        steps: ['Mental addition and subtraction strategies','Add and subtract multiples of 10, 100 and 1,000','Add numbers with more than four digits','Subtract numbers with more than four digits','Column addition with exchange','Column subtraction with exchange','Efficient written methods','Estimating answers','Checking using inverse operations','Find missing numbers','Multi-step addition problems','Multi-step subtraction problems','Problems involving addition and subtraction','Reasoning with addition and subtraction'].map(s => ({ label: s, content: null }))
-      },
-      { 
-        id: 'multdivA', 
-        label: 'Multiplication & Division A', 
-        col: TOPIC_PALETTE[3],
-        steps: ['Multiples','Common multiples','Factors','Factor pairs','Common factors','Prime numbers','Prime factors','Composite numbers','Square numbers','Cube numbers','Squared notation (²)','Cubed notation (³)','Recognise divisibility patterns','Multiplication facts and related division facts','Mental multiplication strategies','Mental division strategies'].map(s => ({ label: s, content: null }))
-      },
-      { 
-        id: 'fractionsA', 
-        label: 'Fractions A', 
-        col: TOPIC_PALETTE[2],
-        steps: ['What is a fraction?','Equivalent fractions','Simplifying fractions','Improper fractions','Mixed numbers','Convert improper fractions to mixed numbers','Convert mixed numbers to improper fractions','Compare fractions','Order fractions','Fractions on a number line','Fractions greater than one','Add fractions with the same denominator','Add fractions with related denominators','Subtract fractions with the same denominator','Subtract fractions with related denominators','Add mixed numbers','Subtract mixed numbers','Fraction problem-solving'].map(s => ({ label: s, content: null }))
-      }
+          { label:'Roman numerals to 1,000', content: P5_PV1 },
+          { label:'Numbers to 10,000', content: P5_PV2 },
+          { label:'Numbers to 100,000', content: P5_PV3 },
+          { label:'Numbers to 1,000,000', content: P5_PV4 },
+          { label:'Read and write numbers to 1,000,000', content: P5_PV5 },
+          { label:'Place value within 1,000,000', content: P5_PV6 },
+          { label:'Powers of 10', content: P5_PV7 },
+          { label:'10, 100, 1,000, 10,000 and 100,000 more or less', content: P5_PV8 },
+          { label:'Partition numbers to 1,000,000', content: P5_PV9 },
+          { label:'Number lines to 1,000,000', content: P5_PV10 },
+          { label:'Compare numbers to 100,000', content: P5_PV11 },
+          { label:'Compare numbers to 1,000,000', content: P5_PV12 },
+          { label:'Order numbers to 1,000,000', content: P5_PV13 },
+          { label:'Round to the nearest 10, 100 or 1,000', content: P5_PV14 },
+          { label:'Round to the nearest 10,000', content: P5_PV15 },
+          { label:'Round to the nearest 100,000', content: P5_PV16 },
+          { label:'Rounding in problem-solving contexts', content: P5_PV17 },
+          { label:'Negative numbers in context', content: P5_PV18 },
+          { label:'Count forwards and backwards through zero', content: P5_PV19 },
+          { label:'Number sequences involving large numbers', content: P5_PV20 }
+        ]},
+      { id:'addsub', label:'Addition and Subtraction', col: TOPIC_PALETTE[1],
+        steps: ['Mental addition and subtraction strategies','Add and subtract multiples of 10, 100 and 1,000','Add numbers with more than four digits','Subtract numbers with more than four digits','Column addition with exchange','Column subtraction with exchange','Efficient written methods','Estimating answers','Checking using inverse operations','Find missing numbers','Multi-step addition problems','Multi-step subtraction problems','Problems involving addition and subtraction','Reasoning with addition and subtraction'].map(s=>({label:s, content:null}))},
+      { id:'multdivA', label:'Multiplication & Division A', col: TOPIC_PALETTE[3],
+        steps: ['Multiples','Common multiples','Factors','Factor pairs','Common factors','Prime numbers','Prime factors','Composite numbers','Square numbers','Cube numbers','Squared notation (²)','Cubed notation (³)','Recognise divisibility patterns','Multiplication facts and related division facts','Mental multiplication strategies','Mental division strategies'].map(s=>({label:s, content:null}))},
+      { id:'fractionsA', label:'Fractions A', col: TOPIC_PALETTE[2],
+        steps: ['What is a fraction?','Equivalent fractions','Simplifying fractions','Improper fractions','Mixed numbers','Convert improper fractions to mixed numbers','Convert mixed numbers to improper fractions','Compare fractions','Order fractions','Fractions on a number line','Fractions greater than one','Add fractions with the same denominator','Add fractions with related denominators','Subtract fractions with the same denominator','Subtract fractions with related denominators','Add mixed numbers','Subtract mixed numbers','Fraction problem-solving'].map(s=>({label:s, content:null}))},
     ]
   },
-  { 
-    id: 'spring', 
-    emoji: '🌱', 
-    label: 'Spring Term', 
-    meta: 'January – April 2026', 
-    col: TERM_COLORS.spring, 
-    open: false,
+  { id:'spring', emoji:'🌱', label:'Spring Term', meta:'January – April 2026', col: TERM_COLORS.spring, open:false,
     topics: [
-      { id: 'multdivB', label: 'Multiplication & Division B', col: TOPIC_PALETTE[0], steps: ['Multiply by 10, 100 and 1,000','Divide by 10, 100 and 1,000','Multiply a 4-digit number by a 1-digit number','Multiply a 4-digit number by a 2-digit number','Long multiplication','Divide up to 4 digits by a 1-digit number','Short division','Interpret remainders','Multi-step multiplication and division problems','Choosing efficient methods'].map(s => ({ label: s, content: null })) },
-      { id: 'fractionsB', label: 'Fractions B', col: TOPIC_PALETTE[2], steps: ['Multiply fractions by integers','Find fractions of quantities','Find fractions of amounts','Multiply a mixed number by an integer','Divide fractions by integers','Find the whole from a fraction','Fractions as division','Add fractions with different denominators','Subtract fractions with different denominators','Solve multi-step fraction problems'].map(s => ({ label: s, content: null })) },
-      { id: 'decperc', label: 'Decimals & Percentages', col: TOPIC_PALETTE[3], steps: ['Decimal place value','Thousandths','Decimal number lines','Equivalent fractions and decimals','Compare decimals','Order decimals','Round decimals','Multiply decimals by 10, 100 and 1,000','Divide decimals by 10, 100 and 1,000','Percentages as fractions','Percentages as decimals','Find simple percentages of quantities'].map(s => ({ label: s, content: null })) },
-      { id: 'perarea', label: 'Perimeter & Area', col: TOPIC_PALETTE[1], steps: ['What is perimeter?','Perimeter of rectangles','Perimeter of rectilinear shapes','Find missing lengths','What is area?','Calculate area by counting squares','Area of rectangles','Area of compound shapes','Compare area and perimeter'].map(s => ({ label: s, content: null })) },
-      { id: 'stats', label: 'Statistics', col: TOPIC_PALETTE[4], steps: ['Read tables','Interpret tables','Read line graphs','Interpret line graphs','Solve comparison problems from line graphs','Complete tables','Read timetables','Interpret timetables'].map(s => ({ label: s, content: null })) }
-    ]
-  },
-  { 
-    id: 'summer', 
-    emoji: '☀️', 
-    label: 'Summer Term', 
-    meta: 'April – July 2026', 
-    col: TERM_COLORS.summer, 
-    open: false,
+      { id:'multdivB', label:'Multiplication & Division B', col: TOPIC_PALETTE[0], steps:['Multiply by 10, 100 and 1,000','Divide by 10, 100 and 1,000','Multiply a 4-digit number by a 1-digit number','Multiply a 4-digit number by a 2-digit number','Long multiplication','Divide up to 4 digits by a 1-digit number','Short division','Interpret remainders','Multi-step multiplication and division problems','Choosing efficient methods'].map(s=>({label:s,content:null}))},
+      { id:'fractionsB', label:'Fractions B', col: TOPIC_PALETTE[2], steps:['Multiply fractions by integers','Find fractions of quantities','Find fractions of amounts','Multiply a mixed number by an integer','Divide fractions by integers','Find the whole from a fraction','Fractions as division','Add fractions with different denominators','Subtract fractions with different denominators','Solve multi-step fraction problems'].map(s=>({label:s,content:null}))},
+      { id:'decperc', label:'Decimals & Percentages', col: TOPIC_PALETTE[3], steps:['Decimal place value','Thousandths','Decimal number lines','Equivalent fractions and decimals','Compare decimals','Order decimals','Round decimals','Multiply decimals by 10, 100 and 1,000','Divide decimals by 10, 100 and 1,000','Percentages as fractions','Percentages as decimals','Find simple percentages of quantities'].map(s=>({label:s,content:null}))},
+      { id:'perarea', label:'Perimeter & Area', col: TOPIC_PALETTE[1], steps:['What is perimeter?','Perimeter of rectangles','Perimeter of rectilinear shapes','Find missing lengths','What is area?','Calculate area by counting squares','Area of rectangles','Area of compound shapes','Compare area and perimeter'].map(s=>({label:s,content:null}))},
+      { id:'stats', label:'Statistics', col: TOPIC_PALETTE[4], steps:['Read tables','Interpret tables','Read line graphs','Interpret line graphs','Solve comparison problems from line graphs','Complete tables','Read timetables','Interpret timetables'].map(s=>({label:s,content:null}))},
+    ]},
+  { id:'summer', emoji:'☀️', label:'Summer Term', meta:'April – July 2026', col: TERM_COLORS.summer, open:false,
     topics: [
-      { id: 'shape', label: 'Properties of Shape', col: TOPIC_PALETTE[3], steps: ['Understand angles','Measure angles','Angles on a straight line','Angles around a point','Acute, obtuse and reflex angles','Triangles','Classifying triangles','Quadrilaterals','Regular and irregular polygons','Symmetry','Missing angles'].map(s => ({ label: s, content: null })) },
-      { id: 'posdir', label: 'Position & Direction', col: TOPIC_PALETTE[0], steps: ['Coordinates in the first quadrant','Plot coordinates','Draw shapes using coordinates','Translate shapes','Describe translations','Reflect shapes','Reflection in horizontal and vertical lines'].map(s => ({ label: s, content: null })) },
-      { id: 'decimals', label: 'Decimals', col: TOPIC_PALETTE[2], steps: ['Decimal place value','Thousandths','Add decimals','Subtract decimals','Decimal complements','Decimal multiplication','Decimal division','Solve decimal problems'].map(s => ({ label: s, content: null })) },
-      { id: 'negatives', label: 'Negative Numbers', col: TOPIC_PALETTE[5], steps: ['What are negative numbers?','Negative numbers on a number line','Compare negative numbers','Count forwards and backwards through zero','Positive and negative temperature','Negative numbers in real-life contexts'].map(s => ({ label: s, content: null })) },
-      { id: 'converting', label: 'Converting Units', col: TOPIC_PALETTE[1], steps: ['Metric units','Millimetres, centimetres and metres','Metres and kilometres','Kilograms and grams','Litres and millilitres','Units of time','Convert between seconds, minutes and hours','Solve conversion problems'].map(s => ({ label: s, content: null })) },
-      { id: 'volume', label: 'Volume', col: TOPIC_PALETTE[4], steps: ['What is volume?','Volume using cubes','Count cubes to find volume','Volume of cuboids','Calculate volume using multiplication','Volume and capacity'].map(s => ({ label: s, content: null })) }
-    ]
-  }
+      { id:'shape', label:'Properties of Shape', col: TOPIC_PALETTE[3], steps:['Understand angles','Measure angles','Angles on a straight line','Angles around a point','Acute, obtuse and reflex angles','Triangles','Classifying triangles','Quadrilaterals','Regular and irregular polygons','Symmetry','Missing angles'].map(s=>({label:s,content:null}))},
+      { id:'posdir', label:'Position & Direction', col: TOPIC_PALETTE[0], steps:['Coordinates in the first quadrant','Plot coordinates','Draw shapes using coordinates','Translate shapes','Describe translations','Reflect shapes','Reflection in horizontal and vertical lines'].map(s=>({label:s,content:null}))},
+      { id:'decimals', label:'Decimals', col: TOPIC_PALETTE[2], steps:['Decimal place value','Thousandths','Add decimals','Subtract decimals','Decimal complements','Decimal multiplication','Decimal division','Solve decimal problems'].map(s=>({label:s,content:null}))},
+      { id:'negatives', label:'Negative Numbers', col: TOPIC_PALETTE[5], steps:['What are negative numbers?','Negative numbers on a number line','Compare negative numbers','Count forwards and backwards through zero','Positive and negative temperature','Negative numbers in real-life contexts'].map(s=>({label:s,content:null}))},
+      { id:'converting', label:'Converting Units', col: TOPIC_PALETTE[1], steps:['Metric units','Millimetres, centimetres and metres','Metres and kilometres','Kilograms and grams','Litres and millilitres','Units of time','Convert between seconds, minutes and hours','Solve conversion problems'].map(s=>({label:s,content:null}))},
+      { id:'volume', label:'Volume', col: TOPIC_PALETTE[4], steps:['What is volume?','Volume using cubes','Count cubes to find volume','Volume of cuboids','Calculate volume using multiplication','Volume and capacity'].map(s=>({label:s,content:null}))},
+    ]},
 ];
 
 /* ============================================================
