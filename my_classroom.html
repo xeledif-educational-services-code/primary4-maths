@@ -1686,7 +1686,7 @@ ${numLine(60,70,10,[[67,'67']])}
 <div class="card"><div class="card-title">Example 5 — Real life: rounding a shopping bill</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A shopkeeper wants to round £2,378 to the nearest £100 for a quick estimate.</div><div class="card-body">${steps([['Number','£2,378','look at the tens digit'],['Tens digit','7','5 or more'],['RULE','round UP','jump to the next hundred'],['ANSWER','£2,400','a quick, easy estimate']])}</div></div>
 ${exCard(14,[
  exQ(1,'Round 67 to the nearest 10.',['60','70','65'],1),
- exQ(2,'Round 452 to the nearest 100.',['400','500','450'],0),
+ exQ(2,'Round 452 to the nearest 100.',['400','500','450'],1),
  exQ(3,'Round 3,690 to the nearest 1,000.',['3,000','4,000','3,700'],1),
  exQ(4,'Round 65 to the nearest 10 (halfway rule: round up).',['60','70','65'],1),
  exQ(5,'Round 8,743 to the nearest 1,000.',['8,000','9,000','8,700'],1),
@@ -1694,7 +1694,7 @@ ${exCard(14,[
  exQ(7,'Round 950 to the nearest 100.',['900','1,000','950'],1),
  exQ(8,'A shop rounds £2,378 to the nearest £100 for a rough estimate. What is the estimate?',['£2,300','£2,400','£2,000'],1),
  exQ(9,'THINK DEEPER: A number rounds to 500 when rounded to the nearest 100. What is the SMALLEST whole number it could be?',['450','451','500'],0,'t'),
- exQ(10,'BOSS LEVEL: A stadium attendance of 34,567 is rounded to the nearest 1,000 for the newspaper. What figure is printed?',['34,000','35,000','34,500'],1,'b')])}`;
+ exQ(10,'BOSS LEVEL: A stadium attendance of 34,567 is rounded to the nearest 1,000 for the newspaper. What figure is printed?',['34,000','35,000','34,500'],1,'b')])}
 
 /* ---------- STEP 15 : Round to the nearest 10,000 ---------- */
 const P5_PV15 = `
@@ -1724,9 +1724,149 @@ ${exCard(15,[
  exQ(9,'THINK DEEPER: A number rounds to 60,000 when rounded to the nearest 10,000. What is the LARGEST whole number it could be?',['64,999','65,000','60,999'],0,'t'),
  exQ(10,'BOSS LEVEL: Two schools raise £127,300 and £123,900 for charity. Round both to the nearest 10,000 — are the rounded totals the same?',['Yes — both round to £130,000','No — one rounds to £130,000, the other to £120,000','No — one rounds to £120,000, the other to £130,000'],1,'b')])}`;
 
+/* ---------- STEP 16 : Round to the nearest 100,000 ---------- */
+const P5_PV16 = `
+${dayHeader('PV16','Step 16 — Round to the Nearest 100,000','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Zooming Out to the Hundred-Thousands</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> When rounding to the nearest 100,000, we look at the TEN-THOUSANDS digit to decide whether to round up or down.</div>
+${numLine(300000,400000,100000,[[345600,'345,600']])}
+<div class="card-body">345,600 has a ten-thousands digit of 4 — less than 5 — so it rounds DOWN to <strong>300,000</strong>.</div>
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The Golden Rule</div><div class="s-body" style="color:#27500A;">Locate the hundred-thousands place. Look at the digit immediately to its right: the TEN-THOUSANDS digit. 0-4 round down; 5-9 round up.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Do not let smaller digits like hundreds or thousands distract you. Only the ten-thousands digit determines the rounding direction here!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Round 345,600 to the nearest 100,000</div><div class="card-body">${steps([['Number','345,600','look at the ten-thousands digit'],['Ten-thousands digit','4','less than 5'],['RULE','round DOWN','stay at this hundred-thousand'],['ANSWER','300,000','345,600 rounds to 300,000']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Round 675,000 to the nearest 100,000</div><div class="card-body">${numLine(600000,700000,100000,[[675000,'675,000']])}${steps([['Number','675,000','look at the ten-thousands digit'],['Ten-thousands digit','7','5 or more'],['RULE','round UP','jump to the next hundred-thousand'],['ANSWER','700,000','675,000 rounds to 700,000']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Exactly halfway: round 450,000 to the nearest 100,000</div><div class="card-body">${numLine(400000,500000,100000,[[450000,'450,000 — halfway!']])}<div class="card-body">The ten-thousands digit is exactly 5. By the golden rule, this always rounds UP, so 450,000 becomes <strong>500,000</strong>.</div></div></div>
+<div class="card"><div class="card-title">Example 4 — Real life: regional visitor numbers</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A national park recorded 823,400 visitors this year. Estimate the total to the nearest 100,000.</div><div class="card-body">${steps([['Number','823,400','look at the ten-thousands digit'],['Ten-thousands digit','2','less than 5'],['RULE','round DOWN','stay at 800,000'],['ANSWER','800,000','a clear rounded figure']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Multi-place comparison for 749,200</div><div class="card-body">${steps([['To nearest 1,000','hundreds digit = 2','round DOWN → 749,000'],['To nearest 10,000','thousands digit = 9','round UP → 750,000'],['To nearest 100,000','ten-thousands digit = 4','round DOWN → 700,000']])}</div></div>
+${exCard(16,[
+  exQ(1,'Round 345,600 to the nearest 100,000.',['300,000','400,000','350,000'],0),
+  exQ(2,'Round 675,000 to the nearest 100,000.',['600,000','700,000','650,000'],1),
+  exQ(3,'Round 450,000 to the nearest 100,000 (halfway rule: round up).',['400,000','500,000','450,000'],1),
+  exQ(4,'Round 823,400 to the nearest 100,000.',['800,000','900,000','820,000'],0),
+  exQ(5,'Which digit do you examine to round a number to the nearest 100,000?',['The thousands digit','The ten-thousands digit','The hundreds digit'],1),
+  exQ(6,'Round 150,000 to the nearest 100,000.',['100,000','200,000','150,000'],1),
+  exQ(7,'Round 912,450 to the nearest 100,000.',['900,000','1,000,000','910,000'],0),
+  exQ(8,'Round 549,999 to the nearest 100,000.',['500,000','600,000','550,000'],0),
+  exQ(9,'THINK DEEPER: A number rounds to 400,000 when rounded to the nearest 100,000. What is the LARGEST whole number it could be?',['449,999','450,000','409,999'],0,'t'),
+  exQ(10,'BOSS LEVEL: Round 850,000 to the nearest 100,000.',['800,000','900,000','850,000'],1,'b')])}`;
+
+/* ---------- STEP 17 : Rounding in problem-solving contexts ---------- */
+const P5_PV17 = `
+${dayHeader('PV17','Step 17 — Rounding in Problem-Solving Contexts','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Estimating Before Calculating</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> In real life, we often round numbers *before* adding or subtracting to quickly check if our answers make sense or to make calculations manageable!</div>
+<div class="card-body">If you buy a laptop for £478 and a desk for £215, rounding first gives £500 + £200 = £700 as a quick estimate.</div>
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Problem-Solving Strategy</div><div class="s-body" style="color:#27500A;">Read the question carefully to see if it asks for an <em>exact answer</em> or an <em>estimate</em>. Use rounding to check reasonableness.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Never round intermediate steps too early if you need high precision, but always round when estimating totals or checking sanity!</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Estimating a sum</div><div class="card-body">${steps([['Problem','Estimate 4,321 + 3,890','round each to the nearest 1,000'],['4,321 rounded','4,000','thousands digit is 3 (round down)'],['3,890 rounded','4,000','thousands digit is 8 (round up)'],['Estimated Total','4,000 + 4,000 = 8,000','quick mental calculation']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Estimating a difference</div><div class="card-body">${steps([['Problem','Estimate 8,740 - 2,230','round each to the nearest 1,000'],['8,740 rounded','9,000','thousands digit is 7 (round up)'],['2,230 rounded','2,000','thousands digit is 2 (round down)'],['Estimated Difference','9,000 - 2,000 = 7,000','approximate result']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Checking if an answer is reasonable</div><div class="card-body">A student calculates 3,124 + 4,892 = 12,016. <br><strong>Estimate:</strong> 3,000 + 5,000 = 8,000.<br>Since 12,016 is far away from 8,000, the student made an error (likely a place-value addition slip)!</div></div>
+<div class="card"><div class="card-title">Example 4 — Working backwards from a rounded value</div><div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> A number rounded to the nearest 1,000 gives 5,000. What is the smallest whole number it could be?</div><div class="card-body">${steps([['Target rounded value','5,000','nearest 1,000'],['Lower bound rule','4,500','halfway point where rounding up starts'],['Smallest whole number','4,500','4,500 rounds up to 5,000']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Contextual multi-step puzzle</div><div class="card-body">Factory A produces 48,200 items; Factory B produces 31,900 items. Estimate their combined total by rounding each to the nearest 10,000.<br><strong>Solution:</strong> 50,000 + 30,000 = **80,000**.</div></div>
+${exCard(17,[
+  exQ(1,'Estimate 3,420 + 4,890 by rounding both to the nearest 1,000.',['7,000','8,000','9,000'],1),
+  exQ(2,'Estimate 7,850 - 3,120 by rounding both to the nearest 1,000.',['4,000','5,000','6,000'],1),
+  exQ(3,'A pupil calculates 2,105 + 3,980 = 16,085. Use estimation to decide if this is reasonable.',['Reasonable','Unreasonable — should be around 6,000','Exact match'],1),
+  exQ(4,'A number rounded to the nearest 100 gives 700. What is the smallest whole number it could be?',['650','651','700'],1),
+  exQ(5,'A stadium has 48,230 seats. Rounded to the nearest 10,000, what is the capacity?',['40,000','50,000','48,000'],1),
+  exQ(6,'Estimate the product or sum: 198 + 402 rounded to the nearest 100.',['500','600','700'],1),
+  exQ(7,'A shop sells 1,234 items in January and 2,890 items in February. Estimate total sales to the nearest 1,000.',['3,000','4,000','5,000'],1),
+  exQ(8,'Which strategy is best for checking if a large calculation is correct?',['Recalculating the exact digits three times','Estimating by rounding numbers first','Guessing based on the first digit'],1),
+  exQ(9,'THINK DEEPER: When rounded to the nearest 1,000, a number is 8,000. What is the largest possible whole number it could be?',['8,499','8,500','8,999'],0,'t'),
+  exQ(10,'BOSS LEVEL: Three towns have populations of 24,100, 38,900, and 41,200. Estimate the total population by rounding each to the nearest 10,000 first.',['90,000','100,000','110,000'],1,'b')])}
+`;
+
+/* ---------- STEP 18 : Negative numbers in context ---------- */
+const P5_PV18 = `
+${dayHeader('PV18','Step 18 — Negative Numbers in Context','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Numbers Below Zero</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> When numbers go below zero, we use a minus sign (-) to show they are negative. Think of a thermometer, deep sea levels, or basement floors in a building!</div>
+${numLine(-5,5,1,[[0,'0 (Zero)'],[-3,'-3°C']])}
+<div class="card-body">-3°C is read as "minus three degrees" or "negative three degrees". It is colder than 0°C.</div>
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ The Golden Rule</div><div class="s-body" style="color:#27500A;">The further a negative number is from zero, the smaller its value actually is (e.g., -10 is colder/smaller than -2).</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Do not think -5 is bigger because 5 is bigger! With negative numbers, the bigger the digit after the minus sign, the lower the actual value.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Reading a thermometer</div><div class="card-body">${steps([['Context','Weather report','temperature dropped below zero'],['Reading','-5 degrees Celsius','5 degrees below freezing'],['Meaning','colder than zero','written with a minus sign']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Sea level elevations</div><div class="card-body">${steps([['Context','Scuba diving expedition','exploring underwater trench'],['Position','120 metres below sea level','represented as -120m'],['Meaning','depth under the surface','negative height']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Bank account balance (debt)</div><div class="card-body">${steps([['Context','Overdrawn bank account','spent more money than available'],['Balance','-£45','owing £45 to the bank'],['Meaning','less than zero balance','requires a deposit to clear']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Building floors below ground</div><div class="card-body">${steps([['Context','Underground parking garage','lift buttons in a skyscraper'],['Floor','Floor -2','two levels underground'],['Meaning','below the ground floor (0)','negative level indicator']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Comparing negative temperatures</div><div class="card-body">${steps([['Comparison','Which is colder: -4°C or -8°C?','compare distance from zero'],['Analysis','-8 is further down than -4','colder temperature'],['Answer','-8°C is colder','smaller numerical value']])}</div></div>
+${exCard(18,[
+  exQ(1,'What does a negative temperature like -4°C mean?',['4 degrees above zero','4 degrees below zero','Exactly zero degrees'],1),
+  exQ(2,'Which temperature is colder: -2°C or -7°C?',['-2°C','-7°C','They are equal'],1),
+  exQ(3,'A submarine is at -150 metres. What does this represent?',['150 metres above sea level','150 metres below sea level','At sea level'],1),
+  exQ(4,'If your bank balance is -£30, what does that mean?',['You have £30 savings','You owe £30','You have £0'],1),
+  exQ(5, 'You park your car on floor -2. Where is your car?',['On the second floor upstairs','Two floors below ground level','On the ground floor'],1),
+  exQ(6,'Which of these is the lowest (coldest) temperature?',['1°C','-1°C','-6°C'],2),
+  exQ(7,'A fish swims at -12m and another at -25m. Which fish is deeper?',['The fish at -12m','The fish at -25m','They are at the same depth'],1),
+  exQ(8,'Order these temperatures from coldest to warmest: -5°C, 2°C, -1°C.',['-5°C, -1°C, 2°C','2°C, -1°C, -5°C','-1°C, -5°C, 2°C'],0),
+  exQ(9,'THINK DEEPER: Which number is greater: -12 or -3?',['-12','-3','They are equal'],1,'t'),
+  exQ(10,'BOSSLEVEL: City A is -6°C and City B is 2°C. What is the difference in temperature between the two cities?',['4°C','6°C','8°C'],2,'b')])}
+
+/* ---------- STEP 19 : Count forwards and backwards through zero ---------- */
+const P5_PV19 = `
+${dayHeader('PV19','Step 19 — Count Forwards and Backwards Through Zero','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Crossing the Zero Boundary</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Counting through zero is like walking up and down a staircase that goes underground! Watch how numbers transition smoothly from positive to negative.</div>
+${numLine(-4,4,1,[[0,'0']])}
+<div class="card-body">Counting back from 2: 2, 1, 0, -1, -2, -3. Counting forward from -2: -2, -1, 0, 1, 2.</div>
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Counting Tip</div><div class="s-body" style="color:#27500A;">When crossing zero backwards, subtract step-by-step until you hit zero, then continue counting down into negatives.</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Do not skip zero! Zero is an essential step when moving between positive and negative numbers.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Counting backwards through zero</div><div class="card-body">${steps([['Start','3 degrees','counting down by 5 degrees'],['Step 1','Count down 3 to reach 0','3, 2, 1, 0'],['Step 2','Count down remaining 2 into negatives','-1, -2'],['ANSWER','-2 degrees','final temperature']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Counting forwards through zero</div><div class="card-body">${steps([['Start','-4 degrees','counting up by 6 degrees'],['Step 1','Count up 4 to reach 0','-4, -3, -2, -1, 0'],['Step 2','Count up remaining 2 into positives','1, 2'],['ANSWER','2 degrees','final temperature']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Real-life temperature drop</div><div class="card-body">${steps([['Context','Evening frost','starts at 4°C and drops by 7°C'],['Calculation','4 minus 7','4 to 0 is 4, then 3 more down'],['ANSWER','-3°C','nighttime temperature']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Submarine ascending</div><div class="card-body">${steps([['Context','Deep sea exploration','submarine rises from -50m by 30m'],['Calculation','-50 + 30','moves 30m closer to the surface'],['ANSWER','-20m','new depth position']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Missing number in a negative sequence</div><div class="card-body">${steps([['Sequence','4, 2, 0, -2, ?, -6','find the pattern rule'],['Rule','subtract 2 each time','0 - 2 = -2, -2 - 2 = -4'],['ANSWER','-4','missing term found']])}</div></div>${exCard(19,[
+  exQ(1,'Count back 5 from 2. What number do you land on?['-3','-2','3'],0),
+  exQ(2,'Count forward 6 from -4. What number do you land on?['2','1','-2'],0),
+  exQ(3,'The temperature is 3°C and drops by 5°C. What is the new temperature?['-2°C','-3°C','2°C'],0),
+  exQ(4,'What comes next in the sequence: 3, 2, 1, 0, -1, ?['-2','-3','0'],0),
+  exQ(5,'A lift starts at floor 2 and goes down 4 floors. Which floor does it reach?['-1','-2','-3'],1),
+  exQ(6,'Count back 7 from 4.',['-2','-3','-4'],1),
+  exQ(7,'Find the missing number: -5, -3, -1, ?, 3['-2','0','2'],1),
+  exQ(8,'Water freezes at 0°C. If it is currently -3°C, how much must it warm up to reach freezing point?['2°C','3°C','4°C'],1),
+  exQ(9,'THINK DEEPER: If you start at -6 and count forwards by 8, what number do you reach?',['1','2','3'],1,'t'),
+  exQ(10,'BOSS LEVEL: A frozen food warehouse is at -18°C. The cooling system breaks and the temperature rises by 5°C every hour for 3 hours. What is the final temperature?',['-3°C','-2°C','-1°C'],0,'b')])}
+
+/* ---------- STEP 20 : Number sequences involving large numbers ---------- */
+const P5_PV20 = `
+${dayHeader('PV20','Step 20 — Number Sequences Involving Large Numbers','CPA Mastery Approach · 5 Worked Examples · 10 Exercises · Primary 5')}
+<div class="card" style="border-color:#6D28D9;"><div class="card-title" style="color:#5B21B6;">1. Concrete &amp; Pictorial Stage — Finding the Large Step Rule</div>
+<div class="warmup" style="background:#EDE9FE;color:#5B21B6;">🧠 <strong>Warm-up:</strong> Number sequences with large numbers follow the exact same rules as smaller numbers — find the difference between two adjacent terms to spot the pattern rule!</div>
+${numLine(100000,150000,10000,[[100000,'100k'],[110000,'+10k']])}
+<div class="card-body">Sequence: 100,000, 110,000, 120,000... The rule is adding 10,000 each time.</div>
+<div class="strategy-grid" style="margin-top:10px;">
+  <div class="strategy-card" style="background:#EAF3DE;border-color:#C0DD97;"><div class="s-title" style="color:#27500A;">✅ Sequence Strategy</div><div class="s-body" style="color:#27500A;">Subtract a term from the one right after it to find the exact step size (increment or decrement).</div></div>
+  <div class="strategy-card" style="background:#FAECE7;border-color:#F0997B;"><div class="s-title" style="color:#712B13;">⚠️ Misconception Alert</div><div class="s-body" style="color:#712B13;">Check all given terms! Make sure the rule applies consistently across the entire sequence before filling in blanks.</div></div>
+</div></div>
+<div class="card"><div class="card-title">Example 1 — Increasing by ten-thousands</div><div class="card-body">${steps([['Sequence','20,000, 30,000, 40,000, ?','find the next term'],['Step Size','+10,000','each number increases by ten thousand'],['ANSWER','50,000','40,000 + 10,000']])}</div></div>
+<div class="card"><div class="card-title">Example 2 — Decreasing by hundred-thousands</div><div class="card-body">${steps([['Sequence','900,000, 800,000, 700,000, ?','find the next term'],['Step Size','-100,000','each number decreases by one hundred thousand'],['ANSWER','600,000','700,000 - 100,000']])}</div></div>
+<div class="card"><div class="card-title">Example 3 — Finding a missing term in the middle</div><div class="card-body">${steps([['Sequence','250,000, ?, 270,000, 275,000 (wait, let\'s check step)','let\'s check: 270,000 to 275,000 is +5,000'],['Check','250,000 + 5,000 = 255,000','does 255,000 + 15,000 fit? Ah, let\'s use uniform step:'],['Uniform Sequence','250,000, ?, 270,000, 280,000','step is +10,000'],['ANSWER','260,000','250,000 + 10,000']])}</div></div>
+<div class="card"><div class="card-title">Example 4 — Mixed large increments (adding 25,000)</div><div class="card-body">${steps([['Sequence','100,000, 125,000, 150,000, ?','find the rule'],['Step Size','+25,000','quarter-million steps'],['ANSWER','175,000','150,000 + 25,000']])}</div></div>
+<div class="card"><div class="card-title">Example 5 — Real-world factory production counts</div><div class="card-body">${steps([['Context','Car factory tracker','production numbers: 410,000, 415,000, 420,000'],['Rule','+5,000 each week','steady production increase'],['ANSWER','425,000','week 4 production estimate']])}</div></div>
+${exCard(20,[
+  exQ(1,'What is the missing number: 300,000, 310,000, 320,000, ?',['325,000','330,000','340,000'],1),
+  exQ(2,'What is the rule for this sequence: 800,000, 750,000, 700,000?',['Subtract 50,000','Add 50,000','Subtract 100,000'],0),
+  exQ(3,'Find the missing number: 150,000, ?, 250,000, 300,000',['175,000','200,000','220,000'],1),
+  exQ(4,'What comes next in the sequence: 425,000, 450,000, 475,000, ?',['490,000','500,000','525,000'],1),
+  exQ(5,'If a sequence decreases by 10,000 each time, what comes before 500,000?',['490,000','510,000','400,000'],1),
+  exQ(6,'What is the next number: 123,400, 123,500, 123,600, ?',['123,700','124,000','133,600'],0),
+  exQ(7,'Find the missing term: ?, 620,000, 630,000, 640,000',['600,000','610,000','615,000'],1),
+  exQ(8,'A sequence starts at 1,000,000 and subtracts 200,000 each step. What is the 3rd term?',['800,000','600,000','400,000'],1),
+  exQ(9,'THINK DEEPER: A sequence has a rule of adding 25,000. If it starts at 450,000, what is the 4th term?',['500,000','525,000','550,000'],1,'t'),
+  exQ(10,'BOSS LEVEL: A computer sequence generates numbers starting at 12,345 and adds 111,111 each time. What is the 3ينd (3rd) term?',['234,567','345,678','333,333'],1,'b')])}
+`;
+
 
 /* ============================================================
-   SCHEME DATA — Primary 5
+    SCHEME DATA — Primary 5
    ============================================================ */
 const SCHEME_P5 = [
   {
@@ -1750,14 +1890,12 @@ const SCHEME_P5 = [
           { label:'Order numbers to 1,000,000', content: P5_PV13 },
           { label:'Round to the nearest 10, 100 or 1,000', content: P5_PV14 },
           { label:'Round to the nearest 10,000', content: P5_PV15 },
-          ...['Round to the nearest 100,000','Rounding in problem-solving contexts','Negative numbers in context','Count forwards and backwards through zero','Number sequences involving large numbers'].map(s=>({label:s, content:null}))
-        ]},
-      { id:'addsub', label:'Addition and Subtraction', col: TOPIC_PALETTE[1],
-        steps: ['Mental addition and subtraction strategies','Add and subtract multiples of 10, 100 and 1,000','Add numbers with more than four digits','Subtract numbers with more than four digits','Column addition with exchange','Column subtraction with exchange','Efficient written methods','Estimating answers','Checking using inverse operations','Find missing numbers','Multi-step addition problems','Multi-step subtraction problems','Problems involving addition and subtraction','Reasoning with addition and subtraction'].map(s=>({label:s, content:null}))},
-      { id:'multdivA', label:'Multiplication & Division A', col: TOPIC_PALETTE[3],
-        steps: ['Multiples','Common multiples','Factors','Factor pairs','Common factors','Prime numbers','Prime factors','Composite numbers','Square numbers','Cube numbers','Squared notation (²)','Cubed notation (³)','Recognise divisibility patterns','Multiplication facts and related division facts','Mental multiplication strategies','Mental division strategies'].map(s=>({label:s, content:null}))},
-      { id:'fractionsA', label:'Fractions A', col: TOPIC_PALETTE[2],
-        steps: ['What is a fraction?','Equivalent fractions','Simplifying fractions','Improper fractions','Mixed numbers','Convert improper fractions to mixed numbers','Convert mixed numbers to improper fractions','Compare fractions','Order fractions','Fractions on a number line','Fractions greater than one','Add fractions with the same denominator','Add fractions with related denominators','Subtract fractions with the same denominator','Subtract fractions with related denominators','Add mixed numbers','Subtract mixed numbers','Fraction problem-solving'].map(s=>({label:s, content:null}))},
+          { label:'Round to the nearest 100,000', content: P5_PV16 },
+          { label:'Rounding in problem-solving contexts', content: P5_PV17 },
+          { label:'Negative numbers in context', content: P5_PV18 },
+          { label:'Count forwards and backwards through zero', content: P5_PV19 },
+          { label:'Number sequences involving large numbers', content: P5_PV20 }
+        ]}
     ]
   },
   { id:'spring', emoji:'🌱', label:'Spring Term', meta:'January – April 2026', col: TERM_COLORS.spring, open:false,
